@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  background-color: #DCDCDC;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit
+}

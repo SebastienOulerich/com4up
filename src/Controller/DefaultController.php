@@ -16,4 +16,95 @@ class DefaultController extends Controller
         // replace this line with your own code!
         return $this->render('base/index.html.twig');
     }
+
+    /**
+     * @Route("/services", name="services")
+     */
+    public function services()
+    {
+        // replace this line with your own code!
+        return $this->render('base/services.html.twig');
+    }
+
+    /**
+     * @Route("/services-web", name="services_web")
+     */
+    public function services_web()
+    {
+        // replace this line with your own code!
+        return $this->render('base/services_web.html.twig');
+    }
+
+    /**
+     * @Route("/services-audiovisuel", name="services_audiovisuel")
+     */
+    public function services_audiovisuel()
+    {
+        // replace this line with your own code!
+        return $this->render('base/services_audiovisuel.html.twig');
+    }
+
+    /**
+     * @Route("/services-social", name="services_social")
+     */
+    public function services_social()
+    {
+        // replace this line with your own code!
+        return $this->render('base/services_social.html.twig');
+    }
+
+    /**
+     * @Route("/services-materiel", name="services_materiel")
+     */
+    public function services_materiel()
+    {
+        // replace this line with your own code!
+        return $this->render('base/services_materiel.html.twig');
+    }
+
+    /**
+     * @Route("/projets", name="projets")
+     */
+    public function projets()
+    {
+        // replace this line with your own code!
+        return $this->render('base/projets.html.twig');
+    }
+
+
+    /**
+     * @Route("/projet-id", name="projet_id")
+     */
+    public function projet_id()
+    {
+        // replace this line with your own code!
+        return $this->render('base/projet_id.html.twig');
+    }
+
+    /**
+     * @Route("/equipe", name="equipe")
+     */
+    public function equipe()
+    {
+        // replace this line with your own code!
+        return $this->render('base/equipe.html.twig');
+    }
+
+    /**
+     * @Route("/a-propos", name="a_propos")
+     */
+    public function a_propos()
+    {
+        // replace this line with your own code!
+        return $this->render('base/a_propos.html.twig');
+    }
+
+    /**
+     * @Route("/mentions-legales", name="mentions_legales")
+     */
+    public function mentions_legales()
+    {
+        // replace this line with your own code!
+        return $this->render('base/mentions_legales.html.twig');
+    }
 }
