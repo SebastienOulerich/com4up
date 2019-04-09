@@ -8,16 +8,21 @@
 }
 
 #Qui {
-	text-align: center;
 	font-size: 2.5em;
 	background-color: #D5D5D5;
 	width: 100%;
 	font-family: "Bebas", sans-serif;
-	height: 2em;
+
 }
 
 #Qui h1 {
+	height: 2em;
 	display: flex;
+	text-align: center;
 	justify-content: center;
 	align-items: center;
+}
+
+.Background_Gris {
+	background-color: #D5D5D5;
 }
