@@ -3,7 +3,8 @@ body {
   padding: 0;
   height: 100vh;
   background-color: #DCDCDC;
-  overflow-x: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 a {
@@ -110,4 +111,22 @@ footer {
 
 #Footer_Legal p {
   margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  footer {
+    width: 100%;
+    border-top: solid #000 1px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap
+  }
+
+  #Footer_info, #Footer_contact, #Footer_Social, #Footer_Legal {
+    width: 100%;
+    border-right: 0;
+    text-align: center;
+    border-bottom: 2px solid #212121;
+    padding-bottom: 1em
+  }
 }
