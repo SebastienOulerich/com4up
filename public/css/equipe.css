@@ -26,3 +26,12 @@
 .Background_Gris {
 	background-color: #D5D5D5;
 }
+
+.Toute_Section {
+	display: flex;
+	width: 100%;
+}
+
+.Info_Gauche {
+	flex-direction: column;
+}
