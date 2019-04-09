@@ -43,7 +43,7 @@
 
 <body>
   <header id="HeaderDesktop">
-    <h1 id="logo"><span id="Com">Com</span><span id="Four">4</span><span id="Up">Up</span></h1>
+    <h1 id="logo"><a href="{{ path('default') }}"><span id="Com">Com</span><span id="Four">4</span><span id="Up">Up</span></a></h1>
     <nav>
       <ul id="NavDesktop">
         {% if app.request.attributes.get('_route') == "default" %}
