@@ -1,7 +1,55 @@
 {% extends 'base.html.twig' %}
 {% block title %}Contact{% endblock %}
-{% block stylesheets %}<link type="text/css" rel="stylesheet" href={{asset("css/contact.css")}} />{% endblock %}
+{% block stylesheets %}
+<link type="text/css" rel="stylesheet" href={{asset("css/contact.css")}} />
+{% endblock %}
 {% block body%}
-<p>En soumettant ce formulaire, j'accepte que les informations saisies dans ce formulaire soient utilisées, exploitées, traitées pour permettre de me recontacter, pour m’envoyer la newsletter, dans le cadre de la relation commerciale qui découle de cette demande de devis.</p>
+<img src={{asset("images/banniere-contact.jpg")}} alt="Banniere contact">
+<form>
+  <div id="contactTop">
+    <div class="contactTopInput">
+      <label>Nom</label>
+      <input></input>
+    </div>
+    <div class="contactTopInput">
+      <label>Prénom</label>
+      <input></input>
+    </div>
+    <div class="contactTopInput">
+      <label>E-Mail</label>
+      <input></input>
+    </div>
+    <div class="contactTopInput">
+      <label>Entreprise/Organisme - Optionnel</label>
+      <input></input>
+    </div>
+  </div>
+  <div id="Categorie">
+    <p>Catégorie</p>
+    <div class="CategorieLine">
+      <input type="checkbox" name="" value=""><label>Site web</label>
+    </div>
+    <div class="Categorie_line">
+      <input type="checkbox" name="" value=""><label>Audiovisuel</label>
+    </div>
+    <div class="Categorie_line">
+      <input type="checkbox" name="" value=""><label>Réseaux sociaux</label>
+    </div>
+    <div class="Categorie_line">
+      <input type="checkbox" name="" value=""><label>Matériel</label>
+    </div>
+  </div>
+  <div id="Objet">
+    <label>Objet</label>
+    <input></input>
+  </div>
+
+  <div id="Message">
+    <label>Votre message</label>
+    <textarea name="name" rows="8" cols="80"></textarea>
+  </div>
+</form>
+<p>En soumettant ce formulaire, j'accepte que les informations saisies dans ce formulaire soient utilisées, exploitées, traitées pour permettre de me recontacter, pour m’envoyer la newsletter, dans le cadre de la relation commerciale qui découle de
+  cette demande de devis.</p>
 
 {% endblock %}

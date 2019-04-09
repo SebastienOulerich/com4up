@@ -1,0 +1,9 @@
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+form {
+  width: 50%;
+  margin: 2em auto 2em auto;
+}
