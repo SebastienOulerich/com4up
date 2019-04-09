@@ -12,6 +12,24 @@ a {
   color: inherit
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  font-size: 1em;
+  margin: auto;
+  padding: auto;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
 #HeaderDesktop {
   position: fixed;
   top: 0;
@@ -27,8 +45,8 @@ a {
 }
 
 #logo {
-  font-size: 3em;
-  margin: auto 0 auto 0.5em;
+  font-size: 3.2em;
+  margin: auto 0 auto 0.4em;
 }
 
 #Com {
@@ -45,9 +63,6 @@ a {
 
 #NavDesktop {
   height: 100%;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -83,11 +98,19 @@ footer {
 #Footer_info, #Footer_contact, #Footer_Social, #Footer_Legal {
   width: 25%;
   font-family: "Montserrat";
-  padding: 2% 2% 1em 2%;
+  padding: 1% 2% 1em 2%;
 }
 
+#Footer_contact h2, #Footer_Social h2, #Footer_Legal h2 {
+  font-weight: bold;
+}
+
+
 #Footer_info p {
-  font-family: 'Bebas';
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.9em;
+  margin: 0;
 }
 
 #Footer_contact p {
@@ -114,17 +137,21 @@ footer {
 @media screen and (max-width: 1024px) {
   footer {
     width: 100%;
+    padding: 0;
     border-top: solid #000 1px;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap
+    flex-wrap: wrap;
   }
 
   #Footer_info, #Footer_contact, #Footer_Social, #Footer_Legal {
     width: 100%;
-    border-right: 0;
     text-align: center;
     border-bottom: 2px solid #212121;
-    padding-bottom: 1em
+    padding:0 0 1em 0;
+  }
+
+  #Footer_info p {
+    margin: 2em 0 1em 0;
   }
 }
