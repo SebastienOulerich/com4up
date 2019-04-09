@@ -1,4 +1,6 @@
 .Image_Profil {
+	height: 175px;
+	width: auto;
 	border-radius: 100%;
 }
 
@@ -23,6 +25,10 @@
 	align-items: center;
 }
 
+.Gras {
+	font-family: "Montserrat_Bold", sans-serif;
+}
+
 .Background_Gris {
 	background-color: #D5D5D5;
 }
@@ -32,6 +38,43 @@
 	width: 100%;
 }
 
+.Ensemble_Info {
+	display: flex;
+	width: 80%;
+	justify-content: center;
+	margin: 1em auto 1em auto;
+	color: #212121;
+}
+
+.Toute_Section h2 {
+	font-family: "Bebas", sans-serif;;
+	font-size: 1.5em;
+}
+
+.Toute_Section h3 {
+	font-family: "Montserrat_Bold", sans-serif;
+	margin: 0.5em 0 0.5em 0;
+}
+
 .Info_Gauche {
 	flex-direction: column;
+	text-align: center;
+	width: 25%;
+}
+
+.Info_Droite {
+	width: 75%;
+}
+
+.Info_Droite p {
+	font-family: "Montserrat", sans-serif;
+}
+
+.Social_User a i {
+	font-size: 1.5em;
+	margin: 0 0.25em 0 0.25em;
+}
+
+.fa-facebook:hover, .fa-twitter:hover, .linked:hover, .fa-envelope:hover {
+	color: black;
 }
