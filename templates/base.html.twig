@@ -8,7 +8,7 @@
 <!-- DESCRIPTION -->
 <title>Com4Up - {% block title %}{% endblock %}</title>
 <meta name="description" content="Agence de communication digitale">
-<meta name="keywords" content="Com4Up, Agence, communication, digital, web, entreprise, video">
+<meta name="keywords" content="Com4Up, Agence, communication, digitale, web, entreprise, video, réseaux sociaux, hardware">
 
 <!-- CSS -->
 <link type="text/css" rel="stylesheet" href={{asset("css/fonts.css")}} />
@@ -62,14 +62,14 @@
         <li><a href="{{ path('projets') }}">Projets</a></li>
         {% endif %}
         {% if app.request.attributes.get('_route') == "equipe" %}
-        <li class="Current_page"><a href="{{ path('equipe') }}">Equipe</a></li>
+        <li class="Current_page"><a href="{{ path('equipe') }}">Équipe</a></li>
         {% else %}
-        <li><a href="{{ path('equipe') }}">Equipe</a></li>
+        <li><a href="{{ path('equipe') }}">Équipe</a></li>
         {% endif %}
         {% if app.request.attributes.get('_route') == "a_propos" %}
-        <li class="Current_page"><a href="{{ path('a_propos') }}">A propos</a></li>
+        <li class="Current_page"><a href="{{ path('a_propos') }}">À propos</a></li>
         {% else %}
-        <li><a href="{{ path('a_propos') }}">A propos</a></li>
+        <li><a href="{{ path('a_propos') }}">À propos</a></li>
         {% endif %}
         {% if app.request.attributes.get('_route') == "contact" %}
         <li class="Current_page"><a href="{{ path('contact') }}">Contact</a></li>
@@ -80,33 +80,33 @@
       </ul>
     </nav>
   </header>
-<main>
-  {% block body %}{% endblock %}
-</main>
+  <main>
+    {% block body %}{% endblock %}
+  </main>
   <footer>
-        <div id="Footer_info">
-            <p>Agence Web/Audiovisuelle accompagnant votre projet vers le Numérique.</p>
-        </div>
-        <div id="Footer_contact">
-            <h2>Contact</h2>
-            <p>10 Rue des coquelicots, 57730 Valmont</p>
-            <p>contact@com4up.fr</p>
-            <p>06 51 27 71 62</p>
-        </div>
-        <div id="Footer_Social">
-            <h2>Réseaux sociaux</h2>
-            <div id="Footer_Social_ico">
-              <a href="https://www.facebook.com/Com4Up/"><i class="fab fa-facebook-square"></i></a>
-              <a href="https://www.linkedin.com/company/com4up/"><i class="fab fa-linkedin"></i></a>
-              <a href="https://www.instagram.com/Com4Up/"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-        <div id="Footer_Legal">
-            <h2>Informations</h2>
-            <p><a href="{{ path('a_propos') }}">A propos</a></p>
-            <p><a href="{{ path('mentions_legales') }}">Mentions Légales</a></p>
-            <p>Copyright</p>
-        </div>
+    <div id="Footer_info">
+      <p>Agence Web/Audiovisuelle accompagnant votre projet vers le Numérique.</p>
+    </div>
+    <div id="Footer_contact">
+      <h2>Contact</h2>
+      <p>10 Rue des coquelicots, 57730 Valmont</p>
+      <a href="mailto:contact@com4up.fr">contact@com4up.fr</a>
+      <p>06 51 27 71 62</p>
+    </div>
+    <div id="Footer_Social">
+      <h2>Réseaux Sociaux</h2>
+      <div id="Footer_Social_ico">
+        <a href="https://www.facebook.com/Com4Up/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+        <a href="https://www.instagram.com/Com4Up/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/com4up/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+    <div id="Footer_Legal">
+      <h2>Informations</h2>
+      <a href="{{ path('a_propos') }}">À propos</a>
+      <a href="{{ path('mentions_legales') }}">Mentions Légales</a>
+      <p>Copyright</p>
+    </div>
   </footer>
   {% block javascripts %}{% endblock %}
 </body>
