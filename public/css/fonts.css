@@ -14,3 +14,8 @@ src: url('../fonts/Bebas/BebasNeue-Regular.otf');
 font-family: 'Montserrat';
 src: url('../fonts/Montserrat/Montserrat-Light.ttf');
 }
+
+@font-face {
+font-family: 'Montserrat_Bold';
+src: url('../fonts/Montserrat/Montserrat-Bold.ttf');
+}
