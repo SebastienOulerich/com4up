@@ -5,8 +5,7 @@ img {
 
 form {
   width: 50%;
-  margin: 0 auto 2em auto;
-  background-color: red;
+  margin: 2em auto 2em auto;
 }
 
 
@@ -42,9 +41,11 @@ form {
 #small {
   font-size: 0.7em;
   font-weight: normal;
+  position: relative;
 }
 
 #Categorie {
+  margin: 2em 0 0 0;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -52,6 +53,7 @@ form {
 
 #Categorie p {
   width: 100%;
+  margin: 0;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 1.5em;
@@ -61,5 +63,4 @@ form {
   display: flex;
   margin: 0.2em 0 0.2em 0;
   width: 50%;
-  background-color: red;
 }
