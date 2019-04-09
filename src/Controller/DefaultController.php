@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/default", name="default")
+     * @Route("/", name="default")
      */
     public function index()
     {
@@ -97,6 +97,15 @@ class DefaultController extends Controller
     {
         // replace this line with your own code!
         return $this->render('base/a_propos.html.twig');
+    }
+
+    /**
+     * @Route("/contact", name="contact")
+     */
+    public function contact()
+    {
+        // replace this line with your own code!
+        return $this->render('base/contact.html.twig');
     }
 
     /**

@@ -1,12 +1,12 @@
 @font-face {
   font-family: 'Starway';
-  src: url("../fonts/Starway/Starway.otf");
+  src: url("../fonts/Starway/Starway-Light.otf");
 }
 
 @font-face {
 font-family: 'Bebas';
-src: url('../fonts/Bebas/BebasNeue-Light.ttf');
-src: url('../fonts/Bebas/BebasNeue-Light.otf');
+src: url('../fonts/Bebas/BebasNeue-Regular.ttf');
+src: url('../fonts/Bebas/BebasNeue-Regular.otf');
 }
 
 

@@ -1,10 +1,113 @@
 body {
   margin: 0;
+  padding: 0;
+  height: 100vh;
   background-color: #DCDCDC;
-  overflow-x: hidden;
+  overflow-x: auto;
 }
 
 a {
   text-decoration: none;
   color: inherit
+}
+
+#HeaderDesktop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 4em;
+  background-color: #e6e6e6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: solid #14cc97 2px;
+  width: 100%;
+  font-family: "Starway";
+}
+
+#logo {
+  font-size: 3em;
+  margin: auto 0 auto 0.5em;
+}
+
+#Com {
+  color: #0077d2;
+}
+
+#Four {
+  color: #ff0000;
+}
+
+#Up {
+  color: #068200;
+}
+
+#NavDesktop {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#NavDesktop li {
+  text-transform: uppercase;
+  font-family: "Bebas";
+  font-size: 1.7em;
+  margin: auto 0.8em auto auto;
+}
+
+.Current_page {
+  color: #0077d2;
+}
+
+main {
+  margin: 4em 0 0 0;
+  width: 100%;
+  height: calc(100vh - 4em);
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+    border-top: solid #14cc97 2px;
+    width: 100%;
+    background-color: #242424;
+    color: #fff;
+}
+
+#Footer_info, #Footer_contact, #Footer_Social, #Footer_Legal {
+  width: 25%;
+  font-family: "Montserrat";
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 1em;
+}
+
+#Footer_info p {
+  font-family: 'Bebas';
+}
+
+#Footer_contact p {
+  margin: 0;
+}
+
+#Footer_Social_img {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+#Footer_Social_ico i {
+  margin: 0;
+  font-size: 2em;
+  margin-left: 1%;
+}
+
+#Footer_Legal p {
+  margin: 0;
 }
