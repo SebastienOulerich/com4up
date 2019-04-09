@@ -130,8 +130,8 @@ footer {
 }
 
 #Footer_contact a:hover, #Footer_Legal a:hover {
-    color: #ff0000;
-  }
+  color: #ff0000;
+}
 
 .fa-facebook-square:hover {
   color: #3b5998;
@@ -165,5 +165,4 @@ footer {
   #Footer_Legal {
     border-bottom: 0;
   }
-
 }
