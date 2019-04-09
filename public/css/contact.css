@@ -4,7 +4,7 @@ img {
 }
 
 form {
-  width: 50%;
+  width: 40%;
   margin: 2em auto 2em auto;
 }
 
@@ -22,6 +22,15 @@ form {
   width: 50%;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+}
+
+.contactTopInputRight {
+  margin: 0.2em 0 0.2em 0;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 #contactTop label {
@@ -30,10 +39,14 @@ form {
   font-size: 1.5em;
 }
 
+.contactTopInputRight label {
+  width: 80%;
+}
+
 #contactTop input {
   border: solid black 1px;
   background: none;
-  width: 60%;
+  width: 80%;
   height: 1.7em;
 }
 
@@ -41,7 +54,7 @@ form {
 #small {
   font-size: 0.7em;
   font-weight: normal;
-  position: relative;
+  position: absolute;
 }
 
 #Categorie {
@@ -59,8 +72,70 @@ form {
   font-size: 1.5em;
 }
 
+#Categorie input {
+  width: 1.7em;
+  height: 1.7em;
+}
 .CategorieLine {
   display: flex;
+  align-items: center;
   margin: 0.2em 0 0.2em 0;
   width: 50%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+#Objet {
+    margin: 2em 0 0 0;
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+#Objet input {
+  border: solid black 1px;
+  background: none;
+  height: 1.7em;
+}
+
+#Message {
+    margin: 2em 0 0 0;
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+#Message label {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+#Message textarea {
+  border: solid black 1px;
+  background: none;
+  resize: none;
+}
+
+#Consent {
+  display: flex;
+  align-items: center;
+  margin: 0.2em 0 0.2em 0;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 0.7em;
+}
+#Consent input {
+  width: 2.5em;
+  height: 2.5em;
+}
+
+button {
+  margin: 0 auto 0 auto;
 }
