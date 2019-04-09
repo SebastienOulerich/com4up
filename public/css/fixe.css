@@ -83,9 +83,7 @@ footer {
 #Footer_info, #Footer_contact, #Footer_Social, #Footer_Legal {
   width: 25%;
   font-family: "Montserrat";
-  padding-left: 2%;
-  padding-right: 2%;
-  padding-bottom: 1em;
+  padding: 2% 2% 1em 2%;
 }
 
 #Footer_info p {
