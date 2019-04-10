@@ -58,7 +58,6 @@
 }
 
 .Info_Gauche {
-	flex-direction: column;
 	text-align: center;
 	width: 25%;
 }
@@ -69,6 +68,7 @@
 
 .Info_Droite p {
 	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
 }
 
 .Social_User a i {
@@ -78,4 +78,39 @@
 
 .fa-facebook:hover, .fa-twitter:hover, .linked:hover, .fa-envelope:hover {
 	color: black;
+}
+
+@media screen and (max-width: 1280px) {
+	.Ensemble_Info {
+		width: 90%;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.Ensemble_Info {
+		flex-direction: column;
+		width: 90%;
+	}
+
+	.Info_Gauche {
+		display: flex;
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		margin-bottom: 1em;
+	}
+
+	.Info_Gauche img {
+		margin-right: 15%;
+	}
+
+	.Info_Gauche_Droite {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.Info_Droite {
+		width: 100%;
+	}
 }
