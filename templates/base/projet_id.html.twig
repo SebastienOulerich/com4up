@@ -1,7 +1,53 @@
 {% extends 'base.html.twig' %}
 {% block title %}Projet ID{% endblock %}
-{% block stylesheets %}<link type="text/css" rel="stylesheet" href={{asset("css/projet_id.css")}} />{% endblock %}
+{% block stylesheets %}
+<link type="text/css" rel="stylesheet" href={{asset("css/lecture_projet.css")}} />{% endblock %}
 {% block body%}
-projets id
+
+<img id="Bandeau" src={{asset("images/projets/faeriths_banniere.jpg")}} alt="Bandeau">
+
+<div id="Partie_Haute">
+  <div id="Partie_Haute_Gauche">
+    <i class="fas fa-th-large" aria-hidden></i>
+    </div>
+  <div id="Partie_Haute_Centre">
+    <i class="far fa-angle-left icone-awesome" aria-hidden></i>
+    <h1>FAERITH'S</h1>
+    <i class="far fa-angle-right icone-awesome" aria-hidden></i>
+    </div>
+    <div id="Partie_Haute_Droite">
+      <a href="https://faeriths.fr"><h2 id="Bouton_Visite">VISITER LE SITE</h2></a>
+      </div>
+</div>
+
+<div id="Bandeau_Information">
+  <div id="Integrale_Information">
+    <div id="Information_Gauche">
+      <h3 id="Client">Client : Projet Personnel</h3>
+      <h3 id="Categorie">Catégorie : Site Web</h3>
+      </div>
+    <div id="Information_Droite">
+      <h3 id="Date">Date : Septembre 2019</h3>
+      <div id="Technologies">
+        <h3>Technologies utilisées :</h3>
+        <i class="fab fa-html5" aria-hidden></i>
+        <i class="fab fa-css3" aria-hidden></i>
+        <i class="fas fa-server" aria-hidden></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h4>Description :</h4>
+    <p>
+      Faerith's est un collectif de créateurs de contenus sur Internet (vidéos, lives, articles, ...), principalement axé sur le jeux vidéo ainsi que la culture geek.
+      </p>
+      <i class="fas fa-arrow-circle-left" aria-hidden></i>
+      <img />
+      <img />
+      <img />
+      <i class="fas fa-arrow-circle-right" aria-hidden></i>
+    </div>
 
 {% endblock %}

@@ -1,0 +1,85 @@
+#Bandeau {
+	max-width: 100%;
+	height: auto;
+}
+
+#Partie_Haute {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	height: 5em;
+}
+
+#Partie_Haute_Gauche {
+	display: flex;
+	justify-content: center;
+	width: 15%;
+}
+
+#Partie_Haute_Centre {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 70%;
+	font-family: "Bebas", sans-serif;
+	font-size: 2em;
+}
+
+#Partie_Haute_Centre h1 {
+	margin: auto 2em auto 2em;
+}
+
+#Partie_Haute_Droite {
+	display: flex;
+	justify-content: center;
+	width: 15%;
+	font-family: "Montserrat_Regular", sans-serif;
+	font-size: 1.25em;
+}
+
+#Bouton_Visite {
+	background-color: #212121;
+	color: white;
+	padding: 0.5em;
+}
+
+#Bandeau_Information {
+	display: flex;
+	width: 100%;
+	background-color: #D5D5D5;
+	font-family: "Montserrat_Bold", sans-serif;
+	height: 8em;
+}
+
+#Integrale_Information {
+	display: flex;
+	width: 40%;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#Client, #Date, #Categorie, #Technologies {
+	display: flex;
+	width: 100%;
+	margin: 2em auto 2em auto;
+}
+
+.fa-th-large {
+	font-size: 2.5em;
+}
+
+.icone-awesome {
+	font-size: 1.5em;
+	}
+
+@media screen and (max-width: 1280px) {
+
+}
+
+@media screen and (max-width: 1024px) {
+
+}
