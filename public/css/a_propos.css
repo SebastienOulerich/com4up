@@ -18,6 +18,7 @@ img {
 .texte {
 	width: 60%;
 	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
 	margin: 1em auto 1em auto;
 }
 
