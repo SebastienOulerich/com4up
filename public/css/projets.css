@@ -34,6 +34,7 @@ width: 100%;
 
 #Integrale_Image a {
   width: 25%;
+	height: auto;
 }
 
 .Images_Projet {
@@ -44,6 +45,48 @@ width: 100%;
 
 .Espace_Slash {
   margin: auto 0.5em auto 0.5em;
+}
+
+
+.Projet_hover {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	bottom:100%;
+opacity: 0;
+height:100%;
+width: 100%;
+  -webkit-transition: all 0.2s ease-out; /*compatibilité chrome*/
+  -moz-transition: all 0.2s ease-out; /*compatibilité firefox*/
+  -o-transition: all 0.2s ease-out; /*compatibilité opéra*/
+  transition: all 0.2s ease-out; /* Autre navigateur */
+}
+
+.Projet_Hover_border {
+  width: calc(100% - 1em);
+  height: calc(100% - 1em);
+  border: solid white 1px;
+}
+
+.Projet_hover:hover {
+  opacity: 1;
+}
+
+.Projet_hover_web {
+  background-color: rgba(255, 0, 45, 0.5)
+}
+
+.Projet_hover_audiovisuel {
+  background-color: rgba(0, 182, 65, 0.5);
+}
+
+.Projet_hover_social {
+  background-color: rgba(0, 128, 209, 0.5);
+}
+
+.Projet_hover_materiel {
+  background-color: rgba(123, 0, 255, 0.5);
 }
 
 @media screen and (max-width: 1280px) {
