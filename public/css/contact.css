@@ -80,6 +80,7 @@ form {
   width: 1.7em;
   height: 1.7em;
 }
+
 .CategorieLine {
   display: flex;
   align-items: center;
@@ -88,6 +89,10 @@ form {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 1em;
+}
+
+.CategorieLine label:hover, .CategorieLine input:hover {
+  cursor: pointer;
 }
 
 #Objet {
