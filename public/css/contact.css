@@ -49,6 +49,10 @@ form {
 	flex-wrap: nowrap;
 }
 
+#small {
+	min-width: 10em;
+	font-size: 0.5em;
+}
 #contactTop input {
   border: solid black 1px;
   background: none;
