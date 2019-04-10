@@ -63,10 +63,10 @@ width: 100%;
   transition: all 0.2s ease-out; /* Autre navigateur */
 }
 
-.Projet_Hover_border {
-  width: calc(100% - 1em);
-  height: calc(100% - 1em);
-  border: solid white 1px;
+.Projet_hover_border {
+  min-width: 95%;
+  min-height: 90%;
+  outline: solid white 1px;
 }
 
 .Projet_hover:hover {
