@@ -1,0 +1,73 @@
+#Bandeau {
+	max-width: 100%;
+	height: auto;
+}
+
+#Une_Ligne {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 8em;
+}
+
+#Titre_Principal {
+  display: flex;
+  font-family: "Bebas", sans-serif;
+  font-size: 2.5em;
+  margin-left: 0.5em;
+}
+
+#Categorie_Selection {
+  display: flex;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25em;
+  font-weight: bold;
+  margin-right: 0.5em;
+}
+
+#Integrale_Image {
+display: flex;
+flex-wrap: wrap;
+width: 100%;
+}
+
+#Integrale_Image a {
+  width: 25%;
+}
+
+.Images_Projet {
+  display: flex;
+  width: 100%;
+	height: auto;
+}
+
+.Espace_Slash {
+  margin: auto 0.5em auto 0.5em;
+}
+
+@media screen and (max-width: 1280px) {
+  #Integrale_Image a {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #Une_Ligne {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 8em;
+  }
+
+  #Titre_Principal {
+    margin-left: 0em;
+    margin-bottom: 0.25em;
+  }
+
+  #Categorie_Selection {
+    font-size: 1em;
+    margin-right: 0em;
+  }
+}

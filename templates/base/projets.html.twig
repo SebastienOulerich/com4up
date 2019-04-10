@@ -1,7 +1,58 @@
 {% extends 'base.html.twig' %}
 {% block title %}projets{% endblock %}
-{% block stylesheets %}<link type="text/css" rel="stylesheet" href={{asset("css/projets.css")}} />{% endblock %}
+{% block stylesheets %}
+<link type="text/css" rel="stylesheet" href={{asset("css/projets.css")}} />{% endblock %}
 {% block body%}
-projets
+
+<img id="Bandeau" src={{asset("images/banniere-projets.jpg")}} alt="Bandeau">
+
+<div id="Une_Ligne">
+  <h1 id="Titre_Principal">Travaux Récents</h1>
+  <ul id="Categorie_Selection">
+    <li>
+      Tous
+    </li>
+    <li class="Espace_Slash">
+      /
+    </li>
+    <li>
+      Site Web
+    </li>
+    <li class="Espace_Slash">
+      /
+    </li>
+    <li>
+      Audiovisuel
+    </li>
+    <li class="Espace_Slash">
+      /
+    </li>
+    <li>
+      Réseaux Sociaux
+    </li>
+    <li class="Espace_Slash">
+      /
+    </li>
+    <li>
+      Matériel
+    </li>
+  </ul>
+</div>
+
+<div id="Integrale_Image">
+  <a href=""><img class="Images_Projet" src={{asset("images/projets/com4up.jpg")}} alt="Bandeau"></a>
+  <a href=""><img class="Images_Projet" src={{asset("images/projets/faeriths.jpg")}} alt="Bandeau"></a>
+  <a href=""><img class="Images_Projet" src={{asset("images/projets/esuria.jpg")}} alt="Bandeau"></a>
+  <a href=""><img class="Images_Projet" src={{asset("images/projets/streamingschool.jpg")}} alt="Bandeau"></a>
+  <a href=""><img class="Images_Projet" src={{asset("images/projets/loic.jpg")}} alt="Bandeau"></a>
+  <a href=""><img class="Images_Projet" src={{asset("images/projets/sebastien.jpg")}} alt="Bandeau"></a>
+  <a href=""><img class="Images_Projet" src={{asset("images/projets/MichelLavertu.jpg")}} alt="Bandeau"></a>
+  <a href=""><img class="Images_Projet" src={{asset("images/projets/Projet.jpg")}} alt="Bandeau"></a>
+  <a href=""><img class="Images_Projet" src={{asset("images/projets/Projet.jpg")}} alt="Bandeau"></a>
+  <a href=""><img class="Images_Projet" src={{asset("images/projets/Projet.jpg")}} alt="Bandeau"></a>
+  <a href=""><img class="Images_Projet" src={{asset("images/projets/Projet.jpg")}} alt="Bandeau"></a>
+  <a href=""><img class="Images_Projet" src={{asset("images/projets/Projet.jpg")}} alt="Bandeau"></a>
+</div>
+
 
 {% endblock %}
