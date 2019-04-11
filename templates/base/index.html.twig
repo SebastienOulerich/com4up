@@ -1,5 +1,234 @@
 {% extends 'base.html.twig' %}
+{% block title %}Accueil{% endblock %}
+{% block stylesheets %}
+<link type="text/css" rel="stylesheet" href={{asset("css/index.css")}} />{% endblock %}
 {% block body%}
-Start
+
+<div id="Services">
+  <img id="Web" src={{asset("images/Accueil---Site-Web.jpg")}} alt="Image Web">
+  <h1>SITE WEB</h1>
+  <hr class="Trait_Decoration" />
+  <img id="Audiovisuel" src={{asset("images/Accueil---Audiovisual.jpg")}} alt="Image Audiovisuel">
+  <h1>AUDIOVISUEL</h1>
+  <hr class="Trait_Decoration" />
+  <img id="Reseaux" src={{asset("images/Accueil---Social.jpg")}} alt="Image Réseaux Sociaux">
+  <h1>RÉSEAUX SOCIAUX</h1>
+  <hr class="Trait_Decoration" />
+  <img id="Hardware" src={{asset("images/Accueil---Materiel.jpg")}} alt="Image Matériel">
+  <h1>MATÉRIEL</h1>
+  <hr class="Trait_Decoration" />
+  </div>
+
+  <div id="Une_Colonne">
+    <h1 id="Titre_Principal">Travaux Récents</h1>
+    <ul id="Categorie_Selection">
+      <li>
+        Tous
+      </li>
+      <li class="Espace_Slash">
+        /
+      </li>
+      <li>
+        Site Web
+      </li>
+      <li class="Espace_Slash">
+        /
+      </li>
+      <li>
+        Audiovisuel
+      </li>
+      <li class="Espace_Slash">
+        /
+      </li>
+      <li>
+        Réseaux Sociaux
+      </li>
+      <li class="Espace_Slash">
+        /
+      </li>
+      <li>
+        Matériel
+      </li>
+    </ul>
+  </div>
+
+  <div id="Integrale_Image">
+    <a href=""><img class="Images_Projet" src={{asset("images/projets/com4up.jpg")}} alt="Bandeau"><div class="Projet_hover Projet_hover_web"><div class="Projet_hover_border"></div></div></a>
+    <a href="{{ path('projet_id') }}"><img class="Images_Projet" src={{asset("images/projets/faeriths.jpg")}} alt="Bandeau"><div class="Projet_hover Projet_hover_web"><div class="Projet_hover_border"></div></div></a>
+    <a href=""><img class="Images_Projet" src={{asset("images/projets/esuria.jpg")}} alt="Bandeau"><div class="Projet_hover Projet_hover_web"><div class="Projet_hover_border"></div></div></a>
+    <a href=""><img class="Images_Projet" src={{asset("images/projets/streamingschool.jpg")}} alt="Bandeau"><div class="Projet_hover Projet_hover_web"><div class="Projet_hover_border"></div></div></a>
+    <a href=""><img class="Images_Projet" src={{asset("images/projets/loic.jpg")}} alt="Bandeau"><div class="Projet_hover Projet_hover_web"><div class="Projet_hover_border"></div></div></a>
+    <a href=""><img class="Images_Projet" src={{asset("images/projets/sebastien.jpg")}} alt="Bandeau"><div class="Projet_hover Projet_hover_web"><div class="Projet_hover_border"></div></div></a>
+    <a href=""><img class="Images_Projet" src={{asset("images/projets/MichelLavertu.jpg")}} alt="Bandeau"><div class="Projet_hover Projet_hover_web"><div class="Projet_hover_border"></div></div></a>
+    <a href=""><img class="Images_Projet" src={{asset("images/projets/Projet.jpg")}} alt="Bandeau"></a>
+  </div>
+
+  <div id="Qui">
+    <h2>QUI SOMMES-NOUS ?</h1>
+  </div>
+
+<div id="Integrale_Personne">
+  <div class="Toute_Section">
+    <div class="Ensemble_Info">
+        <img class="Image_Profil" src={{asset("images/Profil_Thomas.jpg")}} alt="Photo Thomas">
+        <h2>THOMAS KLEINE</h2>
+        <h3>UX et UI Designer / Webdesigner <br />/ Vidéaste</h3>
+        <p>
+          Cofondateur de Com4Up, je réalise l’UX et l’UI Design des différents projets. Je participe au développement Front-End des sites web et je possède également des compétences en référencement, vous permettant d’améliorer votre visibilité.
+        </p>
+        <div class="Social_User">
+          <a href="https://www.facebook.com/Fas.Esuria/" target="_blank">
+            <i class="fab fa-facebook" aria-hidden="aria-hidden"></i>
+          </a>
+          <a href="https://twitter.com/fas_esuria" target="_blank">
+            <i class="fab fa-twitter" aria-hidden="aria-hidden"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/esuria/" target="_blank">
+            <i class="fab fa-linkedin linked" aria-hidden="aria-hidden"></i>
+          </a>
+          <a href="mailto:kleine.thomas@com4up.fr">
+            <i class="fas fa-envelope" aria-hidden="aria-hidden"></i>
+          </a>
+        </div>
+    </div>
+</div>
+
+<div class="Toute_Section">
+  <div class="Ensemble_Info">
+      <img class="Image_Profil" src={{asset("images/Profil_Sebastien.jpg")}} alt="Photo Sébastien">
+      <h2>SÉBASTIEN OULERICH</h2>
+      <h3>Développeur Full Stack</h3>
+      <p>
+        Cofondateur et développeur Full Stack de Com4Up.
+        Je réalise l’intégration de vos projets à partir des maquettes d’UX/UI Design et participe à la structuration des bases de données.
+      </p>
+      <div class="Social_User">
+        <a href="https://www.facebook.com/Fas.Nargash" target="_blank">
+          <i class="fab fa-facebook" aria-hidden="aria-hidden"></i>
+        </a>
+        <a href="https://twitter.com/Fas_Nargash" target="_blank">
+          <i class="fab fa-twitter" aria-hidden="aria-hidden"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/sebastien-oulerich/" target="_blank">
+          <i class="fab fa-linkedin linked" aria-hidden="aria-hidden"></i>
+        </a>
+        <a href="mailto:oulerich.sebastien@com4up.fr">
+          <i class="fas fa-envelope" aria-hidden="aria-hidden"></i>
+        </a>
+      </div>
+  </div>
+</div>
+
+<div class="Toute_Section">
+  <div class="Ensemble_Info">
+      <img class="Image_Profil" src={{asset("images/Profil_Loic.jpg")}} alt="Photo Loic">
+      <h2>LOIC OULERICH</h2>
+      <h3>Développeur Back-End</h3>
+      <p>
+        Cofondateur et développeur Back-End de Com4Up, actuellement étudiant en 4ème année à l’école d’ingénieur informatique Cesi. Lors de mon Cursus scolaire, j'ai pu approfondir le développement web qui est rapidement devenu une véritable passion.
+      </p>
+      <div class="Social_User">
+        <a href="https://www.facebook.com/loic.oulerich" target="_blank">
+          <i class="fab fa-facebook" aria-hidden="aria-hidden"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/loic-oulerich-4a9536136/" target="_blank">
+          <i class="fab fa-linkedin linked" aria-hidden="aria-hidden"></i>
+        </a>
+        <a href="mailto:oulerich.loic@com4up.fr">
+          <i class="fas fa-envelope" aria-hidden="aria-hidden"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+<div class="Toute_Section">
+  <div class="Ensemble_Info">
+      <img class="Image_Profil" src={{asset("images/Profil_Julien.jpg")}} alt="Photo Julien">
+      <h2>JULIEN GOBY</h2>
+      <h3>Technicien Audiovisuel</h3>
+      <p>
+    Collaborateur de Com4Up. Technicien supérieur en audiovisuel, spécialisé dans la technique vidéo. Passionné de vidéo depuis mon plus jeune âge, mes études m’ont appris la vidéo broadcast.
+      </p>
+      <div class="Social_User">
+      <a href="https://www.facebook.com/juliendondada ">
+        <i class="fab fa-facebook" aria-hidden="aria-hidden" target="_blank"></i>
+      </a>
+      <a href="https://twitter.com/WanTeeD57 ">
+        <i class="fab fa-twitter" aria-hidden="aria-hidden" target="_blank"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/julien-goby-2710b9138/">
+        <i class="fab fa-linkedin linked" aria-hidden="aria-hidden" target="_blank"></i>
+      </a>
+      <a href="">
+        <i class="fas fa-envelope" aria-hidden="aria-hidden"></i>
+      </a>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div id="Confiance_Section">
+    <h2>ILS NOUS FONT CONFIANCE !</h2>
+    <div id="Logo_Confiance">
+      <i class="fas fa-chevron-left" aria-hidden></i>
+      <img class="Confiance_Photo" src={{asset("images/.jpg")}} alt="Photo Confiance">
+      <img class="Confiance_Photo" src={{asset("images/.jpg")}} alt="Photo Confiance">
+      <img class="Confiance_Photo" src={{asset("images/.jpg")}} alt="Photo Confiance">
+      <img class="Confiance_Photo" src={{asset("images/.jpg")}} alt="Photo Confiance">
+      <img class="Confiance_Photo" src={{asset("images/.jpg")}} alt="Photo Confiance">
+      <i class="fas fa-chevron-right" aria-hidden></i>
+      </div>
+    </div>
+
+    <div id="Temoignage_Section">
+      <h2>TÉMOIGNAGES</h2>
+      <div id="Ensemble_Temoignage">
+        <div class="Temoignages">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <div class="Ensemble_Profil">
+              <div class="Image_Temoignage">
+                <img class="Temoignages_Photo" src={{asset("images/.jpg")}} alt="Photo Témoignages">
+                </div>
+  <div class="Prenom_Metier">
+    <h4>Prénom NOM</h4>
+    <h5>Métier</h5>
+    </div>              
+              </div>
+
+          </div>
+          <div class="Temoignages">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+              <div class="Ensemble_Profil">
+                <div class="Image_Temoignage">
+  <img class="Temoignages_Photo" src={{asset("images/.jpg")}} alt="Photo Témoignages">
+                  </div>
+                <div class="Prenom_Metier">
+                  <h4>Prénom NOM</h4>
+                  <h5>Métier</h5>
+                  </div>
+                </div>
+
+            </div>
+            <div class="Temoignages">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <div class="Ensemble_Profil">
+                  <div class="Image_Temoignage">
+  <img class="Temoignages_Photo" src={{asset("images/.jpg")}} alt="Photo Témoignages">
+                    </div>
+                  <div class="Prenom_Metier">
+                    <h4>Prénom NOM</h4>
+                    <h5>Métier</h5>
+                    </div>
+                  </div>
+
+              </div>
+        </div>
+      </div>
 
 {% endblock %}

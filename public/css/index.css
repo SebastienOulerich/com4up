@@ -1,0 +1,213 @@
+#Services {
+	display: flex;
+}
+
+#Services h1 {
+	font-family: "Bebas", sans-serif;
+	color: white;
+}
+
+.Trait_Decoration {
+	border: 0;
+	border-bottom: 2px solid white;
+	width: 100%;
+}
+
+#Une_Colonne {
+  display: flex;
+	flex-direction: column;
+  align-items: center;
+	justify-content: center;
+  width: 100%;
+  height: 10em;
+}
+
+#Titre_Principal {
+  display: flex;
+  font-family: "Bebas", sans-serif;
+  font-size: 2.5em;
+	margin-bottom: 0.25em;
+}
+
+#Categorie_Selection {
+  display: flex;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+#Integrale_Image {
+display: flex;
+flex-wrap: wrap;
+width: 100%;
+}
+
+#Integrale_Image a {
+  width: 25%;
+	height: auto;
+}
+
+#Qui, #Confiance_Section h2, #Temoignage_Section h2 {
+	font-size: 2.5em;
+	width: 100%;
+	font-family: "Bebas", sans-serif;
+	background-color: #D5D5D5;
+}
+
+#Qui h2, #Confiance_Section h2, #Temoignage_Section h2 {
+	height: 2em;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+
+#Temoignage_Section{
+	display: flex;
+	flex-direction: column;
+}
+
+#Ensemble_Temoignage{
+	display: flex;
+}
+
+.Temoignages {
+	display: flex;
+	flex-direction: column;
+	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
+}
+
+.Temoignages h4 {
+	font-family: "Montserrat_Bold", sans-serif;
+}
+
+.Temoignages h5 {
+	font-family: "Montserrat_Regular", sans-serif;
+}
+
+.Ensemble_Profil{
+	display: flex;
+}
+
+#Integrale_Personne {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#Confiance_Section {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#Logo_Confiance {
+	display: flex;
+	align-items: center;
+}
+
+.Toute_Section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	width: 22.5%;
+	height: 100%;
+	margin: 1em auto 1em auto;
+}
+
+.Ensemble_Info {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.Ensemble_Info h2 {
+	font-family: "Bebas", sans-serif;;
+	font-size: 1.75em;
+}
+
+.Ensemble_Info h3 {
+	font-family: "Montserrat_Bold", sans-serif;
+	margin: 0.5em 0 0.5em 0;
+	font-size: 1em;
+}
+
+.Ensemble_Info p {
+	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
+}
+
+.Social_User a i {
+	font-size: 1.5em;
+	margin: 0 0.25em 0 0.25em;
+}
+
+.fa-facebook:hover, .fa-twitter:hover, .linked:hover, .fa-envelope:hover {
+	color: black;
+}
+
+.Images_Projet {
+  display: flex;
+  width: 100%;
+	height: auto;
+}
+
+.Espace_Slash {
+  margin: auto 0.5em auto 0.5em;
+}
+
+.Projet_hover {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	bottom:100%;
+opacity: 0;
+height:100%;
+width: 100%;
+  -webkit-transition: all 0.2s ease-out; /*compatibilité chrome*/
+  -moz-transition: all 0.2s ease-out; /*compatibilité firefox*/
+  -o-transition: all 0.2s ease-out; /*compatibilité opéra*/
+  transition: all 0.2s ease-out; /* Autre navigateur */
+}
+
+.Projet_hover_border {
+  min-width: 95%;
+  min-height: 90%;
+  outline: solid white 1px;
+}
+
+.Projet_hover:hover {
+  opacity: 1;
+}
+
+.Projet_hover_web {
+  background-color: rgba(255, 0, 45, 0.5)
+}
+
+.Projet_hover_audiovisuel {
+  background-color: rgba(0, 182, 65, 0.5);
+}
+
+.Projet_hover_social {
+  background-color: rgba(0, 128, 209, 0.5);
+}
+
+.Projet_hover_materiel {
+  background-color: rgba(123, 0, 255, 0.5);
+}
+
+.Image_Profil {
+	height: 175px;
+	width: auto;
+	border-radius: 100%;
+}

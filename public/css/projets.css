@@ -9,6 +9,7 @@
   align-items: center;
   width: 100%;
   height: 8em;
+	background-color: #D5D5D5;
 }
 
 #Titre_Principal {
@@ -46,7 +47,6 @@ width: 100%;
 .Espace_Slash {
   margin: auto 0.5em auto 0.5em;
 }
-
 
 .Projet_hover {
 	display: flex;
