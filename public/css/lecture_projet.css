@@ -1,85 +1,162 @@
 #Bandeau {
-	max-width: 100%;
-	height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 #Partie_Haute {
-	display: flex;
-	width: 100%;
-	justify-content: space-between;
-	align-items: center;
-	height: 5em;
+  display: flex;
+	flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: 5em;
 }
 
 #Partie_Haute_Gauche {
-	display: flex;
-	justify-content: center;
-	width: 15%;
+  display: flex;
+  justify-content: center;
+  width: 15%;
 }
 
 #Partie_Haute_Centre {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 70%;
-	font-family: "Bebas", sans-serif;
-	font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  font-family: "Bebas", sans-serif;
+  font-size: 2.5em;
 }
 
 #Partie_Haute_Centre h1 {
-	margin: auto 2em auto 2em;
+  margin: auto 2em auto 2em;
 }
 
 #Partie_Haute_Droite {
-	display: flex;
-	justify-content: center;
-	width: 15%;
-	font-family: "Montserrat_Regular", sans-serif;
-	font-size: 1.25em;
+  display: flex;
+  justify-content: center;
+  width: 15%;
+  font-family: "Montserrat_Regular", sans-serif;
+  font-size: 1.25em;
 }
 
 #Bouton_Visite {
-	background-color: #212121;
-	color: white;
-	padding: 0.5em;
+  background-color: #212121;
+  color: white;
+  padding: 0.5em;
 }
 
 #Bandeau_Information {
-	display: flex;
-	width: 100%;
-	background-color: #D5D5D5;
-	font-family: "Montserrat_Bold", sans-serif;
-	height: 8em;
+  display: flex;
+  width: 100%;
+  background-color: #D5D5D5;
+  font-family: "Montserrat_Bold", sans-serif;
+  height: 100%;
 }
 
-#Integrale_Information {
-	display: flex;
-	width: 40%;
-	justify-content: space-between;
-	align-items: center;
-	flex-wrap: wrap;
-	margin-left: auto;
-	margin-right: auto;
+#Integrale_Information, #Description_Integrale {
+  display: flex;
+  width: 45%;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+	margin: 2.5em auto 0.5em auto;
 }
 
 #Client, #Date, #Categorie, #Technologies {
+  display: flex;
+  width: 100%;
+	margin-bottom: 2em;
+}
+
+#Technologies {
+  display: flex;
+  align-items: center;
+}
+
+#Technologies i {
+  font-size: 1.75em;
+  margin: auto 0.25em auto 0.25em;
+}
+
+#Description_Integrale {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+	margin-top: 2em;
+}
+
+#Description_Integrale h4 {
+  font-family: "Montserrat_Bold", sans-serif;
+}
+
+#Apercu {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#Apercu i {
+	font-size: 2em;
+}
+
+#Responsive_Image{
 	display: flex;
 	width: 100%;
-	margin: 2em auto 2em auto;
+	justify-content: center;
+}
+
+#Responsive_Image img {
+	display: flex;
+	justify-content: center;
+	width: 25%;
+	height: 25%;
+	margin: 1em;
 }
 
 .fa-th-large {
-	font-size: 2.5em;
+  font-size: 2.5em;
 }
 
 .icone-awesome {
-	font-size: 1.5em;
-	}
+  font-size: 1.25em;
+}
 
 @media screen and (max-width: 1280px) {
+
+#Integrale_Information, #Description_Integrale {
+	width: 80%;
+}
+
+#Partie_Haute {
+  display: flex;
+	flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+#Partie_Haute_Gauche {
+  width: 10%;
+}
+
+#Partie_Haute_Centre {
+  width: 80%;
+	justify-content: flex-end;
+	height: 2em;
+}
+
+#Partie_Haute_Droite {
+  width: 100%;
+	background-color: #212121;
+}
+
+#Bouton_Visite {
+  padding: 1em 0 1em 0;
+}
 
 }
 
 @media screen and (max-width: 1024px) {
+
 
 }

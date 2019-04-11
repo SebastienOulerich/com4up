@@ -8,7 +8,7 @@
 
 <div id="Partie_Haute">
   <div id="Partie_Haute_Gauche">
-    <i class="fas fa-th-large" aria-hidden></i>
+    <a href="{{ path('projets') }}"><i class="fas fa-th-large" aria-hidden></i></a>
     </div>
   <div id="Partie_Haute_Centre">
     <i class="far fa-angle-left icone-awesome" aria-hidden></i>
@@ -24,7 +24,7 @@
   <div id="Integrale_Information">
     <div id="Information_Gauche">
       <h3 id="Client">Client : Projet Personnel</h3>
-      <h3 id="Categorie">Catégorie : Site Web</h3>
+      <h3 id="Categorie">Catégorie :&nbsp<a href="{{ path('projets') }}">Site Web</a></h3>
       </div>
     <div id="Information_Droite">
       <h3 id="Date">Date : Septembre 2019</h3>
@@ -38,16 +38,20 @@
     </div>
   </div>
 
-  <div>
+  <div id="Description_Integrale">
     <h4>Description :</h4>
     <p>
       Faerith's est un collectif de créateurs de contenus sur Internet (vidéos, lives, articles, ...), principalement axé sur le jeux vidéo ainsi que la culture geek.
       </p>
-      <i class="fas fa-arrow-circle-left" aria-hidden></i>
-      <img />
-      <img />
-      <img />
-      <i class="fas fa-arrow-circle-right" aria-hidden></i>
+      <div id="Apercu">
+        <i class="fas fa-arrow-circle-left" aria-hidden></i>
+        <div id="Responsive_Image">
+        <img src={{asset("images/projets/fas1.jpg")}} alt="Aperçu Faeriths">
+        <img src={{asset("images/projets/fas2.jpg")}} alt="Aperçu Faeriths">
+        <img src={{asset("images/projets/fas3.jpg")}} alt="Aperçu Faeriths">
+          </div>
+        <i class="fas fa-arrow-circle-right" aria-hidden></i>
+        </div>
     </div>
 
 {% endblock %}
