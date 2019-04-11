@@ -83,7 +83,7 @@
   <header id='HeaderMobile'>
     <div id="HeaderMobileTop">
       <h1 class="logo"><a href="{{ path('default') }}"><span class="Com">Com</span><span class="Four">4</span><span class="Up">Up</span></a></h1>
-      <i class="far fa-bars"></i>
+      <i class="far fa-bars" id="NavMobileIcone" onclick="navMobile()"></i>
     </div>
     <ul>
       {% if app.request.attributes.get('_route') == "default" %}
@@ -146,6 +146,50 @@
       <p>Copyright</p>
     </div>
   </footer>
+
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script>
+  function adpaterHauteur()
+{
+  var hauteurFenetre = window.innerHeight;
+    document.querySelector("#HeaderMobile ul").style.height = hauteurFenetre +'px';
+}
+
+function addEvent(element, type, listener)
+{
+    if(element.addEventListener)
+    {
+        element.addEventListener(type, listener, false);
+    }
+    else if(element.attachEvent)
+    {
+        element.attachEvent("on"+type, listener);
+    }
+}
+
+
+addEvent(window, "load", adpaterHauteur);
+addEvent(window, "resize", adpaterHauteur);
+</script>
+<script>
+var Nav = 0;
+function navMobile() {
+    if ( Nav == 0) {
+      $('#HeaderMobile ul').css({
+    display: 'flex'
+});
+
+    Nav = 1;
+  }
+  else {
+  $('#HeaderMobile ul').css({
+display: 'none'
+});
+  Nav = 0;
+}
+}
+
+  </script>
   {% block javascripts %}{% endblock %}
 </body>
 
