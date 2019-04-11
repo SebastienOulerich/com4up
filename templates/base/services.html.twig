@@ -2,6 +2,18 @@
 {% block title %}Services{% endblock %}
 {% block stylesheets %}<link type="text/css" rel="stylesheet" href={{asset("css/services.css")}} />{% endblock %}
 {% block body%}
-Services
+<div id="Services_full">
+<a href="#"><img class="service_full_pic" src={{asset("images/Services---Site-Web.jpg")}} alt="Service web"><div class="Projet_hover Projet_hover_web"><div class="Projet_hover_border">test</div></div></a>
+<a href="#"><img class="service_full_pic" src={{asset("images/Services---Audiovisual.jpg")}} alt="Service audiovisuel"><div class="Projet_hover Projet_hover_audiovisuel"><div class="Projet_hover_border"></div></div></a>
+<a href="#"><img class="service_full_pic" src={{asset("images/Services---Social.jpg")}} alt="Service réseaux sociaux"><div class="Projet_hover Projet_hover_social"><div class="Projet_hover_border"></div></div></a>
+<a href="#"><img class="service_full_pic" src={{asset("images/Services---Materiel.jpg")}} alt="Service matériel"><div class="Projet_hover Projet_hover_materiel"><div class="Projet_hover_border"></div></div></a>
+</div>
+
+<div id="Services_mob">
+<a href="#"><img class="service_mob_pic" src={{asset("images/Accueil---Site-Web.jpg")}} alt="Service web"><div class="Projet_hover Projet_hover_web"><div class="Projet_hover_border"></div></div></a>
+<a href="#"><img class="service_mob_pic" src={{asset("images/Accueil---Audiovisual.jpg")}} alt="Service audiovisuel"><div class="Projet_hover Projet_hover_audiovisuel"><div class="Projet_hover_border"></div></div></a>
+<a href="#"><img class="service_mob_pic" src={{asset("images/Accueil---Social.jpg")}} alt="Service réseaux sociaux"><div class="Projet_hover Projet_hover_social"><div class="Projet_hover_border"></div></div></a>
+<a href="#"><img class="service_mob_pic" src={{asset("images/Accueil---Materiel.jpg")}} alt="Service matériel"><div class="Projet_hover Projet_hover_materiel"><div class="Projet_hover_border"></div></div></a>
+</div>
 
 {% endblock %}

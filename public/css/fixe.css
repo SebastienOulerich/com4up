@@ -34,6 +34,7 @@ ul, ol {
 
 #HeaderDesktop {
   position: fixed;
+  z-index: 1000;
   top: 0;
   height: 4em;
   background-color: #e6e6e6;
