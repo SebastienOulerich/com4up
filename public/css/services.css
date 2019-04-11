@@ -17,36 +17,6 @@
 	height: 100%;
 }
 
-.service_title {
-	width: 100%;
-	height: 100%;
-	position: relative;
-	right: 0%;
-	bottom: -100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-family: "Montserrat", sans-serif;
-	font-weight: bold;
-	font-size: 1.5em;
-	color: white;
-}
-
-.Projet_hover_web {
-  background-color: rgba(255, 0, 45, 0.5)
-}
-
-.Projet_hover_audiovisuel {
-  background-color: rgba(0, 182, 65, 0.5);
-}
-
-.Projet_hover_social {
-  background-color: rgba(0, 128, 209, 0.5);
-}
-
-.Projet_hover_materiel {
-  background-color: rgba(123, 0, 255, 0.5);
-}
 
 
 
