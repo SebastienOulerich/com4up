@@ -43,7 +43,7 @@
 
 <body>
   <header id="HeaderDesktop">
-    <h1 id="logo"><a href="{{ path('default') }}"><span id="Com">Com</span><span id="Four">4</span><span id="Up">Up</span></a></h1>
+    <h1 class="logo"><a href="{{ path('default') }}"><span class="Com">Com</span><span class="Four">4</span><span class="Up">Up</span></a></h1>
     <nav>
       <ul id="NavDesktop">
         {% if app.request.attributes.get('_route') == "default" %}
@@ -79,6 +79,44 @@
 
       </ul>
     </nav>
+  </header>
+  <header id='HeaderMobile'>
+    <div id="HeaderMobileTop">
+      <h1 class="logo"><a href="{{ path('default') }}"><span class="Com">Com</span><span class="Four">4</span><span class="Up">Up</span></a></h1>
+      <i class="far fa-bars"></i>
+    </div>
+    <ul>
+      {% if app.request.attributes.get('_route') == "default" %}
+      <li class="Current_page"><a href="{{ path('default') }}">Accueil</a></li>
+      {% else %}
+      <li><a href="{{ path('default') }}">Accueil</a></li>
+      {% endif %}
+      {% if app.request.attributes.get('_route') == "services" %}
+      <li class="Current_page"><a href="{{ path('services') }}">Services</a></li>
+      {% else %}
+      <li><a href="{{ path('services') }}">Services</a></li>
+      {% endif %}
+      {% if app.request.attributes.get('_route') == "projets" %}
+      <li class="Current_page"><a href="{{ path('projets') }}">Projets</a></li>
+      {% else %}
+      <li><a href="{{ path('projets') }}">Projets</a></li>
+      {% endif %}
+      {% if app.request.attributes.get('_route') == "equipe" %}
+      <li class="Current_page"><a href="{{ path('equipe') }}">Équipe</a></li>
+      {% else %}
+      <li><a href="{{ path('equipe') }}">Équipe</a></li>
+      {% endif %}
+      {% if app.request.attributes.get('_route') == "a_propos" %}
+      <li class="Current_page"><a href="{{ path('a_propos') }}">À propos</a></li>
+      {% else %}
+      <li><a href="{{ path('a_propos') }}">À propos</a></li>
+      {% endif %}
+      {% if app.request.attributes.get('_route') == "contact" %}
+      <li class="Current_page"><a href="{{ path('contact') }}">Contact</a></li>
+      {% else %}
+      <li><a href="{{ path('contact') }}">Contact</a></li>
+      {% endif %}
+    </ul>
   </header>
   <main>
     {% block body %}{% endblock %}

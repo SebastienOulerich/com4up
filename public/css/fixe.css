@@ -44,21 +44,21 @@ ul, ol {
   width: 100%;
 }
 
-#logo {
+.logo {
   font-size: 3.2em;
   margin: auto 0 auto 0.25em;
   font-family: "Starway", sans-serif;
 }
 
-#Com {
+.Com {
   color: #0077d2;
 }
 
-#Four {
+.Four {
   color: #ff0000;
 }
 
-#Up {
+.Up {
   color: #068200;
 }
 
@@ -78,6 +78,10 @@ ul, ol {
 
 .Current_page {
   color: #0077d2;
+}
+
+#HeaderMobile {
+  display: none;
 }
 
 main {
@@ -151,6 +155,39 @@ footer {
 }
 
 @media screen and (max-width: 1024px) {
+  #HeaderDesktop {
+    display: none;
+  }
+
+  #HeaderMobile {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #HeaderMobileTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e6e6e6;
+    border-bottom: solid #14cc97 2px;
+    height: 4em;
+    width: 100%;
+  }
+
+  #HeaderMobileTop i {
+  font-size: 2em;
+  margin: 0 0.5em 0 0;
+  }
+  #HeaderMobileTop i:hover {
+  cursor: pointer;
+
+  }
+
   footer {
     padding: 0;
     margin: 0;
