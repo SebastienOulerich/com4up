@@ -91,6 +91,7 @@ main {
   width: 100%;
   min-height: calc(100vh - 4em);
   flex-grow: 1;
+  color: #212121;
 }
 
 footer {
