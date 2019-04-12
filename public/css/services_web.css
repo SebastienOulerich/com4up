@@ -17,14 +17,21 @@
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+	flex-wrap: wrap;
 	width: 100%;
-	height: 3em;
+
 }
 
 #Partie_Sup h1 {
 	width: 25%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-wrap: wrap;
 	font-family: "Montserrat", sans-serif;
 	font-weight: bold;
+	height: 3em;
 }
 
 #Partie_Basse {
@@ -94,7 +101,6 @@
 	flex-wrap: wrap;
 	width: 100%;
 	font-family: "Bebas", sans-serif;
-	font-size: 2em;
 	justify-content: center;
 	align-items: center;
 	min-height: 100%;
@@ -106,7 +112,16 @@
 	justify-content: center;
 	align-items: center;
 	width: calc(100% / 3);
-	margin: 1em auto 1em auto;
+	margin: 2em auto 2em auto;
+}
+
+#Cat_1 i, #Cat_2 i, #Cat_3 i, #Cat_4 i, #Cat_5 i, #Cat_6 i {
+font-size: 2.25em;
+}
+
+#Cat_1 h4, #Cat_2 h4, #Cat_3 h4, #Cat_4 h4, #Cat_5 h4, #Cat_6 h4 {
+font-size: 1.75em;
+margin-top: 0.25em;
 }
 
 @media screen and (max-width: 1280px) {
@@ -114,5 +129,19 @@
 }
 
 @media screen and (max-width: 1024px) {
+	#Cat_1, #Cat_2, #Cat_3, #Cat_4, #Cat_5, #Cat_6 {
+		width: 50%;
+		margin: 2em auto 2em auto;
+	}
 
+	#Cat_1 h4, #Cat_2 h4, #Cat_3 h4, #Cat_4 h4, #Cat_5 h4, #Cat_6 h4 {
+	font-size: 1.5em;
+	margin-top: 0.25em;
+	}
+
+	#Partie_Sup h1 {
+		width: 50%;
+		border: 1px solid #b70020;
+		margin: -1px;
+	}
 }
