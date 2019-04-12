@@ -168,6 +168,7 @@ width: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
+	align-items: center;
 }
 
 .Equipe_Social i {
@@ -175,7 +176,9 @@ width: 100%;
 		margin: auto 0.4em auto 0.4em;
 }
 
-
+.Equipe_Social i:hover {
+	color: black;
+}
 
 .Images_Projet, .Images_Services {
   display: flex;
