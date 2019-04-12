@@ -1,0 +1,98 @@
+#Bandeau {
+	max-width: 100%;
+	height: auto;
+}
+
+#Partie_Haute{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	font-size: 1.5em;
+	background-color: #ff002d;
+	color: #212121;
+}
+
+#Partie_Sup {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	width: 100%;
+	height: 3em;
+}
+
+#Partie_Sup h1 {
+	width: 25%;
+	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
+}
+
+#Partie_Basse {
+	background-color: #b70020;
+	color: white;
+	display: flex;
+	justify-content: space-around;
+	height: 2em;
+	align-items: center;
+}
+
+#Vide {
+	width: 25%;
+}
+
+#Partie_Basse h2 {
+	display: flex;
+	justify-content: center;
+	font-family: "Montserrat", sans-serif;
+	width: 50%;
+}
+
+#Partie_Basse i {
+	display: flex;
+	width: 25%;
+	justify-content: flex-end;
+	margin-right: 1em;
+}
+
+#Selection {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	background-color: #b70020;
+	color: white;
+	height: 100%;
+}
+
+#Argument_Bandeau {
+	display: flex;
+	width: 100%;
+	background-color: #D5D5D5;
+}
+
+#Argument {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	width: 75%;
+	margin: 1em auto 1em auto;
+}
+
+#Argument h3 {
+	font-family: "Bebas", sans-serif;
+	font-size: 2em;
+}
+
+#Argument p {
+	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
+}
+
+@media screen and (max-width: 1280px) {
+
+}
+
+@media screen and (max-width: 1024px) {
+
+}

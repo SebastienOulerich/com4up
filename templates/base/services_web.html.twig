@@ -1,7 +1,34 @@
 {% extends 'base.html.twig' %}
-{% block title %}Services web{% endblock %}
-{% block stylesheets %}<link type="text/css" rel="stylesheet" href={{asset("css/services_web.css")}} />{% endblock %}
+{% block title %}Accueil{% endblock %}
+{% block stylesheets %}
+<link type="text/css" rel="stylesheet" href={{asset("css/services_web.css")}} />{% endblock %}
 {% block body%}
-Services web
+
+
+<img id="Bandeau" src={{asset("images/banniere-web.jpg")}} alt="Bandeau">
+
+<div id="Partie_Haute">
+  <div id="Partie_Sup">
+    <h1 id="Selection">Site Web</h1>
+    <h1>Audiovisuel</h1>
+    <h1>Réseaux Sociaux</h1>
+    <h1>Matériel</h1>
+    </div>
+    <div id="Partie_Basse">
+      <div id="Vide"></div>
+      <h2>Nos prestations</h2>
+      <i class="far fa-arrow-right" aria-hidden></i>
+      </div>
+  </div>
+
+  <div id="Argument_Bandeau">
+    <div id="Argument">
+      <h3>POURQUOI AVOIR UN SITE INTERNET ?</h3>
+      <p>
+        Votre site internet est une part importante de votre identité numérique. Gage de sérieux et de professionnalisme, il vous permettra d'afficher toute les informations essentielles de votre activité aux yeux de tous. Notre but est de vous proposer un site web moderne qui vous correspond ainsi qu’à vos visiteurs.
+        </p>
+      </div>
+    </div>
+
 
 {% endblock %}
