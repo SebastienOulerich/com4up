@@ -2,17 +2,6 @@
 	display: flex;
 }
 
-#Services h1 {
-	font-family: "Bebas", sans-serif;
-	color: white;
-}
-
-.Trait_Decoration {
-	border: 0;
-	border-bottom: 2px solid white;
-	width: 100%;
-}
-
 #Une_Colonne {
   display: flex;
 	flex-direction: column;
@@ -36,13 +25,13 @@
   font-weight: bold;
 }
 
-#Integrale_Image {
+#Integrale_Image, #Services {
 display: flex;
 flex-wrap: wrap;
 width: 100%;
 }
 
-#Integrale_Image a {
+#Integrale_Image a, #Services a {
   width: 25%;
 	height: auto;
 }
@@ -93,10 +82,9 @@ width: 100%;
 #Integrale_Personne {
 	display: flex;
 	justify-content: center;
-	width: 100%;
+	width: 85%;
 	height: 100%;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 1em auto 1em auto;
 }
 
 #Confiance_Section {
@@ -119,9 +107,8 @@ width: 100%;
 	flex-direction: column;
 	justify-content: center;
 	text-align: center;
-	width: 22.5%;
+	width: 25%;
 	height: 100%;
-	margin: 1em auto 1em auto;
 }
 
 .Ensemble_Info {
@@ -155,7 +142,7 @@ width: 100%;
 	color: black;
 }
 
-.Images_Projet {
+.Images_Projet, .Images_Services {
   display: flex;
   width: 100%;
 	height: auto;
