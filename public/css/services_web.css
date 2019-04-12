@@ -7,9 +7,9 @@
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	font-size: 1.5em;
 	background-color: #ff002d;
 	color: #212121;
+	font-size: 1.5em;
 }
 
 #Partie_Sup {
@@ -31,7 +31,7 @@
 	flex-wrap: wrap;
 	font-family: "Montserrat", sans-serif;
 	font-weight: bold;
-	height: 3em;
+	height: 2.5em;
 }
 
 #Partie_Basse {
