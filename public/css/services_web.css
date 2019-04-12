@@ -89,6 +89,26 @@
 	font-weight: bold;
 }
 
+#Categorie {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	font-family: "Bebas", sans-serif;
+	font-size: 2em;
+	justify-content: center;
+	align-items: center;
+	min-height: 100%;
+}
+
+#Cat_1, #Cat_2, #Cat_3, #Cat_4, #Cat_5, #Cat_6 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: calc(100% / 3);
+	margin: 1em auto 1em auto;
+}
+
 @media screen and (max-width: 1280px) {
 
 }
