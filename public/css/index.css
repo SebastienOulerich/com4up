@@ -75,17 +75,6 @@ width: 100%;
 	font-family: "Montserrat_Regular", sans-serif;
 }
 
-.Ensemble_Profil{
-	display: flex;
-}
-
-#Integrale_Personne {
-	display: flex;
-	justify-content: center;
-	width: 85%;
-	height: 100%;
-	margin: 1em auto 1em auto;
-}
 
 #Confiance_Section {
 	display: flex;
@@ -102,45 +91,91 @@ width: 100%;
 	align-items: center;
 }
 
-.Toute_Section {
+
+#Bloc_Equipe {
+  margin: 0;
+  height: auto;
+  padding-bottom: 1em;
+}
+
+#Bloc_Equipe h2 {
+	font-size: 2.5em;
+	width: 100%;
+	font-family: "Bebas", sans-serif;
+	background-color: #D5D5D5;
+	height: 2em;
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
-	text-align: center;
-	width: 25%;
-	height: 100%;
+	align-items: center;
 }
 
-.Ensemble_Info {
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
+#Bloc_Equipe_Content {
+  width: 80%;
+  height: auto;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.Ensemble_Info h2 {
+.Bloc_Equipe_Case {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 20%;
+	margin-top: 1em;
+}
+
+.Bloc_Equipe_Case_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.Bloc_Equipe_Case_text img {
+  width: 70%;
+  height: auto;
+  border-radius: 100%
+}
+
+.Bloc_Equipe_Case h3 {
 	font-family: "Bebas", sans-serif;;
 	font-size: 1.75em;
+  text-align: center;
+  margin-bottom: 0;
 }
 
-.Ensemble_Info h3 {
-	font-family: "Montserrat_Bold", sans-serif;
-	margin: 0.5em 0 0.5em 0;
-	font-size: 1em;
+.Bloc_Equipe_Case h4 {
+  font-family: "Montserrat_Bold", sans-serif;
+  text-align: center;
+		white-space: nowrap;
+  font-size: 1em;
+	margin: 0 auto 0 auto;
 }
 
-.Ensemble_Info p {
+.Bloc_Equipe_Case p {
+  width: 90%;
+  text-align: center;
 	font-family: "Montserrat", sans-serif;
 	font-weight: bold;
+  margin: 0.4em auto 0.4em auto;
 }
 
-.Social_User a i {
-	font-size: 1.5em;
-	margin: 0 0.25em 0 0.25em;
+.Equipe_Social {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.fa-facebook:hover, .fa-twitter:hover, .linked:hover, .fa-envelope:hover {
-	color: black;
+.Equipe_Social i {
+  	font-size: 1.5em;
+		margin: auto 0.4em auto 0.4em;
 }
+
+
 
 .Images_Projet, .Images_Services {
   display: flex;
@@ -197,4 +232,21 @@ width: 100%;
 	height: 175px;
 	width: auto;
 	border-radius: 100%;
+}
+
+@media screen and (max-width: 1280px) {
+	#Integrale_Image a {
+	  width: 50%;
+		height: auto;
+	}
+
+	.Bloc_Equipe_Case {
+	  width: 50%;
+	}
+}
+
+@media screen and (max-width: 715px) {
+	.Bloc_Equipe_Case {
+	  width: 80%;
+	}
 }

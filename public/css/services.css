@@ -10,11 +10,32 @@
 #Services_full a {
 	width: 25%;
 	min-height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#Services_full p {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	top: 50%;
+	z-index: 999;
+		min-width: 9%;
+		max-width: 9%;
+		min-height: auto;
+		white-space: nowrap;
+	border-bottom: solid white 3px;
+	align-items: center;
+	font-family: "Bebas", sans-serif;
+	font-weight: bold;
+	font-size: 2.8em;
+	color: white;
 }
 
 .service_full_pic {
-	width: 100%;
-	height: 100%;
+	min-width: 100%;
+	min-height: auto;
 }
 
 .Projet_hover {
