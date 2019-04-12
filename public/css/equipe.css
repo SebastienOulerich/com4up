@@ -74,7 +74,7 @@
 	margin: 0 0.25em 0 0.25em;
 }
 
-.fa-facebook:hover, .fa-twitter:hover, .linked:hover, .fa-envelope:hover {
+.fa-globe:hover, .fa-facebook:hover, .fa-twitter:hover, .linked:hover, .fa-envelope:hover {
 	color: black;
 }
 
