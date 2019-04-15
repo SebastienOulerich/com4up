@@ -58,13 +58,28 @@ width: 100%;
 
 #Ensemble_Temoignage{
 	display: flex;
+	width: 100%;
+	justify-content: space-around;
+	margin: 1em;
+}
+
+.Ensemble_Profil{
+	display: flex;
+	align-items: center;
 }
 
 .Temoignages {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	font-family: "Montserrat", sans-serif;
 	font-weight: bold;
+	width: 22.5%;
+}
+
+.Temoignages_Photo {
+	border-radius: 100%;
+	margin-right: 1em;
 }
 
 .Temoignages h4 {
@@ -73,6 +88,7 @@ width: 100%;
 
 .Temoignages h5 {
 	font-family: "Montserrat_Regular", sans-serif;
+	font-weight: bold;
 }
 
 
@@ -257,6 +273,25 @@ width: 100%;
 
 	.Bloc_Equipe_Case {
 	  width: 50%;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.Confiance_Photo {
+		width: 30%;
+	}
+
+	.Photo_Mobile {
+		display: none;
+	}
+
+	#Ensemble_Temoignage{
+		flex-direction: column;
+	}
+
+	.Temoignages {
+		width: 100%;
+		margin: 0.5em auto 0.5em auto;
 	}
 }
 
