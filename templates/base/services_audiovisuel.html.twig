@@ -1,7 +1,64 @@
 {% extends 'base.html.twig' %}
-{% block title %}Services audiovisuel{% endblock %}
-{% block stylesheets %}<link type="text/css" rel="stylesheet" href={{asset("css/services_audiovisuel.css")}} />{% endblock %}
+{% block title %}Audiovisuel{% endblock %}
+{% block stylesheets %}
+<link type="text/css" rel="stylesheet" href={{asset("css/services_audiovisuel.css")}} />{% endblock %}
 {% block body%}
-Services audiovisuel
+
+
+<img id="Bandeau" src={{asset("images/banniere-audiovisuel.jpg")}} alt="Bandeau">
+
+<div id="Partie_Haute">
+  <div id="Partie_Sup">
+    <a href="#"><h1>Site Web</h1></a>
+    <a href="{{ path('services_audiovisuel') }}"><h1 id="Selection">Audiovisuel</h1></a>
+    <a href="{{ path('services_social') }}"><h1>Réseaux Sociaux</h1></a>
+    <a href="{{ path('services_materiel') }}"><h1>Matériel</h1></a>
+    </div>
+    <div id="Partie_Basse">
+      <a href="https://forms.gle/Z59arfjsAX4rembR9">
+      <div id="Vide"></div>
+      <h2>REMPLIR LE FORMULAIRE DE DEVIS GRATUIT</h2>
+      <i class="far fa-arrow-right" aria-hidden></i>
+      </div>
+    </a>
+  </div>
+
+  <div id="Argument_Bandeau">
+    <div id="Argument">
+      <h3>L'APPORT DE L'AUDIOVISUEL</h3>
+      <p>
+        Dans de nombreux domaines, la vidéo a dépassé le format écrit en terme d’audience. YouTube est utilisé par 1,9 milliard d’utilisateurs mensuellement, Facebook met en avant le contenu vidéo, la diffusion en direct s’est démocratisée, ...
+        Mettez en avant votre expertise par le biais de la vidéo. Nous vous proposons la réalisation de vidéo pour présenter votre activité et vos produits / services.
+        </p>
+      </div>
+    </div>
+
+    <div id="Categorie">
+      <div id="Cat_1">
+        <i class="fas fa-sitemap"></i>
+        <h4>Expérience Utilisateur (UX Design)</h4>
+        </div>
+        <div id="Cat_2">
+          <i class="fas fa-expand-arrows-alt"></i>
+          <h4>Responsive</h4>
+          </div>
+          <div id="Cat_3">
+            <i class="fas fa-user-check"></i>
+            <h4>Qui vous correspond</h4>
+            </div>
+            <div id="Cat_4">
+              <i class="fas fa-paint-brush-alt"></i>
+              <h4>Interface Utilisateur (UI Design)</h4>
+              </div>
+              <div id="Cat_5">
+                <i class="far fa-chart-line"></i>
+                <h4>Référencement et Publicité</h4>
+                </div>
+                <div id="Cat_6">
+                  <i class="fas fa-wrench"></i>
+                  <h4>Maintenance</h4>
+                  </div>
+                </div>
+
 
 {% endblock %}

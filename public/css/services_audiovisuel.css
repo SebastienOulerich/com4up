@@ -7,7 +7,7 @@
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	background-color: #ff002d;
+	background-color: #00B641;
 	color: #212121;
 	font-size: 1.25em;
 }
@@ -40,7 +40,7 @@
 }
 
 #Partie_Basse a {
-	background-color: #b70020;
+	background-color: #008A31;
 	color: white;
 	display: flex;
 	justify-content: space-around;
@@ -71,7 +71,7 @@
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	background-color: #b70020;
+	background-color: #008A31;
 	color: white;
 	height: 100%;
 	width: 100%;
@@ -147,7 +147,7 @@ margin-top: 0.4em;
 
 	#Partie_Sup a {
 		width: 50%;
-		border: 1px solid #b70020;
+		border: 1px solid #00B641;
 		margin: -1px;
 	}
 }
