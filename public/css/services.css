@@ -9,6 +9,8 @@
 
 #Services_full a {
 	width: 25%;
+	min-width: 25%;
+	max-width: 25%;
 	min-height: auto;
 	display: flex;
 	justify-content: center;
@@ -16,75 +18,26 @@
 }
 
 #Services_full p {
+	min-width: 10%;
+	width: 10%;
+	margin: auto 0 auto 0;
 	position: absolute;
+	white-space: nowrap;
 	display: flex;
 	justify-content: center;
-	top: 50%;
-	z-index: 999;
-		min-width: 9%;
-		max-width: 9%;
-		min-height: auto;
-		white-space: nowrap;
-	border-bottom: solid white 3px;
 	align-items: center;
+	z-index: 999;
+	border-bottom: solid white 2px;
 	font-family: "Bebas", sans-serif;
 	font-weight: bold;
-	font-size: 2.5em;
+	font-size: 2.8em;
 	color: white;
 }
 
 .service_full_pic {
-	min-width: 100%;
-	min-height: auto;
+	width: 100%;
+	height: auto;
 }
-
-.Projet_hover {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: relative;
-	bottom: calc(100% + 4px);
-opacity: 0;
-min-height: auto;
-width: 100%;
-  -webkit-transition: all 0.4s ease-out; /*compatibilité chrome*/
-  -moz-transition: all 0.4s ease-out; /*compatibilité firefox*/
-  -o-transition: all 0.4s ease-out; /*compatibilité opéra*/
-  transition: all 0.4s ease-out; /* Autre navigateur */
-}
-
-.Projet_hover:hover {
-  opacity: 1;
-}
-
-.Projet_hover_web {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 0, 45, 1.0)), to(rgba(255, 0, 45, 0)));
-  background-image: -moz-linear-gradient(bottom center, rgba(255, 0, 45, 1), rgba(255, 0, 45, 0));
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColor=0, endColorStr=#FFFFFF);
-  -ms-filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColor=0, endColoStr=#FFFFFF);
-}
-
-.Projet_hover_audiovisuel {
-	background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 182, 65, 1.0)), to(rgba(0, 182, 65, 0)));
-  background-image: -moz-linear-gradient(bottom center, rgba(0, 182, 65, 1.0) 20%, rgba(0, 182, 65, 0) 95%);
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColor=0, endColorStr=#FFFFFF);
-  -ms-filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColor=0, endColoStr=#FFFFFF);
-}
-
-.Projet_hover_social {
-	background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 128, 209, 1.0)), to(rgba(0, 128, 209, 0)));
-	background-image: -moz-linear-gradient(bottom center, rgba(0, 128, 209, 1.0) 20%, rgba(0, 128, 209, 0) 95%);
-	filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColor=0, endColorStr=#FFFFFF);
-	-ms-filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColor=0, endColoStr=#FFFFFF);
-}
-
-.Projet_hover_materiel {
-	background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(123, 0, 255, 1.0)), to(rgba(123, 0, 255, 0)));
-	background-image: -moz-linear-gradient(bottom center, rgba(123, 0, 255, 1.0) 20%, rgba(123, 0, 255, 0) 95%);
-	filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColor=0, endColorStr=#FFFFFF);
-	-ms-filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColor=0, endColoStr=#FFFFFF);
-}
-
 
 @media screen and (max-width: 1280px) {
 	#Services_full {
@@ -98,22 +51,44 @@ width: 100%;
 	}
 
 	#Services_mob a {
-		display: flex;
 		width: 50%;
+		min-width: 50%;
+		max-width: 50%;
 		min-height: auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#Services_mob p {
+		min-width: 10%;
+		width: 10%;
+		margin: auto 0 auto 0;
+		position: absolute;
+		white-space: nowrap;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 999;
+		border-bottom: solid white 2px;
+		font-family: "Bebas", sans-serif;
+		font-weight: bold;
+		font-size: 2.8em;
+		color: white;
 	}
 
 	.service_mob_pic {
 		width: 100%;
-		height: 100%;
+		height: auto;
 	}
 }
 
 @media screen and (max-width: 1024px) {
 	#Services_mob a {
-		display: flex;
 		width: 100%;
-		min-height: auto;
+		min-width: 100%;
+		max-width: 100%;
 	}
+
 
 }
