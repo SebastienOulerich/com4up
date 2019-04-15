@@ -39,6 +39,175 @@
 	height: auto;
 }
 
+.Web_hover {
+	opacity: 0;
+	position: absolute;
+	z-index: 998;
+
+	min-width: 25%;
+	min-height: 100%;
+	margin: 0;
+
+	-webkit-transition: all 0.3s ease-out; /*compatibilité chrome*/
+  -moz-transition: all 0.3s ease-out; /*compatibilité firefox*/
+  -o-transition: all 0.3s ease-out; /*compatibilité opéra*/
+  transition: all 0.3s ease-out; /* Autre navigateur */
+
+  /* webkit example */
+  background-image: -webkit-gradient(
+    linear, left bottom, left top, from(rgba(255, 0, 45, 1.0)),
+    to(rgba(255, 0, 45, 0))
+  );
+
+  /* mozilla example - FF3.6+ */
+  background-image: -moz-linear-gradient(
+    bottom center,
+    rgba(255, 0, 45, 1), rgba(255, 0, 45, 0)
+  );
+
+  /* IE 5.5 - 7 */
+  filter: progid:DXImageTransform.Microsoft.gradient(
+    gradientType=1, startColor=0, endColorStr=#FFFFFF
+  );
+
+  /* IE8 uses -ms-filter for whatever reason... */
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(
+    gradientType=1, startColor=0, endColoStr=#FFFFFF
+  );
+
+}
+
+.Bloc_web:hover>.Web_hover {
+	opacity: 1;
+}
+
+.Audiovisuel_hover {
+	opacity: 0;
+	position: absolute;
+	z-index: 998;
+
+	min-width: 25%;
+	min-height: 100%;
+	margin: 0;
+
+	-webkit-transition: all 0.3s ease-out; /*compatibilité chrome*/
+  -moz-transition: all 0.3s ease-out; /*compatibilité firefox*/
+  -o-transition: all 0.3s ease-out; /*compatibilité opéra*/
+  transition: all 0.3s ease-out; /* Autre navigateur */
+
+	/* webkit example */
+  background-image: -webkit-gradient(
+    linear, left bottom, left top, from(rgba(0, 182, 65, 1.0)),
+    to(rgba(0, 182, 65, 0))
+  );
+
+  /* mozilla example - FF3.6+ */
+  background-image: -moz-linear-gradient(
+    bottom center,
+    rgba(0, 182, 65, 1.0) 20%, rgba(0, 182, 65, 0) 95%
+  );
+
+  /* IE 5.5 - 7 */
+  filter: progid:DXImageTransform.Microsoft.gradient(
+    gradientType=1, startColor=0, endColorStr=#FFFFFF
+  );
+
+  /* IE8 uses -ms-filter for whatever reason... */
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(
+    gradientType=1, startColor=0, endColoStr=#FFFFFF
+  );
+
+}
+
+.Bloc_audiovisuel:hover>.Audiovisuel_hover {
+	opacity: 1;
+}
+
+.Social_hover {
+	opacity: 0;
+	position: absolute;
+	z-index: 998;
+
+	min-width: 25%;
+	min-height: 100%;
+	margin: 0;
+
+	-webkit-transition: all 0.3s ease-out; /*compatibilité chrome*/
+  -moz-transition: all 0.3s ease-out; /*compatibilité firefox*/
+  -o-transition: all 0.3s ease-out; /*compatibilité opéra*/
+  transition: all 0.3s ease-out; /* Autre navigateur */
+
+	/* webkit example */
+  background-image: -webkit-gradient(
+    linear, left bottom, left top, from(rgba(0, 128, 209, 1.0)),
+    to(rgba(0, 128, 209, 0))
+  );
+
+  /* mozilla example - FF3.6+ */
+  background-image: -moz-linear-gradient(
+    bottom center,
+    rgba(0, 128, 209, 1.0) 20%, rgba(0, 128, 209, 0) 95%
+  );
+
+  /* IE 5.5 - 7 */
+  filter: progid:DXImageTransform.Microsoft.gradient(
+    gradientType=1, startColor=0, endColorStr=#FFFFFF
+  );
+
+  /* IE8 uses -ms-filter for whatever reason... */
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(
+    gradientType=1, startColor=0, endColoStr=#FFFFFF
+  );
+
+}
+
+.Bloc_Social:hover>.Social_hover {
+	opacity: 1;
+}
+
+.Materiel_hover {
+	opacity: 0;
+	position: absolute;
+	z-index: 998;
+
+	min-width: 25%;
+	min-height: 100%;
+	margin: 0;
+
+	-webkit-transition: all 0.3s ease-out; /*compatibilité chrome*/
+  -moz-transition: all 0.3s ease-out; /*compatibilité firefox*/
+  -o-transition: all 0.3s ease-out; /*compatibilité opéra*/
+  transition: all 0.3s ease-out; /* Autre navigateur */
+
+
+	  /* webkit example */
+	  background-image: -webkit-gradient(
+	    linear, left bottom, left top, from(rgba(123, 0, 255, 1.0)),
+	    to(rgba(123, 0, 255, 0))
+	  );
+
+	  /* mozilla example - FF3.6+ */
+	  background-image: -moz-linear-gradient(
+	    bottom center,
+	    rgba(123, 0, 255, 1.0) 20%, rgba(123, 0, 255, 0) 95%
+	  );
+
+	  /* IE 5.5 - 7 */
+	  filter: progid:DXImageTransform.Microsoft.gradient(
+	    gradientType=1, startColor=0, endColorStr=#FFFFFF
+	  );
+
+	  /* IE8 uses -ms-filter for whatever reason... */
+	  -ms-filter: progid:DXImageTransform.Microsoft.gradient(
+	    gradientType=1, startColor=0, endColoStr=#FFFFFF
+	  );
+
+}
+
+.Bloc_materiel:hover>.Materiel_hover {
+	opacity: 1;
+}
+
 @media screen and (max-width: 1280px) {
 	#Services_full {
 		display: none;
@@ -80,6 +249,26 @@
 	.service_mob_pic {
 		width: 100%;
 		height: auto;
+	}
+
+	.Web_hover {
+		min-width: 50%;
+		min-height: 50%;
+	}
+
+	.Audiovisuel_hover {
+		min-width: 50%;
+		min-height: 50%;
+	}
+
+	.Social_hover {
+		min-width: 50%;
+		min-height: 50%;
+	}
+
+	.Materiel_hover {
+		min-width: 50%;
+		min-height: 50%;
 	}
 }
 
