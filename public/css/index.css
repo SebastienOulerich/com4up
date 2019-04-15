@@ -89,8 +89,21 @@ width: 100%;
 #Logo_Confiance {
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	margin: 1em;
+	width: 85%;
 }
 
+#Logo_Confiance i {
+	font-size: 2em;
+}
+
+.Confiance_Photo {
+	display: flex;
+  width: 20%;
+	height: auto;
+	margin: 1em;
+}
 
 #Bloc_Equipe {
   margin: 0;

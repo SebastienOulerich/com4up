@@ -11,9 +11,6 @@ form {
 	align-items: center;
 }
 
-
-
-
 #contactTop {
   width: 100%;
   display: flex;
@@ -21,7 +18,7 @@ form {
 }
 
 .contactTopInput {
-  margin: 0.2em 0 0.2em 0;
+  margin: 0.5em 0 0.5em 0;
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -39,7 +36,8 @@ form {
 #contactTop label {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 1.25em;
+	margin-bottom: 0.25em;
 }
 
 .contactTopInputRight label {
@@ -53,12 +51,15 @@ form {
 	min-width: 10em;
 	font-size: 0.5em;
 }
+
 #contactTop input {
   border: solid black 1px;
   background: none;
   width: 80%;
   height: 1.7em;
 	padding: 0 0.2em 0 0.2em;
+	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
 }
 
 #Categorie {
@@ -73,12 +74,15 @@ form {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
-  font-size: 1.5em;
+	font-size: 1.25em;
+	margin-bottom: 0.25em;
 }
 
 #Categorie input {
   width: 1.7em;
   height: 1.7em;
+	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
 }
 
 .CategorieLine {
@@ -102,7 +106,11 @@ form {
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
-  font-size: 1.5em;
+	font-size: 1.25em;
+}
+
+#Objet label {
+	margin-bottom: 0.25em;
 }
 
 #Objet input {
@@ -110,6 +118,8 @@ form {
   background: none;
 	padding: 0 0.2em 0 0.2em;
   height: 1.7em;
+	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
 }
 
 #Message {
@@ -119,18 +129,20 @@ form {
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
-  font-size: 1.5em;
+	font-size: 1.25em;
 }
 
 #Message label {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 1em;
+	margin-bottom: 0.25em;
 }
 
 #Message textarea {
+	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
   border: solid black 1px;
-	font-family: arial;
   background: none;
   resize: none;
 }
@@ -149,8 +161,13 @@ form {
 }
 
 button {
-	margin: 2em 0 0 0;
+	margin: 1em 0 0 0;
 	width: 25%;
+	background: none;
+	border: 1px solid #212121;
+	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
+	font-size: 1.25em;
 }
 
 @media screen and (max-width: 1280px) {

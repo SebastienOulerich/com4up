@@ -115,7 +115,7 @@
 
 .Un_Reseau i {
 	font-size: 2em;
-	margin-right: 0.5em;
+	margin-right: 1em;
 }
 
 .Un_Reseau p {
@@ -142,7 +142,9 @@
 }
 
 @media screen and (max-width: 1280px) {
-
+	.Redimension {
+		width: 70%;
+	}
 }
 
 @media screen and (max-width: 1024px) {
@@ -151,5 +153,9 @@
 		width: 50%;
 		border: 1px solid #0080D1;
 		margin: -1px;
+	}
+
+	.Redimension {
+		width: 80%;
 	}
 }
