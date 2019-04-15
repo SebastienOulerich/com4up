@@ -5,19 +5,19 @@
 {% block body%}
 
 
-<img id="Bandeau" src={{asset("images/banniere-web.jpg")}} alt="Bandeau">
+<img id="Bandeau" src={{asset("images/Background_Service_Materiel.jpg")}} alt="Bandeau">
 
 <div id="Partie_Haute">
   <div id="Partie_Sup">
-    <a href="#"><h1 id="Selection">Site Web</h1></a>
+    <a href="{{ path('services_web') }}"><h1>Site Web</h1></a>
     <a href="{{ path('services_audiovisuel') }}"><h1>Audiovisuel</h1></a>
     <a href="{{ path('services_social') }}"><h1>Réseaux Sociaux</h1></a>
-    <a href="{{ path('services_materiel') }}"><h1>Matériel</h1></a>
+    <a href="#"><h1 id="Selection">Matériel</h1></a>
     </div>
     <div id="Partie_Basse">
-      <a href="https://forms.gle/HF3STXjuG1yTeAFt7">
+      <a href="#">
       <div id="Vide"></div>
-      <h2>REMPLIR LE FORMULAIRE DE DEVIS GRATUIT</h2>
+      <h2>NOS TARIFS</h2>
       <i class="far fa-arrow-right" aria-hidden></i>
       </div>
     </a>
@@ -25,39 +25,26 @@
 
   <div id="Argument_Bandeau">
     <div id="Argument">
-      <h3>POURQUOI AVOIR UN SITE INTERNET ?</h3>
+      <h3>ÉQUIPEZ-VOUS DURABLEMENT</h3>
       <p>
-        Votre site internet est une part importante de votre identité numérique. Gage de sérieux et de professionnalisme, il vous permettra d'afficher toute les informations essentielles de votre activité aux yeux de tous. Notre but est de vous proposer un site web moderne qui vous correspond ainsi qu’à vos visiteurs.
+        Vous voulez équiper votre entreprise ou disposer d'une bonne machine pour votre utilisation privée mais vous n'avez pas les connaissances nécessaires en composants informatiques ? Nous pouvons vous conseiller et même vous installer les ordinateurs adaptés à vos utilisations (bureautique, modélisation 3D, jeux vidéo, ...) ainsi que des espaces de stockages (NAS, Cloud, ...). Nous proposons également des services de réparation/maintenance afin d’optimiser la durée de vie de votre équipement.
         </p>
       </div>
     </div>
 
     <div id="Categorie">
       <div id="Cat_1">
-        <i class="fas fa-sitemap"></i>
-        <h4>Expérience Utilisateur (UX Design)</h4>
+        <i class="fas fa-desktop" aria-hidden></i>
+        <h4>ORDINATEURS</h4>
         </div>
         <div id="Cat_2">
-          <i class="fas fa-expand-arrows-alt"></i>
-          <h4>Responsive</h4>
+          <i class="fas fa-hdd" aria-hidden></i>
+          <h4>STOCKAGE NAS</h4>
           </div>
           <div id="Cat_3">
-            <i class="fas fa-user-check"></i>
-            <h4>Qui vous correspond</h4>
+            <i class="fas fa-wrench" aria-hidden></i>
+            <h4>MAINTENANCE</h4>
             </div>
-            <div id="Cat_4">
-              <i class="fas fa-paint-brush-alt"></i>
-              <h4>Interface Utilisateur (UI Design)</h4>
-              </div>
-              <div id="Cat_5">
-                <i class="far fa-chart-line"></i>
-                <h4>Référencement et Publicité</h4>
-                </div>
-                <div id="Cat_6">
-                  <i class="fas fa-wrench"></i>
-                  <h4>Maintenance</h4>
-                  </div>
-                </div>
 
 
 {% endblock %}
