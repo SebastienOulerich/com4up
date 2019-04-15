@@ -3,13 +3,13 @@
 	height: auto;
 }
 
-#Partie_Haute{
+#Partie_Haute {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 	background-color: #ff002d;
 	color: #212121;
-	font-size: 1.5em;
+	font-size: 1.25em;
 }
 
 #Partie_Sup {
@@ -19,19 +19,24 @@
 	text-align: center;
 	flex-wrap: wrap;
 	width: 100%;
-
 }
 
-#Partie_Sup h1 {
+#Partie_Sup a {
 	width: 25%;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	flex-wrap: wrap;
+}
+
+#Partie_Sup a h1 {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	flex-wrap: wrap;
 	font-family: "Montserrat", sans-serif;
 	font-weight: bold;
-	height: 2.5em;
+	height: 3em;
 }
 
 #Partie_Basse {
@@ -39,7 +44,7 @@
 	color: white;
 	display: flex;
 	justify-content: space-around;
-	height: 2em;
+	height: 2.5em;
 	align-items: center;
 }
 
@@ -69,6 +74,7 @@
 	background-color: #b70020;
 	color: white;
 	height: 100%;
+	width: 100%;
 }
 
 #Argument_Bandeau {
@@ -121,7 +127,7 @@ font-size: 2.25em;
 
 #Cat_1 h4, #Cat_2 h4, #Cat_3 h4, #Cat_4 h4, #Cat_5 h4, #Cat_6 h4 {
 font-size: 1.75em;
-margin-top: 0.25em;
+margin-top: 0.4em;
 }
 
 @media screen and (max-width: 1280px) {
@@ -139,7 +145,7 @@ margin-top: 0.25em;
 	margin-top: 0.25em;
 	}
 
-	#Partie_Sup h1 {
+	#Partie_Sup a {
 		width: 50%;
 		border: 1px solid #b70020;
 		margin: -1px;
