@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
   background-color: #DCDCDC;
   overflow-x: hidden;
   overflow-y: auto;
@@ -90,7 +89,6 @@ main {
   flex-direction: column;
   margin: 4em 0 0 0;
   width: 100%;
-  min-height: calc(100vh - 4em);
   flex-grow: 1;
   color: #212121;
 }

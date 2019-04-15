@@ -103,7 +103,7 @@
 	font-family: "Bebas", sans-serif;
 	justify-content: center;
 	align-items: center;
-	min-height: 100%;
+	min-height: 35vh;
 }
 
 #Cat_1, #Cat_2, #Cat_3, #Cat_4, #Cat_5, #Cat_6 {
