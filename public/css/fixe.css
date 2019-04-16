@@ -80,6 +80,11 @@ ul, ol {
   color: #0077d2;
 }
 
+ #NavDesktop #lang {
+   margin-left: 0.5em;
+  font-size: 1.2em;
+}
+
 #HeaderMobile {
   display: none;
 }
