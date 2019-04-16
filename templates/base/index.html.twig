@@ -4,12 +4,13 @@
 <link type="text/css" rel="stylesheet" href={{asset("css/index.css")}} />{% endblock %}
 {% block body%}
 
-<div id="Services">
-  <a href="{{ path('services_web') }}"><img id="Web" class="Images_Services" src={{asset("images/Accueil-Web.jpg")}} alt="Image Web"></a>
-  <a href="{{ path('services_audiovisuel') }}"><img id="Audiovisuel" class="Images_Services" src={{asset("images/Accueil-Audiovisuel.jpg")}} alt="Image Audiovisuel"></a>
-  <a href="{{ path('services_social') }}"><img id="Reseaux" class="Images_Services" src={{asset("images/Accueil-Reseaux.jpg")}} alt="Image Réseaux Sociaux"></a>
-  <a href="{{ path('services_materiel') }}"><img id="Hardware" class="Images_Services" src={{asset("images/Accueil-Materiel.jpg")}} alt="Image Matériel"></a>
+<div id="Services_mob">
+<a href="{{ path('services_web') }}" class="Bloc_web"><img class="service_mob_pic" src={{asset("images/Accueil-Web.jpg")}} alt="Service web"><p>Site web</p><div class="Web_hover"></div></a>
+<a href="{{ path('services_audiovisuel') }}" class="Bloc_audiovisuel"><img class="audiovisuel_mob_pic" src={{asset("images/Accueil-Audiovisuel.jpg")}} alt="Service audiovisuel"><p>Audiovisuel</p><div class="Audiovisuel_hover"></div></a>
+<a href="{{ path('services_social') }}" class="Bloc_Social"><img class="social_mob_pic" src={{asset("images/Accueil-Reseaux.jpg")}} alt="Service réseaux sociaux"><p>Réseaux sociaux</p><div class="Social_hover"></div></a>
+<a href="{{ path('services_materiel') }}" class="Bloc_materiel"><img class="materiel_mob_pic" src={{asset("images/Accueil-Materiel.jpg")}} alt="Service matériel"><p>Matériel</p><div class="Materiel_hover"></div></a>
 </div>
+
 
 <div id="Une_Colonne">
   <h1 id="Titre_Principal">Travaux Récents</h1>
