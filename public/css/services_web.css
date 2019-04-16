@@ -1,153 +1,303 @@
+/* Les ID Argument et Categorie sont à remettre en Flex pour afficher la partie de base */
 #Bandeau {
-	max-width: 100%;
-	height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 #Partie_Haute {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	background-color: #ff002d;
-	color: #212121;
-	font-size: 1.25em;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #ff002d;
+  color: #212121;
+  font-size: 1.25em;
 }
 
 #Partie_Sup {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	flex-wrap: wrap;
-	width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 #Partie_Sup a {
-	width: 25%;
-	display: flex;
-	justify-content: center;
-	text-align: center;
-	flex-wrap: wrap;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
 }
 
 #Partie_Sup a h1 {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	font-family: "Montserrat", sans-serif;
-	font-weight: bold;
-	height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  height: 3em;
 }
 
 #Partie_Basse a {
-	background-color: #b70020;
-	color: white;
-	display: flex;
-	justify-content: space-around;
-	height: 2.5em;
-	align-items: center;
+  background-color: #b70020;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  height: 2.5em;
+  align-items: center;
 }
 
 #Vide {
-	width: 5%;
+  width: 5%;
 }
 
 #Partie_Basse a h2 {
-	display: flex;
-	justify-content: center;
-	font-family: "Montserrat", sans-serif;
-	width: 90%;
+  display: flex;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  width: 90%;
 }
 
 #Partie_Basse i {
-	display: flex;
-	width: 5%;
-	justify-content: flex-end;
-	margin-right: 1em;
+  display: flex;
+  width: 5%;
+  justify-content: flex-end;
+  margin-right: 1em;
 }
 
 #Selection {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	background-color: #b70020;
-	color: white;
-	height: 100%;
-	width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #b70020;
+  color: white;
+  height: 100%;
+  width: 100%;
 }
 
 #Argument_Bandeau {
-	display: flex;
-	width: 100%;
-	background-color: #D5D5D5;
+  display: none;
+  width: 100%;
+  background-color: #D5D5D5;
 }
 
 #Argument {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: center;
-	width: 75%;
-	margin: 1em auto 1em auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 75%;
+  margin: 1em auto 1em auto;
 }
 
 #Argument h3 {
-	font-family: "Bebas", sans-serif;
-	font-size: 2em;
+  font-family: "Bebas", sans-serif;
+  font-size: 2em;
 }
 
 #Argument p {
-	font-family: "Montserrat", sans-serif;
-	font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
 }
 
 #Categorie {
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-	font-family: "Bebas", sans-serif;
-	justify-content: center;
-	align-items: center;
-	min-height: 35vh;
+  display: none;
+  flex-wrap: wrap;
+  width: 100%;
+  font-family: "Bebas", sans-serif;
+  justify-content: center;
+  align-items: center;
+  min-height: 35vh;
 }
 
 #Cat_1, #Cat_2, #Cat_3, #Cat_4, #Cat_5, #Cat_6 {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: calc(100% / 3);
-	margin: 2em auto 2em auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% / 3);
+  margin: 2em auto 2em auto;
 }
 
 #Cat_1 i, #Cat_2 i, #Cat_3 i, #Cat_4 i, #Cat_5 i, #Cat_6 i {
-font-size: 2.25em;
+  font-size: 2.25em;
 }
 
 #Cat_1 h4, #Cat_2 h4, #Cat_3 h4, #Cat_4 h4, #Cat_5 h4, #Cat_6 h4 {
-font-size: 1.75em;
-margin-top: 0.4em;
+  font-size: 1.75em;
+  margin-top: 0.4em;
 }
 
-@media screen and (max-width: 1280px) {
-
+#Partie_Sup a:hover {
+  color: white;
 }
+
+#Partie_Haute_1 {
+  display: none;
+}
+
+#Partie_Haute_2 {
+  display: none;
+}
+
+#Partie_Haute_3 {
+  display: none;
+}
+
+#Partie_Haute_4 {
+  display: none;
+}
+
+#Partie_Haute_5 {
+  display: none;
+}
+
+#Categorie_2 {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+}
+
+#Categorie_3 {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+}
+
+#Categorie_4 {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+}
+
+#Categorie_5 {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+}
+
+#Categorie_6 {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+}
+
+#Categorie_7 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.Un_Reseau {
+  display: flex;
+  align-items: center;
+}
+
+.Icone_Centre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2em;
+  margin-right: 0.5em;
+  min-width: 2em;
+}
+
+.Un_Reseau p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+.Redimension {
+  width: 60%;
+  margin: 1em auto 1em auto;
+}
+
+.Background_Gris {
+  background-color: #D5D5D5;
+}
+
+.Section_Reseaux {
+  font-family: "Bebas", sans-serif;
+  font-size: 2em;
+}
+
+.Mettre_Valeur {
+  font-family: "Montserrat_Bold", sans-serif;
+}
+
+.Partie_Haute_Alt {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: 7em;
+  background-color: #D5D5D5;
+}
+
+.Partie_Haute_Gauche_Alt {
+  display: flex;
+  justify-content: center;
+  width: 15%;
+}
+
+.Partie_Haute_Centre_Alt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  font-family: "Bebas", sans-serif;
+  font-size: 2em;
+}
+
+.Titre_Menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.Titre_Menu h1 {
+  margin: 0.25em 2em auto 2em;
+}
+
+.Partie_Haute_Droite_Alt {
+  display: flex;
+  justify-content: center;
+  width: 15%;
+  font-family: "Montserrat_Regular", sans-serif;
+  font-size: 1.25em;
+}
+
+.fa-th-large {
+  font-size: 2.5em;
+}
+
+.icone-awesome {
+  font-size: 1.25em;
+}
+
+@media screen and (max-width: 1280px) {}
 
 @media screen and (max-width: 1024px) {
-	#Cat_1, #Cat_2, #Cat_3, #Cat_4, #Cat_5, #Cat_6 {
-		width: 50%;
-		margin: 2em auto 2em auto;
-	}
+  #Cat_1, #Cat_2, #Cat_3, #Cat_4, #Cat_5, #Cat_6 {
+    width: 50%;
+    margin: 2em auto 2em auto;
+  }
 
-	#Cat_1 h4, #Cat_2 h4, #Cat_3 h4, #Cat_4 h4, #Cat_5 h4, #Cat_6 h4 {
-	font-size: 1.5em;
-	margin-top: 0.25em;
-	}
+  #Cat_1 h4, #Cat_2 h4, #Cat_3 h4, #Cat_4 h4, #Cat_5 h4, #Cat_6 h4 {
+    font-size: 1.5em;
+    margin-top: 0.25em;
+  }
 
-	#Partie_Sup a {
-		width: 50%;
-		border: 1px solid #b70020;
-		margin: -1px;
-	}
+  #Partie_Sup a {
+    width: 50%;
+    border: 1px solid #b70020;
+    margin: -1px;
+  }
 }

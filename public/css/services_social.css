@@ -108,14 +108,23 @@
 	width: 100%;
 }
 
+#Partie_Sup a:hover {
+	color: white;
+}
+
 .Un_Reseau {
 	display: flex;
 	align-items: center;
 }
 
-.Un_Reseau i {
+.Icone_Centre {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 	font-size: 2em;
-	margin-right: 1em;
+	margin-right: 0.5em;
+	min-width: 2em;
 }
 
 .Un_Reseau p {
@@ -141,6 +150,10 @@
 	font-family: "Montserrat_Bold", sans-serif;
 }
 
+.sanshover:hover {
+	color: #212121;
+}
+
 @media screen and (max-width: 1280px) {
 	.Redimension {
 		width: 70%;
@@ -151,7 +164,7 @@
 
 	#Partie_Sup a {
 		width: 50%;
-		border: 1px solid #0080D1;
+		border: 1px solid #005B95;
 		margin: -1px;
 	}
 
