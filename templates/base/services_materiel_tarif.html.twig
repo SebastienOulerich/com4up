@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+{% block title %}Matériel - Tarif{% endblock %}
+{% block stylesheets %}
+<link type="text/css" rel="stylesheet" href={{asset("css/services_materiel.css")}} />{% endblock %}
+{% block body%}
+
+
+<img id="Bandeau" src={{asset("images/Background_Service_Materiel.jpg")}} alt="Bandeau">
+
+<div id="Partie_Haute">
+  <div id="Partie_Sup">
+    <a href="{{ path('services_web') }}"><h1>Site Web</h1></a>
+    <a href="{{ path('services_audiovisuel') }}"><h1>Audiovisuel</h1></a>
+    <a href="{{ path('services_social') }}"><h1>Réseaux Sociaux</h1></a>
+    <a href="#"><h1 id="Selection">Matériel</h1></a>
+    </div>
+    <div id="Partie_Basse">
+      <a href="#">
+      <div id="Vide"></div>
+      <h2>NOS TARIFS</h2>
+      <i class="far fa-arrow-right" aria-hidden></i>
+      </div>
+    </a>
+  </div>
+
+    <div class="Partie_Haute_Alt" id="Partie_Haute_1">
+      <div class="Partie_Haute_Gauche_Alt">
+        <a href="#"><i class="fas fa-th-large" aria-hidden></i></a>
+        </div>
+      <div class="Partie_Haute_Centre_Alt">
+        <i class="far fa-angle-left icone-awesome" aria-hidden></i>
+        <div class="Titre_Menu">
+          <i class="fas fa-sitemap"></i>
+          <h1>Expérience Utilisateur (UX Design)</h1>
+          </div>
+        <i class="far fa-angle-right icone-awesome" aria-hidden></i>
+        </div>
+        <div class="Partie_Haute_Droite_Alt">
+          </div>
+    </div>
+
+    <div id="Categorie">
+
+            </div>
+
+
+{% endblock %}

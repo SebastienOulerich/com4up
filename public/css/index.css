@@ -15,8 +15,8 @@
 }
 
 #Services_mob p {
-	min-width: 10%;
-	width: 10%;
+	min-width: 8%;
+	width: 8%;
 	margin: auto 0 auto 0;
 	position: absolute;
 	white-space: nowrap;
@@ -27,7 +27,7 @@
 	border-bottom: solid white 2px;
 	font-family: "Bebas", sans-serif;
 	font-weight: bold;
-	font-size: 2.5em;
+	font-size: 2.25em;
 	color: white;
 }
 
@@ -406,7 +406,8 @@ width: 100%;
 .Bloc_Equipe_Case_text img {
   width: 70%;
   height: auto;
-  border-radius: 100%
+  border-radius: 100%;
+	margin-bottom: 0.5em;
 }
 
 .Bloc_Equipe_Case h3 {
