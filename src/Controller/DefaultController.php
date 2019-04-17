@@ -63,9 +63,9 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/services-materiel-tarif", name="services_materiel_tarif")
+     * @Route("/services-materiel-tarifs", name="services_materiel_tarifs")
      */
-    public function services_materiel_tarif()
+    public function services_materiel_tarifs()
     {
         // replace this line with your own code!
         return $this->render('base/services_materiel_tarif.html.twig');

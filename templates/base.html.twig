@@ -51,7 +51,7 @@
         {% else %}
         <li><a href="{{ path('default') }}">Accueil</a></li>
         {% endif %}
-        {% if app.request.attributes.get('_route') == "services" or app.request.attributes.get('_route') == "services_web" or app.request.attributes.get('_route') == "services_audiovisuel" or app.request.attributes.get('_route') == "services_social" or app.request.attributes.get('_route') == "services_materiel" or app.request.attributes.get('_route') == "services_materiel_tarif" %}
+        {% if app.request.attributes.get('_route') == "services" or app.request.attributes.get('_route') == "services_web" or app.request.attributes.get('_route') == "services_audiovisuel" or app.request.attributes.get('_route') == "services_social" or app.request.attributes.get('_route') == "services_materiel" or app.request.attributes.get('_route') == "services_materiel_tarifs" %}
         <li class="Current_page"><a href="{{ path('services') }}">Services</a></li>
         {% else %}
         <li><a href="{{ path('services') }}">Services</a></li>
