@@ -9,39 +9,135 @@
 
 <div id="Partie_Haute">
   <div id="Partie_Sup">
-    <a href="{{ path('services_web') }}"><h1>Site Web</h1></a>
-    <a href="{{ path('services_audiovisuel') }}"><h1>Audiovisuel</h1></a>
-    <a href="{{ path('services_social') }}"><h1>Réseaux Sociaux</h1></a>
-    <a href="#"><h1 id="Selection">Matériel</h1></a>
-    </div>
-    <div id="Partie_Basse">
-      <a href="#">
-      <div id="Vide"></div>
-      <h2>NOS TARIFS</h2>
-      <i class="far fa-arrow-right" aria-hidden></i>
-      </div>
+    <a href="{{ path('services_web') }}">
+      <h1>Site Web</h1>
+    </a>
+    <a href="{{ path('services_audiovisuel') }}">
+      <h1>Audiovisuel</h1>
+    </a>
+    <a href="{{ path('services_social') }}">
+      <h1>Réseaux Sociaux</h1>
+    </a>
+    <a href="{{ path('services_materiel') }}">
+      <h1 id="Selection">Matériel</h1>
     </a>
   </div>
+  <div id="Partie_Basse">
+    <a href="{{ path('services_materiel') }}">
+      <i class="far fa-arrow-left" aria-hidden></i>
+      <h2>RETOUR</h2>
+      <div id="Vide"></div>
+    </a>
+  </div>
+</div>
 
-    <div class="Partie_Haute_Alt" id="Partie_Haute_1">
-      <div class="Partie_Haute_Gauche_Alt">
-        <a href="#"><i class="fas fa-th-large" aria-hidden></i></a>
-        </div>
-      <div class="Partie_Haute_Centre_Alt">
-        <i class="far fa-angle-left icone-awesome" aria-hidden></i>
-        <div class="Titre_Menu">
-          <i class="fas fa-sitemap"></i>
-          <h1>Expérience Utilisateur (UX Design)</h1>
-          </div>
-        <i class="far fa-angle-right icone-awesome" aria-hidden></i>
-        </div>
-        <div class="Partie_Haute_Droite_Alt">
-          </div>
-    </div>
+<div id="Categorie">
 
-    <div id="Categorie">
+<div id="Bloc_Gauche">
+  <div id="Domicile" class="background_gris">
+    <i class="fas fa-home" aria-hidden></i>
+    <h3>SERVICE À DOMICILE</h3>
+  </div>
 
-            </div>
+  <div class="Une_ligne">
+    <p class="texte">
+      <span class="Mettre_Valeur">Pack de démarrage :</span>Mise à jour des Drivers + Mise à jour Windows + Pack de logiciels essentiels + Antivirus + Antimalware + AntiAdwares + Optimisation
+    </p>
+    <p class="prix">
+      65€
+    </p>
+  </div>
+
+  <div class="Une_ligne background_gris">
+    <p class="texte">
+      <span class="Mettre_Valeur">Pack entretien :</span>Dépannage / Nettoyage / Update
+    </p>
+    <p class="prix">
+      45€
+    </p>
+  </div>
+
+  <div class="Une_ligne">
+    <p class="texte">
+      <span class="Mettre_Valeur">Installation / Réinstallation de votre système d'exploitation (Windows, Linux, ...)</span>
+    </p>
+    <p class="prix">
+      80€
+    </p>
+  </div>
+
+  <div class="Une_ligne background_gris">
+    <p class="texte">
+      <span class="Mettre_Valeur">Changement d'un composant d'un ordinateur</span>
+    </p>
+    <p class="prix">
+      30€
+    </p>
+  </div>
+
+  <div class="Une_ligne">
+    <p class="texte">
+      <span class="Mettre_Valeur">Installation d'un NAS</span>
+    </p>
+    <p class="prix">
+      40€
+    </p>
+  </div>
+  </div>
+
+<div id="Bloc_Droit">
+  <div id="Distance" class="background_gris">
+    <i class="fas fa-headset" aria-hidden></i>
+    <h3>SERVICE À DISTANCE</h3>
+  </div>
+
+  <div class="Une_ligne">
+    <p class="texte">
+      <span class="Mettre_Valeur">Pack de démarrage à distance :</span>Mise à jour des Drivers + Mise à jour Windows + Pack de logiciels essentiels + Antivirus + Antimalware + AntiAdwares + Optimisation
+    </p>
+    <p class="prix">
+      50€
+    </p>
+  </div>
+
+  <div class="Une_ligne background_gris">
+    <p class="texte">
+      <span class="Mettre_Valeur">Pack entretien à distance :</span>Dépannage / Nettoyage / Update
+    </p>
+    <p class="prix">
+      30€
+    </p>
+  </div>
+
+  <div class="Une_ligne">
+    <p class="texte">
+      <span class="Mettre_Valeur">Conseil sur le matériel :</span>Savoir quel matériel informatique se procurer
+    </p>
+    <p class="prix">
+      25€
+    </p>
+  </div>
+
+  <div class="Une_ligne background_gris">
+    <p class="texte">
+      <span class="Mettre_Valeur">Montage d'un Ordinateur</span>
+    </p>
+    <p class="prix">
+      50€
+    </p>
+  </div>
+
+  <div class="Une_ligne">
+    <p class="texte">
+      <span class="Mettre_Valeur">Conseil sur les composants + Montage d'un Ordinateur</span>
+    </p>
+    <p class="prix">
+      60€
+    </p>
+  </div>
+  </div>
+
+</div>
 
 
 {% endblock %}

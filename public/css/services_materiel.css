@@ -46,24 +46,27 @@
 	justify-content: space-around;
 	height: 2.5em;
 	align-items: center;
+	text-align: center;
 }
 
 #Vide {
+	display: flex;
 	width: 5%;
 }
 
 #Partie_Basse a h2 {
 	display: flex;
 	justify-content: center;
+	text-align: center;
 	font-family: "Montserrat", sans-serif;
 	width: 90%;
 }
 
-#Partie_Basse i {
+#Partie_Basse a i {
 	display: flex;
 	width: 5%;
 	justify-content: flex-end;
-	margin-right: 1em;
+	padding-right: 1em;
 }
 
 #Selection {
