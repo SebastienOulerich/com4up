@@ -16,8 +16,23 @@ class ContactType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('Nom')
-            ->add('Prenom')
+            ->add('nom', TextType::class ,array(
+                'attr' => [
+                    // 'class' => 'contactTopInput',
+                          // 'placeholder' =>'Nombre entre 1 et 8 ;)',
+                           'require' => false,
+                        ],
+                'label'=> 'Nom',
+            ))
+            ->add('prenom', TextType::class ,array(
+                'attr' => [
+                    // 'id' => "check_prenom",    
+                    // 'class' => 'contactTopInputRight',
+                          // 'placeholder' =>'Nombre entre 1 et 8 ;)',
+                           'require' => false,
+                        ],
+                'label'=> 'Prenom',
+            ))
             ->add('Email', EmailType::class)
             ->add('Entreprise')
             ->add('cateWeb', CheckboxType::class)

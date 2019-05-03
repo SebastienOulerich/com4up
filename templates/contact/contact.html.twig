@@ -6,7 +6,14 @@
 {% block body%}
 <img src={{asset("images/banniere-contact.jpg")}} alt="Banniere contact">
 {{ form_start(our_form) }}
-
+<div id="contactTop">
+  <div class="contactTopInput">
+    {{ form_label(our_form.nom)}}
+    {{ form_widget(our_form.nom)}}
+  </div>
+  
+  {# {{ form_row(our_form.prenom)}} #}
+</div>
 {{ form_widget(our_form) }}
 
 
