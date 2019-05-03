@@ -40,18 +40,23 @@
 </div>
 
 <div id="Integrale_Image">
-  <a href=""><img class="Images_Projet" src={{asset("images/projets/com4up.jpg")}} alt="Bandeau"><div class="Projet_hover Projet_hover_web"><div class="Projet_hover_border"></div></div></a>
-  <a href="{{ path('projet_id') }}"><img class="Images_Projet" src={{asset("images/projets/faeriths.jpg")}} alt="Bandeau"><div class="Projet_hover Projet_hover_web"><div class="Projet_hover_border"></div></div></a>
-  <a href=""><img class="Images_Projet" src={{asset("images/projets/esuria.jpg")}} alt="Bandeau"><div class="Projet_hover Projet_hover_web"><div class="Projet_hover_border"></div></div></a>
-  <a href=""><img class="Images_Projet" src={{asset("images/projets/streamingschool.jpg")}} alt="Bandeau"><div class="Projet_hover Projet_hover_web"><div class="Projet_hover_border"></div></div></a>
-  <a href=""><img class="Images_Projet" src={{asset("images/projets/loic.jpg")}} alt="Bandeau"><div class="Projet_hover Projet_hover_web"><div class="Projet_hover_border"></div></div></a>
-  <a href=""><img class="Images_Projet" src={{asset("images/projets/sebastien.jpg")}} alt="Bandeau"><div class="Projet_hover Projet_hover_web"><div class="Projet_hover_border"></div></div></a>
-  <a href=""><img class="Images_Projet" src={{asset("images/projets/MichelLavertu.jpg")}} alt="Bandeau"><div class="Projet_hover Projet_hover_web"><div class="Projet_hover_border"></div></div></a>
-  <a href=""><img class="Images_Projet" src={{asset("images/projets/Projet.jpg")}} alt="Bandeau"></a>
-  <a href=""><img class="Images_Projet" src={{asset("images/projets/Projet.jpg")}} alt="Bandeau"></a>
-  <a href=""><img class="Images_Projet" src={{asset("images/projets/Projet.jpg")}} alt="Bandeau"></a>
-  <a href=""><img class="Images_Projet" src={{asset("images/projets/Projet.jpg")}} alt="Bandeau"></a>
-  <a href=""><img class="Images_Projet" src={{asset("images/projets/Projet.jpg")}} alt="Bandeau"></a>
+{% set counter = 0 %}
+{% for project in projects | slice(0,12) %}
+<a href=" projet.URLSite "><img class="Images_Projet" src={{asset("images/projets/com4up.jpg")}} alt="Bandeau"><div class="Projet_hover
+{% if project.categorie == "0" %} {% endif %}
+{% if project.categorie == "1" %}Projet_hover_web {% endif %}
+{% if project.categorie == "2" %}Projet_hover_audiovisuel {% endif %}
+{% if project.categorie == "3" %}Projet_hover_social{% endif %}
+{% if project.categorie == "4" %}Projet_hover_materiel {% endif %}
+"><div class="Projet_hover_border"></div></div></a>
+{% set counter = counter + 1 %}
+{% endfor %}
+{% if counter != 12 %}
+{% for i in  counter..11 %}
+<a href=""><img class="Images_Projet" src={{asset("images/projets/Projet.jpg")}} alt="Bandeau"></a>
+{% set counter = counter + 1 %}
+{% endfor %}
+{% endif %}
 </div>
 
 

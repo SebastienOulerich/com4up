@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+
+
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -71,15 +73,6 @@ class DefaultController extends Controller
         return $this->render('base/services_materiel_tarif.html.twig');
     }
 
-    /**
-     * @Route("/projets", name="projets")
-     */
-    public function projets()
-    {
-        // replace this line with your own code!
-        return $this->render('base/projets.html.twig');
-    }
-
 
     /**
      * @Route("/projet-id", name="projet_id")
@@ -108,14 +101,6 @@ class DefaultController extends Controller
         return $this->render('base/a_propos.html.twig');
     }
 
-    /**
-     * @Route("/contact", name="contact")
-     */
-    public function contact()
-    {
-        // replace this line with your own code!
-        return $this->render('base/contact.html.twig');
-    }
 
     /**
      * @Route("/mentions-legales", name="mentions_legales")

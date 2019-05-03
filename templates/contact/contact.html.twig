@@ -5,25 +5,34 @@
 {% endblock %}
 {% block body%}
 <img src={{asset("images/banniere-contact.jpg")}} alt="Banniere contact">
+{{ form_start(our_form) }}
+
+{{ form_widget(our_form) }}
+
+
+
+  <input type="submit" value="ENVOYER"/>
+
+{{ form_end(our_form) }}
 <form>
-  <div id="contactTop">
-    <div class="contactTopInput">
-      <label for="check_nom">Nom</label>
-      <input id="check_nom"></input>
-    </div>
-    <div class="contactTopInputRight">
-      <label for="check_prenom">Prénom</label>
-      <input id="check_prenom"></input>
-    </div>
-    <div class="contactTopInput">
-      <label for="check_mail">E-Mail</label>
-      <input id="check_mail"></input>
-    </div>
-    <div class="contactTopInputRight">
-      <label for="check_entreprise">Entreprise/Organisme<span id="small"> &nbsp;- (Optionnel)</span></label>
-      <input id="check_entreprise"></input>
-    </div>
+<div id="contactTop">
+  <div class="contactTopInput">
+    <label for="check_nom">Nom</label>
+    <input id="check_nom"></input>
   </div>
+  <div class="contactTopInputRight">
+    <label for="check_prenom">Prénom</label>
+    <input id="check_prenom"></input>
+  </div>
+  <div class="contactTopInput">
+    <label for="check_mail">E-Mail</label>
+    <input id="check_mail"></input>
+  </div>
+  <div class="contactTopInputRight">
+    <label for="check_entreprise">Entreprise/Organisme<span id="small"> &nbsp;- (Optionnel)</span></label>
+    <input id="check_entreprise"></input>
+  </div>
+</div>
   <div id="Categorie">
     <p>Catégorie</p>
     <div class="CategorieLine">
