@@ -11,66 +11,66 @@
     {{ form_label(our_form.nom)}}
     {{ form_widget(our_form.nom)}}
   </div>
-  
-  {# {{ form_row(our_form.prenom)}} #}
+  <div class="contactTopInputRight">
+    {{ form_label(our_form.prenom)}}
+    {{ form_widget(our_form.prenom)}}
+  </div>
+  <div class="contactTopInput">
+    {{ form_label(our_form.email)}}
+    {{ form_widget(our_form.email)}}
+  </div>
+  <div class="contactTopInputRight">
+    {{ form_label(our_form.entreprise)}}
+    {{ form_widget(our_form.entreprise)}}
+  </div>
 </div>
+
+  <div id="Categorie">
+    <p>Catégorie</p>
+    <div class="CategorieLine">
+      {{ form_widget(our_form.cateWeb)}}
+      {{ form_label(our_form.cateWeb)}}
+    </div>
+    <div class="CategorieLine">
+    {{ form_widget(our_form.cateAudiovisuel)}}
+    {{ form_label(our_form.cateAudiovisuel)}}
+    </div>
+    <div class="CategorieLine">
+    {{ form_widget(our_form.cateSocial)}}
+    {{ form_label(our_form.cateSocial)}}
+    </div>
+    <div class="CategorieLine">
+    {{ form_widget(our_form.cateMateriel)}}
+    {{ form_label(our_form.cateMateriel)}}
+    </div>
+  </div>
+
+  <div id="Objet">
+  {{ form_label(our_form.objet)}}
+  {{ form_widget(our_form.objet)}}
+  </div>
+
+  <div id="Message">
+  {{ form_label(our_form.message)}}
+  {{ form_widget(our_form.message)}}
+  </div>
+
+  <div id="Consent">
+  {{ form_widget(our_form.rgpd)}}
+  {{ form_label(our_form.rgpd)}}
+  </div>
+
 {{ form_widget(our_form) }}
 
 
 
-  <input type="submit" value="ENVOYER"/>
+  <input id="submit" type="submit" value="ENVOYER"/>
 
 {{ form_end(our_form) }}
 <form>
-<div id="contactTop">
-  <div class="contactTopInput">
-    <label for="check_nom">Nom</label>
-    <input id="check_nom"></input>
-  </div>
-  <div class="contactTopInputRight">
-    <label for="check_prenom">Prénom</label>
-    <input id="check_prenom"></input>
-  </div>
-  <div class="contactTopInput">
-    <label for="check_mail">E-Mail</label>
-    <input id="check_mail"></input>
-  </div>
-  <div class="contactTopInputRight">
-    <label for="check_entreprise">Entreprise/Organisme<span id="small"> &nbsp;- (Optionnel)</span></label>
-    <input id="check_entreprise"></input>
-  </div>
-</div>
-  <div id="Categorie">
-    <p>Catégorie</p>
-    <div class="CategorieLine">
-      <input type="checkbox" name="" value="" id="check_web"><label for="check_web">Site web</label>
-    </div>
-    <div class="CategorieLine">
-      <input type="checkbox" name="" value="" id="check_audiovisuel"><label for="check_audiovisuel">Audiovisuel</label>
-    </div>
-    <div class="CategorieLine">
-      <input type="checkbox" name="" value="" id="check_social"><label for="check_social">Réseaux sociaux</label>
-    </div>
-    <div class="CategorieLine">
-      <input type="checkbox" name="" value="" id="check_materiel"><label for="check_materiel">Matériel</label>
-    </div>
 
-  </div>
-  <div id="Objet">
-    <label  for="check_object">Objet</label>
-    <input id="check_object"></input>
-  </div>
 
-  <div id="Message">
-    <label for="check_message">Votre message</label>
-    <textarea name="name" rows="8" cols="80" id="check_message"></textarea>
-  </div>
-  <div id="Consent">
-    <input type="checkbox" name="" value=""><label>En soumettant ce formulaire, j'accepte que les informations saisies dans ce formulaire soient utilisées, exploitées, traitées pour permettre de me recontacter, pour m’envoyer la newsletter, dans le cadre de la relation commerciale qui découle de
-      cette demande de devis.</label>
-  </div>
 
-  <button type="button" name="button">ENVOYER</button>
 </form>
 
 {% endblock %}

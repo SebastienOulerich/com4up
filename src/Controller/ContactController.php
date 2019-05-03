@@ -23,10 +23,10 @@ class ContactController extends AbstractController
       if ($form->isSubmitted() && $form->isValid()) {
         $contactFormData = $form->getData();
         $message = (new \Swift_Message('You Got Mail!'))
-               ->setFrom($contactFormData['Email'])
+               ->setFrom($contactFormData['email'])
                ->setTo('soulerich@gmail.com')
                ->setBody(
-                   $contactFormData['Message'],
+                   $contactFormData['message'],
                    'text/plain'
                )
            ;

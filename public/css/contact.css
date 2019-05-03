@@ -144,6 +144,7 @@ form {
 	font-weight: bold;
   border: solid black 1px;
   background: none;
+	  height: 10em;
   resize: none;
 }
 
@@ -160,7 +161,7 @@ form {
   height: 3em;
 }
 
-button {
+#submit {
 	margin: 1em 0 0 0;
 	width: 25%;
 	background: none;
@@ -168,6 +169,10 @@ button {
 	font-family: "Montserrat", sans-serif;
 	font-weight: bold;
 	font-size: 1.25em;
+}
+
+#submit:hover {
+	cursor: pointer;
 }
 
 @media screen and (max-width: 1280px) {

@@ -16,34 +16,33 @@ class ContactType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nom', TextType::class ,array(
-                'attr' => [
-                    // 'class' => 'contactTopInput',
-                          // 'placeholder' =>'Nombre entre 1 et 8 ;)',
-                           'require' => false,
-                        ],
-                'label'=> 'Nom',
+            ->add('nom', TextType::class)
+            ->add('prenom', TextType::class)
+            ->add('email', EmailType::class ,array('label'=> 'E-Mail',))
+            ->add('entreprise', TextType::class ,array(
+                'attr' => ['require' => false,],
+                'label'=> 'Entreprise/Organisme  - (Optionnel)',))
+            ->add('cateWeb', CheckboxType::class ,array(
+                'label'=> 'Site web',))
+            ->add('cateAudiovisuel', CheckboxType::class ,array(
+                'label'=> 'Audiovisuel',))
+            ->add('cateSocial', CheckboxType::class ,array(
+                'label'=> 'Réseaux sociaux',))
+            ->add('cateMateriel', CheckboxType::class ,array(
+                'label'=> 'Matériel',))
+            ->add('objet', TextType::class  ,array(
+                'attr' => [ 'require' => true,],))
+            ->add('message',  TextareaType::class  ,array(
+                'attr' => [ 'require' => true,],))
+            ->add('rgpd', CheckboxType::class ,array(
+                'attr' => ['require' => true,],
+                'label'=> '  En soumettant ce formulaire, j\'accepte que les informations saisies dans ce formulaire soient utilisées, exploitées, traitées pour permettre de me recontacter, pour m’envoyer la newsletter, dans le cadre de la relation commerciale qui découle de
+                    cette demande de devis.',
             ))
-            ->add('prenom', TextType::class ,array(
-                'attr' => [
-                    // 'id' => "check_prenom",    
-                    // 'class' => 'contactTopInputRight',
-                          // 'placeholder' =>'Nombre entre 1 et 8 ;)',
-                           'require' => false,
-                        ],
-                'label'=> 'Prenom',
-            ))
-            ->add('Email', EmailType::class)
-            ->add('Entreprise')
-            ->add('cateWeb', CheckboxType::class)
-            ->add('cateAudiovisuel', CheckboxType::class)
-            ->add('cateSocial', CheckboxType::class)
-            ->add('cateMateriel', CheckboxType::class)
-            ->add('Object')
-            ->add('Message',  TextareaType::class)
-            ->add('rgpd', CheckboxType::class)
         ;
     }
+
+
 
     public function configureOptions(OptionsResolver $resolver)
     {
