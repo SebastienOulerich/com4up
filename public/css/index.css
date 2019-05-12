@@ -4,6 +4,10 @@
 	width: 100%;
 }
 
+#Mobile_service {
+	display: none;
+}
+
 #Services_mob a {
 	width: 25%;
 	min-width: 25%;
@@ -523,8 +527,43 @@ width: 100%;
 }
 
 @media screen and (max-width: 1024px) {
+	#Mobile_service {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+		#Mobile_service .swiper-wrapper .swiper-slide a {
+		width: 100%;
+		min-width: 100%;
+		max-width: 100%;
+		min-height: auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#Mobile_service .swiper-wrapper .swiper-slide p {
+		min-width: 8%;
+		width: 8%;
+		margin: auto 0 auto 0;
+		position: absolute;
+		white-space: nowrap;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 999;
+		border-bottom: solid white 2px;
+		font-family: "Bebas", sans-serif;
+		font-weight: bold;
+		font-size: 2.25em;
+		color: white;
+	}
+
+
 	#Services_mob {
 		flex-wrap: nowrap;
+		display: none;
 	}
 
 	#Services_mob a {

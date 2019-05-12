@@ -22,6 +22,17 @@ class ProjectsController extends Controller
       return $this->render('base/projets.html.twig', array('projects' => $projects));
   }
 
+
+  /**
+   * @Route("/projets/{slug}-{id}", name="project_id", requirements={"slug": [a-z0-9\-])
+   */
+  public function projet_id($slug, $id)
+  {
+      // replace this line with your own code!
+      $project = $this->repository->find($id);
+      return $this->render('base/projet_id.html.twig', ['project' => $project]);
+  }
+
     /**
      * @Route("/new-project", name="new_project")
      */

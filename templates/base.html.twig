@@ -83,7 +83,11 @@
   <header id='HeaderMobile'>
     <div id="HeaderMobileTop">
       <h1 class="logo"><a href="{{ path('default') }}"><span class="Com">Com</span><span class="Four">4</span><span class="Up">Up</span></a></h1>
-      <i class="far fa-bars" id="NavMobileIcone" onclick="navMobile()"></i>
+      <div id="nav-icon1" onclick="navMobile()">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
     </div>
     <ul>
       {% if app.request.attributes.get('_route') == "default" %}
@@ -172,6 +176,12 @@ addEvent(window, "load", adpaterHauteur);
 addEvent(window, "resize", adpaterHauteur);
 </script>
 <script>
+$(document).ready(function(){
+	$('#nav-icon1').click(function(){
+		$(this).toggleClass('open');
+	});
+});
+
 var Nav = 0;
 function navMobile() {
     if ( Nav == 0) {

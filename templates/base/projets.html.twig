@@ -42,7 +42,7 @@
 <div id="Integrale_Image">
 {% set counter = 0 %}
 {% for project in projects | slice(0,12) %}
-<a href=" projet.URLSite "><img class="Images_Projet" src={{asset("images/projets/com4up.jpg")}} alt="Bandeau"><div class="Projet_hover
+<a href=" {{ path('project_id', {id : project.id, slug: project.slug}) }} "><img class="Images_Projet" src={{asset("images/projets/com4up.jpg")}} alt="Bandeau"><div class="Projet_hover
 {% if project.categorie == "0" %} {% endif %}
 {% if project.categorie == "1" %}Projet_hover_web {% endif %}
 {% if project.categorie == "2" %}Projet_hover_audiovisuel {% endif %}

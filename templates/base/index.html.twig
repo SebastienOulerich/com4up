@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 {% block title %}Accueil{% endblock %}
 {% block stylesheets %}
-<link type="text/css" rel="stylesheet" href={{asset("css/index.css")}} />{% endblock %}
+<link type="text/css" rel="stylesheet" href={{asset("css/index.css")}} />
+<link rel="stylesheet" href="{{ asset('css/swiper.min.css') }}">
+{% endblock %}
 {% block body%}
 
 <div id="Services_mob">
@@ -12,6 +14,23 @@
 </div>
 
 
+<div class="swiper-container" id="Mobile_service">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <a href="{{ path('services_web') }}" class="Bloc_web"><img class="service_mob_pic" src={{asset("images/Accueil-Web.jpg")}} alt="Service web"><p>Site web</p><div class="Web_hover"></div></a>
+    </div>
+    <div class="swiper-slide">
+      <a href="{{ path('services_audiovisuel') }}" class="Bloc_audiovisuel"><img class="audiovisuel_mob_pic" src={{asset("images/Accueil-Audiovisuel.jpg")}} alt="Service audiovisuel"><p>Audiovisuel</p><div class="Audiovisuel_hover"></div></a>
+    </div>
+    <div class="swiper-slide">
+      <a href="{{ path('services_social') }}" class="Bloc_Social"><img class="social_mob_pic" src={{asset("images/Accueil-Reseaux.jpg")}} alt="Service réseaux sociaux"><p>Réseaux sociaux</p><div class="Social_hover"></div></a>
+    </div>
+    <div class="swiper-slide">
+      <a href="{{ path('services_materiel') }}" class="Bloc_materiel"><img class="materiel_mob_pic" src={{asset("images/Accueil-Materiel.jpg")}} alt="Service matériel"><p>Matériel</p><div class="Materiel_hover"></div></a>
+    </div>
+  </div>
+</div>
+</div>
 <div id="Une_Colonne">
   <h1 id="Titre_Principal">Travaux Récents</h1>
   <ul id="Categorie_Selection">
@@ -51,7 +70,7 @@
       <div class="Projet_hover_border"></div>
     </div>
   </a>
-  <a href="{{ path('projet_id') }}"><img class="Images_Projet" src={{asset("images/projets/faeriths.jpg")}} alt="Bandeau">
+  <a href=""><img class="Images_Projet" src={{asset("images/projets/faeriths.jpg")}} alt="Bandeau">
     <div class="Projet_hover Projet_hover_web">
       <div class="Projet_hover_border"></div>
     </div>
@@ -252,4 +271,41 @@
   </div>
 </div>
 
+{% endblock %}
+
+
+{% block javascripts %}
+  <!-- Swiper JS -->
+  <script type="text/javascript" src="../js/swiper.min.js"></script>
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper1 = new Swiper('.swiper-container', {
+      pagination: '.swiper-pagination',
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+      slidesPerView: 1,
+      paginationClickable: true,
+      spaceBetween: 0,
+      loop: true
+    });
+
+    var swiper2 = new Swiper('.Confiance_Slider', {
+      pagination: '.swiper-pagination',
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+      slidesPerView: 5,
+      paginationClickable: true,
+      spaceBetween: 0,
+      loop: true
+    });
+    var swiper3 = new Swiper('.Confiance_Slider_mobile', {
+      pagination: '.swiper-pagination',
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+      slidesPerView: 1,
+      paginationClickable: true,
+      spaceBetween: 0,
+      loop: true
+    });
+  </script>
 {% endblock %}

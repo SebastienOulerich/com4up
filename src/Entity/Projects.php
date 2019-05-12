@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Cocur\Slugify\Slugify;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProjectsRepository")
@@ -20,6 +21,7 @@ class Projects
      * @ORM\Column(type="string", length=255)
      */
     private $title;
+
 
     /**
      * @ORM\Column(type="text")
@@ -60,6 +62,12 @@ class Projects
     {
         return $this->title;
     }
+
+    public function getSlug(): ?string
+    {
+        return (new Slugify())->slugify($this->title);
+    }
+
 
     public function setTitle(string $title): self
     {

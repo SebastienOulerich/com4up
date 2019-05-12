@@ -73,16 +73,6 @@ class DefaultController extends Controller
         return $this->render('base/services_materiel_tarif.html.twig');
     }
 
-
-    /**
-     * @Route("/projet-id", name="projet_id")
-     */
-    public function projet_id()
-    {
-        // replace this line with your own code!
-        return $this->render('base/projet_id.html.twig');
-    }
-
     /**
      * @Route("/equipe", name="equipe")
      */
