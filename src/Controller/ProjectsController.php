@@ -24,12 +24,13 @@ class ProjectsController extends Controller
 
 
   /**
-   * @Route("/projets/{slug}-{id}", name="project_id", requirements={"slug": [a-z0-9\-])
+   * @Route("/projets/{slug}-{id}", name="project_id", requirements={"slug" : "[a-z0-9\-]*"})
    */
   public function projet_id($slug, $id)
   {
       // replace this line with your own code!
-      $project = $this->repository->find($id);
+      $em = $this->getDoctrine()->getManager();
+      $project = $em->getRepository(Projects::class)->find($id);
       return $this->render('base/projet_id.html.twig', ['project' => $project]);
   }
 
@@ -50,7 +51,8 @@ class ProjectsController extends Controller
               $em->persist($project);
               $em->flush();
         // replace this line with your own code!
-        return $this->render('base/addProject.html.twig');
+        return $this->redirectToRoute('projets');
+        // return $this->render('base/addProject.html.twig');
     }
 
 
