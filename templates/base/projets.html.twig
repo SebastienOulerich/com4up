@@ -3,61 +3,235 @@
 {% block stylesheets %}
 <link type="text/css" rel="stylesheet" href={{asset("css/projets.css")}} />{% endblock %}
 {% block body%}
-
+<div id="app">
 <img id="Bandeau" src={{asset("images/banniere-projets.jpg")}} alt="Bandeau">
 
 <div id="Une_Ligne">
   <h1 id="Titre_Principal">Travaux Récents</h1>
-  <ul id="Categorie_Selection">
-    <li>
+  <ul  id="Categorie_Selection">
+    <li v-on:click="setSelect('All')">
       Tous
     </li>
     <li class="Espace_Slash">
       /
     </li>
-    <li>
+    <li v-on:click="setSelect('web')">
       Site Web
     </li>
     <li class="Espace_Slash">
       /
     </li>
-    <li>
+    <li v-on:click="setSelect('audiovisuel')">
       Audiovisuel
     </li>
     <li class="Espace_Slash">
       /
     </li>
-    <li>
+    <li v-on:click="setSelect('social')">
       Réseaux Sociaux
     </li>
     <li class="Espace_Slash">
       /
     </li>
-    <li>
+    <li v-on:click="setSelect('materiel')">
       Matériel
     </li>
   </ul>
 </div>
 
 <div id="Integrale_Image">
-{% set counter = 0 %}
-{% for project in projects | slice(0,12) %}
-<a href=" {{ path('project_id', {id : project.id, slug: project.slug}) }} "><img class="Images_Projet" src={{asset("images/projets/com4up.jpg")}} alt="Bandeau"><div class="Projet_hover
-{% if project.categorie == "0" %} {% endif %}
-{% if project.categorie == "1" %}Projet_hover_web {% endif %}
-{% if project.categorie == "2" %}Projet_hover_audiovisuel {% endif %}
-{% if project.categorie == "3" %}Projet_hover_social{% endif %}
-{% if project.categorie == "4" %}Projet_hover_materiel {% endif %}
-"><div class="Projet_hover_border"></div></div></a>
-{% set counter = counter + 1 %}
-{% endfor %}
-{% if counter != 12 %}
-{% for i in  counter..11 %}
-<a href=""><img class="Images_Projet" src={{asset("images/projets/Projet.jpg")}} alt="Bandeau"></a>
-{% set counter = counter + 1 %}
-{% endfor %}
-{% endif %}
+{# {% set counter = 0 %} #}
+{# <div v-for="projet in projets"> #}
+  <a v-for="projet in projets" v-bind:href="'/projets/' + projet.slug + - + projet.id" ><img class="Images_Projet" src={{asset("images/projets/com4up.jpg")}} alt="Bandeau"><div class="Projet_hover"><div class="Projet_hover_border"></div></div></a>
+  {# <a href=" {{ path('project_id', {id : project.id, slug: project.slug}) }} "><img class="Images_Projet" src={{asset("images/projets/com4up.jpg")}} alt="Bandeau"><div class="Projet_hover #}
+
+{# </div> #}
+
+
+
+
+
+
+
+{# {% for project in projects | slice(0,12) %} #}
+{# <a href=" {{ path('project_id', {id : project.id, slug: project.slug}) }} "><img class="Images_Projet" src={{asset("images/projets/com4up.jpg")}} alt="Bandeau"><div class="Projet_hover #}
+{# {% if project.categorie == "0" %} {% endif %} #}
+{# {% if project.categorie == "1" %}Projet_hover_web {% endif %} #}
+{# {% if project.categorie == "2" %}Projet_hover_audiovisuel {% endif %} #}
+{# {% if project.categorie == "3" %}Projet_hover_social{% endif %} #}
+{# {% if project.categorie == "4" %}Projet_hover_materiel {% endif %} #}
+{# "><div class="Projet_hover_border"></div></div></a> #}
+{# {% set counter = counter + 1 %} #}
+{# {% endfor %} #}
+{# {% if counter != 12 %} #}
+{# {% for i in  counter..11 %} #}
+{# <a href=""><img class="Images_Projet" src={{asset("images/projets/Projet.jpg")}} alt="Bandeau"></a> #}
+{# {% set counter = counter + 1 %} #}
+{# {% endfor %} #}
+{# {% endif %} #}
 </div>
+<template>
+      <div v-if="page == 1">
+      <button style="background-color:blue;" v-on:click="setPage(page)">{page}</button>
+      <button v-on:click="setPage(page + 1)">{page + 1}</button>
+      <button v-on:click="setPage(page + 2)">{page + 2}</button>
+      ...
+      <button v-on:click="setPage(nbrPage)">{nbrPage}</button>
+
+      </div>
+      <div v-else-if="page < 3">
+      <button  v-on:click="setPage(page -1)">{page -1}</button>
+      <button style="background-color:blue;" v-on:click="setPage(page)">{page}</button>
+      <button v-on:click="setPage(page + 1)">{page + 1}</button>
+      ...
+      <button v-on:click="setPage(nbrPage)">{nbrPage}</button>
+
+      </div>
+      <div v-else-if="page >= 3 && page < nbrPage - 1">
+      <button v-on:click="setPage(1)">1</button>
+      ...
+      <button v-on:click="setPage(page - 1)">{page - 1}</button>
+      <button style="background-color:blue;" v-on:click="setPage(page)">{page}</button>
+      <button v-on:click="setPage(page + 1)">{page + 1}</button>
+      ...
+      <button v-on:click="setPage(nbrPage)">{nbrPage}</button>
+
+      </div>
+      <div v-else-if="page == (nbrPage - 1)">
+      <button v-on:click="setPage(1)">1</button>
+      ...
+      <button v-on:click="setPage(page - 1)">{page - 1}</button>
+      <button style="background-color:blue;"  v-on:click="setPage(page)">{page}</button>
+      <button v-on:click="setPage(page + 1)">{page + 1}</button>
+      </div>
+      <div v-else-if="page == nbrPage">
+      <button v-on:click="setPage(1)">1</button>
+      ...
+      <button v-on:click="setPage(page - 2)">{page - 2}</button>
+      <button v-on:click="setPage(page - 1)">{page - 1}</button>
+      <button style="background-color:blue;" v-on:click="setPage(page)">{page}</button>
+      </div>
+</template>
+</div>
+    
+
+{% endblock %}
+{% block js %}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="{{asset('js/vue.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 
 
+	  <script>
+        var app = new Vue({
+            el: '#app',
+            delimiters: [
+                '{', '}'
+            ],
+            data: {
+                projets: [],
+                select: "All",
+                page: 1,
+                count: 0,
+                nbrPage : 0,
+                onLoad : false
+            },
+            mounted() {
+                //this.sayHello();
+                this.getArticle();
+                this.getCount();
+            },
+            methods: {
+                setSelect(selection) {
+          					this.page = 1;
+                    this.select = selection;
+                    this.getArticleSelection();
+                },
+                setPage(page) {
+                    console.log('Set page');
+                    if(this.page != page)
+                    {
+                        this.page = page;
+                        console.log(this.page);
+                        
+                        if(this.select == 'All'){
+                            this.getArticle();
+                        }
+                        else{
+                            this.getArticleSelection();
+                        }
+                    }
+                },
+                setLoad() {
+                    console.log('Set load');
+                    if(this.onLoad == false)
+                    {
+                         this.onLoad = true;
+                    }
+                    else{
+                        this.onLoad = false;
+                    }
+                    
+                },
+                getArticle() {
+                    console.log("get Article");
+                    this.onLoad = true;
+                    axios({
+                        method: 'POST',
+                        url: '/get-projet',
+                        data: {
+                            page: this.page
+                        }
+                    }).then(response => {
+                        var json = JSON.parse(response.data);
+                        console.log(json);
+
+                        var object = this;
+						            this.projets = [];
+                        
+                        $.each(json, function (key, value) {
+                            object.projets.push({"id" : value.id,"slug": value.slug});
+                        });
+                        this.onLoad = false;
+                        
+                    })
+                },
+                getArticleSelection() {
+                    console.log("get Article Selection");
+                    axios({
+                        method: 'POST',
+                        url: '/get-projet-selection',
+                        data: {
+                            //id :this.biens[0],
+                            selection: this.select,
+                            page: this.page
+                        }
+                    }).then(response => {
+                        var json = JSON.parse(response.data);
+                        var object = this;
+                        this.projets = [];
+                        $.each(json, function (key, value) {
+                            object.projets.push({"id" : value.id, "slug": value.slug});
+                        });
+                        this.getCount();
+                    })
+                },
+                getCount() {
+                    console.log("get Count");
+                    axios({
+                        method: 'POST',
+                        url: '/count-projet',
+                        data: {
+                            //id :this.biens[0],
+                            selection: this.select
+                        }
+                    }).then(response => {
+                        var json = JSON.parse(response.data);
+                        this.count = json;
+                        this.nbrPage =  Math.ceil(this.count / 6 )
+                    })
+                }
+            }
+        })
+    </script>
 {% endblock %}

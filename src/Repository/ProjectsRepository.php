@@ -35,7 +35,49 @@ class ProjectsRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function myGetProjet($page)
+    {
+        return $this->createQueryBuilder('b')
+        ->setFirstResult(($page-1)*6)
+        ->setMaxResults(6)
+        ->orderBy('b.date','ASC')
+        ->getQuery()
+        ->getResult()
+        ;
+    }
+    public function myGetProjetByType($categorie,$page)
+    {
+        $query =  $this->createQueryBuilder('b')
+        ->where('b.categorie = :categorie')
+        ->setParameter('categorie', $categorie)
+        ->setFirstResult(($page-1)*6)
+        ->setMaxResults(6)
+        ->orderBy('b.date','ASC')
+      
+        ->getQuery()
+        ->getResult()
+        ;
+        return $query;
+    }
 
+    public function myCount()
+    {
+        return $this->createQueryBuilder('b')
+            ->select('count(b)')
+            ->getQuery()
+            ->getSingleScalarResult()
+        ;
+    }
+    public function myCountByTri($categorie)
+    {
+        return $this->createQueryBuilder('b')
+            ->select('count(b)')
+            ->where("b.categorie like :categorie")
+            ->setParameter("categorie" , $categorie)
+            ->getQuery()
+            ->getSingleScalarResult()
+        ;
+    }
     /*
     public function findOneBySomeField($value): ?Projects
     {

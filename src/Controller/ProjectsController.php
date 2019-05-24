@@ -50,7 +50,58 @@ class ProjectsController extends Controller
      */
     public function new_project(Request $request)
     {
+      $project = new Projects();
+      $project->setTitle("test")
+              ->setDescription("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+              ->setClient("Projet interne")
+              ->setDate("01 mai 2019")
+              ->setCategorie("web")
+              ->setTechno("symphony")
+              ->setURLSite("https://com4up.fr");
+              $em = $this->getDoctrine()->getManager();
+              $em->persist($project);
+              $em->flush();
+        // replace this line with your own code!
+        return $this->redirectToRoute('projets');
+        // return $this->render('base/addProject.html.twig');
+    }
 
+     /**
+     * @Route("/get-projet",name="getProjet")
+     */
+    public function getProjet(Request $request, RegistryInterface $doctrine)
+    {
+        $user1 = $this->getUser();
+        $request_stack = $this->container->get('request_stack');
+        $request = $request_stack->getCurrentRequest();
+        $content = $request->getContent();
+        $contentDecode = json_decode($content);
+        $page = $contentDecode->page;
+        $projets = $doctrine->getRepository(Projects::class)->myGetProjet($page);
+        // var_dump($projets);
+        // foreach ($projets as $projet) {
+          // var_dump($projet->getSlug());
+        // }
+        $encoders = array(new XmlEncoder(), new JsonEncoder());
+        $normalizer = new ObjectNormalizer();
+        $normalizer->setCircularReferenceLimit(2);
+        // Add Circular reference handler
+        $normalizer->setCircularReferenceHandler(function ($object) {
+            return $object->getId();
+        });
+
+        $normalizers = array($normalizer);
+        $serializer = new Serializer($normalizers, $encoders);
+        $jsonContent = $serializer->serialize($projets, 'json');
+        
+        $response = new JsonResponse();
+        $response->setData($jsonContent);
+        // dump($response);
+       
+        return $response;
+    }
+
+     /**
 
     $project = new Projects();
 
@@ -93,6 +144,7 @@ class ProjectsController extends Controller
      /**
      * @Route("/get-projet",name="getProjet")
      */
+  /*
     public function getProjet(Request $request, RegistryInterface $doctrine)
     {
         $user1 = $this->getUser();
@@ -124,7 +176,7 @@ class ProjectsController extends Controller
 
         return $response;
     }
-
+*/
      /**
      * @Route("/get-projet-selection",name="getProjetSelection")
      */
