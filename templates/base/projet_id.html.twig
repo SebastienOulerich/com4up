@@ -12,27 +12,27 @@
     </div>
   <div id="Partie_Haute_Centre">
     <i class="far fa-angle-left icone-awesome" aria-hidden></i>
-    <h1>FAERITH'S</h1>
+    <h1>{{ project.title }}</h1>
     <i class="far fa-angle-right icone-awesome" aria-hidden></i>
     </div>
     <div id="Partie_Haute_Droite">
-      <a href="https://faeriths.fr" target="_blank"><h2 id="Bouton_Visite">VISITER LE SITE</h2></a>
+    {% if project.URLSite %}
+      <a href="project.URLSite" target="_blank"><h2 id="Bouton_Visite">VISITER LE SITE</h2></a>
+      {% endif %}
       </div>
 </div>
 
 <div id="Bandeau_Information">
   <div id="Integrale_Information">
     <div id="Information_Gauche">
-      <h3 id="Client">Client : Projet Personnel</h3>
-      <h3 id="Categorie">Catégorie :&nbsp<a href="{{ path('projets') }}">Site Web</a></h3>
+      <h3 id="Client">Client :{{ project.client }}</h3>
+      <h3 id="Categorie">Catégorie :&nbsp<a href="{{ path('projets') }}">{{ project.categorie }}</a></h3>
       </div>
     <div id="Information_Droite">
-      <h3 id="Date">Date : Septembre 2019</h3>
+      <h3 id="Date">Date :{{ project.date }}</h3>
       <div id="Technologies">
         <h3>Technologies utilisées :</h3>
-        <i class="fab fa-html5" aria-hidden></i>
-        <i class="fab fa-css3" aria-hidden></i>
-        <i class="fas fa-server" aria-hidden></i>
+      {{  project.techno }}
         </div>
       </div>
     </div>
@@ -41,7 +41,7 @@
   <div id="Description_Integrale">
     <h4>Description :</h4>
     <p>
-      Faerith's est un collectif de créateurs de contenus sur Internet (vidéos, lives, articles, ...), principalement axé sur le jeux vidéo ainsi que la culture geek.
+    {{  project.description }}
       </p>
       <div id="Apercu">
         <i class="fas fa-arrow-circle-left" aria-hidden></i>

@@ -3,6 +3,10 @@
 {% block stylesheets %}
 <link type="text/css" rel="stylesheet" href={{asset("css/addProject.css")}} />
 {% endblock %}
-{% block body%}
 
+{% block body%}
+  {{ form_start(form) }}
+  {{ form_widget(form) }}
+    <input id="submit" type="submit" value="AJOUTER"/>
+  {{ form_end(form) }}
 {% endblock %}
