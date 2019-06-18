@@ -39,6 +39,14 @@
   </ul>
 </div>
 
+<div class="cards">
+  {% set counter = 0 %}
+  {% for i in  counter..11 %}
+  <img class="card" src={{asset("images/projets/Projet.jpg")}} alt="Bandeau" id="card-{{ counter }}">
+   {% set counter = counter + 1 %}
+   {% endfor %}
+</div>
+
 <div id="Integrale_Image">
 {# {% set counter = 0 %} #}
 {# <div v-for="projet in projets"> #}
@@ -113,7 +121,7 @@
       </div>
 </template>
 </div>
-    
+
 
 {% endblock %}
 {% block js %}
@@ -153,7 +161,7 @@
                     {
                         this.page = page;
                         console.log(this.page);
-                        
+
                         if(this.select == 'All'){
                             this.getArticle();
                         }
@@ -171,7 +179,7 @@
                     else{
                         this.onLoad = false;
                     }
-                    
+
                 },
                 getArticle() {
                     console.log("get Article");
@@ -188,12 +196,12 @@
 
                         var object = this;
 						            this.projets = [];
-                        
+
                         $.each(json, function (key, value) {
                             object.projets.push({"id" : value.id,"slug": value.slug});
                         });
                         this.onLoad = false;
-                        
+
                     })
                 },
                 getArticleSelection() {
@@ -234,4 +242,46 @@
             }
         })
     </script>
+
+    <script>
+      let cards = Array.from(document.querySelectorAll('.card'))
+
+      cards.forEach((card) => {
+        card.addEventListener('click', function () {
+          let flip = new Flip()
+          flip.read(cards)
+          card.parentNode.removeChild(card)
+          flip.play(cards.filter(c => c !== card))
+        })
+      })
+
+      class Flip {
+        constructor () {
+          this.duration = 500
+          this.positions = {}
+        }
+
+
+        read (elements) {
+          elements.forEach(element => {
+            const id = element.getAttribute('id')
+            this.positions[id] = element.getBoundingClientRect()
+          })
+        }
+
+        play (elements) {
+          elements.forEach(element => {
+            const id = element.getAttribute('id')
+            const newPosition = element.getBoundingClientRect()
+            const oldPosition = this.positions[id]
+            const deltaX = oldPosition.x - newPosition.x
+            const deltaY = oldPosition.y - newPosition.y
+            const deltaW = oldPosition.width / newPosition.width
+            const deltaH = oldPosition.height / newPosition.height
+            element.style.transform = 'translate(${deltaX}px, ${deltaY}px) scale(${deltaW}, ${deltaH})'
+          })
+        }
+      }
+
+      </script>
 {% endblock %}
