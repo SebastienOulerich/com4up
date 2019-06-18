@@ -278,7 +278,15 @@
             const deltaY = oldPosition.y - newPosition.y
             const deltaW = oldPosition.width / newPosition.width
             const deltaH = oldPosition.height / newPosition.height
-            element.style.transform = 'translate(${deltaX}px, ${deltaY}px) scale(${deltaW}, ${deltaH})'
+            element.animate([{
+              transform: `translate(${deltaX}px, ${deltaY}px) scale(${deltaW}, ${deltaH})`
+            },{
+              transform: 'none'
+            }], {
+              duration: this.duration,
+              easing: 'ease-in-out',
+              fill: 'both'
+            })
           })
         }
       }
