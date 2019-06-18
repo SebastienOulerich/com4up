@@ -251,13 +251,14 @@
           let flip = new Flip()
           flip.read(cards)
           card.parentNode.removeChild(card)
-          flip.play(cards.filter(c => c !== card))
+          cards = cards.filter(c => c !== card)
+          flip.play(cards)
         })
       })
 
       class Flip {
         constructor () {
-          this.duration = 500
+          this.duration = 300
           this.positions = {}
         }
 
@@ -287,6 +288,7 @@
               easing: 'ease-in-out',
               fill: 'both'
             })
+            element.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(${deltaW}, ${deltaH})`
           })
         }
       }
