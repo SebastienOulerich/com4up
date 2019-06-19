@@ -20,18 +20,16 @@ class ImageUploadListener
 
     public function prePersist(LifecycleEventArgs $args)
     {
-     
         $entity = $args->getEntity();
 
  
-       
         if (!$entity instanceof Image) {
-            var_dump("Not Image");
-            // if(method_exists($entity,'getImage'))
-            // {
-            //     $entity = $entity->getImage();
-            //     $this->uploadFile($entity);
-            // }
+            
+            if(method_exists($entity,'getImage'))
+            {
+                $entity = $entity->getImage();
+                $this->uploadFile($entity);
+            }
             if(method_exists($entity,'getBanner'))
             {
                 var_dump("getBanner");
@@ -53,7 +51,7 @@ class ImageUploadListener
             // }
         }
         else{
-            var_dump("image");
+            
             $this->uploadFile($entity);
         }
     }
@@ -61,7 +59,6 @@ class ImageUploadListener
     public function preUpdate(PreUpdateEventArgs $args)
     {
         var_dump("update ?");
-        s;
         $entity = $args->getEntity();
 
          if (!$entity instanceof Image) {
@@ -78,8 +75,6 @@ class ImageUploadListener
         
         if(!$entity instanceof Image)
         {
-            var_dump($entity);
-            s;
             return;
         }
         $file = $entity->getFilename();    

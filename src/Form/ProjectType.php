@@ -6,6 +6,7 @@ use App\Entity\Projects;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use App\Form\ImageType;
 
 class ProjectType extends AbstractType
 {
@@ -19,6 +20,7 @@ class ProjectType extends AbstractType
             ->add('categorie')
             ->add('techno')
             ->add('URL_site')
+            ->add('banner', ImageType::class)
         ;
     }
 

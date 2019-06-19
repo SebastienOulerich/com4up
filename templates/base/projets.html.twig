@@ -42,7 +42,8 @@
 <div id="Integrale_Image">
 {# {% set counter = 0 %} #}
 {# <div v-for="projet in projets"> #}
-  <a v-for="projet in projets" v-bind:href="'/projets/' + projet.slug + - + projet.id" ><img class="Images_Projet" src={{asset("images/projets/com4up.jpg")}} alt="Bandeau"><div class="Projet_hover"><div class="Projet_hover_border"></div></div></a>
+  {# <a v-for="projet in projets" v-bind:href="'/projets/' + projet.slug + - + projet.id" ><img class="Images_Projet" src={{asset("images/projets/com4up.jpg")}} alt="Bandeau"><div class="Projet_hover"><div class="Projet_hover_border"></div></div></a> #}
+  <a v-for="projet in projets" v-bind:href="'/projets/' + projet.slug + - + projet.id" ><img class="Images_Projet" v-bind:src=projet.banner alt="Bandeau"><div class="Projet_hover"><div class="Projet_hover_border"></div></div></a>
   {# <a href=" {{ path('project_id', {id : project.id, slug: project.slug}) }} "><img class="Images_Projet" src={{asset("images/projets/com4up.jpg")}} alt="Bandeau"><div class="Projet_hover #}
 
 {# </div> #}
@@ -187,10 +188,10 @@
                         console.log(json);
 
                         var object = this;
-						            this.projets = [];
+						this.projets = [];
                         
                         $.each(json, function (key, value) {
-                            object.projets.push({"id" : value.id,"slug": value.slug});
+                            object.projets.push({"id" : value.id,"slug": value.slug, "banner": value.banner.path});
                         });
                         this.onLoad = false;
                         

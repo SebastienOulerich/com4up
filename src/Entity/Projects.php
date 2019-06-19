@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Cocur\Slugify\Slugify;
 
@@ -51,6 +53,22 @@ class Projects
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $URL_site;
+
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Image", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $banner;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="projects")
+     */
+    private $gallery;
+
+    public function __construct()
+    {
+        $this->gallery = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -143,6 +161,49 @@ class Projects
     public function setURLSite(?string $URL_site): self
     {
         $this->URL_site = $URL_site;
+
+        return $this;
+    }
+
+    public function getBanner(): ?Image
+    {
+        return $this->banner;
+    }
+
+    public function setBanner(Image $banner): self
+    {
+        $this->banner = $banner;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Image[]
+     */
+    public function getGallery(): Collection
+    {
+        return $this->gallery;
+    }
+
+    public function addGallery(Image $gallery): self
+    {
+        if (!$this->gallery->contains($gallery)) {
+            $this->gallery[] = $gallery;
+            $gallery->setProjects($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGallery(Image $gallery): self
+    {
+        if ($this->gallery->contains($gallery)) {
+            $this->gallery->removeElement($gallery);
+            // set the owning side to null (unless already changed)
+            if ($gallery->getProjects() === $this) {
+                $gallery->setProjects(null);
+            }
+        }
 
         return $this;
     }

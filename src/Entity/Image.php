@@ -40,10 +40,16 @@ class Image
     private $alt;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Projects", inversedBy="galery")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Projects", inversedBy="gallery")
      */
-    private $project;
+    private $projects;
+
+
+    // /**
+    //  * @ORM\ManyToOne(targetEntity="App\Entity\Projects", inversedBy="galery")
+    //  * @ORM\JoinColumn(nullable=false)
+    //  */
+    // private $project;
 
     public function getId(): ?int
     {
@@ -86,15 +92,27 @@ class Image
         return $this;
     }
 
-    public function getProject(): ?Projects
+    public function getProjects(): ?Projects
     {
-        return $this->project;
+        return $this->projects;
     }
 
-    public function setProject(?Projects $project): self
+    public function setProjects(?Projects $projects): self
     {
-        $this->project = $project;
+        $this->projects = $projects;
 
         return $this;
     }
+
+    // public function getProject(): ?Projects
+    // {
+    //     return $this->project;
+    // }
+
+    // public function setProject(?Projects $project): self
+    // {
+    //     $this->project = $project;
+
+    //     return $this;
+    // }
 }
