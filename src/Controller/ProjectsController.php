@@ -4,7 +4,10 @@ namespace App\Controller;
 
 use App\Entity\Projects;
 use App\Form\ProjectType;
+use App\Form\EditProjectType;
 use App\Service\FileUploader;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\HttpFoundation\File\File;
 
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -54,7 +57,6 @@ class ProjectsController extends Controller
     {
       $project = new Projects();
       $form = $this->createForm(ProjectType::class, $project);
-
       // 2) handle the submit (will only happen on POST)
       $form->handleRequest($request);
       if ($form->isSubmitted() && $form->isValid()) {
@@ -69,6 +71,65 @@ class ProjectsController extends Controller
         ]);
     }
 
+    /**
+     * @Route("/edit-project/{id}", name="edit_project")
+     */
+    public function edit_project(Request $request,FileUploader $fileUploader, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $project = $em->getRepository(Projects::class)->find($id);
+        $originalGallery = new ArrayCollection();
+
+        // Create an ArrayCollection of the current Tag objects in the database
+        foreach ($project->getGallery() as $img) {
+            // var_dump($img);
+            $img->setFilename(new File($this->getParameter('uploadDirectory').'/'.$img->getFilename()));
+        }
+        foreach ($project->getGallery() as $img) {
+            $originalGallery->add($img);
+        }
+        $project->getBanner()->setFilename(new File($this->getParameter('uploadDirectory').'/'.$project->getBanner()->getFilename()));
+        $form = $this->createForm(ProjectType::class, $project);
+
+      // 2) handle the submit (will only happen on POST)
+      $form->handleRequest($request);
+      if ($form->isSubmitted() && $form->isValid()) {
+              $em = $this->getDoctrine()->getManager();
+                $i = 0;
+              foreach ($originalGallery as $img) {
+                  if($img != null)
+                    var_dump($img->getId());
+                
+                $i++;
+
+                // if (false === $project->getGallery()->contains($img)) {
+                //     // remove the Task from the Tag
+                //     // var_dump($img->getId());
+                //     // var_dump($img->getProjects());
+                // var_dump("Count : " . $i );
+                    // $img->getProjects()->removeElement($project);
+                //     s;
+                //     // if it was a many-to-one relationship, remove the relationship like this
+                    // $img->setProjects(null);
+    
+                //     // $entityManager->persist($tag);
+    
+                //     // if you wanted to delete the Tag entirely, you can also do that
+                //     // $entityManager->remove($tag);
+                // }
+                          
+      }
+      var_dump("Count : " . $i );
+    //   s;
+      $em->persist($project);
+      $em->flush();
+    }
+        // replace this line with your own code!
+        // return $this->redirectToRoute('projets');
+        return $this->render('base/editProject.html.twig',[
+            "form" => $form->createView(),
+        ]);
+    }
      /**
      * @Route("/get-projet",name="getProjet")
      */

@@ -61,7 +61,8 @@ class Projects
     private $banner;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="projects")
+     * @ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="projects", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
      */
     private $gallery;
 
@@ -187,11 +188,8 @@ class Projects
 
     public function addGallery(Image $gallery): self
     {
-        if (!$this->gallery->contains($gallery)) {
-            $this->gallery[] = $gallery;
-            $gallery->setProjects($this);
-        }
-
+        $gallery->setProjects($this);
+        $this->gallery->add($gallery);
         return $this;
     }
 

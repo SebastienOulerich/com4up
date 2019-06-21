@@ -46,9 +46,12 @@
       <div id="Apercu">
         <i class="fas fa-arrow-circle-left" aria-hidden></i>
         <div id="Responsive_Image">
-        <img src={{asset("images/projets/fas1.jpg")}} alt="Aperçu Faeriths">
+        {% for img in project.gallery %}
+          <img src={{asset( img.path )}} alt="Aperçu Faeriths">
+        {% endfor %}
+        {# <img src={{asset("images/projets/fas1.jpg")}} alt="Aperçu Faeriths">
         <img src={{asset("images/projets/fas2.jpg")}} alt="Aperçu Faeriths">
-        <img src={{asset("images/projets/fas3.jpg")}} alt="Aperçu Faeriths">
+        <img src={{asset("images/projets/fas3.jpg")}} alt="Aperçu Faeriths"> #}
           </div>
         <i class="fas fa-arrow-circle-right" aria-hidden></i>
         </div>

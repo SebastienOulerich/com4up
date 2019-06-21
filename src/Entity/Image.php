@@ -41,15 +41,10 @@ class Image
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Projects", inversedBy="gallery")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $projects;
 
-
-    // /**
-    //  * @ORM\ManyToOne(targetEntity="App\Entity\Projects", inversedBy="galery")
-    //  * @ORM\JoinColumn(nullable=false)
-    //  */
-    // private $project;
 
     public function getId(): ?int
     {
@@ -102,6 +97,11 @@ class Image
         $this->projects = $projects;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return (string) $this->getPath();
     }
 
     // public function getProject(): ?Projects

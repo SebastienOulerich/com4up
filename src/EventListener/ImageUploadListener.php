@@ -58,7 +58,7 @@ class ImageUploadListener
 
     public function preUpdate(PreUpdateEventArgs $args)
     {
-        var_dump("update ?");
+
         $entity = $args->getEntity();
 
          if (!$entity instanceof Image) {

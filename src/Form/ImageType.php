@@ -7,6 +7,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\Form\FormInterface;
 
 
 class ImageType extends AbstractType
@@ -21,11 +23,17 @@ class ImageType extends AbstractType
             ;
 }
 
+    // public function configureOptions(OptionsResolver $resolver)
     public function configureOptions(OptionsResolver $resolver)
         {
             $resolver->setDefaults([
                 'data_class' => Image::class,
             ]);
+            // $resolver->setDefaults(array(
+            //     'empty_data' => function (FormInterface $form) {
+            //         return new Image($form->get('title')->getData());
+            //     },
+            // ));
         }
 
 }

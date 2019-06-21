@@ -10,7 +10,11 @@
     <ul class="tags" data-prototype="{{ form_widget(form.gallery.vars.prototype)|e('html_attr') }}">
         {# iterate over each existing tag and render its only field: name #}
         {% for img in form.gallery %}
-            <li>{{ form_row(img.filename) }}</li>
+        <li>
+            {{ form_row(img.alt) }}
+            {{ form_row(img.filename) }}
+            <a href="#" class="remove-tag">x</a>
+        </li>
         {% endfor %}
     </ul>
     <input id="submit" type="submit" value="Submit"/>
