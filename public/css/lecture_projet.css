@@ -93,27 +93,12 @@ main {
 }
 
 #Apercu {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-#Apercu i {
-	font-size: 2em;
-}
-
-#Responsive_Image{
-	display: flex;
-	width: 100%;
-	justify-content: center;
-}
-
-#Responsive_Image img {
-	display: flex;
-	justify-content: center;
-	width: 25%;
-	height: 25%;
-	margin: 1em;
+  margin-top: 1em;
+width: 100%;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
 }
 
 .fa-th-large {
@@ -124,6 +109,46 @@ main {
   font-size: 1.25em;
 }
 
+.swiper-container {
+    width: 76.5%;
+        height: auto;
+}
+
+.swiper-wrapper {
+  height: auto;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    height: auto;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.swiper-slide img {
+width: 100%;
+height: 100%;
+}
+.button-prev {
+  	font-size: 2em;
+
+}
+
+.button-next {
+  	font-size: 2em;
+}
 @media screen and (max-width: 1280px) {
 
 #Integrale_Information, #Description_Integrale {
