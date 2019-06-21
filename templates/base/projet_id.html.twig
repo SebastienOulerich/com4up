@@ -69,7 +69,18 @@
         <div class="button-next"><i class="fas fa-arrow-circle-right" aria-hidden></i></div>
         </div>
     </div>
+    <img id="myImg" src={{asset("images/projets/fas1.jpg")}} alt="Aperçu Faeriths">
+    <div id="myModal" class="modal">
 
+      <!-- The Close Button -->
+      <span class="close">&times;</span>
+
+      <!-- Modal Content (The Image) -->
+      <img class="myImgZoom" id="img01" src={{asset("images/projets/fas1.jpg")}} alt="Aperçu Faeriths">
+
+      <!-- Modal Caption (Image Text) -->
+      <div class="caption" id="caption1"></div>
+    </div>
 
 
 {% endblock %}
@@ -89,5 +100,28 @@ var swiper = new Swiper('.swiper-container', {
     loop: true
 });
 </script>
+
+<script>
+  // Get the modal
+  var modal = document.getElementById("myModal");
+
+  // Get the image and insert it inside the modal - use its "alt" text as a caption
+  var img = document.getElementById("myImg");
+  var modalImg = document.getElementById("img01");
+  var captionText = document.getElementById("caption1");
+  img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  }
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  </script>
 
 {% endblock %}
