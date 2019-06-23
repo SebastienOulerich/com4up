@@ -152,9 +152,6 @@ height: 100%;
 
 /* Style the Image Used to Trigger the Modal */
 #myImg {
-  width: 10%;
-  height: auto;
-  border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
 }

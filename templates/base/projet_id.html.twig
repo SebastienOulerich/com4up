@@ -52,7 +52,7 @@
         <div class="swiper-container">
 
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src={{asset("images/projets/fas1.jpg")}} alt="Aperçu Faeriths"></div>
+                <div class="swiper-slide"><img id="myImg" src={{asset("images/projets/fas1.jpg")}} alt="Aperçu Faeriths"></div>
                 <div class="swiper-slide"><img src={{asset("images/projets/fas2.jpg")}} alt="Aperçu Faeriths"></div>
                 <div class="swiper-slide"><img src={{asset("images/projets/fas3.jpg")}} alt="Aperçu Faeriths"></div>
                 <div class="swiper-slide">Slide 4</div>
@@ -69,7 +69,6 @@
         <div class="button-next"><i class="fas fa-arrow-circle-right" aria-hidden></i></div>
         </div>
     </div>
-    <img id="myImg" src={{asset("images/projets/fas1.jpg")}} alt="Aperçu Faeriths">
     <div id="myModal" class="modal">
 
       <!-- The Close Button -->
@@ -109,6 +108,7 @@ var swiper = new Swiper('.swiper-container', {
   var img = document.getElementById("myImg");
   var modalImg = document.getElementById("img01");
   var captionText = document.getElementById("caption1");
+
   img.onclick = function(){
     modal.style.display = "block";
     modalImg.src = this.src;
