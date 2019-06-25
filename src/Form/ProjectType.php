@@ -23,6 +23,7 @@ class ProjectType extends AbstractType
             ->add('URL_site')
             ->add('banner', ImageType::class, [
                 // 'data_class' => null
+                'required' => false,
             ])
             ->add('gallery', CollectionType::class, [
                 'entry_type' => ImageType::class,
@@ -30,6 +31,7 @@ class ProjectType extends AbstractType
                 'allow_add' => true,
                 'by_reference' => false,
                 'allow_delete' => true,
+                'required' => false,
                 // 'data_class' => null
             ]);
         ;

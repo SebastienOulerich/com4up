@@ -27,46 +27,46 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ProjectsController extends Controller
 {
 
-  /**
-   * @Route("/projets", name="projets")
-   */
-  public function projets()
-  {
-      // replace this line with your own code!
-      $em = $this->getDoctrine()->getManager();
-      $projects = $em->getRepository(Projects::class)->findAll();
-      return $this->render('base/projets.html.twig', array('projects' => $projects));
-  }
+    /**
+     * @Route("/projets", name="projets")
+     */
+    public function projets()
+    {
+        // replace this line with your own code!
+        $em = $this->getDoctrine()->getManager();
+        $projects = $em->getRepository(Projects::class)->findAll();
+        return $this->render('base/projets.html.twig', array('projects' => $projects));
+    }
 
 
-  /**
-   * @Route("/projets/{slug}-{id}", name="project_id", requirements={"slug" : "[a-z0-9\-]*"})
-   */
-  public function projet_id($slug, $id)
-  {
-      // replace this line with your own code!
-      $em = $this->getDoctrine()->getManager();
-      $project = $em->getRepository(Projects::class)->find($id);
-      return $this->render('base/projet_id.html.twig', ['project' => $project]);
-  }
+    /**
+     * @Route("/projets/{slug}-{id}", name="project_id", requirements={"slug" : "[a-z0-9\-]*"})
+     */
+    public function projet_id($slug, $id)
+    {
+        // replace this line with your own code!
+        $em = $this->getDoctrine()->getManager();
+        $project = $em->getRepository(Projects::class)->find($id);
+        return $this->render('base/projet_id.html.twig', ['project' => $project]);
+    }
 
     /**
      * @Route("/new-project", name="new_project")
      */
-    public function new_project(Request $request,FileUploader $fileUploader)
+    public function new_project(Request $request, FileUploader $fileUploader)
     {
-      $project = new Projects();
-      $form = $this->createForm(ProjectType::class, $project);
-      // 2) handle the submit (will only happen on POST)
-      $form->handleRequest($request);
-      if ($form->isSubmitted() && $form->isValid()) {
-              $em = $this->getDoctrine()->getManager();
-              $em->persist($project);
-              $em->flush();
-      }
+        $project = new Projects();
+        $form = $this->createForm(ProjectType::class, $project);
+        // 2) handle the submit (will only happen on POST)
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($project);
+            $em->flush();
+        }
         // replace this line with your own code!
         // return $this->redirectToRoute('projets');
-        return $this->render('base/addProject.html.twig',[
+        return $this->render('base/addProject.html.twig', [
             "form" => $form->createView(),
         ]);
     }
@@ -74,7 +74,7 @@ class ProjectsController extends Controller
     /**
      * @Route("/edit-project/{id}", name="edit_project")
      */
-    public function edit_project(Request $request,FileUploader $fileUploader, $id)
+    public function edit_project(Request $request, FileUploader $fileUploader, $id)
     {
         $em = $this->getDoctrine()->getManager();
         $project = $em->getRepository(Projects::class)->find($id);
@@ -83,54 +83,37 @@ class ProjectsController extends Controller
         // Create an ArrayCollection of the current Tag objects in the database
         foreach ($project->getGallery() as $img) {
             // var_dump($img);
-            $img->setFilename(new File($this->getParameter('uploadDirectory').'/'.$img->getFilename()));
+            $img->setFilename(new File($this->getParameter('uploadDirectory') . '/' . $img->getFilename()));
         }
         foreach ($project->getGallery() as $img) {
             $originalGallery->add($img);
         }
-        $project->getBanner()->setFilename(new File($this->getParameter('uploadDirectory').'/'.$project->getBanner()->getFilename()));
+        $project->getBanner()->setFilename(new File($this->getParameter('uploadDirectory') . '/' . $project->getBanner()->getFilename()));
         $form = $this->createForm(ProjectType::class, $project);
+        $saveProject = $project->getBanner()->getFilename();
+        var_dump($saveProject);
+        // 2) handle the submit (will only happen on POST)
+        $form->handleRequest($request);
+        //   var_dump($saveProject);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+            //   var_dump($data->getBanner());
+            if ($data->getBanner()->getFilename() == null)
+                $data->getBanner()->setFilename($saveProject);
+            var_dump($data->getGallery());
 
-      // 2) handle the submit (will only happen on POST)
-      $form->handleRequest($request);
-      if ($form->isSubmitted() && $form->isValid()) {
-              $em = $this->getDoctrine()->getManager();
-                $i = 0;
-              foreach ($originalGallery as $img) {
-                  if($img != null)
-                    var_dump($img->getId());
-                
-                $i++;
-
-                // if (false === $project->getGallery()->contains($img)) {
-                //     // remove the Task from the Tag
-                //     // var_dump($img->getId());
-                //     // var_dump($img->getProjects());
-                // var_dump("Count : " . $i );
-                    // $img->getProjects()->removeElement($project);
-                //     s;
-                //     // if it was a many-to-one relationship, remove the relationship like this
-                    // $img->setProjects(null);
-    
-                //     // $entityManager->persist($tag);
-    
-                //     // if you wanted to delete the Tag entirely, you can also do that
-                //     // $entityManager->remove($tag);
-                // }
-                          
-      }
-      var_dump("Count : " . $i );
-    //   s;
-      $em->persist($project);
-      $em->flush();
-    }
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($project);
+            $em->flush();
+        }
         // replace this line with your own code!
         // return $this->redirectToRoute('projets');
-        return $this->render('base/editProject.html.twig',[
+        return $this->render('base/editProject.html.twig', [
             "form" => $form->createView(),
+            "project" => $project,
         ]);
     }
-     /**
+    /**
      * @Route("/get-projet",name="getProjet")
      */
     public function getProjet(Request $request, RegistryInterface $doctrine)
@@ -144,7 +127,7 @@ class ProjectsController extends Controller
         $projets = $doctrine->getRepository(Projects::class)->myGetProjet($page);
         // var_dump($projets);
         // foreach ($projets as $projet) {
-          // var_dump($projet->getSlug());
+        // var_dump($projet->getSlug());
         // }
         $encoders = array(new XmlEncoder(), new JsonEncoder());
         $normalizer = new ObjectNormalizer();
@@ -157,15 +140,15 @@ class ProjectsController extends Controller
         $normalizers = array($normalizer);
         $serializer = new Serializer($normalizers, $encoders);
         $jsonContent = $serializer->serialize($projets, 'json');
-        
+
         $response = new JsonResponse();
         $response->setData($jsonContent);
         // dump($response);
-       
+
         return $response;
     }
 
-     /**
+    /**
 
     $project = new Projects();
 
@@ -208,7 +191,7 @@ class ProjectsController extends Controller
      /**
      * @Route("/get-projet",name="getProjet")
      */
-  /*
+    /*
     public function getProjet(Request $request, RegistryInterface $doctrine)
     {
         $user1 = $this->getUser();
@@ -241,7 +224,7 @@ class ProjectsController extends Controller
         return $response;
     }
 */
-     /**
+    /**
      * @Route("/get-projet-selection",name="getProjetSelection")
      */
 
@@ -254,10 +237,10 @@ class ProjectsController extends Controller
         $contentDecode = json_decode($content);
         $type = $contentDecode->selection;
         $page = $contentDecode->page;
-        if($type == 'All')
+        if ($type == 'All')
             $selection = $doctrine->getRepository(Projects::class)->myGetProjet($page);
         else
-            $selection = $doctrine->getRepository(Projects::class)->myGetProjetByType($type,intval($page));
+            $selection = $doctrine->getRepository(Projects::class)->myGetProjetByType($type, intval($page));
         $encoders = array(new XmlEncoder(), new JsonEncoder());
         $normalizer = new ObjectNormalizer();
         $normalizer->setCircularReferenceLimit(2);
@@ -277,7 +260,7 @@ class ProjectsController extends Controller
         return $response;
     }
 
-     /**
+    /**
      * @Route("/count-projet",name="countProjet")
      */
 
@@ -289,7 +272,7 @@ class ProjectsController extends Controller
         $content = $request->getContent();
         $contentDecode = json_decode($content);
         $type = $contentDecode->selection;
-        if($type != 'All')
+        if ($type != 'All')
             $count = $doctrine->getRepository(Projects::class)->myCountByTri($type);
         else
             $count = $doctrine->getRepository(Projects::class)->myCount();
@@ -311,5 +294,4 @@ class ProjectsController extends Controller
 
         return $response;
     }
-
 }

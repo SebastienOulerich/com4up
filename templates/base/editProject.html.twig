@@ -14,6 +14,7 @@
             {{ form_row(img.alt) }}
             {{ form_row(img.filename) }}
             <a href="#" class="remove-tag">x</a>
+            {{img.vars.value}}
         </li>
         {% endfor %}
     </ul>
