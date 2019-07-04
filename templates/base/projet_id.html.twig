@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 {% block title %}Projet ID{% endblock %}
 {% block stylesheets %}
-<link type="text/css" rel="stylesheet" href={{asset("css/lecture_projet.css")}} />{% endblock %}
+<link rel="stylesheet" href="{{ asset('css/swiper.min.css') }}">
+<link type="text/css" rel="stylesheet" href={{asset("css/lecture_projet.css")}} />
+{% endblock %}
 {% block body%}
 
 <img id="Bandeau" src={{asset("images/projets/faeriths_banniere.jpg")}} alt="Bandeau">
@@ -43,18 +45,84 @@
     <p>
     {{  project.description }}
       </p>
-      <div id="Apercu">
-        <i class="fas fa-arrow-circle-left" aria-hidden></i>
-        <div id="Responsive_Image">
-        {% for img in project.gallery %}
-          <img src={{asset( img.path )}} alt="Aperçu Faeriths">
-        {% endfor %}
-        {# <img src={{asset("images/projets/fas1.jpg")}} alt="Aperçu Faeriths">
-        <img src={{asset("images/projets/fas2.jpg")}} alt="Aperçu Faeriths">
-        <img src={{asset("images/projets/fas3.jpg")}} alt="Aperçu Faeriths"> #}
-          </div>
-        <i class="fas fa-arrow-circle-right" aria-hidden></i>
+
+<div id="Apercu">
+        <!-- Swiper -->
+        <div class="button-prev"><i class="fas fa-arrow-circle-left" aria-hidden></i></div>
+        <div class="swiper-container">
+
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img class="myImg" src={{asset("images/projets/fas1.jpg")}} alt="Aperçu Faeriths"></div>
+                <div class="swiper-slide"><img class="myImg" src={{asset("images/projets/fas2.jpg")}} alt="Aperçu Faeriths"></div>
+                <div class="swiper-slide"><img class="myImg" src={{asset("images/projets/fas3.jpg")}} alt="Aperçu Faeriths"></div>
+                <div class="swiper-slide">Slide 4</div>
+                <div class="swiper-slide">Slide 5</div>
+                <div class="swiper-slide">Slide 6</div>
+                <div class="swiper-slide">Slide 7</div>
+                <div class="swiper-slide">Slide 8</div>
+                <div class="swiper-slide">Slide 9</div>
+                <div class="swiper-slide">Slide 10</div>
+            </div>
+            <!-- Add Arrows -->
+
+        </div>
+        <div class="button-next"><i class="fas fa-arrow-circle-right" aria-hidden></i></div>
         </div>
     </div>
+    <div id="myModal" class="modal">
+
+      <!-- The Close Button -->
+      <span class="close">&times;</span>
+
+      <!-- Modal Content (The Image) -->
+      <img class="myImgZoom" id="imgZoom" src={{asset("images/projets/fas1.jpg")}} alt="Aperçu Faeriths">
+
+      <!-- Modal Caption (Image Text) -->
+      <div class="caption" id="caption"></div>
+    </div>
+
+
+{% endblock %}
+
+{% block js %}
+
+  <script type="text/javascript" src="../js/swiper.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+var swiper = new Swiper('.swiper-container', {
+    nextButton: '.button-next',
+    prevButton: '.button-prev',
+    slidesPerView: 3,
+    paginationClickable: false,
+    spaceBetween: 33,
+    loop: true
+});
+</script>
+
+<script>
+  // Get the image and insert it inside the modal - use its "alt" text as a caption
+  var img = document.getElementsByClassName('myImg');
+  var modalImg = document.getElementById("imgZoom");
+  var captionText = document.getElementById("caption");
+
+  console.log(img);
+for (let element of img) {
+    console.log(element);
+    element.onclick = function(){
+      document.getElementById("myModal").style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    }
+  }
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    document.getElementById("myModal").style.display = "none";
+  }
+  </script>
 
 {% endblock %}
