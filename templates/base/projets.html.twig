@@ -39,19 +39,19 @@
   </ul>
 </div>
 
-<div class="cards">
+{# <div class="cards">
   {% set counter = 0 %}
   {% for i in  counter..11 %}
   <img class="card" src={{asset("images/projets/Projet.jpg")}} alt="Bandeau" id="card-{{ counter }}">
    {% set counter = counter + 1 %}
    {% endfor %}
-</div>
+</div> #}
 
 <div id="Integrale_Image">
 {# {% set counter = 0 %} #}
 {# <div v-for="projet in projets"> #}
   {# <a v-for="projet in projets" v-bind:href="'/projets/' + projet.slug + - + projet.id" ><img class="Images_Projet" src={{asset("images/projets/com4up.jpg")}} alt="Bandeau"><div class="Projet_hover"><div class="Projet_hover_border"></div></div></a> #}
-  <a v-for="projet in projets" v-bind:href="'/projets/' + projet.slug + - + projet.id" ><img class="Images_Projet" v-bind:src=projet.banner alt="Bandeau"><div class="Projet_hover"><div class="Projet_hover_border"></div></div></a>
+  <a class="card"  v-for="(projet,index) in projets"  v-bind:href="'/projets/' + projet.slug + - + projet.id" ><img class="Images_Projet" v-bind:src=projet.banner alt="Bandeau"><div class="Projet_hover"><div class="Projet_hover_border"></div></div></a>
   {# <a href=" {{ path('project_id', {id : project.id, slug: project.slug}) }} "><img class="Images_Projet" src={{asset("images/projets/com4up.jpg")}} alt="Bandeau"><div class="Projet_hover #}
 
 {# </div> #}
