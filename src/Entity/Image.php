@@ -41,7 +41,7 @@ class Image
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Projects", inversedBy="gallery")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $projects;
 

@@ -63,7 +63,7 @@ class ProjectsController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($project);
             $em->flush();
-            return redirectToRoute('projects');
+            return $this->redirectToRoute('projets');
         }
         // replace this line with your own code!
         // return $this->redirectToRoute('projets');
