@@ -93,27 +93,12 @@ main {
 }
 
 #Apercu {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-#Apercu i {
-	font-size: 2em;
-}
-
-#Responsive_Image{
-	display: flex;
-	width: 100%;
-	justify-content: center;
-}
-
-#Responsive_Image img {
-	display: flex;
-	justify-content: center;
-	width: 25%;
-	height: 25%;
-	margin: 1em;
+  margin-top: 1em;
+width: 100%;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
 }
 
 .fa-th-large {
@@ -122,6 +107,118 @@ main {
 
 .icone-awesome {
   font-size: 1.25em;
+}
+
+.swiper-container {
+    width: 76.5%;
+        height: auto;
+}
+
+.swiper-wrapper {
+  height: auto;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    height: auto;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.swiper-slide img {
+width: 100%;
+height: 100%;
+}
+.button-prev {
+  	font-size: 2em;
+
+}
+
+.button-next {
+  	font-size: 2em;
+}
+
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000000; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.myImgZoom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+  max-width: 70%;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+.caption {
+  display: block;
+  margin: auto;
+  padding: 0.5em;
+  width: 80%;
+  text-align: center;
+  color: #ccc;
+  height: 150px;
+}
+
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 1280px) {

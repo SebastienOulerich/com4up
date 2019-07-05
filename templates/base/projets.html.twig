@@ -39,11 +39,19 @@
   </ul>
 </div>
 
+{# <div class="cards">
+  {% set counter = 0 %}
+  {% for i in  counter..11 %}
+  <img class="card" src={{asset("images/projets/Projet.jpg")}} alt="Bandeau" id="card-{{ counter }}">
+   {% set counter = counter + 1 %}
+   {% endfor %}
+</div> #}
+
 <div id="Integrale_Image">
 {# {% set counter = 0 %} #}
 {# <div v-for="projet in projets"> #}
   {# <a v-for="projet in projets" v-bind:href="'/projets/' + projet.slug + - + projet.id" ><img class="Images_Projet" src={{asset("images/projets/com4up.jpg")}} alt="Bandeau"><div class="Projet_hover"><div class="Projet_hover_border"></div></div></a> #}
-  <a v-for="projet in projets" v-bind:href="'/projets/' + projet.slug + - + projet.id" ><img class="Images_Projet" v-bind:src=projet.banner alt="Bandeau"><div class="Projet_hover"><div class="Projet_hover_border"></div></div></a>
+  <a class="card"  v-for="(projet,index) in projets"  v-bind:href="'/projets/' + projet.slug + - + projet.id" ><img class="Images_Projet" v-bind:src=projet.banner alt="Bandeau"><div class="Projet_hover"><div class="Projet_hover_border"></div></div></a>
   {# <a href=" {{ path('project_id', {id : project.id, slug: project.slug}) }} "><img class="Images_Projet" src={{asset("images/projets/com4up.jpg")}} alt="Bandeau"><div class="Projet_hover #}
 
 {# </div> #}
@@ -114,7 +122,7 @@
       </div>
 </template>
 </div>
-    
+
 
 {% endblock %}
 {% block js %}
@@ -154,7 +162,7 @@
                     {
                         this.page = page;
                         console.log(this.page);
-                        
+
                         if(this.select == 'All'){
                             this.getArticle();
                         }
@@ -172,7 +180,7 @@
                     else{
                         this.onLoad = false;
                     }
-                    
+
                 },
                 getArticle() {
                     console.log("get Article");
@@ -194,7 +202,7 @@
                             object.projets.push({"id" : value.id,"slug": value.slug, "banner": value.banner.path});
                         });
                         this.onLoad = false;
-                        
+
                     })
                 },
                 getArticleSelection() {
@@ -235,4 +243,56 @@
             }
         })
     </script>
+
+    <script>
+      let cards = Array.from(document.querySelectorAll('.card'))
+
+      cards.forEach((card) => {
+        card.addEventListener('click', function () {
+          let flip = new Flip()
+          flip.read(cards)
+          card.parentNode.removeChild(card)
+          cards = cards.filter(c => c !== card)
+          flip.play(cards)
+        })
+      })
+
+      class Flip {
+        constructor () {
+          this.duration = 300
+          this.positions = {}
+        }
+
+
+        read (elements) {
+          elements.forEach(element => {
+            const id = element.getAttribute('id')
+            this.positions[id] = element.getBoundingClientRect()
+          })
+        }
+
+        play (elements) {
+          elements.forEach(element => {
+            const id = element.getAttribute('id')
+            const newPosition = element.getBoundingClientRect()
+            const oldPosition = this.positions[id]
+            const deltaX = oldPosition.x - newPosition.x
+            const deltaY = oldPosition.y - newPosition.y
+            const deltaW = oldPosition.width / newPosition.width
+            const deltaH = oldPosition.height / newPosition.height
+            element.animate([{
+              transform: `translate(${deltaX}px, ${deltaY}px) scale(${deltaW}, ${deltaH})`
+            },{
+              transform: 'none'
+            }], {
+              duration: this.duration,
+              easing: 'ease-in-out',
+              fill: 'both'
+            })
+            element.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(${deltaW}, ${deltaH})`
+          })
+        }
+      }
+
+      </script>
 {% endblock %}

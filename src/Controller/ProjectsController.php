@@ -62,6 +62,7 @@ class ProjectsController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($project);
+            s;
             $em->flush();
             return $this->redirectToRoute('projets');
         }
