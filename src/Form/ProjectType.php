@@ -3,11 +3,15 @@
 namespace App\Form;
 
 use App\Entity\Projects;
+use App\Entity\Technologies;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use App\Form\ImageType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+
+
 
 class ProjectType extends AbstractType
 {
@@ -25,6 +29,10 @@ class ProjectType extends AbstractType
                 // 'data_class' => null
                 'required' => false,
             ])
+            ->add('miniature', ImageType::class, [
+                // 'data_class' => null
+                'required' => false,
+            ])
             ->add('gallery', CollectionType::class, [
                 'entry_type' => ImageType::class,
                 'entry_options' => ['label' => false],
@@ -33,7 +41,13 @@ class ProjectType extends AbstractType
                 'allow_delete' => true,
                 'required' => false,
                 // 'data_class' => null
-            ]);
+            ])
+            ->add('technologies', EntityType::class, [
+                "class" => "App\Entity\Technologies",
+                "choice_label" => "name",
+                "expanded" => true,
+                "multiple" => true,
+            ])
         ;
     }
 

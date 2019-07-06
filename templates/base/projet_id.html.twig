@@ -19,7 +19,7 @@
     </div>
     <div id="Partie_Haute_Droite">
     {% if project.URLSite %}
-      <a href="project.URLSite" target="_blank"><h2 id="Bouton_Visite">VISITER LE SITE</h2></a>
+      <a href="{{project.URLSite}}" target="_blank"><h2 id="Bouton_Visite">VISITER LE SITE</h2></a>
       {% endif %}
       </div>
 </div>
@@ -34,7 +34,9 @@
       <h3 id="Date">Date :{{ project.date }}</h3>
       <div id="Technologies">
         <h3>Technologies utilisées :</h3>
-      {{  project.techno }}
+          {% for techno in project.technologies %}
+            {{techno.icon|raw}}
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -52,16 +54,9 @@
         <div class="swiper-container">
 
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img class="myImg" src={{asset("images/projets/fas1.jpg")}} alt="Aperçu Faeriths"></div>
-                <div class="swiper-slide"><img class="myImg" src={{asset("images/projets/fas2.jpg")}} alt="Aperçu Faeriths"></div>
-                <div class="swiper-slide"><img class="myImg" src={{asset("images/projets/fas3.jpg")}} alt="Aperçu Faeriths"></div>
-                <div class="swiper-slide">Slide 4</div>
-                <div class="swiper-slide">Slide 5</div>
-                <div class="swiper-slide">Slide 6</div>
-                <div class="swiper-slide">Slide 7</div>
-                <div class="swiper-slide">Slide 8</div>
-                <div class="swiper-slide">Slide 9</div>
-                <div class="swiper-slide">Slide 10</div>
+              {% for img in project.gallery %}
+                  <div class="swiper-slide"><img class="myImg" src={{asset(img.path)}} alt="{{img.alt}}"></div>
+                {% endfor %}
             </div>
             <!-- Add Arrows -->
 

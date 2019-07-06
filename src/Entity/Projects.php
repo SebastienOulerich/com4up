@@ -61,14 +61,26 @@ class Projects
     private $banner;
 
     /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Image", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $miniature;
+
+    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="projects", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=true)
      */
     private $gallery;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Technologies", inversedBy="projects")
+     */
+    private $technologies;
+
     public function __construct()
     {
         $this->gallery = new ArrayCollection();
+        $this->technologies = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -178,6 +190,18 @@ class Projects
         return $this;
     }
 
+    public function getMiniature(): ?Image
+    {
+        return $this->miniature;
+    }
+
+    public function setMiniature(Image $miniature): self
+    {
+        $this->miniature = $miniature;
+
+        return $this;
+    }
+
     /**
      * @return Collection|Image[]
      */
@@ -201,6 +225,36 @@ class Projects
             if ($gallery->getProjects() === $this) {
                 $gallery->setProjects(null);
             }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Technologies[]
+     */
+    public function getTechnologies(): Collection
+    {
+        return $this->technologies;
+    }
+
+    public function addTechnology(Technologies $technology): self
+    {
+        var_dump($technology);
+        s;
+        if (!$this->technologies->contains($technology)) {
+            $this->technologies[] = $technology;
+            $technology->addProject($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTechnology(Technologies $technology): self
+    {
+        if ($this->technologies->contains($technology)) {
+            $this->technologies->removeElement($technology);
+            $technology->removeProject($this);
         }
 
         return $this;

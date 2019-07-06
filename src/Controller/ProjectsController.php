@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Technologies;
+use App\Form\TechnologieType;
 use App\Entity\Projects;
 use App\Form\ProjectType;
 use App\Form\EditProjectType;
@@ -90,19 +92,16 @@ class ProjectsController extends Controller
             $originalGallery->add($img);
         }
         $project->getBanner()->setFilename(new File($this->getParameter('uploadDirectory') . '/' . $project->getBanner()->getFilename()));
+        $project->getMiniature()->setFilename(new File($this->getParameter('uploadDirectory') . '/' . $project->getMiniature()->getFilename()));
         $form = $this->createForm(ProjectType::class, $project);
         $saveProject = $project->getBanner()->getFilename();
         var_dump($saveProject);
         // 2) handle the submit (will only happen on POST)
         $form->handleRequest($request);
-        //   var_dump($saveProject);
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
-            //   var_dump($data->getBanner());
             if ($data->getBanner()->getFilename() == null)
                 $data->getBanner()->setFilename($saveProject);
-            var_dump($data->getGallery());
-
             $em = $this->getDoctrine()->getManager();
             $em->persist($project);
             $em->flush();
@@ -149,82 +148,6 @@ class ProjectsController extends Controller
         return $response;
     }
 
-    /**
-
-    $project = new Projects();
-
-      $form = $this->createFormBuilder($project)
-      ->add('title')
-      ->add('description')
-      ->add('client')
-      ->add('date')
-      ->add('categorie')
-      ->add('techno')
-      ->add('URL_site')
-          ->getForm();
-
-      $form->handleRequest($request);
-
-      if ($form->isSubmitted() && $form->isValid()) {
-          // $form->getData() holds the submitted values
-          // but, the original `$task` variable has also been updated
-          $project = $form->getData();
-
-          // ... perform some action, such as saving the task to the database
-          // for example, if Task is a Doctrine entity, save it!
-          // $entityManager = $this->getDoctrine()->getManager();
-          // $entityManager->persist($task);
-          // $entityManager->flush();
-          $em = $this->getDoctrine()->getManager();
-          $em->persist($project);
-          $em->flush();
-
-          return $this->redirectToRoute('projets');
-      }
-
-      return $this->render('base/addProject.html.twig', [
-        'project' => $project,
-          'form' => $form->createView(),
-      ]);
-
-    }
-
-     /**
-     * @Route("/get-projet",name="getProjet")
-     */
-    /*
-    public function getProjet(Request $request, RegistryInterface $doctrine)
-    {
-        $user1 = $this->getUser();
-        $request_stack = $this->container->get('request_stack');
-        $request = $request_stack->getCurrentRequest();
-        $content = $request->getContent();
-        $contentDecode = json_decode($content);
-        $page = $contentDecode->page;
-        $projets = $doctrine->getRepository(Projects::class)->myGetProjet($page);
-        // var_dump($projets);
-        // foreach ($projets as $projet) {
-          // var_dump($projet->getSlug());
-        // }
-        $encoders = array(new XmlEncoder(), new JsonEncoder());
-        $normalizer = new ObjectNormalizer();
-        $normalizer->setCircularReferenceLimit(2);
-        // Add Circular reference handler
-        $normalizer->setCircularReferenceHandler(function ($object) {
-            return $object->getId();
-        });
-
-        $normalizers = array($normalizer);
-        $serializer = new Serializer($normalizers, $encoders);
-        $jsonContent = $serializer->serialize($projets, 'json');
-
-        $response = new JsonResponse();
-        $response->setData($jsonContent);
-        // dump($response);
-
-        return $response;
-    }
-*/
     /**
      * @Route("/get-projet-selection",name="getProjetSelection")
      */
@@ -294,5 +217,28 @@ class ProjectsController extends Controller
         // dump($response);
 
         return $response;
+    }
+
+
+    /**
+     * @Route("/new-technologie", name="new_technologie")
+     */
+    public function new_technologie(Request $request)
+    {
+        $technologie = new Technologies();
+        $form = $this->createForm(TechnologieType::class, $technologie);
+        // 2) handle the submit (will only happen on POST)
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($technologie);
+            $em->flush();
+            // return $this->redirectToRoute('technologie_id', ['slug' => $technologie->getSlug(), 'id' => $project->getId()]);
+        }
+        // replace this line with your own code!
+        // return $this->redirectToRoute('projets');
+        return $this->render('base/addTechnologie.html.twig', [
+            "form" => $form->createView(),
+        ]);
     }
 }

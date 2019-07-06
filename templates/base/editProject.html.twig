@@ -6,6 +6,7 @@
 
 {% block body%}
   {{ form_start(form) }}
+  {{ form_widget(form._token) }}
    <h3>Gallery</h3>
     <ul class="tags" data-prototype="{{ form_widget(form.gallery.vars.prototype)|e('html_attr') }}">
         {# iterate over each existing tag and render its only field: name #}
