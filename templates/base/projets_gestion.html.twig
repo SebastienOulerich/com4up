@@ -1,55 +1,20 @@
 {% extends 'base.html.twig' %}
 {% block title %}Projets{% endblock %}
 {% block stylesheets %}
-<link type="text/css" rel="stylesheet" href={{asset("css/projets.css")}} />{% endblock %}
+<link type="text/css" rel="stylesheet" href={{asset("css/projets_gestion.css")}} />{% endblock %}
 {% block body%}
 <div id="app">
 <img id="Bandeau" src={{asset("images/banniere-projets.jpg")}} alt="Bandeau">
-
 <div id="Une_Ligne">
-  <h1 id="Titre_Principal">Travaux Récents</h1>
-  <ul  id="Categorie_Selection">
-    <li v-on:click="setSelect('All')">
-      Tous
-    </li>
-    <li class="Espace_Slash">
-      /
-    </li>
-    <li v-on:click="setSelect('web')">
-      Site Web
-    </li>
-    <li class="Espace_Slash">
-      /
-    </li>
-    <li v-on:click="setSelect('audiovisuel')">
-      Audiovisuel
-    </li>
-    <li class="Espace_Slash">
-      /
-    </li>
-    <li v-on:click="setSelect('social')">
-      Réseaux Sociaux
-    </li>
-    <li class="Espace_Slash">
-      /
-    </li>
-    <li v-on:click="setSelect('materiel')">
-      Matériel
-    </li>
-  </ul>
+  <a href="{{ path('new_project') }}">Ajouter un projet<a>
 </div>
-
-{# <div class="cards">
-  {% set counter = 0 %}
-  {% for i in  counter..11 %}
-  <img class="card" src={{asset("images/projets/Projet.jpg")}} alt="Bandeau" id="card-{{ counter }}">
-   {% set counter = counter + 1 %}
-   {% endfor %}
-</div> #}
-
-<div id="Integrale_Image">
-  <a class="card"  v-for="(projet,index) in projets"  v-bind:href="'/projets/' + projet.slug + - + projet.id" ><img class="Images_Projet" v-bind:src=projet.banner alt="Bandeau"><div class="Projet_hover"  v-bind:class="hover_select(projet.categorie)"><div class="Projet_hover_border"></div></div></a>
-</div>
+  <div id="wrapper">
+    <div class="wrapperChild"  v-for="(projet,index) in projets">
+      <img class="Images_Projet" v-bind:src=projet.banner alt="Bandeau">
+      <a  v-bind:href="'/edit-project/' + projet.id"  class="gestion_button">edit</a>
+      <a v-bind:href="'/delete-projet/' + projet.id" class="gestion_button">suprimer</a>
+    </div>
+  </div>
 </div>
 
 

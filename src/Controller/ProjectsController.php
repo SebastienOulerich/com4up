@@ -38,6 +38,18 @@ class ProjectsController extends Controller
         return $this->render('base/projets.html.twig', array('projects' => $projects));
     }
 
+    /**
+     * @Route("/gestion-projects", name="gestion_projects")
+     */
+    public function gestion_projets()
+    {
+        // replace this line with your own code!
+        $em = $this->getDoctrine()->getManager();
+        $projects = $em->getRepository(Projects::class)->findAll();
+        return $this->render('base/projets_gestion.html.twig', array('projects' => $projects));
+    }
+
+
 
     /**
      * @Route("/projets/{slug}-{id}", name="project_id", requirements={"slug" : "[a-z0-9\-]*"})
@@ -62,7 +74,6 @@ class ProjectsController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($project);
-            s;
             $em->flush();
             return $this->redirectToRoute('projets');
         }
@@ -93,7 +104,6 @@ class ProjectsController extends Controller
         $project->getBanner()->setFilename(new File($this->getParameter('uploadDirectory') . '/' . $project->getBanner()->getFilename()));
         $form = $this->createForm(ProjectType::class, $project);
         $saveProject = $project->getBanner()->getFilename();
-        var_dump($saveProject);
         // 2) handle the submit (will only happen on POST)
         $form->handleRequest($request);
         //   var_dump($saveProject);
@@ -102,7 +112,6 @@ class ProjectsController extends Controller
             //   var_dump($data->getBanner());
             if ($data->getBanner()->getFilename() == null)
                 $data->getBanner()->setFilename($saveProject);
-            var_dump($data->getGallery());
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($project);
@@ -115,6 +124,19 @@ class ProjectsController extends Controller
             "project" => $project,
         ]);
     }
+
+    /**
+     * @Route("delete-projet/{id}",name="deleteProjet")
+     */
+     public function deleteProjets($id)
+     {
+         $em = $this->getDoctrine()->getManager();
+         $project = $em->getRepository(Projects::class)->findOneBy(array('id' => $id));
+         $em->remove($project);
+         $em->flush();
+         return $this->redirectToRoute('projet_gestion');
+     }
+
     /**
      * @Route("/get-projet",name="getProjet")
      */
