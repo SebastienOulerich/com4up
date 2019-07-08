@@ -1,0 +1,89 @@
+#Bandeau {
+	max-width: 100%;
+	height: auto;
+}
+
+#Une_Ligne {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 6em;
+	background-color: #D5D5D5;
+}
+
+#Une_Ligne a {
+  display: flex;
+  font-family: "Bebas", sans-serif;
+  font-size: 2.5em;
+  margin-left: 0.5em;
+}
+
+#wrapper {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+.wrapperChild {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+		background-color: grey;
+		height: auto;
+		width: 20%;
+		min-width: 20%;
+		max-width: 20%;
+}
+
+.gestion_button {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	font-family: "Bebas", sans-serif;
+	font-size: 1.5em;
+	color: white;
+	background-color: #313131;
+	min-width: 50%;
+	height: 2em;
+}
+
+.gestion_button:hover {
+	color: white;
+	background-color: #212121;
+}
+
+.Images_Projet {
+  display: flex;
+  width: 100%;
+	height: auto;
+}
+
+
+@media screen and (max-width: 1280px) {
+  #Integrale_Image a {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #Une_Ligne {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 8em;
+  }
+
+  #Titre_Principal {
+    margin-left: 0em;
+    margin-bottom: 0.25em;
+  }
+
+  #Categorie_Selection {
+    font-size: 1em;
+    margin-right: 0em;
+  }
+}
