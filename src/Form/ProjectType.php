@@ -10,8 +10,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use App\Form\ImageType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-
-
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
 class ProjectType extends AbstractType
 {

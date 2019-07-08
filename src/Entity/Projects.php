@@ -35,11 +35,6 @@ class Projects
     private $client;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $date;
-
-    /**
     * @ORM\Column(type="string", length=255)
      */
     private $categorie;
@@ -77,10 +72,21 @@ class Projects
      */
     private $technologies;
 
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $date;
+
     public function __construct()
     {
         $this->gallery = new ArrayCollection();
         $this->technologies = new ArrayCollection();
+
+        $date = \DateTime::createFromFormat('d-m-Y','now');
+        $timeZone = new \DateTimeZone('Europe/Paris');
+        $date2 = new \DateTime($date);
+        $date2->setTimeZone($timeZone);
+        $this->date = $date2;
     }
 
     public function getId(): ?int
@@ -130,18 +136,7 @@ class Projects
         return $this;
     }
 
-    public function getDate(): ?string
-    {
-        return $this->date;
-    }
-
-    public function setDate(string $date): self
-    {
-        $this->date = $date;
-
-        return $this;
-    }
-
+ 
     public function getCategorie(): ?string
     {
         return $this->categorie;
@@ -256,6 +251,18 @@ class Projects
             $this->technologies->removeElement($technology);
             $technology->removeProject($this);
         }
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
 
         return $this;
     }

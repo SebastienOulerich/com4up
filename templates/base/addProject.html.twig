@@ -14,6 +14,7 @@
         {% endfor %}
     </ul>
     <input id="submit" type="submit" value="Submit"/>
+  {{ form_widget(form._token) }}
   {{ form_end(form) }}
 {% endblock %}
 {% block js %}

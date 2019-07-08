@@ -61,7 +61,15 @@ class ProjectsController extends Controller
         // replace this line with your own code!
         $em = $this->getDoctrine()->getManager();
         $project = $em->getRepository(Projects::class)->find($id);
-        return $this->render('base/projet_id.html.twig', ['project' => $project]);
+        $next = $em->getRepository(Projects::class)->findOneByNext($project->getDate());
+        var_dump($next);
+        return $this->render(
+            'base/projet_id.html.twig',
+            [
+                'project' => $project,
+                'next' => $next
+            ]
+        );
     }
 
     /**
@@ -128,14 +136,14 @@ class ProjectsController extends Controller
     /**
      * @Route("delete-projet/{id}",name="deleteProjet")
      */
-     public function deleteProjets($id)
-     {
-         $em = $this->getDoctrine()->getManager();
-         $project = $em->getRepository(Projects::class)->findOneBy(array('id' => $id));
-         $em->remove($project);
-         $em->flush();
-         return $this->redirectToRoute('projet_gestion');
-     }
+    public function deleteProjets($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $project = $em->getRepository(Projects::class)->findOneBy(array('id' => $id));
+        $em->remove($project);
+        $em->flush();
+        return $this->redirectToRoute('projet_gestion');
+    }
 
     /**
      * @Route("/get-projet",name="getProjet")

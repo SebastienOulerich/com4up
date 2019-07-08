@@ -78,15 +78,28 @@ class ProjectsRepository extends ServiceEntityRepository
             ->getSingleScalarResult()
         ;
     }
-    /*
-    public function findOneBySomeField($value): ?Projects
+    public function findOneByNext($date)
     {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
+        return $this->createQueryBuilder('b')
+            ->select('b.id')
+            ->where("b.date > :date")
+            ->setParameter("date" , $date)
+            ->setMaxResults(1)
             ->getQuery()
             ->getOneOrNullResult()
         ;
     }
-    */
+    public function findOneByPrevious($date)
+    {
+        return $this->createQueryBuilder('b')
+            ->select('b.id')
+            ->where("b.date < :date")
+            ->setParameter("date" , $date)
+            ->setMaxResults(1)
+            ->orderBy('b.date','DESC')
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
+
 }

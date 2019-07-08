@@ -28,10 +28,13 @@
   <div id="Integrale_Information">
     <div id="Information_Gauche">
       <h3 id="Client">Client :{{ project.client }}</h3>
+      <h3 id="Client">Client :{{ next }}</h3>
       <h3 id="Categorie">Catégorie :&nbsp<a href="{{ path('projets') }}">{{ project.categorie }}</a></h3>
       </div>
     <div id="Information_Droite">
-      <h3 id="Date">Date :{{ project.date }}</h3>
+      <h3 id="Date">Date : {{ project.date|localizeddate('none', 'none', null, null, 'EEEE d ')|capitalize }} {{ project.date|localizeddate('none', 'none', null, null, 'MMMM Y ')|capitalize }}</h3>
+      {# <h3 id="Date">Date : {{ project.date|localizeddate('none', 'none', null, null, 'EEEE d MMMM Y') }}</h3> #}
+      {# <h3 id="Date">Date :{{ project.date|date("D M Y") }}</h3> #}
       <div id="Technologies">
         <h3>Technologies utilisées :</h3>
           {% for techno in project.technologies %}
