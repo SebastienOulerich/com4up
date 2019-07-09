@@ -31,21 +31,20 @@ class UserFixtures extends Fixture
         $project1->setCategorie("web");
         $project1->setURL_site("https://faeriths.fr");
 
-        $image = new Image();
-        $image->setPath('/Images/480x270.png');
-        $image->setFileName("480x270.png");
-        $manager->persist($image);
-        $project1->setBanner($image);
+        $project1image1 = new Image();
+        $project1image1->setPath('/images/projets/faeriths_banniere.jpg');
+        $project1image1->setFileName("Faerith's banniere");
+        $manager->persist($project1image1);
+        $project1->setBanner($project1image1);
 
-        $image = new Image();
-        $image->setPath('/Images/480x270.png');
-        $image->setFileName("480x270.png");
-        $manager->persist($image);
-        $project1->setMiniature($image);
+        $project1image2 = new Image();
+        $project1image2->setPath('/images/projets/faeriths.jpg');
+        $project1image2->setFileName("Miniature Faerith's");
+        $manager->persist($project1image2);
+        $project1->setMiniature($project1image2);
 
         $project1->setGallery();
 
-        $project1->setTechno();
         $project1->setTechnologies();
 
         $manager->persist($project1);
