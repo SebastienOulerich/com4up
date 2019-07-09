@@ -10,6 +10,8 @@ use App\Form\EditProjectType;
 use App\Service\FileUploader;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\HttpFoundation\File\File;
+use Cocur\Slugify\Slugify;
+
 
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -62,12 +64,25 @@ class ProjectsController extends Controller
         $em = $this->getDoctrine()->getManager();
         $project = $em->getRepository(Projects::class)->find($id);
         $next = $em->getRepository(Projects::class)->findOneByNext($project->getDate());
-        var_dump($next);
+        $previous = $em->getRepository(Projects::class)->findOneByPrevious($project->getDate());
+        $slug = new Slugify();
+        if ($next != null) {
+            var_dump($next);
+            var_dump("next");
+            $next["title"] = $slug->slugify($next["title"]);
+        }
+        if ($previous != null) {
+            var_dump($previous);
+            var_dump("previous");
+            $previous["title"] = $slug->slugify($previous["title"]);
+        }
         return $this->render(
             'base/projet_id.html.twig',
             [
                 'project' => $project,
-                'next' => $next
+                'next'    => $next,
+                'previous' => $previous,
+
             ]
         );
     }

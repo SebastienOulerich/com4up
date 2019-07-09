@@ -1,82 +1,104 @@
 {% extends 'base.html.twig' %}
-{% block title %}Projet ID{% endblock %}
+{% block title %}Projet ID
+{% endblock %}
 {% block stylesheets %}
-<link rel="stylesheet" href="{{ asset('css/swiper.min.css') }}">
-<link type="text/css" rel="stylesheet" href={{asset("css/lecture_projet.css")}} />
+    <link rel="stylesheet" href="{{ asset('css/swiper.min.css') }}">
+    <link type="text/css" rel="stylesheet" href={{asset("css/lecture_projet.css")}}/>
 {% endblock %}
 {% block body%}
 
-<img id="Bandeau" src={{asset("images/projets/faeriths_banniere.jpg")}} alt="Bandeau">
+    <img id="Bandeau" src={{asset("images/projets/faeriths_banniere.jpg")}} alt="Bandeau">
 
-<div id="Partie_Haute">
-  <div id="Partie_Haute_Gauche">
-    <a href="{{ path('projets') }}"><i class="fas fa-th-large" aria-hidden></i></a>
-    </div>
-  <div id="Partie_Haute_Centre">
-    <i class="far fa-angle-left icone-awesome" aria-hidden></i>
-    <h1>{{ project.title }}</h1>
-    <i class="far fa-angle-right icone-awesome" aria-hidden></i>
-    </div>
-    <div id="Partie_Haute_Droite">
-    {% if project.URLSite %}
-      <a href="{{project.URLSite}}" target="_blank"><h2 id="Bouton_Visite">VISITER LE SITE</h2></a>
-      {% endif %}
-      </div>
-</div>
-
-<div id="Bandeau_Information">
-  <div id="Integrale_Information">
-    <div id="Information_Gauche">
-      <h3 id="Client">Client :{{ project.client }}</h3>
-      <h3 id="Client">Client :{{ next }}</h3>
-      <h3 id="Categorie">Catégorie :&nbsp<a href="{{ path('projets') }}">{{ project.categorie }}</a></h3>
-      </div>
-    <div id="Information_Droite">
-      <h3 id="Date">Date : {{ project.date|localizeddate('none', 'none', null, null, 'EEEE d ')|capitalize }} {{ project.date|localizeddate('none', 'none', null, null, 'MMMM Y ')|capitalize }}</h3>
-      {# <h3 id="Date">Date : {{ project.date|localizeddate('none', 'none', null, null, 'EEEE d MMMM Y') }}</h3> #}
-      {# <h3 id="Date">Date :{{ project.date|date("D M Y") }}</h3> #}
-      <div id="Technologies">
-        <h3>Technologies utilisées :</h3>
-          {% for techno in project.technologies %}
-            {{techno.icon|raw}}
-          {% endfor %}
+    <div id="Partie_Haute">
+        <div id="Partie_Haute_Gauche">
+            <a href="{{ path('projets') }}">
+                <i aria-hidden class="fas fa-th-large"></i>
+            </a>
         </div>
-      </div>
+        <div id="Partie_Haute_Centre">
+            {% if previous is not null %}
+                <a href="{{path('project_id' , {'id' : previous.id ,'slug' : previous.title }) }}">
+                    <i aria-hidden class="far fa-angle-left icone-awesome"></i>
+                </a>
+            {% endif %}
+            <h1>{{ project.title }}</h1>
+            {% if next is not null %}
+                <a href="{{path('project_id' , {'id' : next.id ,'slug' : next.title }) }}">
+                    <i aria-hidden class="far fa-angle-right icone-awesome"></i>
+                </a>
+            {% endif %}
+        </div>
+        <div id="Partie_Haute_Droite">
+            {% if project.URLSite %}
+                <a href="{{project.URLSite}}" target="_blank">
+                    <h2 id="Bouton_Visite">VISITER LE SITE</h2>
+                </a>
+            {% endif %}
+        </div>
     </div>
-  </div>
 
-  <div id="Description_Integrale">
-    <h4>Description :</h4>
-    <p>
-    {{  project.description }}
-      </p>
-
-<div id="Apercu">
-        <!-- Swiper -->
-        <div class="button-prev"><i class="fas fa-arrow-circle-left" aria-hidden></i></div>
-        <div class="swiper-container">
-
-            <div class="swiper-wrapper">
-              {% for img in project.gallery %}
-                  <div class="swiper-slide"><img class="myImg" src={{asset(img.path)}} alt="{{img.alt}}"></div>
-                {% endfor %}
+    <div id="Bandeau_Information">
+        <div id="Integrale_Information">
+            <div id="Information_Gauche">
+                <h3 id="Client">Client :{{ project.client }}</h3>
+                <h3 id="Categorie">Catégorie :&nbsp<a href="{{ path('projets') }}">{{ project.categorie }}</a>
+                </h3>
             </div>
-            <!-- Add Arrows -->
-
-        </div>
-        <div class="button-next"><i class="fas fa-arrow-circle-right" aria-hidden></i></div>
+            <div id="Information_Droite">
+                <h3 id="Date">Date :
+                    {{ project.date|localizeddate('none', 'none', null, null, 'EEEE d ')|capitalize }}
+                    {{ project.date|localizeddate('none', 'none', null, null, 'MMMM Y ')|capitalize }}</h3>
+                {# <h3 id="Date">Date : {{ project.date|localizeddate('none', 'none', null, null, 'EEEE d MMMM Y') }}</h3> #}
+                {# <h3 id="Date">Date :{{ project.date|date("D M Y") }}</h3> #}
+                <div id="Technologies">
+                    <h3>Technologies utilisées :</h3>
+                    {% for techno in project.technologies %}
+                        {{techno.icon|raw}}
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
-    <div id="myModal" class="modal">
 
-      <!-- The Close Button -->
-      <span class="close">&times;</span>
+    <div id="Description_Integrale">
+        <h4>Description :</h4>
+        <p>
+            {{  project.description }}
+        </p>
 
-      <!-- Modal Content (The Image) -->
-      <img class="myImgZoom" id="imgZoom" src={{asset("images/projets/fas1.jpg")}} alt="Aperçu Faeriths">
+        <div
+            id="Apercu">
+            <!-- Swiper -->
+            <div class="button-prev">
+                <i aria-hidden class="fas fa-arrow-circle-left"></i>
+            </div>
+            <div class="swiper-container">
 
-      <!-- Modal Caption (Image Text) -->
-      <div class="caption" id="caption"></div>
+                <div class="swiper-wrapper">
+                    {% for img in project.gallery %}
+                        <div class="swiper-slide"><img class="myImg" src={{asset(img.path)}} alt="{{img.alt}}"></div>
+                    {% endfor %}
+                </div>
+                <!-- Add Arrows -->
+
+            </div>
+            <div class="button-next">
+                <i aria-hidden class="fas fa-arrow-circle-right"></i>
+            </div>
+        </div>
+    </div>
+    <div
+        class="modal" id="myModal">
+
+        <!-- The Close Button -->
+        <span class="close">&times;</span>
+
+        <!-- Modal Content (The Image) -->
+        <img
+        class="myImgZoom" id="imgZoom" src={{asset("images/projets/fas1.jpg")}} alt="Aperçu Faeriths">
+
+        <!-- Modal Caption (Image Text) -->
+        <div class="caption" id="caption"></div>
     </div>
 
 
@@ -84,43 +106,43 @@
 
 {% block js %}
 
-  <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script src="../js/swiper.min.js" type="text/javascript"></script>
 
-<!-- Initialize Swiper -->
-<script>
-var swiper = new Swiper('.swiper-container', {
-    nextButton: '.button-next',
-    prevButton: '.button-prev',
-    slidesPerView: 3,
-    paginationClickable: false,
-    spaceBetween: 33,
-    loop: true
-});
-</script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            nextButton: '.button-next',
+            prevButton: '.button-prev',
+            slidesPerView: 3,
+            paginationClickable: false,
+            spaceBetween: 33,
+            loop: true
+        });
+    </script>
 
-<script>
-  // Get the image and insert it inside the modal - use its "alt" text as a caption
-  var img = document.getElementsByClassName('myImg');
-  var modalImg = document.getElementById("imgZoom");
-  var captionText = document.getElementById("caption");
+    <script>
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementsByClassName('myImg');
+        var modalImg = document.getElementById("imgZoom");
+        var captionText = document.getElementById("caption");
 
-  console.log(img);
-for (let element of img) {
-    console.log(element);
-    element.onclick = function(){
-      document.getElementById("myModal").style.display = "block";
-      modalImg.src = this.src;
-      captionText.innerHTML = this.alt;
-    }
-  }
+        console.log(img);
+        for (let element of img) {
+            console.log(element);
+            element.onclick = function () {
+                document.getElementById("myModal").style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+        }
 
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
 
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
-    document.getElementById("myModal").style.display = "none";
-  }
-  </script>
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            document.getElementById("myModal").style.display = "none";
+        }
+    </script>
 
 {% endblock %}

@@ -40,7 +40,7 @@ class ProjectsRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('b')
         ->setFirstResult(($page-1)*6)
         ->setMaxResults(6)
-        ->orderBy('b.date','ASC')
+        ->orderBy('b.date','DESC')
         ->getQuery()
         ->getResult()
         ;
@@ -52,7 +52,7 @@ class ProjectsRepository extends ServiceEntityRepository
         ->setParameter('categorie', $categorie)
         ->setFirstResult(($page-1)*6)
         ->setMaxResults(6)
-        ->orderBy('b.date','ASC')
+        ->orderBy('b.date','DESC')
       
         ->getQuery()
         ->getResult()
@@ -82,6 +82,7 @@ class ProjectsRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('b')
             ->select('b.id')
+            ->addSelect('b.title')
             ->where("b.date > :date")
             ->setParameter("date" , $date)
             ->setMaxResults(1)
@@ -93,6 +94,7 @@ class ProjectsRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('b')
             ->select('b.id')
+            ->addSelect('b.title')
             ->where("b.date < :date")
             ->setParameter("date" , $date)
             ->setMaxResults(1)
