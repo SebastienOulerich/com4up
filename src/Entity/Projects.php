@@ -235,8 +235,6 @@ class Projects
 
     public function addTechnology(Technologies $technology): self
     {
-        var_dump($technology);
-        s;
         if (!$this->technologies->contains($technology)) {
             $this->technologies[] = $technology;
             $technology->addProject($this);

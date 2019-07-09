@@ -268,6 +268,17 @@ class ProjectsController extends Controller
 
 
     /**
+     * @Route("/gestion-technologies", name="gestion_technologies")
+     */
+    public function gestion_technologies()
+    {
+        // replace this line with your own code!
+        $em = $this->getDoctrine()->getManager();
+        $technologies = $em->getRepository(Technologies::class)->findAll();
+        return $this->render('base/techno_gestion.html.twig', array('technologies' => $technologies));
+    }
+
+    /**
      * @Route("/new-technologie", name="new_technologie")
      */
     public function new_technologie(Request $request)
@@ -288,4 +299,28 @@ class ProjectsController extends Controller
             "form" => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route("edit-technologie/{id}",name="editTechnologie")
+     */
+     public function editTechnologie($id)
+     {
+         $em = $this->getDoctrine()->getManager();
+         $technologie = $em->getRepository(Technologies::class)->findOneBy(array('id' => $id));
+         $em->remove($technologie);
+         $em->flush();
+         return $this->redirectToRoute('technologie_gestion');
+     }
+
+    /**
+     * @Route("delete-technologie/{id}",name="deleteTechnologie")
+     */
+     public function deleteTechnologie($id)
+     {
+         $em = $this->getDoctrine()->getManager();
+         $technologie = $em->getRepository(Technologies::class)->findOneBy(array('id' => $id));
+         $em->remove($technologie);
+         $em->flush();
+         return $this->redirectToRoute('technologie_gestion');
+     }
 }
