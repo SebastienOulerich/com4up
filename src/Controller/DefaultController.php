@@ -29,6 +29,15 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/404", name="e404")
+     */
+    public function e404()
+    {
+        // replace this line with your own code!
+        return $this->render('base/404.html.twig');
+    }
+
+    /**
      * @Route("/services-web", name="services_web")
      */
     public function services_web()

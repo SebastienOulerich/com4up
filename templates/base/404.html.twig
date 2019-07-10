@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    <title>Com4Up - page introuvable</title>
+{% endblock %}
+
+{% block stylesheets %}<link type="text/css" rel="stylesheet" href={{asset("css/404.css")}} />{% endblock %}
+{% block body %}
+<section id="Content">
+  <p id="Lettre">404</p>
+  <p id="Phrase">Il semblerait que cette page n'existe pas. Vous pouvez retourner à l'accueil en cliquant <a href="{{ path('index') }}">ici</a></p>
+</section>
+    {% endblock %}

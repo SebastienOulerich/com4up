@@ -1,0 +1,23 @@
+#Content {
+  width: 100%;
+  min-height: 80.1vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#Lettre {
+  font-family: 'Starway';
+  color: #ff0000;
+  font-size: 6em;
+}
+
+#Phrase {
+  font-family: Arial;
+}
+
+#Phrase a {
+  text-decoration: underline;
+  color: blue;
+}
