@@ -10,7 +10,7 @@
 </div>
   <div id="wrapper">
     <div class="wrapperChild"  v-for="(projet,index) in projets">
-      <img class="Images_Projet" v-bind:src=projet.banner alt="Bandeau">
+      <img class="Images_Projet" v-bind:src=projet.miniature alt="Bandeau">
       <a  v-bind:href="'/edit-project/' + projet.id"  class="gestion_button">edit</a>
       <a v-bind:href="'/delete-projet/' + projet.id" class="gestion_button">suprimer</a>
     </div>
@@ -101,7 +101,7 @@
 						this.projets = [];
 
                         $.each(json, function (key, value) {
-                            object.projets.push({"id" : value.id,"slug": value.slug, "banner": value.banner.path, "categorie": value.categorie});
+                            object.projets.push({"id" : value.id,"slug": value.slug, "miniature": value.miniature.path, "categorie": value.categorie});
                         });
                         this.onLoad = false;
 
@@ -122,7 +122,7 @@
                         var object = this;
                         this.projets = [];
                         $.each(json, function (key, value) {
-                            object.projets.push({"id" : value.id, "slug": value.slug, "categorie": value.categorie,  "banner": value.banner.path});
+                            object.projets.push({"id" : value.id, "slug": value.slug, "categorie": value.categorie,  "miniature": value.miniature.path});
                         });
                         this.getCount();
                     })

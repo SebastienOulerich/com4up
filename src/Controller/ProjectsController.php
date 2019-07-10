@@ -67,13 +67,10 @@ class ProjectsController extends Controller
         $previous = $em->getRepository(Projects::class)->findOneByPrevious($project->getDate());
         $slug = new Slugify();
         if ($next != null) {
-            var_dump($next);
-            var_dump("next");
+
             $next["title"] = $slug->slugify($next["title"]);
         }
         if ($previous != null) {
-            var_dump($previous);
-            var_dump("previous");
             $previous["title"] = $slug->slugify($previous["title"]);
         }
         return $this->render(
@@ -157,7 +154,7 @@ class ProjectsController extends Controller
         $project = $em->getRepository(Projects::class)->findOneBy(array('id' => $id));
         $em->remove($project);
         $em->flush();
-        return $this->redirectToRoute('projet_gestion');
+        return $this->redirectToRoute('gestion_projects');
     }
 
     /**

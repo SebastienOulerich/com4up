@@ -40,8 +40,8 @@ class Image
     private $alt;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Projects", inversedBy="gallery")
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Projects", inversedBy="gallery", cascade={"persist" ,"remove"})
+     * @ORM\JoinColumn(nullable=true , onDelete="SET NULL")
      */
     private $projects;
 

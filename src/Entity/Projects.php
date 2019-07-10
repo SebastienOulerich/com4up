@@ -50,25 +50,25 @@ class Projects
     private $URL_site;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Image", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\OneToOne(targetEntity="App\Entity\Image", orphanRemoval=true, cascade={"persist" ,"remove"})
+     * @ORM\JoinColumn(nullable=true, onDelete="SET NULL")
      */
     private $banner;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Image", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\OneToOne(targetEntity="App\Entity\Image", orphanRemoval=true, cascade={"persist" ,"remove"})
+     * @ORM\JoinColumn(nullable=true, onDelete="SET NULL")
      */
     private $miniature;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="projects", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="projects", orphanRemoval=true,cascade={"persist" ,"remove"})
+     * @ORM\JoinColumn(nullable=true, onDelete="SET NULL")
      */
     private $gallery;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Technologies", inversedBy="projects")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Technologies" , inversedBy="projects")
      */
     private $technologies;
 

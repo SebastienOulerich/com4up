@@ -35,7 +35,9 @@ class ProjectFixtures extends Fixture
         $project1->setTitle("Faerith's");
         $project1->setDescription("Collectif de créateurs de contenus sur Internet (vidéos, lives, articles …), principalement axé sur le jeux vidéo ainsi que la culture geek. Faerith’s se démarque de par son fort aspect communautaire avec à sa disposition : un serveur vocal/textuel Discord, des serveurs de jeux et un site web comprenant de nombreuses features.");
         $project1->setClient("Nous meme");
-        $project1->setDate(new \Datetime("now"));
+        $date = new \Datetime("now");
+        $date->modify('-1 day');
+        $project1->setDate($date);
         $project1->setCategorie("web");
         $project1->setTechno("none");
         $project1->setURLSite("https://faeriths.fr");
@@ -149,7 +151,9 @@ Com4Up a été lancée en Septembre 2017 par 4 collaborateurs travaillant ensemb
         $project3->setTitle("Esuria");
         $project3->setDescription("Je m'appelle Thomas et mon pseudo est Esuria. Je travaille en tant qu'UX/UI designer, webdesigner et vidéaste chez Com4Up. Je suis le fondateur du collectif Faerith's et co-fondateur de Streaming School. Je propose du contenu sur YouTube et je live de temps en temps sur Twitch.");
         $project3->setClient("Esuria");
-        $project3->setDate(new \Datetime("now"));
+        $date = new \Datetime("now");
+        $date->modify('+1 day');
+        $project3->setDate($date);
         $project3->setCategorie("social");
         $project3->setTechno("none");
         $project3->setURLSite("https://esuria.fr");
@@ -159,7 +163,7 @@ Com4Up a été lancée en Septembre 2017 par 4 collaborateurs travaillant ensemb
         $project3image1->setFileName("esuria_banniere.jpg");
         $project3image1->setAlt("Esuria banniere");
         $manager->persist($project3image1);
-        $project2->setBanner($project3image1);
+        $project3->setBanner($project3image1);
 
         $project3image2 = new Image();
         $project3image2->setPath('/images/projets/esuria.jpg');

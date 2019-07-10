@@ -48,7 +48,7 @@
 </div> #}
 
 <div id="Integrale_Image">
-  <a class="card"  v-for="(projet,index) in projets"  v-bind:href="'/projets/' + projet.slug + - + projet.id" ><img class="Images_Projet" v-bind:src=projet.banner alt="Bandeau"><div class="Projet_hover"  v-bind:class="hover_select(projet.categorie)"><div class="Projet_hover_border"></div></div></a>
+  <a class="card"  v-for="(projet,index) in projets"  v-bind:href="'/projets/' + projet.slug + - + projet.id" ><img class="Images_Projet" v-bind:src=projet.miniature alt="Bandeau"><div class="Projet_hover"  v-bind:class="hover_select(projet.categorie)"><div class="Projet_hover_border"></div></div></a>
 </div>
 </div>
 
@@ -136,7 +136,7 @@
 						this.projets = [];
 
                         $.each(json, function (key, value) {
-                            object.projets.push({"id" : value.id,"slug": value.slug, "banner": value.banner.path, "categorie": value.categorie});
+                            object.projets.push({"id" : value.id,"slug": value.slug, "miniature": value.miniature.path, "categorie": value.categorie});
                         });
                         this.onLoad = false;
 
@@ -157,7 +157,7 @@
                         var object = this;
                         this.projets = [];
                         $.each(json, function (key, value) {
-                            object.projets.push({"id" : value.id, "slug": value.slug, "categorie": value.categorie,  "banner": value.banner.path});
+                            object.projets.push({"id" : value.id, "slug": value.slug, "categorie": value.categorie,  "miniature": value.miniature.path});
                         });
                         this.getCount();
                     })
