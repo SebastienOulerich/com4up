@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Technologies;
 use App\Form\TechnologieType;
 use App\Entity\Projects;
+use App\Entity\Image;
 use App\Form\ProjectType;
 use App\Form\EditProjectType;
 use App\Service\FileUploader;
@@ -30,7 +31,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ProjectsController extends Controller
 {
-
     /**
      * @Route("/projets", name="projets")
      */
@@ -106,6 +106,7 @@ class ProjectsController extends Controller
         ]);
     }
 
+
     /**
      * @Route("/edit-project/{id}", name="edit_project")
      */
@@ -113,26 +114,53 @@ class ProjectsController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $project = $em->getRepository(Projects::class)->find($id);
-        $originalGallery = new ArrayCollection();
+        $saveGallery = new ArrayCollection();
+        $filenames = array();
 
         // Create an ArrayCollection of the current Tag objects in the database
         foreach ($project->getGallery() as $img) {
-            // var_dump($img);
             $img->setFilename(new File($this->getParameter('uploadDirectory') . '/' . $img->getFilename()));
         }
         foreach ($project->getGallery() as $img) {
-            $originalGallery->add($img);
+            $filenames[$img->getId()] = $img->getFilename();
+            $saveGallery->add($img);
         }
+        // var_dump($filenames);
         $project->getBanner()->setFilename(new File($this->getParameter('uploadDirectory') . '/' . $project->getBanner()->getFilename()));
         $project->getMiniature()->setFilename(new File($this->getParameter('uploadDirectory') . '/' . $project->getMiniature()->getFilename()));
         $form = $this->createForm(ProjectType::class, $project);
         $saveProject = $project->getBanner()->getFilename();
+        $saveMiniature = $project->getMiniature()->getFilename();
         // 2) handle the submit (will only happen on POST)
+
         $form->handleRequest($request);
+        // var_dump($saveMiniature->getFilename());
+        // var_dump($saveGallery[0]->getId());
+        // var_dump($saveGallery[0]->getFilename());
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
+            // var_dump($filenames);
+
+            // var_dump(count($data->getGallery()));
+            foreach ($data->getGallery() as $img) {
+                if ($img->getFilename() == null) {
+                    // $id = $this->searcharray($img->getId(), $saveGallery);
+                    // var_dump(!empty($filenames[$img->getId()]));
+                    var_dump($img->getId());
+                    if (!empty($filenames[$img->getId()])) {
+                        $img->setFilename($filenames[$img->getId()]);
+                        // s;
+                        // var_dump($img->getFilename()); 
+                    }
+
+                    // var_dump(count($data->getGallery()));
+                    //    var_dump($img->getFilename());
+                }
+            }
             if ($data->getBanner()->getFilename() == null)
                 $data->getBanner()->setFilename($saveProject);
+            if ($data->getMiniature()->getFilename() == null)
+                $data->getMiniature()->setFilename($saveMiniature);
             $em = $this->getDoctrine()->getManager();
             $em->persist($project);
             $em->flush();
@@ -144,6 +172,8 @@ class ProjectsController extends Controller
             "project" => $project,
         ]);
     }
+
+
 
     /**
      * @Route("delete-projet/{id}",name="deleteProjet")
@@ -300,24 +330,34 @@ class ProjectsController extends Controller
     /**
      * @Route("edit-technologie/{id}",name="editTechnologie")
      */
-     public function editTechnologie($id)
-     {
-         $em = $this->getDoctrine()->getManager();
-         $technologie = $em->getRepository(Technologies::class)->findOneBy(array('id' => $id));
-         $em->remove($technologie);
-         $em->flush();
-         return $this->redirectToRoute('technologie_gestion');
-     }
+    public function editTechnologie($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $technologie = $em->getRepository(Technologies::class)->findOneBy(array('id' => $id));
+        $em->remove($technologie);
+        $em->flush();
+        return $this->redirectToRoute('technologie_gestion');
+    }
 
     /**
      * @Route("delete-technologie/{id}",name="deleteTechnologie")
      */
-     public function deleteTechnologie($id)
-     {
-         $em = $this->getDoctrine()->getManager();
-         $technologie = $em->getRepository(Technologies::class)->findOneBy(array('id' => $id));
-         $em->remove($technologie);
-         $em->flush();
-         return $this->redirectToRoute('technologie_gestion');
-     }
+    public function deleteTechnologie($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $technologie = $em->getRepository(Technologies::class)->findOneBy(array('id' => $id));
+        $em->remove($technologie);
+        $em->flush();
+        return $this->redirectToRoute('technologie_gestion');
+    }
+
+    public function searcharray($value, $array)
+    {
+        foreach ($array as $k => $val) {
+            if ($val->getId() == $value) {
+                return $k;
+            }
+        }
+        return null;
+    }
 }
