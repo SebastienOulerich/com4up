@@ -1,311 +1,450 @@
 {% extends 'base.html.twig' %}
-{% block title %}Accueil{% endblock %}
+{% block title %}Accueil
+{% endblock %}
 {% block stylesheets %}
-<link type="text/css" rel="stylesheet" href={{asset("css/index.css")}} />
-<link rel="stylesheet" href="{{ asset('css/swiper.min.css') }}">
+    <link type="text/css" rel="stylesheet" href={{asset("css/index.css")}}/>
+    <link rel="stylesheet" href="{{ asset('css/swiper.min.css') }}">
 {% endblock %}
 {% block body%}
 
-<div id="Services_mob">
-<a href="{{ path('services_web') }}" class="Bloc_web"><img class="service_mob_pic" src={{asset("images/Accueil-Web.jpg")}} alt="Service web"><p>Site web</p><div class="Web_hover"></div></a>
-<a href="{{ path('services_audiovisuel') }}" class="Bloc_audiovisuel"><img class="audiovisuel_mob_pic" src={{asset("images/Accueil-Audiovisuel.jpg")}} alt="Service audiovisuel"><p>Audiovisuel</p><div class="Audiovisuel_hover"></div></a>
-<a href="{{ path('services_social') }}" class="Bloc_Social"><img class="social_mob_pic" src={{asset("images/Accueil-Reseaux.jpg")}} alt="Service réseaux sociaux"><p>Réseaux sociaux</p><div class="Social_hover"></div></a>
-<a href="{{ path('services_materiel') }}" class="Bloc_materiel"><img class="materiel_mob_pic" src={{asset("images/Accueil-Materiel.jpg")}} alt="Service matériel"><p>Matériel</p><div class="Materiel_hover"></div></a>
-</div>
+    <div id="Services_mob">
+        <a href="{{ path('services_web') }}" class="Bloc_web"><img class="service_mob_pic" src={{asset("images/Accueil-Web.jpg")}} alt="Service web"><p>Site web</p>
+            <div class="Web_hover"></div>
+        </a>
+        <a href="{{ path('services_audiovisuel') }}" class="Bloc_audiovisuel"><img class="audiovisuel_mob_pic" src={{asset("images/Accueil-Audiovisuel.jpg")}} alt="Service audiovisuel"><p>Audiovisuel</p>
+            <div class="Audiovisuel_hover"></div>
+        </a>
+        <a href="{{ path('services_social') }}" class="Bloc_Social"><img class="social_mob_pic" src={{asset("images/Accueil-Reseaux.jpg")}} alt="Service réseaux sociaux"><p>Réseaux sociaux</p>
+            <div class="Social_hover"></div>
+        </a>
+        <a href="{{ path('services_materiel') }}" class="Bloc_materiel"><img class="materiel_mob_pic" src={{asset("images/Accueil-Materiel.jpg")}} alt="Service matériel"><p>Matériel</p>
+            <div class="Materiel_hover"></div>
+        </a>
+    </div>
 
 
-<div class="swiper-container" id="Mobile_service">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide">
-      <a href="{{ path('services_web') }}" class="Bloc_web"><img class="service_mob_pic" src={{asset("images/Accueil-Web.jpg")}} alt="Service web"><p>Site web</p><div class="Web_hover"></div></a>
-    </div>
-    <div class="swiper-slide">
-      <a href="{{ path('services_audiovisuel') }}" class="Bloc_audiovisuel"><img class="audiovisuel_mob_pic" src={{asset("images/Accueil-Audiovisuel.jpg")}} alt="Service audiovisuel"><p>Audiovisuel</p><div class="Audiovisuel_hover"></div></a>
-    </div>
-    <div class="swiper-slide">
-      <a href="{{ path('services_social') }}" class="Bloc_Social"><img class="social_mob_pic" src={{asset("images/Accueil-Reseaux.jpg")}} alt="Service réseaux sociaux"><p>Réseaux sociaux</p><div class="Social_hover"></div></a>
-    </div>
-    <div class="swiper-slide">
-      <a href="{{ path('services_materiel') }}" class="Bloc_materiel"><img class="materiel_mob_pic" src={{asset("images/Accueil-Materiel.jpg")}} alt="Service matériel"><p>Matériel</p><div class="Materiel_hover"></div></a>
-    </div>
-  </div>
-</div>
-</div>
-<div id="Une_Colonne">
-  <h1 id="Titre_Principal">Travaux Récents</h1>
-  <ul id="Categorie_Selection">
-    {# <li>
-      Tous
-    </li>
-    <li class="Espace_Slash">
-      /
-    </li> #}
-    <li>
-      Site Web
-    </li>
-    {# <li class="Espace_Slash">
-      /
-    </li>
-    <li>
-      Audiovisuel
-    </li>
-    <li class="Espace_Slash">
-      /
-    </li>
-    <li>
-      Réseaux Sociaux
-    </li>
-    <li class="Espace_Slash">
-      /
-    </li>
-    <li>
-      Matériel
-    </li> #}
-  </ul>
-</div>
-
-<div id="Integrale_Image">
-  <a href=""><img class="Images_Projet" src={{asset("images/projets/com4up.jpg")}} alt="Bandeau">
-    <div class="Projet_hover Projet_hover_web">
-      <div class="Projet_hover_border"></div>
-    </div>
-  </a>
-  <a href=""><img class="Images_Projet" src={{asset("images/projets/faeriths.jpg")}} alt="Bandeau">
-    <div class="Projet_hover Projet_hover_web">
-      <div class="Projet_hover_border"></div>
-    </div>
-  </a>
-  <a href=""><img class="Images_Projet" src={{asset("images/projets/esuria.jpg")}} alt="Bandeau">
-    <div class="Projet_hover Projet_hover_web">
-      <div class="Projet_hover_border"></div>
-    </div>
-  </a>
-  <a href=""><img class="Images_Projet" src={{asset("images/projets/streamingschool.jpg")}} alt="Bandeau">
-    <div class="Projet_hover Projet_hover_web">
-      <div class="Projet_hover_border"></div>
-    </div>
-  </a>
-  <a href=""><img class="Images_Projet" src={{asset("images/projets/loic.jpg")}} alt="Bandeau">
-    <div class="Projet_hover Projet_hover_web">
-      <div class="Projet_hover_border"></div>
-    </div>
-  </a>
-  <a href=""><img class="Images_Projet" src={{asset("images/projets/sebastien.jpg")}} alt="Bandeau">
-    <div class="Projet_hover Projet_hover_web">
-      <div class="Projet_hover_border"></div>
-    </div>
-  </a>
-  <a href=""><img class="Images_Projet" src={{asset("images/projets/MichelLavertu.jpg")}} alt="Bandeau">
-    <div class="Projet_hover Projet_hover_web">
-      <div class="Projet_hover_border"></div>
-    </div>
-  </a>
-  <a href=""><img class="Images_Projet" src={{asset("images/projets/Projet.jpg")}} alt="Bandeau"></a>
-</div>
-
-<div id="Bloc_Equipe">
-  <h2 id="Qui">Qui sommes nous?</h2>
-  <div id="Bloc_Equipe_Content">
-    <div class="Bloc_Equipe_Case">
-      <div class="Bloc_Equipe_Case_text">
-        <img src={{asset("images/Profil_Thomas.jpg")}} alt="Photo de Thomas Kleine">
-        <h3>Thomas Kleine</h3>
-        <h4>UX et UI Designer / Webdesigner<br/>/ Vidéaste</h4>
-        <p>Cofondateur de Com4Up, je réalise l’UX et l’UI Design des différents projets. Je participe au développement Front-End des sites web et je possède également des compétences en référencement, vous permettant d’améliorer votre visibilité.</p>
-      </div>
-      <div class="Equipe_Social">
-        <a href="https://www.esuria.fr/" target="_blank">
-          <i class="far fa-globe" aria-hidden></i>
-        </a>
-        <a href="https://www.facebook.com/Fas.Esuria/" target="_blank">
-          <i class="fab fa-facebook-square"></i>
-        </a>
-        <a href="https://twitter.com/fas_esuria" target="_blank">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/esuria/" target="_blank">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="mailto:kleine.thomas@com4up.fr">
-          <i class="fas fa-envelope"></i>
-        </a>
-      </div>
-    </div>
-    <div class="Bloc_Equipe_Case">
-      <div class="Bloc_Equipe_Case_text">
-        <img src={{asset("images/Profil_Sebastien.jpg")}} alt="Photo de Sebastien Oulerich">
-        <h3>Sébastien Oulerich</h3>
-        <h4>Développeur Full Stack</h4>
-        <p>Cofondateur et développeur Full Stack de Com4Up. Je réalise l’intégration de vos projets à partir des maquettes d’UX/UI Design et participe à la structuration des bases de données.</p>
-      </div>
-      <div class="Equipe_Social">
-        <a href="https://www.nargash.fr/" target="_blank">
-          <i class="far fa-globe" aria-hidden></i>
-        </a>
-        <a href="https://www.facebook.com/Fas.Nargash" target="_blank">
-          <i class="fab fa-facebook-square"></i>
-        </a>
-        <a href="https://twitter.com/Fas_Nargash" target="_blank">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/sebastien-oulerich/" target="_blank">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="mailto:oulerich.sebastien@com4up.fr">
-          <i class="fas fa-envelope"></i>
-        </a>
-      </div>
-    </div>
-    <div class="Bloc_Equipe_Case">
-      <div class="Bloc_Equipe_Case_text">
-        <img src={{asset("images/Profil_Loic.jpg")}} alt="Photo de Loic Oulerich">
-        <h3>Loic Oulerich</h3>
-        <h4>Développeur Back-End</h4>
-        <p>Cofondateur et développeur Back-End de Com4Up, actuellement étudiant en 4ème année à l’école d’ingénieur informatique Cesi. Lors de mon cursus scolaire, j'ai pu approfondir le développement web qui est rapidement devenu une véritable passion.</p>
-      </div>
-      <div class="Equipe_Social">
-        <a href="https://www.loic-oulerich.fr/" target="_blank">
-          <i class="far fa-globe" aria-hidden></i>
-        </a>
-        <a href="https://www.facebook.com/loic.oulerich" target="_blank">
-          <i class="fab fa-facebook-square fa-facebook-square_loic"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/loic-oulerich-4a9536136/" target="_blank">
-          <i class="fab fa-linkedin fa-linkedin-square_loic"></i>
-        </a>
-        <a href="mailto:oulerich.loic@com4up.fr">
-          <i class="fas fa-envelope"></i>
-        </a>
-      </div>
-    </div>
-    <div class="Bloc_Equipe_Case">
-      <div class="Bloc_Equipe_Case_text">
-        <img src={{asset("images/Profil_Julien.jpg")}} alt="Photo de Julien Goby">
-        <h3>Julien Goby</h3>
-        <h4>Technicien Audiovisuel</h4>
-        <p>Collaborateur de Com4Up. Technicien supérieur en audiovisuel, spécialisé dans la technique vidéo. Passionné de vidéo depuis mon plus jeune âge, mes études m’ont appris la vidéo broadcast.</p>
-      </div>
-      <div class="Equipe_Social">
-        <a href="https://www.facebook.com/juliendondada" target="_blank">
-          <i class="fab fa-facebook-square"></i>
-        </a>
-        <a href="https://twitter.com/WanTeeD57" target="_blank">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/julien-goby-2710b9138/" target="_blank">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="mailto:iwntd.faeriths@gmail.com">
-          <i class="fas fa-envelope"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-{# <div id="Confiance_Section">
-  <h2>ILS NOUS FONT CONFIANCE !</h2>
-  <div id="Logo_Confiance">
-    <i class="fas fa-chevron-left" aria-hidden></i>
-      <img class="Confiance_Photo" src="https://via.placeholder.com/300x125" alt="Photo Confiance">
-      <img class="Confiance_Photo" src="https://via.placeholder.com/300x125" alt="Photo Confiance">
-      <img class="Confiance_Photo" src="https://via.placeholder.com/300x125" alt="Photo Confiance">
-      <img class="Confiance_Photo Photo_Mobile" src="https://via.placeholder.com/300x125" alt="Photo Confiance">
-      <img class="Confiance_Photo Photo_Mobile" src="https://via.placeholder.com/300x125" alt="Photo Confiance">
-    <i class="fas fa-chevron-right" aria-hidden></i>
-  </div>
-</div>
-
-<div id="Temoignage_Section">
-  <h2>TÉMOIGNAGES</h2>
-  <div id="Ensemble_Temoignage">
-    <div class="Temoignages">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <div class="Ensemble_Profil">
-        <div class="Image_Temoignage">
-          <img class="Temoignages_Photo" src="https://via.placeholder.com/50x50" alt="Photo Témoignages">
+    <div class="swiper-container" id="Mobile_service">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a href="{{ path('services_web') }}" class="Bloc_web"><img class="service_mob_pic" src={{asset("images/Accueil-Web.jpg")}} alt="Service web"><p>Site web</p>
+                    <div class="Web_hover"></div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="{{ path('services_audiovisuel') }}" class="Bloc_audiovisuel"><img class="audiovisuel_mob_pic" src={{asset("images/Accueil-Audiovisuel.jpg")}} alt="Service audiovisuel"><p>Audiovisuel</p>
+                    <div class="Audiovisuel_hover"></div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="{{ path('services_social') }}" class="Bloc_Social"><img class="social_mob_pic" src={{asset("images/Accueil-Reseaux.jpg")}} alt="Service réseaux sociaux"><p>Réseaux sociaux</p>
+                    <div class="Social_hover"></div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="{{ path('services_materiel') }}" class="Bloc_materiel"><img class="materiel_mob_pic" src={{asset("images/Accueil-Materiel.jpg")}} alt="Service matériel"><p>Matériel</p>
+                    <div class="Materiel_hover"></div>
+                </a>
+            </div>
         </div>
-        <div class="Prenom_Metier">
-          <h4>Prénom NOM</h4>
-          <h5>Métier</h5>
-        </div>
-      </div>
-
     </div>
-    <div class="Temoignages">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <div class="Ensemble_Profil">
-        <div class="Image_Temoignage">
-          <img class="Temoignages_Photo" src="https://via.placeholder.com/50x50" alt="Photo Témoignages">
-        </div>
-        <div class="Prenom_Metier">
-          <h4>Prénom NOM</h4>
-          <h5>Métier</h5>
-        </div>
-      </div>
+</div>
+<div id="app">
 
+    <div id="Une_Colonne">
+        <h1 id="Titre_Principal">Travaux Récents</h1>
+        <ul id="Categorie_Selection">
+            {# <li v-on:click="setSelect('All')">
+                Tous
+            </li>
+            <li class="Espace_Slash">
+                /
+            </li> #}
+            <li v-on:click="setSelect('web')">
+                Site Web
+            </li>
+            {# <li class="Espace_Slash">
+                /
+            </li>
+            <li v-on:click="setSelect('audiovisuel')">
+                Audiovisuel
+            </li>
+            <li class="Espace_Slash">
+                /
+            </li>
+            <li v-on:click="setSelect('social')">
+                Réseaux Sociaux
+            </li>
+            <li class="Espace_Slash">
+                /
+            </li>
+            <li v-on:click="setSelect('materiel')">
+                Matériel
+            </li> #}
+        </ul>
     </div>
-    <div class="Temoignages">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <div class="Ensemble_Profil">
-        <div class="Image_Temoignage">
-          <img class="Temoignages_Photo" src="https://via.placeholder.com/50x50" alt="Photo Témoignages">
-        </div>
-        <div class="Prenom_Metier">
-          <h4>Prénom NOM</h4>
-          <h5>Métier</h5>
-        </div>
-      </div>
 
+    {# <div class="cards">
+      {% set counter = 0 %}
+      {% for i in  counter..11 %}
+      <img class="card" src={{asset("images/projets/Projet.jpg")}} alt="Bandeau" id="card-{{ counter }}">
+       {% set counter = counter + 1 %}
+       {% endfor %}
     </div> #}
-  </div>
+
+    <div id="Integrale_Image">
+        <a class="card" v-bind:href="'/projets/' + projet.slug + - + projet.id" v-for="(projet,index) in projets">
+            <img alt="Bandeau" class="Images_Projet" v-bind:src="projet.miniature">
+            <div class="Projet_hover" v-bind:class="hover_select(projet.categorie)">
+                <div class="Projet_hover_border"></div>
+            </div>
+        </a>
+    </div>
 </div>
+<div id="Bloc_Equipe">
+    <h2 id="Qui">Qui sommes nous?</h2>
+    <div id="Bloc_Equipe_Content">
+        <div class="Bloc_Equipe_Case">
+            <div class="Bloc_Equipe_Case_text">
+                <img src={{asset("images/Profil_Thomas.jpg")}} alt="Photo de Thomas Kleine">
+                <h3>Thomas Kleine</h3>
+                <h4>UX et UI Designer / Webdesigner<br/>/ Vidéaste</h4>
+                <p>Cofondateur de Com4Up, je réalise l’UX et l’UI Design des différents projets. Je participe au développement Front-End des sites web et je possède également des compétences en référencement, vous permettant d’améliorer votre visibilité.</p>
+            </div>
+            <div class="Equipe_Social">
+                <a href="https://www.esuria.fr/" target="_blank">
+                    <i aria-hidden class="far fa-globe"></i>
+                </a>
+                <a href="https://www.facebook.com/Fas.Esuria/" target="_blank">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+                <a href="https://twitter.com/fas_esuria" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/esuria/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:kleine.thomas@com4up.fr">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+        <div class="Bloc_Equipe_Case">
+            <div class="Bloc_Equipe_Case_text">
+                <img src={{asset("images/Profil_Sebastien.jpg")}} alt="Photo de Sebastien Oulerich">
+                <h3>Sébastien Oulerich</h3>
+                <h4>Développeur Full Stack</h4>
+                <p>Cofondateur et développeur Full Stack de Com4Up. Je réalise l’intégration de vos projets à partir des maquettes d’UX/UI Design et participe à la structuration des bases de données.</p>
+            </div>
+            <div class="Equipe_Social">
+                <a href="https://www.nargash.fr/" target="_blank">
+                    <i aria-hidden class="far fa-globe"></i>
+                </a>
+                <a href="https://www.facebook.com/Fas.Nargash" target="_blank">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+                <a href="https://twitter.com/Fas_Nargash" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/sebastien-oulerich/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:oulerich.sebastien@com4up.fr">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+        <div class="Bloc_Equipe_Case">
+            <div class="Bloc_Equipe_Case_text">
+                <img src={{asset("images/Profil_Loic.jpg")}} alt="Photo de Loic Oulerich">
+                <h3>Loic Oulerich</h3>
+                <h4>Développeur Back-End</h4>
+                <p>Cofondateur et développeur Back-End de Com4Up, actuellement étudiant en 4ème année à l’école d’ingénieur informatique Cesi. Lors de mon cursus scolaire, j'ai pu approfondir le développement web qui est rapidement devenu une véritable passion.</p>
+            </div>
+            <div class="Equipe_Social">
+                <a href="https://www.loic-oulerich.fr/" target="_blank">
+                    <i aria-hidden class="far fa-globe"></i>
+                </a>
+                <a href="https://www.facebook.com/loic.oulerich" target="_blank">
+                    <i class="fab fa-facebook-square fa-facebook-square_loic"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/loic-oulerich-4a9536136/" target="_blank">
+                    <i class="fab fa-linkedin fa-linkedin-square_loic"></i>
+                </a>
+                <a href="mailto:oulerich.loic@com4up.fr">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+        <div class="Bloc_Equipe_Case">
+            <div class="Bloc_Equipe_Case_text">
+                <img src={{asset("images/Profil_Julien.jpg")}} alt="Photo de Julien Goby">
+                <h3>Julien Goby</h3>
+                <h4>Technicien Audiovisuel</h4>
+                <p>Collaborateur de Com4Up. Technicien supérieur en audiovisuel, spécialisé dans la technique vidéo. Passionné de vidéo depuis mon plus jeune âge, mes études m’ont appris la vidéo broadcast.</p>
+            </div>
+            <div class="Equipe_Social">
+                <a href="https://www.facebook.com/juliendondada" target="_blank">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+                <a href="https://twitter.com/WanTeeD57" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/julien-goby-2710b9138/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:iwntd.faeriths@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>{# <div id="Confiance_Section">
+                      <h2>ILS NOUS FONT CONFIANCE !</h2>
+                      <div id="Logo_Confiance">
+                        <i class="fas fa-chevron-left" aria-hidden></i>
+                          <img class="Confiance_Photo" src="https://via.placeholder.com/300x125" alt="Photo Confiance">
+                          <img class="Confiance_Photo" src="https://via.placeholder.com/300x125" alt="Photo Confiance">
+                          <img class="Confiance_Photo" src="https://via.placeholder.com/300x125" alt="Photo Confiance">
+                          <img class="Confiance_Photo Photo_Mobile" src="https://via.placeholder.com/300x125" alt="Photo Confiance">
+                          <img class="Confiance_Photo Photo_Mobile" src="https://via.placeholder.com/300x125" alt="Photo Confiance">
+                        <i class="fas fa-chevron-right" aria-hidden></i>
+                      </div>
+                    </div>
+                    
+                    <div id="Temoignage_Section">
+                      <h2>TÉMOIGNAGES</h2>
+                      <div id="Ensemble_Temoignage">
+                        <div class="Temoignages">
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          </p>
+                          <div class="Ensemble_Profil">
+                            <div class="Image_Temoignage">
+                              <img class="Temoignages_Photo" src="https://via.placeholder.com/50x50" alt="Photo Témoignages">
+                            </div>
+                            <div class="Prenom_Metier">
+                              <h4>Prénom NOM</h4>
+                              <h5>Métier</h5>
+                            </div>
+                          </div>
+                    
+                        </div>
+                        <div class="Temoignages">
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          </p>
+                          <div class="Ensemble_Profil">
+                            <div class="Image_Temoignage">
+                              <img class="Temoignages_Photo" src="https://via.placeholder.com/50x50" alt="Photo Témoignages">
+                            </div>
+                            <div class="Prenom_Metier">
+                              <h4>Prénom NOM</h4>
+                              <h5>Métier</h5>
+                            </div>
+                          </div>
+                    
+                        </div>
+                        <div class="Temoignages">
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          </p>
+                          <div class="Ensemble_Profil">
+                            <div class="Image_Temoignage">
+                              <img class="Temoignages_Photo" src="https://via.placeholder.com/50x50" alt="Photo Témoignages">
+                            </div>
+                            <div class="Prenom_Metier">
+                              <h4>Prénom NOM</h4>
+                              <h5>Métier</h5>
+                            </div>
+                          </div>
+                    
+                        </div> #}</div></div>{% endblock %}{% block js %}<!-- Swiper JS --><script src="../js/swiper.min.js" type="text/javascript"></script><!-- Initialize Swiper --><script>var swiper1 = new Swiper('.swiper-container', {
+    pagination: '.swiper-pagination',
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    slidesPerView: 1,
+    paginationClickable: true,
+    spaceBetween: 0,
+    loop: true
+});
 
-{% endblock %}
+var swiper2 = new Swiper('.Confiance_Slider', {
+    pagination: '.swiper-pagination',
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    slidesPerView: 5,
+    paginationClickable: true,
+    spaceBetween: 0,
+    loop: true
+});
+var swiper3 = new Swiper('.Confiance_Slider_mobile', {
+    pagination: '.swiper-pagination',
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    slidesPerView: 1,
+    paginationClickable: true,
+    spaceBetween: 0,
+    loop: true
+});</script><script crossorigin="anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" src="https://code.jquery.com/jquery-3.3.1.min.js"></script><script src="{{asset('js/vue.js')}}"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script><script>var app = new Vue({
+    el: '#app',
+    delimiters: [
+        '{', '}'
+    ],
+    data: {
+        projets: [],
+        select: "All",
+        page: 1,
+        count: 0,
+        nbrPage: 0,
+        onLoad: false
+    },
+    mounted() { // this.sayHello();
+        this.getArticle();
+        this.getCount();
+    },
+    methods: {
+        setSelect(selection) {
+            this.page = 1;
+            this.select = selection;
+            this.getArticleSelection();
+        },
+        hover_select: function (categorie) {
+            return {
+                "Projet_hover_web": categorie == "web",
+                "Projet_hover_audiovisuel": categorie == "audiovisuel",
+                "Projet_hover_social": categorie == "social",
+                "Projet_hover_materiel": categorie == "materiel"
+            }
+        },
+        setPage(page) {
+            console.log('Set page');
+            if (this.page != page) {
+                this.page = page;
+                console.log(this.page);
+
+                if (this.select == 'All') {
+                    this.getArticle();
+                } else {
+                    this.getArticleSelection();
+                }
+            }
+        },
+        setLoad() {
+            console.log('Set load');
+            if (this.onLoad == false) {
+                this.onLoad = true;
+            } else {
+                this.onLoad = false;
+            }
+
+        },
+        getArticle() {
+            console.log("get Article");
+            this.onLoad = true;
+            axios({
+                method: 'POST',
+                url: '/get-projet',
+                data: {
+                    page: this.page
+                }
+            }).then(response => {
+                var json = JSON.parse(response.data);
+                console.log(json);
+
+                var object = this;
+                this.projets = [];
+
+                $.each(json, function (key, value) {
+                    object.projets.push({"id": value.id, "slug": value.slug, "miniature": value.miniature.path, "categorie": value.categorie});
+                });
+                this.onLoad = false;
+
+            })
+        },
+        getArticleSelection() {
+            console.log("get Article Selection");
+            axios({
+                method: 'POST',
+                url: '/get-projet-selection',
+                data: { // id :this.biens[0],
+                    selection: this.select,
+                    page: this.page
+                }
+            }).then(response => {
+                var json = JSON.parse(response.data);
+                var object = this;
+                this.projets = [];
+                $.each(json, function (key, value) {
+                    object.projets.push({"id": value.id, "slug": value.slug, "categorie": value.categorie, "miniature": value.miniature.path});
+                });
+                this.getCount();
+            })
+        },
+        getCount() {
+            console.log("get Count");
+            axios({
+                method: 'POST',
+                url: '/count-projet',
+                data: { // id :this.biens[0],
+                    selection: this.select
+                }
+            }).then(response => {
+                var json = JSON.parse(response.data);
+                this.count = json;
+                this.nbrPage = Math.ceil(this.count / 6)
+            })
+        }
+    }
+})</script><script>let cards = Array.from(document.querySelectorAll('.card'))
+
+cards.forEach((card) => {
+    card.addEventListener('click', function () {
+        let flip = new Flip()
+        flip.read(cards)
+        card.parentNode.removeChild(card)
+        cards = cards.filter(c => c !== card)
+        flip.play(cards)
+    })
+})
+
+class Flip {
+    constructor() {
+        this.duration = 300
+        this.positions = {}
+    }
 
 
-{% block js %}
-  <!-- Swiper JS -->
-  <script type="text/javascript" src="../js/swiper.min.js"></script>
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper1 = new Swiper('.swiper-container', {
-      pagination: '.swiper-pagination',
-      nextButton: '.swiper-button-next',
-      prevButton: '.swiper-button-prev',
-      slidesPerView: 1,
-      paginationClickable: true,
-      spaceBetween: 0,
-      loop: true
-    });
+    read(elements) {
+        elements.forEach(element => {
+            const id = element.getAttribute('id')
+            this.positions[id] = element.getBoundingClientRect()
+        })
+    }
 
-    var swiper2 = new Swiper('.Confiance_Slider', {
-      pagination: '.swiper-pagination',
-      nextButton: '.swiper-button-next',
-      prevButton: '.swiper-button-prev',
-      slidesPerView: 5,
-      paginationClickable: true,
-      spaceBetween: 0,
-      loop: true
-    });
-    var swiper3 = new Swiper('.Confiance_Slider_mobile', {
-      pagination: '.swiper-pagination',
-      nextButton: '.swiper-button-next',
-      prevButton: '.swiper-button-prev',
-      slidesPerView: 1,
-      paginationClickable: true,
-      spaceBetween: 0,
-      loop: true
-    });
-  </script>
-{% endblock %}
+    play(elements) {
+        elements.forEach(element => {
+            const id = element.getAttribute('id')
+            const newPosition = element.getBoundingClientRect()
+            const oldPosition = this.positions[id]
+            const deltaX = oldPosition.x - newPosition.x
+            const deltaY = oldPosition.y - newPosition.y
+            const deltaW = oldPosition.width / newPosition.width
+            const deltaH = oldPosition.height / newPosition.height
+            element.animate([
+                {
+                    transform: `translate(${deltaX}px, ${deltaY}px) scale(${deltaW}, ${deltaH})`
+                }, {
+                    transform: 'none'
+                }
+            ], {
+                duration: this.duration,
+                easing: 'ease-in-out',
+                fill: 'both'
+            })
+            element.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(${deltaW}, ${deltaH})`
+        })
+    }
+}</script>{% endblock %}

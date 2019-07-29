@@ -29,11 +29,16 @@
             {% endif %}
         </div>
         <div id="Partie_Haute_Droite">
-            {% if project.URLSite %}
+            {% if project.URLSite and project.status == "fini" %}
                 <a href="{{project.URLSite}}" target="_blank">
                     <h2 id="Bouton_Visite">VISITER LE SITE</h2>
                 </a>
+            {% elseif project.status == "En développement" %}
+                <p> Site en cours de développement </p>
+            {% else %}
+                <p>Site hors-ligne</p>
             {% endif %}
+
         </div>
     </div>
 

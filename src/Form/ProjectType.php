@@ -10,6 +10,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use App\Form\ImageType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
@@ -47,6 +48,15 @@ class ProjectType extends AbstractType
                 "choice_label" => "name",
                 "expanded" => true,
                 "multiple" => true,
+            ])
+            ->add('status', ChoiceType::class, [
+                'choices'=> array(
+                    'fini' => 'fini',
+                    'En développement' => 'En développement',
+                    'Hors-ligne' => 'Hors-ligne',
+                ),
+                'expanded' => true,
+                'multiple' => false,
             ])
         ;
     }

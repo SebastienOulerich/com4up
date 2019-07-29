@@ -50,6 +50,11 @@ class Projects
     private $URL_site;
 
     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $status;
+
+    /**
      * @ORM\OneToOne(targetEntity="App\Entity\Image", orphanRemoval=true, cascade={"persist" ,"remove"})
      * @ORM\JoinColumn(nullable=true, onDelete="SET NULL")
      */
@@ -120,6 +125,19 @@ class Projects
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+
+    public function getStatus(): ?string
+    {
+        return $this->status;
+    }
+
+    public function setStatus(string $status): self
+    {
+        $this->status = $status;
 
         return $this;
     }
