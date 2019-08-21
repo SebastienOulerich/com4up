@@ -3,7 +3,7 @@
 	height: auto;
 }
 
-#Une_Ligne {
+.Une_Ligne {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,14 +12,21 @@
 	background-color: #D5D5D5;
 }
 
-#Une_Ligne a {
+.Une_Ligne a {
   display: flex;
   font-family: "Bebas", sans-serif;
   font-size: 2.5em;
   margin-left: 0.5em;
 }
 
-#wrapper {
+.Une_Ligne p {
+  display: flex;
+  font-family: "Bebas", sans-serif;
+  font-size: 2.5em;
+  margin-left: 0.5em;
+}
+
+.wrapper {
 	display: flex;
 	justify-content: flex-start;
 	flex-wrap: wrap;
@@ -38,6 +45,9 @@
 		border: solid black 1px;
 }
 
+.plus {
+	justify-content: center;
+}
 .gestion_data_top {
 	min-width: 100%;
 	width: 100%;
@@ -55,6 +65,11 @@ margin: 0.3em 0 0.2em 0;
 
 .gestion_data_top p i{
 font-size: 3em;
+margin: 0;
+}
+
+.plus p i{
+font-size: 5em;
 margin: 0;
 }
 .gestion_button {
