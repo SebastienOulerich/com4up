@@ -203,8 +203,8 @@ footer {
   #nav-icon1 span, #nav-icon3 span, #nav-icon4 span {
     display: block;
     position: absolute;
-    height: 9px;
-    width: 100%;
+    height: 6px;
+    width: 70%;
     background: #212121;
     border-radius: 9px;
     opacity: 1;
@@ -220,7 +220,7 @@ footer {
   }
 
   #nav-icon1 span:nth-child(1) {
-    top: 0px;
+    top: 5px;
   }
 
   #nav-icon1 span:nth-child(2) {
@@ -228,7 +228,7 @@ footer {
   }
 
   #nav-icon1 span:nth-child(3) {
-    top: 36px;
+    top: 31px;
   }
 
   #nav-icon1.open span:nth-child(1) {
