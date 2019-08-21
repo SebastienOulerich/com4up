@@ -18,8 +18,6 @@ class ImageType extends AbstractType
         $builder
            ->add('alt')
            ->add('filename', FileType::class, ['label' => 'Upload the thumbnail'])
-        //    ->add('brochure', FileType::class, ['label' => 'Brochure (PDF file)'])
-
             ;
 }
 

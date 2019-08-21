@@ -53,8 +53,6 @@
                 <h3 id="Date">Date :
                     {{ project.date|localizeddate('none', 'none', null, null, 'EEEE d ')|capitalize }}
                     {{ project.date|localizeddate('none', 'none', null, null, 'MMMM Y ')|capitalize }}</h3>
-                {# <h3 id="Date">Date : {{ project.date|localizeddate('none', 'none', null, null, 'EEEE d MMMM Y') }}</h3> #}
-                {# <h3 id="Date">Date :{{ project.date|date("D M Y") }}</h3> #}
                 <div id="Technologies">
                     <h3>Technologies utilisées :</h3>
                     {% for techno in project.technologies %}

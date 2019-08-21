@@ -67,7 +67,6 @@ class ProjectsController extends Controller
         $previous = $em->getRepository(Projects::class)->findOneByPrevious($project->getDate());
         $slug = new Slugify();
         if ($next != null) {
-
             $next["title"] = $slug->slugify($next["title"]);
         }
         if ($previous != null) {
@@ -144,17 +143,9 @@ class ProjectsController extends Controller
             // var_dump(count($data->getGallery()));
             foreach ($data->getGallery() as $img) {
                 if ($img->getFilename() == null) {
-                    // $id = $this->searcharray($img->getId(), $saveGallery);
-                    // var_dump(!empty($filenames[$img->getId()]));
-                    var_dump($img->getId());
                     if (!empty($filenames[$img->getId()])) {
                         $img->setFilename($filenames[$img->getId()]);
-                        // s;
-                        // var_dump($img->getFilename()); 
                     }
-
-                    // var_dump(count($data->getGallery()));
-                    //    var_dump($img->getFilename());
                 }
             }
             if ($data->getBanner()->getFilename() == null)
