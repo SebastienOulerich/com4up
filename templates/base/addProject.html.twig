@@ -62,6 +62,7 @@
             class="tags" data-prototype="{{ form_widget(form.gallery.vars.prototype)|e('html_attr') }}">
             {# iterate over each existing tag and render its only field: name #}
             {% for img in form.gallery %}
+                <li>{{ form_row(img.alt) }}</li>
                 <li>{{ form_row(img.filename) }}</li>
             {% endfor %}
         </ul>
