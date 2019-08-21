@@ -56,7 +56,7 @@
         {% else %}
         <li><a href="{{ path('services') }}">Services</a></li>
         {% endif %}
-        {% if app.request.attributes.get('_route') == "projets" or app.request.attributes.get('_route') == "projet_id"  %}
+        {% if app.request.attributes.get('_route') == "projets" or app.request.attributes.get('_route') == "project_id"  %}
         <li class="Current_page"><a href="{{ path('projets') }}">Projets</a></li>
         {% else %}
         <li><a href="{{ path('projets') }}">Projets</a></li>

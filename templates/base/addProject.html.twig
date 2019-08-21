@@ -14,7 +14,7 @@
         <h2>Miniature :{{form_widget(form.miniature)}}</h2>
         <h2>Banner :{{form_widget(form.banner)}}</h2>
     </div>
-    <img alt="Bandeau" id="Bandeau" src="https://via.placeholder.com/1920x320">
+    {# <img alt="Bandeau" id="Bandeau" src="https://via.placeholder.com/1920x320"> #}
     <div id="Partie_Haute">
         <div
             id="Partie_Haute_Gauche">
@@ -62,8 +62,8 @@
             class="tags" data-prototype="{{ form_widget(form.gallery.vars.prototype)|e('html_attr') }}">
             {# iterate over each existing tag and render its only field: name #}
             {% for img in form.gallery %}
-                <li>{{ form_row(img.alt) }}</li>
-                <li>{{ form_row(img.filename) }}</li>
+                <li>{{ form_widget(img) }}<a href="#" class="remove-tag">x</a></li>
+              
             {% endfor %}
         </ul>
     <input id="submit" type="submit" value="Submit"/>{{ form_widget(form._token) }}
@@ -72,7 +72,14 @@
     // setup an "add a tag" link
     var $addTagLink = $('<a href="#" class="add_tag_link">Ajouter une image</a>');
     var $newLinkLi = $('<li></li>').append($addTagLink);
+     // handle the removal, just for this example
+        $('.remove-tag').click(function (e) {
+            e.preventDefault();
 
+            $(this).parent().remove();
+
+            return false;
+        });
     jQuery(document).ready(function () { // Get the ul that holds the collection of tags
         var $collectionHolder = $('ul.tags');
 
