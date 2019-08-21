@@ -7,51 +7,11 @@
 {% block body%}
 <div id="app">
   {{ form_start(form) }}
-  {{form_widget(form.name)}}
-  {{form_widget(form.icon, {'attr': {'v-model': 'icon'}}) }}
-  <div v-html="icon"></div>
+  <p> Nom de la compétence :{{form_widget(form.name)}}</p>
+  <p> Icon de la compétence (avec &lt;i&gt;) :{{form_widget(form.icon) }}</p>
     <input id="submit" type="submit" value="Submit"/>
   {{ form_end(form) }}
 </div>
 {% endblock %}
 {% block js %}
-<script src="{{asset('js/vue.js')}}"></script>
-  <script>
-        var app = new Vue({
-            el: '#app',
-            delimiters: [
-                '{', '}'
-            ],
-            data: {
-                icon : ""
-            },
-            mounted() {
-                //this.sayHello();
-                this.getArticle();
-                this.getCount();
-            },
-            methods: {
-                setSelect(selection) {
-          					this.page = 1;
-                    this.select = selection;
-                    this.getArticleSelection();
-                },
-                setPage(page) {
-                    console.log('Set page');
-                    if(this.page != page)
-                    {
-                        this.page = page;
-                        console.log(this.page);
-
-                        if(this.select == 'All'){
-                            this.getArticle();
-                        }
-                        else{
-                            this.getArticleSelection();
-                        }
-                    }
-                },
-            },
-        });
-        </script>
 {% endblock %}

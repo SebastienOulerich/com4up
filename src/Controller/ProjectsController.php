@@ -36,22 +36,12 @@ class ProjectsController extends Controller
      */
     public function projets()
     {
-        // replace this line with your own code!
         $em = $this->getDoctrine()->getManager();
         $projects = $em->getRepository(Projects::class)->findAll();
         return $this->render('base/projets.html.twig', array('projects' => $projects));
     }
 
-    /**
-     * @Route("/gestion-projects", name="gestion_projects")
-     */
-    public function gestion_projets()
-    {
-        // replace this line with your own code!
-        $em = $this->getDoctrine()->getManager();
-        $projects = $em->getRepository(Projects::class)->findAll();
-        return $this->render('base/projets_gestion.html.twig', array('projects' => $projects));
-    }
+    
 
 
 
@@ -83,121 +73,34 @@ class ProjectsController extends Controller
         );
     }
 
-    /**
-     * @Route("/new-project", name="new_project")
-     */
-    public function new_project(Request $request, FileUploader $fileUploader)
+    public function searcharray($value, $array)
     {
-        $project = new Projects();
-        $form = $this->createForm(ProjectType::class, $project);
-        // 2) handle the submit (will only happen on POST)
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($project);
-            $em->flush();
-            return $this->redirectToRoute('project_id', ['slug' => $project->getSlug(), 'id' => $project->getId()]);
-        }
-        // replace this line with your own code!
-        // return $this->redirectToRoute('projets');
-        return $this->render('base/addProject.html.twig', [
-            "form" => $form->createView(),
-        ]);
-    }
-
-
-    /**
-     * @Route("/edit-project/{id}", name="edit_project")
-     */
-    public function edit_project(Request $request, FileUploader $fileUploader, $id)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $project = $em->getRepository(Projects::class)->find($id);
-        $saveGallery = new ArrayCollection();
-        $filenames = array();
-
-        // Create an ArrayCollection of the current Tag objects in the database
-        foreach ($project->getGallery() as $img) {
-            $img->setFilename(new File($this->getParameter('uploadDirectory') . '/' . $img->getFilename()));
-        }
-        foreach ($project->getGallery() as $img) {
-            $filenames[$img->getId()] = $img->getFilename();
-            $saveGallery->add($img);
-        }
-        // var_dump($filenames);
-        $project->getBanner()->setFilename(new File($this->getParameter('uploadDirectory') . '/' . $project->getBanner()->getFilename()));
-        $project->getMiniature()->setFilename(new File($this->getParameter('uploadDirectory') . '/' . $project->getMiniature()->getFilename()));
-        $form = $this->createForm(ProjectType::class, $project);
-        $saveProject = $project->getBanner()->getFilename();
-        $saveMiniature = $project->getMiniature()->getFilename();
-        // 2) handle the submit (will only happen on POST)
-
-        $form->handleRequest($request);
-        // var_dump($saveMiniature->getFilename());
-        // var_dump($saveGallery[0]->getId());
-        // var_dump($saveGallery[0]->getFilename());
-        if ($form->isSubmitted() && $form->isValid()) {
-            $data = $form->getData();
-            // var_dump($filenames);
-
-            // var_dump(count($data->getGallery()));
-            foreach ($data->getGallery() as $img) {
-                if ($img->getFilename() == null) {
-                    if (!empty($filenames[$img->getId()])) {
-                        $img->setFilename($filenames[$img->getId()]);
-                    }
-                }
+        foreach ($array as $k => $val) {
+            if ($val->getId() == $value) {
+                return $k;
             }
-            if ($data->getBanner()->getFilename() == null)
-                $data->getBanner()->setFilename($saveProject);
-            if ($data->getMiniature()->getFilename() == null)
-                $data->getMiniature()->setFilename($saveMiniature);
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($project);
-            $em->flush();
         }
-        // replace this line with your own code!
-        // return $this->redirectToRoute('projets');
-        return $this->render('base/editProject.html.twig', [
-            "form" => $form->createView(),
-            "project" => $project,
-        ]);
+        return null;
     }
 
 
 
-    /**
-     * @Route("delete-projet/{id}",name="deleteProjet")
-     */
-    public function deleteProjets($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $project = $em->getRepository(Projects::class)->findOneBy(array('id' => $id));
-        $em->remove($project);
-        $em->flush();
-        return $this->redirectToRoute('gestion_projects');
-    }
+    // API Projet
 
     /**
      * @Route("/get-projet",name="getProjet")
      */
     public function getProjet(Request $request, RegistryInterface $doctrine)
     {
-        $user1 = $this->getUser();
         $request_stack = $this->container->get('request_stack');
         $request = $request_stack->getCurrentRequest();
         $content = $request->getContent();
         $contentDecode = json_decode($content);
         $page = $contentDecode->page;
         $projets = $doctrine->getRepository(Projects::class)->myGetProjet($page);
-        // var_dump($projets);
-        // foreach ($projets as $projet) {
-        // var_dump($projet->getSlug());
-        // }
         $encoders = array(new XmlEncoder(), new JsonEncoder());
         $normalizer = new ObjectNormalizer();
         $normalizer->setCircularReferenceLimit(2);
-        // Add Circular reference handler
         $normalizer->setCircularReferenceHandler(function ($object) {
             return $object->getId();
         });
@@ -208,8 +111,6 @@ class ProjectsController extends Controller
 
         $response = new JsonResponse();
         $response->setData($jsonContent);
-        // dump($response);
-
         return $response;
     }
 
@@ -219,7 +120,6 @@ class ProjectsController extends Controller
 
     public function getProjetBYType(Request $request, RegistryInterface $doctrine)
     {
-        $user1 = $this->getUser();
         $request_stack = $this->container->get('request_stack');
         $request = $request_stack->getCurrentRequest();
         $content = $request->getContent();
@@ -233,7 +133,6 @@ class ProjectsController extends Controller
         $encoders = array(new XmlEncoder(), new JsonEncoder());
         $normalizer = new ObjectNormalizer();
         $normalizer->setCircularReferenceLimit(2);
-        // Add Circular reference handler
         $normalizer->setCircularReferenceHandler(function ($object) {
             return $object->getId();
         });
@@ -244,8 +143,6 @@ class ProjectsController extends Controller
 
         $response = new JsonResponse();
         $response->setData($jsonContent);
-        // dump($response);
-
         return $response;
     }
 
@@ -285,53 +182,65 @@ class ProjectsController extends Controller
     }
 
 
-    /**
-     * @Route("/gestion-technologies", name="gestion_technologies")
-     */
-    public function gestion_technologies()
-    {
-        // replace this line with your own code!
-        $em = $this->getDoctrine()->getManager();
-        $technologies = $em->getRepository(Technologies::class)->findAll();
-        return $this->render('base/techno_gestion.html.twig', array('technologies' => $technologies));
-    }
+   
 
     /**
-     * @Route("/new-technologie", name="new_technologie")
+     * @Route("/cms", name="cms")
+     */
+    public function cms()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $technologies = $em->getRepository(Technologies::class)->findAll();
+        $projects = $em->getRepository(Projects::class)->findAll();
+        return $this->render('base/cms.html.twig', array(
+            'technologies' => $technologies,
+            'projects' => $projects,
+        ));
+    }
+
+    // CMS Technologies
+
+    /**
+     * @Route("/cms/new-technologie", name="new_technologie")
      */
     public function new_technologie(Request $request)
     {
         $technologie = new Technologies();
         $form = $this->createForm(TechnologieType::class, $technologie);
-        // 2) handle the submit (will only happen on POST)
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($technologie);
             $em->flush();
-            // return $this->redirectToRoute('technologie_id', ['slug' => $technologie->getSlug(), 'id' => $project->getId()]);
+            return $this->redirectToRoute('cms');
         }
-        // replace this line with your own code!
-        // return $this->redirectToRoute('projets');
         return $this->render('base/addTechnologie.html.twig', [
             "form" => $form->createView(),
         ]);
     }
 
     /**
-     * @Route("edit-technologie/{id}",name="editTechnologie")
+     * @Route("/cms/edit-technologie/{id}",name="editTechnologie")
      */
-    public function editTechnologie($id)
+    public function editTechnologie(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
-        $technologie = $em->getRepository(Technologies::class)->findOneBy(array('id' => $id));
-        $em->remove($technologie);
-        $em->flush();
-        return $this->redirectToRoute('technologie_gestion');
+        $technologie = $em->getRepository(Technologies::class)->find($id);
+        $form = $this->createForm(TechnologieType::class, $technologie);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($technologie);
+            $em->flush();
+            return $this->redirectToRoute('cms');
+        }
+        return $this->render('base/addTechnologie.html.twig', [
+            "form" => $form->createView(),
+        ]);
     }
 
     /**
-     * @Route("delete-technologie/{id}",name="deleteTechnologie")
+     * @Route("/cms/delete-technologie/{id}",name="deleteTechnologie")
      */
     public function deleteTechnologie($id)
     {
@@ -339,16 +248,87 @@ class ProjectsController extends Controller
         $technologie = $em->getRepository(Technologies::class)->findOneBy(array('id' => $id));
         $em->remove($technologie);
         $em->flush();
-        return $this->redirectToRoute('technologie_gestion');
+        return $this->redirectToRoute('cms');
     }
 
-    public function searcharray($value, $array)
+    // CMS Projet
+
+    /**
+     * @Route("/cms/new-project", name="new_project")
+     */
+    public function new_project(Request $request, FileUploader $fileUploader)
     {
-        foreach ($array as $k => $val) {
-            if ($val->getId() == $value) {
-                return $k;
-            }
+        $project = new Projects();
+        $form = $this->createForm(ProjectType::class, $project);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($project);
+            $em->flush();
+            return $this->redirectToRoute('project_id', ['slug' => $project->getSlug(), 'id' => $project->getId()]);
         }
-        return null;
+        return $this->render('base/addProject.html.twig', [
+            "form" => $form->createView(),
+        ]);
+    }
+
+
+    /**
+     * @Route("/cms/edit-project/{id}", name="edit_project")
+     */
+    public function edit_project(Request $request, FileUploader $fileUploader, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $project = $em->getRepository(Projects::class)->find($id);
+        $saveGallery = new ArrayCollection();
+        $filenames = array();
+        foreach ($project->getGallery() as $img) {
+            $img->setFilename(new File($this->getParameter('uploadDirectory') . '/' . $img->getFilename()));
+        }
+        foreach ($project->getGallery() as $img) {
+            $filenames[$img->getId()] = $img->getFilename();
+            $saveGallery->add($img);
+        }
+        $project->getBanner()->setFilename(new File($this->getParameter('uploadDirectory') . '/' . $project->getBanner()->getFilename()));
+        $project->getMiniature()->setFilename(new File($this->getParameter('uploadDirectory') . '/' . $project->getMiniature()->getFilename()));
+        $form = $this->createForm(ProjectType::class, $project);
+        $saveProject = $project->getBanner()->getFilename();
+        $saveMiniature = $project->getMiniature()->getFilename();
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+            foreach ($data->getGallery() as $img) {
+                if ($img->getFilename() == null) {
+                    if (!empty($filenames[$img->getId()])) {
+                        $img->setFilename($filenames[$img->getId()]);
+                    }
+                }
+            }
+            if ($data->getBanner()->getFilename() == null)
+                $data->getBanner()->setFilename($saveProject);
+            if ($data->getMiniature()->getFilename() == null)
+                $data->getMiniature()->setFilename($saveMiniature);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($project);
+            $em->flush();
+            return $this->redirectToRoute('project_id', ['slug' => $project->getSlug(), 'id' => $project->getId()]);
+        }
+        return $this->render('base/editProject.html.twig', [
+            "form" => $form->createView(),
+            "project" => $project,
+        ]);
+    }
+
+    /**
+     * @Route("/cms/delete-projet/{id}",name="delete_project")
+     */
+    public function deleteProjets($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $project = $em->getRepository(Projects::class)->findOneBy(array('id' => $id));
+        $em->remove($project);
+        $em->flush();
+        return $this->redirectToRoute('cms');
     }
 }

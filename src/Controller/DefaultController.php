@@ -15,7 +15,6 @@ class DefaultController extends Controller
      */
     public function index()
     {
-        // replace this line with your own code!
         return $this->render('base/index.html.twig');
     }
 
@@ -24,17 +23,7 @@ class DefaultController extends Controller
      */
     public function services()
     {
-        // replace this line with your own code!
         return $this->render('base/services.html.twig');
-    }
-
-    /**
-     * @Route("/404", name="e404")
-     */
-    public function e404()
-    {
-        // replace this line with your own code!
-        return $this->render('base/404.html.twig');
     }
 
     /**
@@ -42,7 +31,6 @@ class DefaultController extends Controller
      */
     public function services_web()
     {
-        // replace this line with your own code!
         return $this->render('base/services_web.html.twig');
     }
 
@@ -51,7 +39,6 @@ class DefaultController extends Controller
      */
     public function services_audiovisuel()
     {
-        // replace this line with your own code!
         return $this->render('base/services_audiovisuel.html.twig');
     }
 
@@ -60,7 +47,6 @@ class DefaultController extends Controller
      */
     public function services_social()
     {
-        // replace this line with your own code!
         return $this->render('base/services_social.html.twig');
     }
 
@@ -69,7 +55,6 @@ class DefaultController extends Controller
      */
     public function services_materiel()
     {
-        // replace this line with your own code!
         return $this->render('base/services_materiel.html.twig');
     }
 
@@ -78,7 +63,6 @@ class DefaultController extends Controller
      */
     public function services_materiel_tarifs()
     {
-        // replace this line with your own code!
         return $this->render('base/services_materiel_tarif.html.twig');
     }
 
@@ -87,7 +71,6 @@ class DefaultController extends Controller
      */
     public function equipe()
     {
-        // replace this line with your own code!
         return $this->render('base/equipe.html.twig');
     }
 
@@ -96,17 +79,14 @@ class DefaultController extends Controller
      */
     public function a_propos()
     {
-        // replace this line with your own code!
         return $this->render('base/a_propos.html.twig');
     }
-
 
     /**
      * @Route("/mentions-legales", name="mentions_legales")
      */
     public function mentions_legales()
     {
-        // replace this line with your own code!
         return $this->render('base/mentions_legales.html.twig');
     }
 }
