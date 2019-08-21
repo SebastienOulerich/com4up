@@ -52,44 +52,45 @@
 
     <div id="Une_Colonne">
         <h1 id="Titre_Principal">Travaux Récents</h1>
-        <ul id="Categorie_Selection">
+        <ul
+            id="Categorie_Selection">
             {# <li v-on:click="setSelect('All')">
-                Tous
-            </li>
-            <li class="Espace_Slash">
-                /
-            </li> #}
+                            Tous
+                        </li>
+                        <li class="Espace_Slash">
+                            /
+                        </li> #}
             <li v-on:click="setSelect('web')">
                 Site Web
             </li>
             {# <li class="Espace_Slash">
-                /
-            </li>
-            <li v-on:click="setSelect('audiovisuel')">
-                Audiovisuel
-            </li>
-            <li class="Espace_Slash">
-                /
-            </li>
-            <li v-on:click="setSelect('social')">
-                Réseaux Sociaux
-            </li>
-            <li class="Espace_Slash">
-                /
-            </li>
-            <li v-on:click="setSelect('materiel')">
-                Matériel
-            </li> #}
+                            /
+                        </li>
+                        <li v-on:click="setSelect('audiovisuel')">
+                            Audiovisuel
+                        </li>
+                        <li class="Espace_Slash">
+                            /
+                        </li>
+                        <li v-on:click="setSelect('social')">
+                            Réseaux Sociaux
+                        </li>
+                        <li class="Espace_Slash">
+                            /
+                        </li>
+                        <li v-on:click="setSelect('materiel')">
+                            Matériel
+                        </li> #}
         </ul>
     </div>
 
     {# <div class="cards">
-      {% set counter = 0 %}
-      {% for i in  counter..11 %}
-      <img class="card" src={{asset("images/projets/Projet.jpg")}} alt="Bandeau" id="card-{{ counter }}">
-       {% set counter = counter + 1 %}
-       {% endfor %}
-    </div> #}
+          {% set counter = 0 %}
+          {% for i in  counter..11 %}
+          <img class="card" src={{asset("images/projets/Projet.jpg")}} alt="Bandeau" id="card-{{ counter }}">
+           {% set counter = counter + 1 %}
+           {% endfor %}
+        </div> #}
 
     <div id="Integrale_Image">
         <a class="card" v-bind:href="'/projets/' + projet.slug + - + projet.id" v-for="(projet,index) in projets">
@@ -196,69 +197,69 @@
         </div>
     </div>
 </div>{# <div id="Confiance_Section">
-                      <h2>ILS NOUS FONT CONFIANCE !</h2>
-                      <div id="Logo_Confiance">
-                        <i class="fas fa-chevron-left" aria-hidden></i>
-                          <img class="Confiance_Photo" src="https://via.placeholder.com/300x125" alt="Photo Confiance">
-                          <img class="Confiance_Photo" src="https://via.placeholder.com/300x125" alt="Photo Confiance">
-                          <img class="Confiance_Photo" src="https://via.placeholder.com/300x125" alt="Photo Confiance">
-                          <img class="Confiance_Photo Photo_Mobile" src="https://via.placeholder.com/300x125" alt="Photo Confiance">
-                          <img class="Confiance_Photo Photo_Mobile" src="https://via.placeholder.com/300x125" alt="Photo Confiance">
-                        <i class="fas fa-chevron-right" aria-hidden></i>
-                      </div>
-                    </div>
-
-                    <div id="Temoignage_Section">
-                      <h2>TÉMOIGNAGES</h2>
-                      <div id="Ensemble_Temoignage">
-                        <div class="Temoignages">
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                          </p>
-                          <div class="Ensemble_Profil">
-                            <div class="Image_Temoignage">
-                              <img class="Temoignages_Photo" src="https://via.placeholder.com/50x50" alt="Photo Témoignages">
-                            </div>
-                            <div class="Prenom_Metier">
-                              <h4>Prénom NOM</h4>
-                              <h5>Métier</h5>
-                            </div>
+                          <h2>ILS NOUS FONT CONFIANCE !</h2>
+                          <div id="Logo_Confiance">
+                            <i class="fas fa-chevron-left" aria-hidden></i>
+                              <img class="Confiance_Photo" src="https://via.placeholder.com/300x125" alt="Photo Confiance">
+                              <img class="Confiance_Photo" src="https://via.placeholder.com/300x125" alt="Photo Confiance">
+                              <img class="Confiance_Photo" src="https://via.placeholder.com/300x125" alt="Photo Confiance">
+                              <img class="Confiance_Photo Photo_Mobile" src="https://via.placeholder.com/300x125" alt="Photo Confiance">
+                              <img class="Confiance_Photo Photo_Mobile" src="https://via.placeholder.com/300x125" alt="Photo Confiance">
+                            <i class="fas fa-chevron-right" aria-hidden></i>
                           </div>
-
                         </div>
-                        <div class="Temoignages">
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                          </p>
-                          <div class="Ensemble_Profil">
-                            <div class="Image_Temoignage">
-                              <img class="Temoignages_Photo" src="https://via.placeholder.com/50x50" alt="Photo Témoignages">
+    
+                        <div id="Temoignage_Section">
+                          <h2>TÉMOIGNAGES</h2>
+                          <div id="Ensemble_Temoignage">
+                            <div class="Temoignages">
+                              <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                                aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                              </p>
+                              <div class="Ensemble_Profil">
+                                <div class="Image_Temoignage">
+                                  <img class="Temoignages_Photo" src="https://via.placeholder.com/50x50" alt="Photo Témoignages">
+                                </div>
+                                <div class="Prenom_Metier">
+                                  <h4>Prénom NOM</h4>
+                                  <h5>Métier</h5>
+                                </div>
+                              </div>
+    
                             </div>
-                            <div class="Prenom_Metier">
-                              <h4>Prénom NOM</h4>
-                              <h5>Métier</h5>
+                            <div class="Temoignages">
+                              <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                                aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                              </p>
+                              <div class="Ensemble_Profil">
+                                <div class="Image_Temoignage">
+                                  <img class="Temoignages_Photo" src="https://via.placeholder.com/50x50" alt="Photo Témoignages">
+                                </div>
+                                <div class="Prenom_Metier">
+                                  <h4>Prénom NOM</h4>
+                                  <h5>Métier</h5>
+                                </div>
+                              </div>
+    
                             </div>
-                          </div>
-
-                        </div>
-                        <div class="Temoignages">
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                          </p>
-                          <div class="Ensemble_Profil">
-                            <div class="Image_Temoignage">
-                              <img class="Temoignages_Photo" src="https://via.placeholder.com/50x50" alt="Photo Témoignages">
-                            </div>
-                            <div class="Prenom_Metier">
-                              <h4>Prénom NOM</h4>
-                              <h5>Métier</h5>
-                            </div>
-                          </div>
-
-                        </div> #}</div></div>{% endblock %}{% block js %}<!-- Swiper JS --><script src="../js/swiper.min.js" type="text/javascript"></script><!-- Initialize Swiper --><script>var swiper1 = new Swiper('.swiper-container', {
+                            <div class="Temoignages">
+                              <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                                aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                              </p>
+                              <div class="Ensemble_Profil">
+                                <div class="Image_Temoignage">
+                                  <img class="Temoignages_Photo" src="https://via.placeholder.com/50x50" alt="Photo Témoignages">
+                                </div>
+                                <div class="Prenom_Metier">
+                                  <h4>Prénom NOM</h4>
+                                  <h5>Métier</h5>
+                                </div>
+                              </div>
+    
+                            </div> #}</div></div>{% endblock %}{% block js %}<!-- Swiper JS --><script src="../js/swiper.min.js" type="text/javascript"></script><!-- Initialize Swiper --><script>var swiper1 = new Swiper('.swiper-container', {
     pagination: '.swiper-pagination',
     nextButton: '.swiper-button-next',
     prevButton: '.swiper-button-prev',
@@ -285,163 +286,11 @@ var swiper3 = new Swiper('.Confiance_Slider_mobile', {
     paginationClickable: true,
     spaceBetween: 0,
     loop: true
-});</script><script crossorigin="anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" src="https://code.jquery.com/jquery-3.3.1.min.js"></script><script src="{{asset('js/vue.js')}}"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script><script>var app = new Vue({
-    el: '#app',
-    delimiters: [
-        '{', '}'
-    ],
-    data: {
-        projets: [],
-        select: "All",
-        page: 1,
-        count: 0,
-        nbrPage: 0,
-        onLoad: false
-    },
-    mounted() { // this.sayHello();
-        this.getArticle();
-        this.getCount();
-    },
-    methods: {
-        setSelect(selection) {
-            this.page = 1;
-            this.select = selection;
-            this.getArticleSelection();
-        },
-        hover_select: function (categorie) {
-            return {
-                "Projet_hover_web": categorie == "web",
-                "Projet_hover_audiovisuel": categorie == "audiovisuel",
-                "Projet_hover_social": categorie == "social",
-                "Projet_hover_materiel": categorie == "materiel"
-            }
-        },
-        setPage(page) {
-            console.log('Set page');
-            if (this.page != page) {
-                this.page = page;
-                console.log(this.page);
-
-                if (this.select == 'All') {
-                    this.getArticle();
-                } else {
-                    this.getArticleSelection();
-                }
-            }
-        },
-        setLoad() {
-            console.log('Set load');
-            if (this.onLoad == false) {
-                this.onLoad = true;
-            } else {
-                this.onLoad = false;
-            }
-
-        },
-        getArticle() {
-            console.log("get Article");
-            this.onLoad = true;
-            axios({
-                method: 'POST',
-                url: '/get-projet',
-                data: {
-                    page: this.page
-                }
-            }).then(response => {
-                var json = JSON.parse(response.data);
-                console.log(json);
-
-                var object = this;
-                this.projets = [];
-
-                $.each(json, function (key, value) {
-                    object.projets.push({"id": value.id, "slug": value.slug, "miniature": value.miniature.path, "categorie": value.categorie});
-                });
-                this.onLoad = false;
-
-            })
-        },
-        getArticleSelection() {
-            console.log("get Article Selection");
-            axios({
-                method: 'POST',
-                url: '/get-projet-selection',
-                data: { // id :this.biens[0],
-                    selection: this.select,
-                    page: this.page
-                }
-            }).then(response => {
-                var json = JSON.parse(response.data);
-                var object = this;
-                this.projets = [];
-                $.each(json, function (key, value) {
-                    object.projets.push({"id": value.id, "slug": value.slug, "categorie": value.categorie, "miniature": value.miniature.path});
-                });
-                this.getCount();
-            })
-        },
-        getCount() {
-            console.log("get Count");
-            axios({
-                method: 'POST',
-                url: '/count-projet',
-                data: { // id :this.biens[0],
-                    selection: this.select
-                }
-            }).then(response => {
-                var json = JSON.parse(response.data);
-                this.count = json;
-                this.nbrPage = Math.ceil(this.count / 6)
-            })
-        }
-    }
-})</script><script>let cards = Array.from(document.querySelectorAll('.card'))
-
-cards.forEach((card) => {
-    card.addEventListener('click', function () {
-        let flip = new Flip()
-        flip.read(cards)
-        card.parentNode.removeChild(card)
-        cards = cards.filter(c => c !== card)
-        flip.play(cards)
-    })
-})
-
-class Flip {
-    constructor() {
-        this.duration = 300
-        this.positions = {}
-    }
-
-
-    read(elements) {
-        elements.forEach(element => {
-            const id = element.getAttribute('id')
-            this.positions[id] = element.getBoundingClientRect()
-        })
-    }
-
-    play(elements) {
-        elements.forEach(element => {
-            const id = element.getAttribute('id')
-            const newPosition = element.getBoundingClientRect()
-            const oldPosition = this.positions[id]
-            const deltaX = oldPosition.x - newPosition.x
-            const deltaY = oldPosition.y - newPosition.y
-            const deltaW = oldPosition.width / newPosition.width
-            const deltaH = oldPosition.height / newPosition.height
-            element.animate([
-                {
-                    transform: `translate(${deltaX}px, ${deltaY}px) scale(${deltaW}, ${deltaH})`
-                }, {
-                    transform: 'none'
-                }
-            ], {
-                duration: this.duration,
-                easing: 'ease-in-out',
-                fill: 'both'
-            })
-            element.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(${deltaW}, ${deltaH})`
-        })
-    }
-}</script>{% endblock %}
+});
+</script>
+<script crossorigin="anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="{{asset('js/vue.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+<script src="{{asset('js/get-project.js')}}"></script>
+<script src="{{asset('js/flip.js')}}"></script>
+{% endblock %}

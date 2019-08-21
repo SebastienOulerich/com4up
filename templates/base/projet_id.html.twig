@@ -126,10 +126,7 @@
         var img = document.getElementsByClassName('myImg');
         var modalImg = document.getElementById("imgZoom");
         var captionText = document.getElementById("caption");
-
-        console.log(img);
         for (let element of img) {
-            console.log(element);
             element.onclick = function () {
                 document.getElementById("myModal").style.display = "block";
                 modalImg.src = this.src;
