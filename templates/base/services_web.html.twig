@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block title %}Site Web{% endblock %}
 {% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/swiper.min.css') }}">
 <link type="text/css" rel="stylesheet" href={{asset("css/services_web.css")}} />{% endblock %}
 {% block body%}
 
@@ -19,57 +20,66 @@
       <div id="Vide"></div>
       <h2>REMPLIR LE FORMULAIRE DE DEVIS GRATUITEMENT</h2>
       <i class="far fa-arrow-right" aria-hidden></i>
-      </div>
+
     </a>
+      </div>
   </div>
 
-  <div id="Argument_Bandeau">
-    <div id="Argument">
-      <h3>POURQUOI AVOIR UN SITE INTERNET ?</h3>
-      <p>
-        Votre site internet est une part importante de votre identité numérique. Gage de sérieux et de professionnalisme, il vous permettra d'afficher toutes les informations essentielles de votre activité aux yeux de tous. Notre but est de vous proposer un site web moderne qui vous correspond ainsi qu’à vos visiteurs.
-        </p>
+    <div class='container'>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+
+
+    <div class="swiper-slide slide0 toggle" data-hash="slide0">
+      <div id="Argument_Bandeau">
+        <div id="Argument">
+          <h3>POURQUOI AVOIR UN SITE INTERNET ?</h3>
+          <p>
+            Votre site internet est une part importante de votre identité numérique. Gage de sérieux et de professionnalisme, il vous permettra d'afficher toutes les informations essentielles de votre activité aux yeux de tous. Notre but est de vous proposer un site web moderne qui vous correspond ainsi qu’à vos visiteurs.
+          </p>
+        </div>
+      </div>
+
+      <div id="Categorie">
+        <div id="Cat_1"  class="toggle" data-toggle='ux' onclick="ux();"
+          <i class="fas fa-sitemap"></i>
+          <h4>Expérience Utilisateur (UX Design)</h4>
+        </div>
+        <div id="Cat_2"  class="toggle"  data-toggle='responsive' onclick="responsive();">
+            <i class="fas fa-expand-arrows-alt"></i>
+            <h4>Responsive</h4>
+        </div>
+        <div id="Cat_3"  class="toggle"  data-toggle='corespond' onclick="correspond();">
+          <i class="fas fa-user-check"></i>
+          <h4>Qui vous correspond</h4>
+        </div>
+        <div id="Cat_4"  class="toggle"  data-toggle='ui' onclick="ui();">
+          <i class="fas fa-paint-brush-alt"></i>
+          <h4>Interface Utilisateur (UI Design)</h4>
+        </div>
+        <div id="Cat_5"  class="toggle"  data-toggle='seo' onclick="referencement();">
+          <i class="far fa-chart-line"></i>
+          <h4>Référencement et Publicité</h4>
+        </div>
+        <div id="Cat_6"  class="toggle"  data-toggle='maintenance' onclick="maintenance();">
+          <i class="fas fa-wrench"></i>
+          <h4>Maintenance</h4>
+        </div>
       </div>
     </div>
 
-    <div id="Categorie">
-      <div id="Cat_1">
-        <i class="fas fa-sitemap"></i>
-        <h4>Expérience Utilisateur (UX Design)</h4>
-        </div>
-        <div id="Cat_2">
-          <i class="fas fa-expand-arrows-alt"></i>
-          <h4>Responsive</h4>
-          </div>
-          <div id="Cat_3">
-            <i class="fas fa-user-check"></i>
-            <h4>Qui vous correspond</h4>
-            </div>
-            <div id="Cat_4">
-              <i class="fas fa-paint-brush-alt"></i>
-              <h4>Interface Utilisateur (UI Design)</h4>
-              </div>
-              <div id="Cat_5">
-                <i class="far fa-chart-line"></i>
-                <h4>Référencement et Publicité</h4>
-                </div>
-                <div id="Cat_6">
-                  <i class="fas fa-wrench"></i>
-                  <h4>Maintenance</h4>
-                  </div>
-                </div>
-
+                <div class="swiper-slide slide1" data-hash="slide1">
                 <div class="Partie_Haute_Alt" id="Partie_Haute_1">
                   <div class="Partie_Haute_Gauche_Alt">
-                    <a href="#"><i class="fas fa-th-large" aria-hidden></i></a>
+                    <i class="fas fa-th-large" aria-hidden onclick="index();"></i>
                     </div>
                   <div class="Partie_Haute_Centre_Alt">
-                    <i class="far fa-angle-left icone-awesome" aria-hidden></i>
+                    <i class="far fa-angle-left icone-awesome button-prev" aria-hidden></i>
                     <div class="Titre_Menu">
                       <i class="fas fa-sitemap"></i>
                       <h1>Expérience Utilisateur (UX Design)</h1>
                       </div>
-                    <i class="far fa-angle-right icone-awesome" aria-hidden></i>
+                    <i class="far fa-angle-right icone-awesome button-next" aria-hidden></i>
                     </div>
                     <div class="Partie_Haute_Droite_Alt">
                       </div>
@@ -136,18 +146,21 @@ L’objectif est d’avoir un site adapté à votre activité, correspondant à 
                   </div>
 
                 </div>
+                </div>
 
+
+                <div class="swiper-slide slide2" data-hash="slide2">
                 <div class="Partie_Haute_Alt" id="Partie_Haute_2">
                   <div class="Partie_Haute_Gauche_Alt">
-                    <a href="#"><i class="fas fa-th-large" aria-hidden></i></a>
+                    <i class="fas fa-th-large" aria-hidden onclick="index();"></i>
                     </div>
                   <div class="Partie_Haute_Centre_Alt">
-                    <i class="far fa-angle-left icone-awesome" aria-hidden></i>
+                    <i class="far fa-angle-left icone-awesome button-prev" aria-hidden></i>
                     <div class="Titre_Menu">
                       <i class="fas fa-expand-arrows-alt"></i>
                       <h1>Responsive</h1>
                       </div>
-                    <i class="far fa-angle-right icone-awesome" aria-hidden></i>
+                    <i class="far fa-angle-right icone-awesome button-next" aria-hidden></i>
                     </div>
                     <div class="Partie_Haute_Droite_Alt">
                       </div>
@@ -213,18 +226,20 @@ L’objectif est d’avoir un site adapté à votre activité, correspondant à 
                   </div>
 
                 </div>
+                </div>
 
+                <div class="swiper-slide slide3" data-hash="slide3">
                 <div class="Partie_Haute_Alt" id="Partie_Haute_3">
                   <div class="Partie_Haute_Gauche_Alt">
-                    <a href="#"><i class="fas fa-th-large" aria-hidden></i></a>
+                    <i class="fas fa-th-large" aria-hidden onclick="index();"></i>
                     </div>
                   <div class="Partie_Haute_Centre_Alt">
-                    <i class="far fa-angle-left icone-awesome" aria-hidden></i>
+                    <i class="far fa-angle-left icone-awesome button-prev" aria-hidden></i>
                     <div class="Titre_Menu">
                       <i class="fas fa-user-check"></i>
                       <h1>Qui vous correspond</h1>
                       </div>
-                    <i class="far fa-angle-right icone-awesome" aria-hidden></i>
+                    <i class="far fa-angle-right icone-awesome button-next" aria-hidden></i>
                     </div>
                     <div class="Partie_Haute_Droite_Alt">
                       </div>
@@ -290,18 +305,20 @@ L’objectif est d’avoir un site adapté à votre activité, correspondant à 
                   </div>
 
                 </div>
+                </div>
 
+                <div class="swiper-slide slide4" data-hash="slide4">
                 <div class="Partie_Haute_Alt" id="Partie_Haute_4">
                   <div class="Partie_Haute_Gauche_Alt">
-                    <a href="#"><i class="fas fa-th-large" aria-hidden></i></a>
+                    <i class="fas fa-th-large" aria-hidden onclick="index();"></i>
                     </div>
                   <div class="Partie_Haute_Centre_Alt">
-                    <i class="far fa-angle-left icone-awesome" aria-hidden></i>
+                    <i class="far fa-angle-left icone-awesome button-prev" aria-hidden></i>
                     <div class="Titre_Menu">
                       <i class="fas fa-paint-brush-alt"></i>
                       <h1>Interface Utilisateur (UI Design)</h1>
                       </div>
-                    <i class="far fa-angle-right icone-awesome" aria-hidden></i>
+                    <i class="far fa-angle-right icone-awesome button-next" aria-hidden></i>
                     </div>
                     <div class="Partie_Haute_Droite_Alt">
                       </div>
@@ -355,18 +372,20 @@ L’objectif est d’avoir un site adapté à votre activité, correspondant à 
                   </div>
 
                 </div>
+                </div>
 
+                <div class="swiper-slide slide6" data-hash="slide6">
                 <div class="Partie_Haute_Alt" id="Partie_Haute_5">
                   <div class="Partie_Haute_Gauche_Alt">
-                    <a href="#"><i class="fas fa-th-large" aria-hidden></i></a>
+                    <i class="fas fa-th-large" aria-hidden onclick="index();"></i>
                     </div>
                   <div class="Partie_Haute_Centre_Alt">
-                    <i class="far fa-angle-left icone-awesome" aria-hidden></i>
+                    <i class="far fa-angle-left icone-awesome button-prev" aria-hidden></i>
                     <div class="Titre_Menu">
                       <i class="far fa-chart-line"></i>
                       <h1>Référencement et Publicité</h1>
                       </div>
-                    <i class="far fa-angle-right icone-awesome" aria-hidden></i>
+                    <i class="far fa-angle-right icone-awesome button-next" aria-hidden></i>
                     </div>
                     <div class="Partie_Haute_Droite_Alt">
                       </div>
@@ -444,18 +463,20 @@ Une fois votre site web en ligne, l’objectif est qu’il soit le plus visité 
                   </div>
 
                 </div>
+                </div>
 
+                <div class="swiper-slide slide5" data-hash="slide5">
                 <div class="Partie_Haute_Alt" id="Partie_Haute_6">
                   <div class="Partie_Haute_Gauche_Alt">
-                    <a href="#"><i class="fas fa-th-large" aria-hidden></i></a>
+                    <i class="fas fa-th-large" aria-hidden onclick="index();"></i>
                     </div>
                   <div class="Partie_Haute_Centre_Alt">
-                    <i class="far fa-angle-left icone-awesome" aria-hidden></i>
+                    <i class="far fa-angle-left icone-awesome button-prev" aria-hidden></i>
                     <div class="Titre_Menu">
                       <i class="fas fa-wrench"></i>
                       <h1>Maintenance</h1>
                       </div>
-                    <i class="far fa-angle-right icone-awesome" aria-hidden></i>
+                    <i class="far fa-angle-right icone-awesome button-next" aria-hidden></i>
                     </div>
                     <div class="Partie_Haute_Droite_Alt">
                       </div>
@@ -510,5 +531,52 @@ Une fois votre site web en ligne, l’objectif est qu’il soit le plus visité 
                   </div>
 
                 </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+{% endblock %}
+
+{% block js %}
+
+    <script src="../js/swiper.min.js" type="text/javascript"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            nextButton: '.button-next',
+            prevButton: '.button-prev',
+            slidesPerView: 1,
+            paginationClickable: false,
+            spaceBetween: 33,
+            loop: true
+        });
+    </script>
+
+    <script language="JavaScript">
+      function index() {
+        swiper.slideTo($('.slide0').index(), 1000, false);
+      }
+      function ux() {
+        swiper.slideTo($('.slide1').index(), 1000, false);
+      }
+      function responsive() {
+        swiper.slideTo($('.slide2').index(), 1000, false);
+      }
+      function correspond() {
+        swiper.slideTo($('.slide3').index(), 1000, false);
+      }
+      function ui() {
+        swiper.slideTo($('.slide4').index(), 1000, false);
+      }
+      function referencement() {
+        swiper.slideTo($('.slide6').index(), 1000, false);
+      }
+      function maintenance() {
+        swiper.slideTo($('.slide5').index(), 1000, false);
+      }
+    </script>
 
 {% endblock %}

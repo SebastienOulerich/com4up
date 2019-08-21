@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 {% block title %}Matériel{% endblock %}
 {% block stylesheets %}
-<link type="text/css" rel="stylesheet" href={{asset("css/services_materiel.css")}} />{% endblock %}
+<link rel="stylesheet" href="{{ asset('css/swiper.min.css') }}">
+<link type="text/css" rel="stylesheet" href={{asset("css/services_materiel.css")}} />
+{% endblock %}
 {% block body%}
 
 
@@ -23,6 +25,12 @@
       </div>
   </div>
 
+  <div class='container'>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+
+
+<div class="swiper-slide slide0 toggle" data-hash="slide0">
   <div id="Argument_Bandeau">
     <div id="Argument">
       <h3>ÉQUIPEZ-VOUS DURABLEMENT</h3>
@@ -32,19 +40,204 @@
       </div>
     </div>
 
+
     <div id="Categorie">
       <div id="Cat_1">
-        <i class="fas fa-desktop" aria-hidden></i>
+        <i class="fas fa-desktop" aria-hidden onclick="ordi();"></i>
         <h4>ORDINATEURS</h4>
         </div>
         <div id="Cat_2">
-          <i class="fas fa-hdd" aria-hidden></i>
+          <i class="fas fa-hdd" aria-hidden onclick="nas();"></i>
           <h4>STOCKAGE NAS</h4>
           </div>
           <div id="Cat_3">
-            <i class="fas fa-wrench" aria-hidden></i>
+            <i class="fas fa-wrench" aria-hidden onclick="maintenance();"></i>
             <h4>MAINTENANCE</h4>
             </div>
+          </div>
+        </div>
 
+
+            <div class="swiper-slide slide1" data-hash="slide1">
+
+              <div class="Partie_Haute_Alt" id="Partie_Haute_1">
+                <div class="Partie_Haute_Gauche_Alt">
+                  <i class="fas fa-th-large" aria-hidden onclick="index();"></i>
+                  </div>
+                <div class="Partie_Haute_Centre_Alt">
+                  <i class="far fa-angle-left icone-awesome button-prev" aria-hidden></i>
+                  <div class="Titre_Menu">
+                    <i class="fas fa-desktop"></i>
+                    <h1>Ordinateurs</h1>
+                    </div>
+                  <i class="far fa-angle-right icone-awesome button-next" aria-hidden></i>
+                  </div>
+                  <div class="Partie_Haute_Droite_Alt">
+                    </div>
+              </div>
+
+              <div class="Service_Section_Content">
+                <div class="Background_Light">
+                  <i class="fas fa-laptop"></i>
+                  <p>
+                    <span class="Gras">Fixe, portable, transportable :</span>
+                    Nous vous proposons une configuration adaptée à votre mobilité.</p>
+                </div>
+                <div class="Background_Dark">
+                  <i class="fas fa-gamepad"></i>
+                  <p>
+                    <span class="Gras">Adapté à votre utilisation :</span>
+                    Bureautique, Modélisation 3D, Gaming, … chaque composant de votre ordinateur sera adapté à vos besoins.</p>
+                </div>
+                <div class="Background_Light">
+                  <i class="fas fa-thermometer-three-quarters"></i>
+                  <p>
+                    <span class="Gras">Refroidissement :</span>
+                    Choix entre le Aircooling ou Watercooling comme système de refroidissement.</p>
+                </div>
+                <div class="Background_Dark">
+                  <i class="fas fa-hdd"></i>
+                  <p>
+                    <span class="Gras">RAID :</span>
+                    Grâce au système RAID, augmenter la rapidité et la sécurité de votre disque dur.</p>
+                </div>
+                <div class="Background_Light">
+                  <i class="fas fa-chart-line"></i>
+                  <p>
+                    <span class="Gras">SSD :</span>
+                    Plus performant et moins bruyant que les disques durs classiques.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide slide2" data-hash="slide2">
+
+              <div class="Partie_Haute_Alt" id="Partie_Haute_2">
+                <div class="Partie_Haute_Gauche_Alt">
+                  <i class="fas fa-th-large" aria-hidden onclick="index();"></i>
+                  </div>
+                <div class="Partie_Haute_Centre_Alt">
+                  <i class="far fa-angle-left icone-awesome button-prev" aria-hidden></i>
+                  <div class="Titre_Menu">
+                    <i class="fas fa-hdd" ></i>
+                    <h1>Stockage NAS</h1>
+                    </div>
+                  <i class="far fa-angle-right icone-awesome button-next" aria-hidden></i>
+                  </div>
+                  <div class="Partie_Haute_Droite_Alt">
+                    </div>
+              </div>
+
+              <div class="Service_Section_Content">
+                <div class="Background_Light">
+                  <p>Un NAS est un serveur de stockage en réseau, composé d’un ou de plusieurs disques durs, le NAS a pour fonctions principales : le stockage, le partage et la sécurisation de vos données.</p>
+                </div>
+                <div class="Background_Dark">
+                  <i class="fas fa-leaf"></i>
+                  <p>
+                    <span class="Gras">Pourquoi un NAS :</span>
+                    Économe, faible consommation énergétique, sécurisation des données, accessible par tout le réseau local, …</p>
+                </div>
+                <div class="Background_Light">
+                  <i class="fas fa-building"></i>
+                  <p>
+                    <span class="Gras">Entreprise :</span>
+                    Accès performance et sécurité pour travailler sur de lourds fichiers vidéos, une grande base de données, …</p>
+                </div>
+                <div class="Background_Dark">
+                  <i class="fas fa-home"></i>
+                  <p>
+                    <span class="Gras">Particulier :</span>
+                    Utilisation tournée vers le stockage vidéo, photo, musique, …</p>
+                </div>
+                <div class="Background_Light">
+                  <i class="fas fa-file"></i>
+                  <p>
+                    <span class="Gras">Autres possibilités :</span>
+                    Faire de votre NAS un Centre Multimédia pour pouvoir regarder à distance vos photos/vidéos et écouter votre musique. Possibilité de télécharger avec Bittorrent même lorsque votre PC est éteint. Brancher votre NAS à un système de vidéosurveillance
+                    pour stocker les informations.</p>
+                </div>
+                <div class="Background_Dark">
+                  <p>
+                    <span class="Gras">RAID 0 (Performance) :</span>
+                    Augmenter significativement les performances en faisant travailler 2 disques durs en parallèle</br>Perte d’un seul disque = perte définitive des données</br>Tout l’espace disque est utilisé</br>
+            </p>
+          </div>
+          <div class="Background_Light">
+            <p>
+              <span class="Gras">RAID 1 (Sécurité) :</span>
+              Consiste à mettre les données en miroir. Lors de la perte d’un disque, le second disposera encore des données.</p>
+          </div>
+          <div class="Background_Dark">
+            <p>
+              <span class="Gras">RAID 5 (Performance + Sécurité) :</span>
+              Nécessite au minimum 3 disques durs pour fonctionner. Performance aussi élevée qu’en RAID 0 tout en ayant une sécurité accrue.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide slide3" data-hash="slide3">
+
+        <div class="Partie_Haute_Alt" id="Partie_Haute_3">
+          <div class="Partie_Haute_Gauche_Alt">
+            <i class="fas fa-th-large" aria-hidden onclick="index();"></i>
+            </div>
+          <div class="Partie_Haute_Centre_Alt">
+            <i class="far fa-angle-left icone-awesome button-prev" aria-hidden></i>
+            <div class="Titre_Menu">
+              <i class="fas fa-wrench"></i>
+              <h1>Maintenance</h1>
+              </div>
+            <i class="far fa-angle-right icone-awesome button-next" aria-hidden></i>
+            </div>
+            <div class="Partie_Haute_Droite_Alt">
+              </div>
+        </div>
+
+        <div class="Service_Section_Content maintenance"></div>
+      </div>
+
+
+
+              </div>
+            </div>
+          </div>
+
+
+{% endblock %}
+
+{% block js %}
+
+    <script src="../js/swiper.min.js" type="text/javascript"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            nextButton: '.button-next',
+            prevButton: '.button-prev',
+            slidesPerView: 1,
+            paginationClickable: false,
+            spaceBetween: 33,
+            loop: true
+        });
+    </script>
+
+    <script language="JavaScript">
+      function index() {
+        swiper.slideTo($('.slide0').index(), 1000, false);
+      }
+
+      function ordi() {
+        swiper.slideTo($('.slide1').index(), 1000, false);
+      }
+
+      function nas() {
+        swiper.slideTo($('.slide2').index(), 1000, false);
+      }
+
+      function maintenance() {
+        swiper.slideTo($('.slide3').index(), 1000, false);
+      }
+    </script>
 
 {% endblock %}
