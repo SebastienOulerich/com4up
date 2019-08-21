@@ -24,7 +24,6 @@ class ProjectType extends AbstractType
             ->add('client')
             ->add('date')
             ->add('categorie')
-            ->add('techno')
             ->add('URL_site')
             ->add('banner', ImageType::class, [
                 // 'data_class' => null

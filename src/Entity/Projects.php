@@ -40,11 +40,6 @@ class Projects
     private $categorie;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $techno;
-
-    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $URL_site;
@@ -166,19 +161,7 @@ class Projects
 
         return $this;
     }
-
-    public function getTechno(): ?string
-    {
-        return $this->techno;
-    }
-
-    public function setTechno(string $techno): self
-    {
-        $this->techno = $techno;
-
-        return $this;
-    }
-
+    
     public function getURLSite(): ?string
     {
         return $this->URL_site;

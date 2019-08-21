@@ -1,81 +1,125 @@
 {% extends 'base.html.twig' %}
-{% block title %}Ajouter Projet{% endblock %}
+{% block title %}Ajouter Projet
+{% endblock %}
 {% block stylesheets %}
-<link type="text/css" rel="stylesheet" href={{asset("css/addProject.css")}} />
+    <link type="text/css" rel="stylesheet" href={{asset("css/addProject.css")}}/>
+    <link type="text/css" rel="stylesheet" href={{asset("css/lecture_projet.css")}}/>
 {% endblock %}
 
 {% block body%}
-  {{ form_start(form) }}
-   <h3>Gallery</h3>
-    <ul class="tags" data-prototype="{{ form_widget(form.gallery.vars.prototype)|e('html_attr') }}">
-        {# iterate over each existing tag and render its only field: name #}
-        {% for img in form.gallery %}
-            <li>{{ form_row(img.filename) }}</li>
-        {% endfor %}
-    </ul>
-    <input id="submit" type="submit" value="Submit"/>
-  {{ form_widget(form._token) }}
-  {{ form_end(form) }}
-{% endblock %}
-{% block js %}
+    {{ form_start(form) }}
 
+    {# <img id="Bandeau" src={{asset(project.banner.path)}} alt="Bandeau"> #}
+    <div>
+        <h2>Miniature :{{form_widget(form.miniature)}}</h2>
+        <h2>Banner :{{form_widget(form.banner)}}</h2>
+    </div>
+    <img alt="Bandeau" id="Bandeau" src="https://via.placeholder.com/1920x320">
+    <div id="Partie_Haute">
+        <div
+            id="Partie_Haute_Gauche">
+            {# <a href="{{ path('projets') }}"> #}
+            <i aria-hidden class="fas fa-th-large"></i>
+        </a>
+    </div>
+    <div id="Partie_Haute_Centre">
+        <h1>Titre :
+            {{ form_widget(form.title) }}</h1>
+    </div>
+    <div id="Partie_Haute_Droite">
+        <h2>URL :{{ form_widget(form.URL_site) }}</h2>
+    </div>
+</div>
+
+<div id="Bandeau_Information">
+    <div id="Integrale_Information">
+        <div id="Information_Gauche">
+            <h3 id="Client">Client :{{ form_widget(form.client) }}</h3>
+            <h3 id="Categorie">Catégorie :&nbsp{{ form_widget(form.categorie) }}
+            </h3>
+        </div>
+        <div id="Information_Droite">
+            <h3 id="Date">Date :
+                {{ form_widget(form.date) }}</h3>
+            <div id="Technologies">
+                <h3>Technologies utilisées :</h3>
+                {{ form_widget(form.technologies) }}
+            </div>
+        </div>
+    </div>
+</div>
+<div id="Description_Integrale">
+<div>
+    <h4>Description :</h4>
+    <p>
+        {{ form_widget(form.description) }}
+    </p>
+    <h4>Status :</h4>
+    <p>{{ form_widget(form.status) }}</p>
+    </div>
+        <h3>Gallery</h3>
+        <ul
+            class="tags" data-prototype="{{ form_widget(form.gallery.vars.prototype)|e('html_attr') }}">
+            {# iterate over each existing tag and render its only field: name #}
+            {% for img in form.gallery %}
+                <li>{{ form_row(img.filename) }}</li>
+            {% endfor %}
+        </ul>
+    <input id="submit" type="submit" value="Submit"/>{{ form_widget(form._token) }}
+</div>{% endblock %}{% block js %}
 <script>
-// setup an "add a tag" link
-var $addTagLink = $('<a href="#" class="add_tag_link">Add a tag</a>');
-var $newLinkLi = $('<li></li>').append($addTagLink);
+    // setup an "add a tag" link
+    var $addTagLink = $('<a href="#" class="add_tag_link">Ajouter une image</a>');
+    var $newLinkLi = $('<li></li>').append($addTagLink);
 
-jQuery(document).ready(function() {
-    // Get the ul that holds the collection of tags
-   var $collectionHolder = $('ul.tags');
-    
-    // add the "add a tag" anchor and li to the tags ul
-    $collectionHolder.append($newLinkLi);
-    
-    // count the current form inputs we have (e.g. 2), use that as the new
-    // index when inserting a new item (e.g. 2)
-    $collectionHolder.data('index', $collectionHolder.find(':input').length);
-    
-    $addTagLink.on('click', function(e) {
-        // prevent the link from creating a "#" on the URL
-        e.preventDefault();
-        
-        // add a new tag form (see code block below)
-        addTagForm($collectionHolder, $newLinkLi);
-    });
-    
-    
-});
+    jQuery(document).ready(function () { // Get the ul that holds the collection of tags
+        var $collectionHolder = $('ul.tags');
 
-function addTagForm($collectionHolder, $newLinkLi) {
-    // Get the data-prototype explained earlier
-    var prototype = $collectionHolder.data('prototype');
-    
-    // get the new index
-    var index = $collectionHolder.data('index');
-    
-    // Replace '$$name$$' in the prototype's HTML to
-    // instead be a number based on how many items we have
-    var newForm = prototype.replace(/__name__/g, index);
-    
-    // increase the index with one for the next item
-    $collectionHolder.data('index', index + 1);
-    
-    // Display the form in the page in an li, before the "Add a tag" link li
-    var $newFormLi = $('<li></li>').append(newForm);
-    
-    // also add a remove button, just for this example
-    $newFormLi.append('<a href="#" class="remove-tag">x</a>');
-    
-    $newLinkLi.before($newFormLi);
-    
-    // handle the removal, just for this example
-    $('.remove-tag').click(function(e) {
-        e.preventDefault();
-        
-        $(this).parent().remove();
-        
-        return false;
+        // add the "add a tag" anchor and li to the tags ul
+        $collectionHolder.append($newLinkLi);
+
+        // count the current form inputs we have (e.g. 2), use that as the new
+        // index when inserting a new item (e.g. 2)
+        $collectionHolder.data('index', $collectionHolder.find(':input').length);
+
+        $addTagLink.on('click', function (e) { // prevent the link from creating a "#" on the URL
+            e.preventDefault();
+
+            // add a new tag form (see code block below)
+            addTagForm($collectionHolder, $newLinkLi);
+        });
+
+
     });
-}
-</script>
-{% endblock %}
+
+    function addTagForm($collectionHolder, $newLinkLi) { // Get the data-prototype explained earlier
+        var prototype = $collectionHolder.data('prototype');
+
+        // get the new index
+        var index = $collectionHolder.data('index');
+
+        // Replace '$$name$$' in the prototype's HTML to
+        // instead be a number based on how many items we have
+        var newForm = prototype.replace(/__name__/g, index);
+
+        // increase the index with one for the next item
+        $collectionHolder.data('index', index + 1);
+
+        // Display the form in the page in an li, before the "Add a tag" link li
+        var $newFormLi = $('<li></li>').append(newForm);
+
+        // also add a remove button, just for this example
+        $newFormLi.append('<a href="#" class="remove-tag">x</a>');
+
+        $newLinkLi.before($newFormLi);
+
+        // handle the removal, just for this example
+        $('.remove-tag').click(function (e) {
+            e.preventDefault();
+
+            $(this).parent().remove();
+
+            return false;
+        });
+    }
+</script>{% endblock %}
