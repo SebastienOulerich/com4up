@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -22,14 +23,13 @@ class ContactType extends AbstractType
             ->add('entreprise', TextType::class ,array(
                 'attr' => ['require' => false,],
                 'label'=> 'Entreprise/Organisme  - (Optionnel)',))
-            ->add('cateWeb', CheckboxType::class ,array(
-                'label'=> 'Site web',))
-            ->add('cateAudiovisuel', CheckboxType::class ,array(
-                'label'=> 'Audiovisuel',))
-            ->add('cateSocial', CheckboxType::class ,array(
-                'label'=> 'Réseaux sociaux',))
-            ->add('cateMateriel', CheckboxType::class ,array(
-                'label'=> 'Matériel',))
+              ->add('cate', ChoiceType::class, [
+                    'choices'=> array(
+                        'Site web' => 'Site web',
+                        'Audiovisuel' => 'Audiovisuel',
+                        'Réseaux sociaux' => 'Réseaux sociaux',
+                        'Matériel' => 'Matériel',
+                    )])
             ->add('objet', TextType::class  ,array(
                 'attr' => [ 'require' => true,],))
             ->add('message',  TextareaType::class  ,array(
