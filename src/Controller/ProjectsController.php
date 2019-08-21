@@ -41,7 +41,7 @@ class ProjectsController extends Controller
         return $this->render('base/projets.html.twig', array('projects' => $projects));
     }
 
-    
+
 
 
 
@@ -182,7 +182,7 @@ class ProjectsController extends Controller
     }
 
 
-   
+
 
     /**
      * @Route("/cms", name="cms")
@@ -314,7 +314,7 @@ class ProjectsController extends Controller
             $em->flush();
             return $this->redirectToRoute('project_id', ['slug' => $project->getSlug(), 'id' => $project->getId()]);
         }
-        return $this->render('base/editProject.html.twig', [
+        return $this->render('base/addProject.html.twig', [
             "form" => $form->createView(),
             "project" => $project,
         ]);
