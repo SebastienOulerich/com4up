@@ -29,7 +29,9 @@ class ContactType extends AbstractType
                         'Audiovisuel' => 'Audiovisuel',
                         'Réseaux sociaux' => 'Réseaux sociaux',
                         'Matériel' => 'Matériel',
-                    )])
+                    ),
+                    'expanded' => true,
+                    'multiple' => true,])
             ->add('objet', TextType::class  ,array(
                 'attr' => [ 'require' => true,],))
             ->add('message',  TextareaType::class  ,array(

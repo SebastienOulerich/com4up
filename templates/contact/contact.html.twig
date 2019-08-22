@@ -27,22 +27,12 @@
 
   <div id="Categorie">
     <p>Catégorie</p>
+    {% for cate in our_form.cate %}
     <div class="CategorieLine">
-      {{ form_widget(our_form.cateWeb)}}
-      {{ form_label(our_form.cateWeb)}}
+      {{ form_widget(cate)}}
+      {{ form_label(cate)}}
     </div>
-    <div class="CategorieLine">
-    {{ form_widget(our_form.cateAudiovisuel)}}
-    {{ form_label(our_form.cateAudiovisuel)}}
-    </div>
-    <div class="CategorieLine">
-    {{ form_widget(our_form.cateSocial)}}
-    {{ form_label(our_form.cateSocial)}}
-    </div>
-    <div class="CategorieLine">
-    {{ form_widget(our_form.cateMateriel)}}
-    {{ form_label(our_form.cateMateriel)}}
-    </div>
+    {% endfor %}
   </div>
 
   <div id="Objet">

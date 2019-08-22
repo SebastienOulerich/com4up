@@ -22,13 +22,16 @@ class ContactController extends AbstractController
 
       if ($form->isSubmitted() && $form->isValid()) {
         $contactFormData = $form->getData();
-        $message = (new \Swift_Message('E-Mail : Contact Com4Up.fr'))
+        $message = (new \Swift_Message('E-Mail: ' . $contactFormData['objet'] ))
                ->setFrom($contactFormData['email'])
                ->setTo('contact@com4up.fr')
                ->setBody(
-                   $contactFormData['message'],
-                   'text/plain'
-               )
+                $this->renderView(
+                    // templates/emails/registration.html.twig
+                    'contact/email.html.twig',
+                    ['cate' => $contactFormData["cate"],'message' => $contactFormData["message"]]
+                ),
+                'text/html')
            ;
 
            $mailer->send($message);
