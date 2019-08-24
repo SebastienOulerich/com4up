@@ -92,13 +92,15 @@ class ProjectsController extends Controller
      */
     public function getProjet(Request $request, RegistryInterface $doctrine)
     {
-        $request_stack = $this->container->get('request_stack');
-        $request = $request_stack->getCurrentRequest();
-        $content = $request->getContent();
-        $contentDecode = json_decode($content);
-        $page = $contentDecode->page;
+        #$request_stack = $this->container->get('request_stack');
+        #$request = $request_stack->getCurrentRequest();
+        #$content = $request->getContent();
+        #$contentDecode = json_decode($content);
+	#$page = $contentDecode->page;
+	$page =1;
         $projets = $doctrine->getRepository(Projects::class)->myGetProjet($page);
-        $encoders = array(new XmlEncoder(), new JsonEncoder());
+	#$projets = $doctrine->getRepository(Projects::class)->findAll();
+	$encoders = array(new XmlEncoder(), new JsonEncoder());
         $normalizer = new ObjectNormalizer();
         $normalizer->setCircularReferenceLimit(2);
         $normalizer->setCircularReferenceHandler(function ($object) {
