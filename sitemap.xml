@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://com4up.fr/</loc>
+  <lastmod>2019-08-26T12:02:39+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://com4up.fr/services</loc>
+  <lastmod>2019-08-26T12:02:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://com4up.fr/projets</loc>
+  <lastmod>2019-08-26T12:02:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://com4up.fr/equipe</loc>
+  <lastmod>2019-08-26T12:02:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://com4up.fr/a-propos</loc>
+  <lastmod>2019-08-26T12:02:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://com4up.fr/contact</loc>
+  <lastmod>2019-08-26T12:02:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://com4up.fr/services-web</loc>
+  <lastmod>2019-08-26T12:02:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://com4up.fr/services-audiovisuel</loc>
+  <lastmod>2019-08-26T12:02:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://com4up.fr/services-social</loc>
+  <lastmod>2019-08-26T12:02:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://com4up.fr/services-materiel</loc>
+  <lastmod>2019-08-26T12:02:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://com4up.fr/mentions-legales</loc>
+  <lastmod>2019-08-26T12:02:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://com4up.fr/services-materiel-tarifs</loc>
+  <lastmod>2019-08-26T12:02:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
