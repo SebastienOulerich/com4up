@@ -21,7 +21,7 @@ class ContactType extends AbstractType
             ->add('prenom', TextType::class)
             ->add('email', EmailType::class ,array('label'=> 'E-Mail',))
             ->add('entreprise', TextType::class ,array(
-                'attr' => ['require' => false,],
+                "required" => false,
                 'label'=> 'Entreprise/Organisme  - (Optionnel)',))
               ->add('cate', ChoiceType::class, [
                     'choices'=> array(
