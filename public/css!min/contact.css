@@ -1,0 +1,206 @@
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+form {
+  width: 40%;
+  margin: 2em auto 2em auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#contactTop {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contactTopInput {
+  margin: 0.5em 0 0.5em 0;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contactTopInputRight {
+  margin: 0.2em 0 0.2em 0;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#contactTop label {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 1.25em;
+	margin-bottom: 0.25em;
+}
+
+.contactTopInputRight label {
+	width: calc(80% + 0.4em);
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+}
+
+#small {
+	min-width: 10em;
+	font-size: 0.75em;
+}
+
+#contactTop input {
+  border: solid black 1px;
+  background: none;
+  width: 80%;
+  height: 1.7em;
+	padding: 0 0.2em 0 0.2em;
+	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
+}
+
+#Categorie {
+  margin: 2em 0 0 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#Categorie p {
+  width: 100%;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+	font-size: 1.25em;
+	margin-bottom: 0.25em;
+}
+
+#Categorie input {
+  width: 1.7em;
+  height: 1.7em;
+	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
+}
+
+.CategorieLine {
+  display: flex;
+  align-items: center;
+  margin: 0.2em 0 0.2em 0;
+  width: 50%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.CategorieLine label:hover, .CategorieLine input:hover {
+  cursor: pointer;
+}
+
+#Objet {
+    margin: 2em 0 0 0;
+  display: flex;
+	width: 100%;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+	font-size: 1.25em;
+}
+
+#Objet label {
+	margin-bottom: 0.25em;
+}
+
+#Objet input {
+  border: solid black 1px;
+  background: none;
+	padding: 0 0.2em 0 0.2em;
+  height: 1.7em;
+	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
+}
+
+#Message {
+    margin: 2em 0 0 0;
+		width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+	font-size: 1.25em;
+}
+
+#Message label {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+	margin-bottom: 0.25em;
+}
+
+#Message textarea {
+	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
+  border: solid black 1px;
+  background: none;
+	  height: 10em;
+  resize: none;
+}
+
+#Consent {
+  display: flex;
+  align-items: center;
+  margin: 2em 0 0 0;
+  width: 80%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 0.7em;
+}
+#Consent input {
+  height: 3em;
+}
+
+#submit {
+	margin: 1em 0 0 0;
+	width: 25%;
+	background: none;
+	border: 1px solid #212121;
+	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
+	font-size: 1.25em;
+}
+
+#submit:hover {
+	cursor: pointer;
+}
+
+@media screen and (max-width: 1280px) {
+	form {
+		width: 60%;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+
+	form {
+	  width: 90%;
+	}
+
+	.contactTopInput, .contactTopInputRight {
+	  width: 100%;
+	}
+
+	.contactTopInputRight {
+	  align-items: flex-start;
+	}
+
+	#contactTop input {
+	  width: 100%;
+		height: 2.5em;
+	}
+
+	#Objet input {
+	  height: 2.5em;
+	}
+}

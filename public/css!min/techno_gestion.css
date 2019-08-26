@@ -1,0 +1,117 @@
+#Bandeau {
+	max-width: 100%;
+	height: auto;
+}
+
+.Une_Ligne {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 6em;
+	background-color: #D5D5D5;
+}
+
+.Une_Ligne a {
+  display: flex;
+  font-family: "Bebas", sans-serif;
+  font-size: 2.5em;
+  margin-left: 0.5em;
+}
+
+.Une_Ligne p {
+  display: flex;
+  font-family: "Bebas", sans-serif;
+  font-size: 2.5em;
+  margin-left: 0.5em;
+}
+
+.wrapper {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+.wrapperChild {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+		width: 10%;
+		min-width: 10%;
+		max-width: 10%;
+		margin: 0.5em;
+		border: solid black 1px;
+}
+
+.plus {
+	justify-content: center;
+}
+.gestion_data_top {
+	min-width: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: grey;
+}
+
+.gestion_data_top p {
+font-family: "Bebas", sans-serif;
+font-size: 1.6em;
+margin: 0.3em 0 0.2em 0;
+}
+
+.gestion_data_top p i{
+font-size: 3em;
+margin: 0;
+}
+
+.plus p i{
+font-size: 5em;
+margin: 0;
+}
+.gestion_button {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	font-family: "Bebas", sans-serif;
+	font-size: 1.5em;
+	color: white;
+	background-color: #313131;
+	min-width: 50%;
+	height: 2em;
+}
+
+.gestion_button:hover {
+	color: white;
+	background-color: #212121;
+}
+
+@media screen and (max-width: 1280px) {
+  #Integrale_Image a {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #Une_Ligne {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 8em;
+  }
+
+  #Titre_Principal {
+    margin-left: 0em;
+    margin-bottom: 0.25em;
+  }
+
+  #Categorie_Selection {
+    font-size: 1em;
+    margin-right: 0em;
+  }
+}

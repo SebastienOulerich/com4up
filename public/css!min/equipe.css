@@ -1,0 +1,114 @@
+.Image_Profil {
+	height: 175px;
+	width: auto;
+	border-radius: 100%;
+}
+
+#Bandeau {
+	max-width: 100%;
+	height: auto;
+}
+
+#Qui {
+	font-size: 2.5em;
+	background-color: #D5D5D5;
+	width: 100%;
+	font-family: "Bebas", sans-serif;
+}
+
+#Qui h1 {
+	height: 2em;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.Gras {
+	font-family: "Montserrat_Bold", sans-serif;
+}
+
+.Background_Gris {
+	background-color: #D5D5D5;
+}
+
+.Toute_Section {
+	display: flex;
+	width: 100%;
+}
+
+.Ensemble_Info {
+	display: flex;
+	width: 80%;
+	justify-content: center;
+	margin: 1.5em auto 1.5em auto;
+}
+
+.Toute_Section h2 {
+	font-family: "Bebas", sans-serif;;
+	font-size: 1.75em;
+}
+
+.Toute_Section h3 {
+	font-family: "Montserrat_Bold", sans-serif;
+	margin: 0.5em 0 0.5em 0;
+	font-size: 1em;
+}
+
+.Info_Gauche {
+	text-align: center;
+	width: 25%;
+}
+
+.Info_Droite {
+	width: 75%;
+}
+
+.Info_Droite p {
+	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
+}
+
+.Social_User a i {
+	font-size: 1.5em;
+	margin: 0 0.25em 0 0.25em;
+}
+
+.Social_User i:hover {
+	color: #717171;
+}
+
+@media screen and (max-width: 1280px) {
+	.Ensemble_Info {
+		width: 90%;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.Ensemble_Info {
+		flex-direction: column;
+		width: 90%;
+	}
+
+	.Info_Gauche {
+		display: flex;
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		margin-bottom: 1em;
+	}
+
+	.Info_Gauche img {
+		margin-right: 15%;
+	}
+
+	.Info_Gauche_Droite {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.Info_Droite {
+		width: 100%;
+	}
+}
