@@ -50,5 +50,3 @@
 .env
 
 public/uploads/Thumbnail/
-
-*.lock
