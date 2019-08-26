@@ -175,7 +175,7 @@
   </footer>
 
   <script crossorigin="anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script>
+  <script  async="async">
   function adpaterHauteur()
 {
   var hauteurFenetre = window.innerHeight;
@@ -198,7 +198,7 @@ function addEvent(element, type, listener)
 addEvent(window, "load", adpaterHauteur);
 addEvent(window, "resize", adpaterHauteur);
 </script>
-<script>
+<script async="async">
 $(document).ready(function(){
 	$('#nav-icon1').click(function(){
 		$(this).toggleClass('open');
