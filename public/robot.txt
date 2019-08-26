@@ -1,0 +1,6 @@
+User-agent: *
+Disallow:
+
+User-agent : *
+Disallow: /cms/
+Sitemap: https://com4up.fr/sitemap.xml
