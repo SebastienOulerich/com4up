@@ -34,7 +34,9 @@
                     <h2 id="Bouton_Visite">VISITER LE SITE</h2>
                 </a>
             {% elseif project.status == "En développement" %}
-                <p> Site en cours de développement </p>
+                <p>
+                    Site en cours de développement
+                </p>
             {% else %}
                 <p>Site hors-ligne</p>
             {% endif %}
@@ -51,8 +53,15 @@
             </div>
             <div id="Information_Droite">
                 <h3 id="Date">Date :
-                    {{ project.date|localizeddate('none', 'none', null, null, 'EEEE d ')|capitalize }}
-                    {{ project.date|localizeddate('none', 'none', null, null, 'MMMM Y ')|capitalize }}</h3>
+                    {% if project.URLSite and project.status == "fini" %}
+                        {{ project.date|localizeddate('none', 'none', null, null, 'EEEE d ')|capitalize }}
+                        {{ project.date|localizeddate('none', 'none', null, null, 'MMMM Y ')|capitalize }}
+                {% elseif project.status == "En développement" %}
+                        À venir
+                {% else %}
+                    Site hors-ligne
+                {% endif %}
+                </h3>
                 <div id="Technologies">
                     <h3>Technologies utilisées :</h3>
                     {% for techno in project.technologies %}
@@ -90,13 +99,15 @@
             </div>
         </div>
     </div>
-    <div class="modal close" id="myModal">
+    <div
+        class="modal close" id="myModal">
 
         <!-- The Close Button -->
         <span class="close">&times;</span>
 
         <!-- Modal Content (The Image) -->
-        <img class="myImgZoom" id="imgZoom" src={{asset("images/projets/fas1.jpg")}} alt="Aperçu Faeriths">
+        <img
+        class="myImgZoom" id="imgZoom" src={{asset("images/projets/fas1.jpg")}} alt="Aperçu Faeriths">
 
         <!-- Modal Caption (Image Text) -->
         <div class="caption" id="caption"></div>
