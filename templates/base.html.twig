@@ -1,205 +1,281 @@
 <!DOCTYPE html>
-<html lang="fr">
-<!-- UTILITAIRES -->
-<meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html
+    lang="fr">
+    <!-- UTILITAIRES -->
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta
+    content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 
-<!-- DESCRIPTION -->
-<title>Com4Up - {% block title %}{% endblock %}</title>
-<meta name="description" content="Agence de communication digitale">
-<meta name="keywords" content="Com4Up, Agence, communication, digitale, web, entreprise, video, réseaux sociaux, hardware">
+    <!-- DESCRIPTION -->
+    <title>Com4Up -
+        {% block title %}{% endblock %}
+    </title>
+    <meta content="Agence de communication digitale" name="description">
+    <meta
+    content="Com4Up, Agence, communication, digitale, web, entreprise, video, réseaux sociaux, hardware" name="keywords">
 
-<!-- CSS -->
-<link type="text/css" rel="stylesheet" href={{asset("css/fonts.css")}} />
-<link type="text/css" rel="stylesheet" href={{asset("css/fixe.css")}} />
-{% block stylesheets %}{% endblock %}
+    <!-- CSS -->
+    <link type="text/css" rel="stylesheet" href={{asset("css/fonts.css")}}/>
+    <link type="text/css" rel="stylesheet" href={{asset("css/fixe.css")}}/> {% block stylesheets %}{% endblock %}
 
-<!-- FAVICON -->
-<link rel="apple-touch-icon-precomposed" sizes="57x57" href="../images/favicon/apple-touch-icon-57x57.png" />
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../images/favicon/apple-touch-icon-114x114.png" />
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../images/favicon/apple-touch-icon-72x72.png" />
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../images/favicon/apple-touch-icon-144x144.png" />
-<link rel="apple-touch-icon-precomposed" sizes="60x60" href="../images/favicon/apple-touch-icon-60x60.png" />
-<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../images/favicon/apple-touch-icon-120x120.png" />
-<link rel="apple-touch-icon-precomposed" sizes="76x76" href="../images/favicon/apple-touch-icon-76x76.png" />
-<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../images/favicon/apple-touch-icon-152x152.png" />
-<link rel="icon" type="image/png" href="../images/favicon/favicon-196x196.png" sizes="196x196" />
-<link rel="icon" type="image/png" href="../images/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/png" href="../images/favicon/favicon-32x32.png" sizes="32x32" />
-<link rel="icon" type="image/png" href="../images/favicon/favicon-16x16.png" sizes="16x16" />
-<link rel="icon" type="image/png" href="../images/favicon/favicon-128.png" sizes="128x128" />
-<meta name="application-name" content="&nbsp;" />
-<meta name="msapplication-TileColor" content="../images/favicon/#FFFFFF" />
-<meta name="msapplication-TileImage" content="../images/favicon/mstile-144x144.png" />
-<meta name="msapplication-square70x70logo" content="../images/favicon/mstile-70x70.png" />
-<meta name="msapplication-square150x150logo" content="../images/favicon/mstile-150x150.png" />
-<meta name="msapplication-wide310x150logo" content="../images/favicon/mstile-310x150.png" />
-<meta name="msapplication-square310x310logo" content="../images/favicon/mstile-310x310.png" />
+    <!-- FAVICON -->
+    <link href="../images/favicon/apple-touch-icon-57x57.png" rel="apple-touch-icon-precomposed" sizes="57x57"/>
+    <link href="../images/favicon/apple-touch-icon-114x114.png" rel="apple-touch-icon-precomposed" sizes="114x114"/>
+    <link href="../images/favicon/apple-touch-icon-72x72.png" rel="apple-touch-icon-precomposed" sizes="72x72"/>
+    <link href="../images/favicon/apple-touch-icon-144x144.png" rel="apple-touch-icon-precomposed" sizes="144x144"/>
+    <link href="../images/favicon/apple-touch-icon-60x60.png" rel="apple-touch-icon-precomposed" sizes="60x60"/>
+    <link href="../images/favicon/apple-touch-icon-120x120.png" rel="apple-touch-icon-precomposed" sizes="120x120"/>
+    <link href="../images/favicon/apple-touch-icon-76x76.png" rel="apple-touch-icon-precomposed" sizes="76x76"/>
+    <link href="../images/favicon/apple-touch-icon-152x152.png" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+    <link href="../images/favicon/favicon-196x196.png" rel="icon" sizes="196x196" type="image/png"/>
+    <link href="../images/favicon/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+    <link href="../images/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+    <link href="../images/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+    <link href="../images/favicon/favicon-128.png" rel="icon" sizes="128x128" type="image/png"/>
+    <meta content="&nbsp;" name="application-name"/>
+    <meta content="../images/favicon/#FFFFFF" name="msapplication-TileColor"/>
+    <meta content="../images/favicon/mstile-144x144.png" name="msapplication-TileImage"/>
+    <meta content="../images/favicon/mstile-70x70.png" name="msapplication-square70x70logo"/>
+    <meta content="../images/favicon/mstile-150x150.png" name="msapplication-square150x150logo"/>
+    <meta content="../images/favicon/mstile-310x150.png" name="msapplication-wide310x150logo"/>
+    <meta
+    content="../images/favicon/mstile-310x310.png" name="msapplication-square310x310logo"/>
 
-<!-- POLICE -->
-<link type="text/css" rel="stylesheet" href="../fonts/fontawesome-pro-5.8.1-web/css/all.css" />
-</head>
+    <!-- POLICE -->
+    <link href="../fonts/fontawesome-pro-5.8.1-web/css/all.css" rel="stylesheet" type="text/css"/>
+</html></head><body>
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({xfbml: true, version: 'v4.0'});
+    };
 
-<body>
-  <header id="HeaderDesktop">
-    <h1 class="logo"><a href="{{ path('default') }}"><span class="Com">Com</span><span class="Four">4</span><span class="Up">Up</span></a></h1>
+    (function (d, s, id) {
+        var js,
+            fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) 
+            return;
+        
+        js = d.createElement(s);
+        js.id = id;
+        js.src = 'https://connect.facebook.net/fr_FR/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<!-- Your customer chat code -->
+<div attribution="setup_tool" class="fb-customerchat" logged_in_greeting="Bonjour! Comment puis-je vous aider?" logged_out_greeting="Bonjour! Comment puis-je vous aider?" page_id="434493520235515"></div>`
+<header id="HeaderDesktop">
+    <h1 class="logo">
+        <a href="{{ path('default') }}">
+            <span class="Com">Com</span>
+            <span class="Four">4</span>
+            <span class="Up">Up</span>
+        </a>
+    </h1>
     <nav>
-      <ul id="NavDesktop">
-        {% if app.request.attributes.get('_route') == "default" %}
-        <li class="Current_page"><a href="{{ path('default') }}">Accueil</a></li>
-        {% else %}
-        <li><a href="{{ path('default') }}">Accueil</a></li>
-        {% endif %}
-        {% if app.request.attributes.get('_route') == "services" or app.request.attributes.get('_route') == "services_web" or app.request.attributes.get('_route') == "services_audiovisuel" or app.request.attributes.get('_route') == "services_social" or app.request.attributes.get('_route') == "services_materiel" or app.request.attributes.get('_route') == "services_materiel_tarifs" %}
-        <li class="Current_page"><a href="{{ path('services') }}">Services</a></li>
-        {% else %}
-        <li><a href="{{ path('services') }}">Services</a></li>
-        {% endif %}
-        {% if app.request.attributes.get('_route') == "projets" or app.request.attributes.get('_route') == "project_id"  %}
-        <li class="Current_page"><a href="{{ path('projets') }}">Projets</a></li>
-        {% else %}
-        <li><a href="{{ path('projets') }}">Projets</a></li>
-        {% endif %}
-        {% if app.request.attributes.get('_route') == "equipe" %}
-        <li class="Current_page"><a href="{{ path('equipe') }}">Équipe</a></li>
-        {% else %}
-        <li><a href="{{ path('equipe') }}">Équipe</a></li>
-        {% endif %}
-        {% if app.request.attributes.get('_route') == "a_propos" %}
-        <li class="Current_page"><a href="{{ path('a_propos') }}">À propos</a></li>
-        {% else %}
-        <li><a href="{{ path('a_propos') }}">À propos</a></li>
-        {% endif %}
-        {% if app.request.attributes.get('_route') == "contact" %}
-        <li class="Current_page"><a href="{{ path('contact') }}">Contact</a></li>
-        {% else %}
-        <li><a href="{{ path('contact') }}">Contact</a></li>
-        {% endif %}
-          <!--<li  id="lang"><span  class="Current_page">FR</span> | EN</li>-->
-      </ul>
+        <ul id="NavDesktop">
+            {% if app.request.attributes.get('_route') == "default" %}
+                <li class="Current_page">
+                    <a href="{{ path('default') }}">Accueil</a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{{ path('default') }}">Accueil</a>
+                </li>
+            {% endif %}
+            {% if app.request.attributes.get('_route') == "services" or app.request.attributes.get('_route') == "services_web" or app.request.attributes.get('_route') == "services_audiovisuel" or app.request.attributes.get('_route') == "services_social" or app.request.attributes.get('_route') == "services_materiel" or app.request.attributes.get('_route') == "services_materiel_tarifs" %}
+                <li class="Current_page">
+                    <a href="{{ path('services') }}">Services</a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{{ path('services') }}">Services</a>
+                </li>
+            {% endif %}
+            {% if app.request.attributes.get('_route') == "projets" or app.request.attributes.get('_route') == "project_id"  %}
+                <li class="Current_page">
+                    <a href="{{ path('projets') }}">Projets</a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{{ path('projets') }}">Projets</a>
+                </li>
+            {% endif %}
+            {% if app.request.attributes.get('_route') == "equipe" %}
+                <li class="Current_page">
+                    <a href="{{ path('equipe') }}">Équipe</a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{{ path('equipe') }}">Équipe</a>
+                </li>
+            {% endif %}
+            {% if app.request.attributes.get('_route') == "a_propos" %}
+                <li class="Current_page">
+                    <a href="{{ path('a_propos') }}">À propos</a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{{ path('a_propos') }}">À propos</a>
+                </li>
+            {% endif %}
+            {% if app.request.attributes.get('_route') == "contact" %}
+                <li class="Current_page">
+                    <a href="{{ path('contact') }}">Contact</a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{{ path('contact') }}">Contact</a>
+                </li>
+            {% endif %}
+            <!--<li  id="lang"><span  class="Current_page">FR</span> | EN</li>-->
+        </ul>
     </nav>
-  </header>
-  <header id='HeaderMobile'>
+</header>
+<header id='HeaderMobile'>
     <div id="HeaderMobileTop">
-      <h1 class="logo"><a href="{{ path('default') }}"><span class="Com">Com</span><span class="Four">4</span><span class="Up">Up</span></a></h1>
-      <div id="nav-icon1" onclick="navMobile()">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
+        <h1 class="logo">
+            <a href="{{ path('default') }}">
+                <span class="Com">Com</span>
+                <span class="Four">4</span>
+                <span class="Up">Up</span>
+            </a>
+        </h1>
+        <div id="nav-icon1" onclick="navMobile()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
     <ul>
-      {% if app.request.attributes.get('_route') == "default" %}
-      <li class="Current_page"><a href="{{ path('default') }}">Accueil</a></li>
-      {% else %}
-      <li><a href="{{ path('default') }}">Accueil</a></li>
-      {% endif %}
-      {% if app.request.attributes.get('_route') == "services" or app.request.attributes.get('_route') == "services_web" or app.request.attributes.get('_route') == "services_audiovisuel" or app.request.attributes.get('_route') == "services_social" or app.request.attributes.get('_route') == "services_materiel" %}
-      <li class="Current_page"><a href="{{ path('services') }}">Services</a></li>
-      {% else %}
-      <li><a href="{{ path('services') }}">Services</a></li>
-      {% endif %}
-      {% if app.request.attributes.get('_route') == "projets" or app.request.attributes.get('_route') == "projet_id"  %}
-      <li class="Current_page"><a href="{{ path('projets') }}">Projets</a></li>
-      {% else %}
-      <li><a href="{{ path('projets') }}">Projets</a></li>
-      {% endif %}
-      {% if app.request.attributes.get('_route') == "equipe" %}
-      <li class="Current_page"><a href="{{ path('equipe') }}">Équipe</a></li>
-      {% else %}
-      <li><a href="{{ path('equipe') }}">Équipe</a></li>
-      {% endif %}
-      {% if app.request.attributes.get('_route') == "a_propos" %}
-      <li class="Current_page"><a href="{{ path('a_propos') }}">À propos</a></li>
-      {% else %}
-      <li><a href="{{ path('a_propos') }}">À propos</a></li>
-      {% endif %}
-      {% if app.request.attributes.get('_route') == "contact" %}
-      <li class="Current_page"><a href="{{ path('contact') }}">Contact</a></li>
-      {% else %}
-      <li><a href="{{ path('contact') }}">Contact</a></li>
-      {% endif %}
+        {% if app.request.attributes.get('_route') == "default" %}
+            <li class="Current_page">
+                <a href="{{ path('default') }}">Accueil</a>
+            </li>
+        {% else %}
+            <li>
+                <a href="{{ path('default') }}">Accueil</a>
+            </li>
+        {% endif %}
+        {% if app.request.attributes.get('_route') == "services" or app.request.attributes.get('_route') == "services_web" or app.request.attributes.get('_route') == "services_audiovisuel" or app.request.attributes.get('_route') == "services_social" or app.request.attributes.get('_route') == "services_materiel" %}
+            <li class="Current_page">
+                <a href="{{ path('services') }}">Services</a>
+            </li>
+        {% else %}
+            <li>
+                <a href="{{ path('services') }}">Services</a>
+            </li>
+        {% endif %}
+        {% if app.request.attributes.get('_route') == "projets" or app.request.attributes.get('_route') == "projet_id"  %}
+            <li class="Current_page">
+                <a href="{{ path('projets') }}">Projets</a>
+            </li>
+        {% else %}
+            <li>
+                <a href="{{ path('projets') }}">Projets</a>
+            </li>
+        {% endif %}
+        {% if app.request.attributes.get('_route') == "equipe" %}
+            <li class="Current_page">
+                <a href="{{ path('equipe') }}">Équipe</a>
+            </li>
+        {% else %}
+            <li>
+                <a href="{{ path('equipe') }}">Équipe</a>
+            </li>
+        {% endif %}
+        {% if app.request.attributes.get('_route') == "a_propos" %}
+            <li class="Current_page">
+                <a href="{{ path('a_propos') }}">À propos</a>
+            </li>
+        {% else %}
+            <li>
+                <a href="{{ path('a_propos') }}">À propos</a>
+            </li>
+        {% endif %}
+        {% if app.request.attributes.get('_route') == "contact" %}
+            <li class="Current_page">
+                <a href="{{ path('contact') }}">Contact</a>
+            </li>
+        {% else %}
+            <li>
+                <a href="{{ path('contact') }}">Contact</a>
+            </li>
+        {% endif %}
     </ul>
-  </header>
-  <main>
+</header>
+<main>
     {% block body %}{% endblock %}
-  </main>
-  <footer>
+</main>
+<footer>
     <div id="Footer_info">
-      <p>Agence Web/Audiovisuelle accompagnant votre projet vers le Numérique.</p>
+        <p>Agence Web/Audiovisuelle accompagnant votre projet vers le Numérique.</p>
     </div>
     <div id="Footer_contact">
-      <h2>Contact</h2>
-      <p>10 Rue des coquelicots, 57730 Valmont</p>
-      <a href="mailto:contact@com4up.fr">contact@com4up.fr</a>
-      <p>06 51 27 71 62</p>
+        <h2>Contact</h2>
+        <p>10 Rue des coquelicots, 57730 Valmont</p>
+        <a href="mailto:contact@com4up.fr">contact@com4up.fr</a>
+        <p>06 51 27 71 62</p>
     </div>
     <div id="Footer_Social">
-      <h2>Réseaux Sociaux</h2>
-      <div id="Footer_Social_ico">
-        <a href="https://www.facebook.com/Com4Up/" target="_blank"><i class="fab fa-facebook-square"></i></a>
-        <a href="https://www.instagram.com/Com4Up/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/company/com4up/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      </div>
+        <h2>Réseaux Sociaux</h2>
+        <div id="Footer_Social_ico">
+            <a href="https://www.facebook.com/Com4Up/" target="_blank">
+                <i class="fab fa-facebook-square"></i>
+            </a>
+            <a href="https://www.instagram.com/Com4Up/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/com4up/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
     </div>
     <div id="Footer_Legal">
-      <h2>Informations</h2>
-      <a href="{{ path('a_propos') }}">À propos</a>
-      <a href="{{ path('mentions_legales') }}">Mentions Légales</a>
+        <h2>Informations</h2>
+        <a href="{{ path('a_propos') }}">À propos</a>
+        <a href="{{ path('mentions_legales') }}">Mentions Légales</a>
     </div>
-  </footer>
+</footer>
 
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  <script>
-  function adpaterHauteur()
-{
-  var hauteurFenetre = window.innerHeight;
-    document.querySelector("#HeaderMobile ul").style.height = hauteurFenetre +'px';
-}
-
-function addEvent(element, type, listener)
-{
-    if(element.addEventListener)
-    {
-        element.addEventListener(type, listener, false);
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+    function adpaterHauteur() {
+        var hauteurFenetre = window.innerHeight;
+        document.querySelector("#HeaderMobile ul").style.height = hauteurFenetre + 'px';
     }
-    else if(element.attachEvent)
-    {
-        element.attachEvent("on"+type, listener);
+
+    function addEvent(element, type, listener) {
+        if (element.addEventListener) {
+            element.addEventListener(type, listener, false);
+        } else if (element.attachEvent) {
+            element.attachEvent("on" + type, listener);
+        }
     }
-}
 
 
-addEvent(window, "load", adpaterHauteur);
-addEvent(window, "resize", adpaterHauteur);
+    addEvent(window, "load", adpaterHauteur);
+    addEvent(window, "resize", adpaterHauteur);
 </script>
 <script>
-$(document).ready(function(){
-	$('#nav-icon1').click(function(){
-		$(this).toggleClass('open');
-	});
-});
+    $(document).ready(function () {
+        $('#nav-icon1').click(function () {
+            $(this).toggleClass('open');
+        });
+    });
 
-var Nav = 0;
-function navMobile() {
-    if ( Nav == 0) {
-      $('#HeaderMobile ul').css({
-    display: 'flex'
-});
+    var Nav = 0;
+    function navMobile() {
+        if (Nav == 0) {
+            $('#HeaderMobile ul').css({display: 'flex'});
 
-    Nav = 1;
-  }
-  else {
-  $('#HeaderMobile ul').css({
-display: 'none'
-});
-  Nav = 0;
-}
-}
-
-  </script>
-  {% block js %}{% endblock %}
-</body>
-
-</html>
+            Nav = 1;
+        } else {
+            $('#HeaderMobile ul').css({display: 'none'});
+            Nav = 0;
+        }
+    }
+</script>
+{% block js %}{% endblock %}</body></html>

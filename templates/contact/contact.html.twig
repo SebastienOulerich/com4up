@@ -2,6 +2,7 @@
 {% block title %}Contact{% endblock %}
 {% block stylesheets %}
 <link type="text/css" rel="stylesheet" href={{asset("css/contact.css")}} />
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 {% endblock %}
 {% block body%}
 <img src={{asset("images/banniere-contact.jpg")}} alt="Banniere contact">
@@ -52,7 +53,7 @@
 
 {{ form_widget(our_form) }}
 
-
+<div class="g-recapatcha" data-sitekey="6LfUyjEUAAAAAOKUsL5eMQAFmYKUmy4Ks7IXuKTJ"
 
   <input id="submit" type="submit" value="ENVOYER"/>
 
