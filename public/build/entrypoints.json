@@ -1,0 +1,150 @@
+{
+  "entrypoints": {
+    "404": {
+      "js": [
+        "/build/runtime.js",
+        "/build/404.js"
+      ],
+      "css": [
+        "/build/404.css"
+      ]
+    },
+    "audiovisuel": {
+      "js": [
+        "/build/runtime.js",
+        "/build/audiovisuel.js"
+      ],
+      "css": [
+        "/build/audiovisuel.css"
+      ]
+    },
+    "index": {
+      "js": [
+        "/build/runtime.js",
+        "/build/index~lecture~materiel~web.js",
+        "/build/index.js"
+      ],
+      "css": [
+        "/build/index~lecture~materiel~web.css",
+        "/build/index.css"
+      ]
+    },
+    "propos": {
+      "js": [
+        "/build/runtime.js",
+        "/build/propos.js"
+      ],
+      "css": [
+        "/build/propos.css"
+      ]
+    },
+    "contact": {
+      "js": [
+        "/build/runtime.js",
+        "/build/contact.js"
+      ],
+      "css": [
+        "/build/contact.css"
+      ]
+    },
+    "equipe": {
+      "js": [
+        "/build/runtime.js",
+        "/build/equipe.js"
+      ],
+      "css": [
+        "/build/equipe.css"
+      ]
+    },
+    "lecture": {
+      "js": [
+        "/build/runtime.js",
+        "/build/index~lecture~materiel~web.js",
+        "/build/lecture.js"
+      ],
+      "css": [
+        "/build/index~lecture~materiel~web.css",
+        "/build/lecture.css"
+      ]
+    },
+    "mention": {
+      "js": [
+        "/build/runtime.js",
+        "/build/mention.js"
+      ],
+      "css": [
+        "/build/mention.css"
+      ]
+    },
+    "social": {
+      "js": [
+        "/build/runtime.js",
+        "/build/social.js"
+      ],
+      "css": [
+        "/build/social.css"
+      ]
+    },
+    "web": {
+      "js": [
+        "/build/runtime.js",
+        "/build/index~lecture~materiel~web.js",
+        "/build/web.js"
+      ],
+      "css": [
+        "/build/index~lecture~materiel~web.css",
+        "/build/web.css"
+      ]
+    },
+    "materiel": {
+      "js": [
+        "/build/runtime.js",
+        "/build/index~lecture~materiel~web.js",
+        "/build/materiel.js"
+      ],
+      "css": [
+        "/build/index~lecture~materiel~web.css",
+        "/build/materiel.css"
+      ]
+    },
+    "materiel-tarif": {
+      "js": [
+        "/build/runtime.js",
+        "/build/materiel-tarif.js"
+      ],
+      "css": [
+        "/build/materiel-tarif.css"
+      ]
+    },
+    "services": {
+      "js": [
+        "/build/runtime.js",
+        "/build/services.js"
+      ],
+      "css": [
+        "/build/services.css"
+      ]
+    },
+    "addProjet": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors~addProjet~cms.js",
+        "/build/addProjet.js"
+      ],
+      "css": [
+        "/build/addProjet.css"
+      ]
+    },
+    "cms": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors~addProjet~cms.js",
+        "/build/vendors~cms.js",
+        "/build/cms.js"
+      ],
+      "css": [
+        "/build/cms.css"
+      ]
+    }
+  }
+}
