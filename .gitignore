@@ -50,3 +50,6 @@
 .env
 
 public/uploads/Thumbnail/
+
+
+node_modules/*
