@@ -20,12 +20,16 @@
                 <a href="{{path('project_id' , {'id' : previous.id ,'slug' : previous.title }) }}">
                     <i aria-hidden class="far fa-angle-left icone-awesome"></i>
                 </a>
+            {% else %} 
+                <i aria-hidden class="far fa-angle-left icone-awesome" style="opacity:0.3;"></i>
             {% endif %}
             <h1>{{ project.title }}</h1>
             {% if next is not null %}
                 <a href="{{path('project_id' , {'id' : next.id ,'slug' : next.title }) }}">
                     <i aria-hidden class="far fa-angle-right icone-awesome"></i>
                 </a>
+            {% else %} 
+                <i aria-hidden class="far fa-angle-right icone-awesome" style="opacity:0.3;"></i>
             {% endif %}
         </div>
         <div id="Partie_Haute_Droite">

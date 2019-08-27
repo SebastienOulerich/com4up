@@ -53,8 +53,8 @@ class ProjectsController extends Controller
         // replace this line with your own code!
         $em = $this->getDoctrine()->getManager();
         $project = $em->getRepository(Projects::class)->find($id);
-        $next = $em->getRepository(Projects::class)->findOneByNext($project->getDate());
-        $previous = $em->getRepository(Projects::class)->findOneByPrevious($project->getDate());
+        $previous = $em->getRepository(Projects::class)->findOneByNext($project->getDate());
+        $next = $em->getRepository(Projects::class)->findOneByPrevious($project->getDate());
         $slug = new Slugify();
         if ($next != null) {
             $next["title"] = $slug->slugify($next["title"]);
