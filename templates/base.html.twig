@@ -11,7 +11,6 @@
 <meta name="keywords" content="Com4Up, Agence, communication, digitale, web, entreprise, video, réseaux sociaux, hardware">
 
 <!-- CSS -->
-<link type="text/css" rel="stylesheet" href={{asset("css/fonts.css")}} />
 <link type="text/css" rel="stylesheet" href={{asset("css/fixe.css")}} />
 {% block stylesheets %}{% endblock %}
 
@@ -198,7 +197,7 @@
     </div>
   </footer>
 
-  <script async="async" crossorigin="anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script async="async" crossorigin="anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  defer="defer" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script  async="async">
   function adpaterHauteur()
 {
@@ -247,6 +246,7 @@ display: 'none'
 }
 
   </script>
+  <noscript>Votre navigateur ne supporte pas JavaScript.</noscript>
   {% block js %}{% endblock %}
 </body>
 
