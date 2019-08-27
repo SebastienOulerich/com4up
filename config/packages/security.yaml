@@ -9,7 +9,7 @@ security:
             memory:
                 users:
                     admin: 
-                        password: $2y$12$.kD9iqbHWxqvbgVutrd1LOJIFX18mJAFeNDga2Jg.l3JkXDVPw6Fu
+                        password: $2y$12$2Ixti8tDGj8k10MoQOZ5q.P0lK/zw/tK3iQju4inEM1ZL.UVZSt6S
                         roles: 'ROLE_ADMIN'
                 # if you're using multiple entity managers
                 # manager_name: customer
