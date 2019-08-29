@@ -118,6 +118,14 @@ main {
   height: auto
 }
 
+.desktop {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
 .swiper-wrapper {
   height: auto
 }
@@ -219,18 +227,33 @@ main {
   }
 }
 
-@media screen and (max-width:1280px) {
-
-  #Bandeau{
+@media screen and (max-width:1024px) {
+  #Bandeau {
     display: none
   }
 
   #Bandeau_mobile {
     display: flex;
-    max-width: 100%;
-    height: auto
+    width: 100%;
+    height: auto;
   }
 
+  #Partie_Haute_Centre {
+    width: 60%;
+    justify-content: flex-end;
+    height: 2em
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+}
+
+@media screen and (max-width:1280px) {
   #Description_Integrale, #Integrale_Information {
     width: 80%
   }

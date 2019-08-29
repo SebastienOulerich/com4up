@@ -89,7 +89,17 @@
             <div class="button-prev">
                 <i aria-hidden class="fas fa-arrow-circle-left"></i>
             </div>
-            <div class="swiper-container">
+            <div class="swiper-container desktop">
+
+                <div class="swiper-wrapper">
+                    {% for img in project.gallery %}
+                        <div class="swiper-slide"><img class="myImg" src={{asset(img.path)}} alt="{{img.alt}}"></div>
+                    {% endfor %}
+                </div>
+                <!-- Add Arrows -->
+
+            </div>
+            <div class="swiper-container mobile">
 
                 <div class="swiper-wrapper">
                     {% for img in project.gallery %}
@@ -131,6 +141,14 @@
             nextButton: '.button-next',
             prevButton: '.button-prev',
             slidesPerView: 3,
+            paginationClickable: false,
+            spaceBetween: 33,
+            loop: true
+        });
+        var swiper = new Swiper('.mobile', {
+            nextButton: '.button-next',
+            prevButton: '.button-prev',
+            slidesPerView: 1,
             paginationClickable: false,
             spaceBetween: 33,
             loop: true
