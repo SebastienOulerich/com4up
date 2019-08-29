@@ -8,6 +8,7 @@
 {% block body%}
 
     <img id="Bandeau" src={{asset(project.banner.path)}} alt="Bandeau">
+    <img id="Bandeau_mobile" src={{asset(project.miniature.path)}} alt="Bandeau">
 
     <div id="Partie_Haute">
         <div id="Partie_Haute_Gauche">
@@ -20,7 +21,7 @@
                 <a href="{{path('project_id' , {'id' : previous.id ,'slug' : previous.title }) }}">
                     <i aria-hidden class="far fa-angle-left icone-awesome"></i>
                 </a>
-            {% else %} 
+            {% else %}
                 <i aria-hidden class="far fa-angle-left icone-awesome" style="opacity:0.3;"></i>
             {% endif %}
             <h1>{{ project.title }}</h1>
@@ -28,7 +29,7 @@
                 <a href="{{path('project_id' , {'id' : next.id ,'slug' : next.title }) }}">
                     <i aria-hidden class="far fa-angle-right icone-awesome"></i>
                 </a>
-            {% else %} 
+            {% else %}
                 <i aria-hidden class="far fa-angle-right icone-awesome" style="opacity:0.3;"></i>
             {% endif %}
         </div>
