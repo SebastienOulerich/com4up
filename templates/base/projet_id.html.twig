@@ -8,6 +8,7 @@
 {% block body%}
 
     <img id="Bandeau" src={{asset(project.banner.path)}} alt="Bandeau">
+    <img id="Bandeau_mobile" src={{asset(project.miniature.path)}} alt="Bandeau">
 
     <div id="Partie_Haute">
         <div id="Partie_Haute_Gauche">
@@ -20,7 +21,7 @@
                 <a href="{{path('project_id' , {'id' : previous.id ,'slug' : previous.title }) }}">
                     <i aria-hidden class="far fa-angle-left icone-awesome"></i>
                 </a>
-            {% else %} 
+            {% else %}
                 <i aria-hidden class="far fa-angle-left icone-awesome" style="opacity:0.3;"></i>
             {% endif %}
             <h1>{{ project.title }}</h1>
@@ -28,7 +29,7 @@
                 <a href="{{path('project_id' , {'id' : next.id ,'slug' : next.title }) }}">
                     <i aria-hidden class="far fa-angle-right icone-awesome"></i>
                 </a>
-            {% else %} 
+            {% else %}
                 <i aria-hidden class="far fa-angle-right icone-awesome" style="opacity:0.3;"></i>
             {% endif %}
         </div>
@@ -51,7 +52,7 @@
     <div id="Bandeau_Information">
         <div id="Integrale_Information">
             <div id="Information_Gauche">
-                <h3 id="Client">Client :{{ project.client }}</h3>
+                <h3 id="Client">Client : {{ project.client }}</h3>
                 <h3 id="Categorie">Catégorie :&nbsp<a href="{{ path('projets') }}">{{ project.categorie }}</a>
                 </h3>
             </div>
@@ -85,10 +86,23 @@
         <div
             id="Apercu">
             <!-- Swiper -->
+            <div class="button-prev-mobile">
+                <i aria-hidden class="fas fa-arrow-circle-left"></i>
+            </div>
             <div class="button-prev">
                 <i aria-hidden class="fas fa-arrow-circle-left"></i>
             </div>
-            <div class="swiper-container">
+            <div class="swiper-container desktop">
+
+                <div class="swiper-wrapper">
+                    {% for img in project.gallery %}
+                        <div class="swiper-slide"><img class="myImg" src={{asset(img.path)}} alt="{{img.alt}}"></div>
+                    {% endfor %}
+                </div>
+                <!-- Add Arrows -->
+
+            </div>
+            <div class="swiper-container mobile">
 
                 <div class="swiper-wrapper">
                     {% for img in project.gallery %}
@@ -101,10 +115,12 @@
             <div class="button-next">
                 <i aria-hidden class="fas fa-arrow-circle-right"></i>
             </div>
+            <div class="button-next-mobile">
+                <i aria-hidden class="fas fa-arrow-circle-right"></i>
+            </div>
         </div>
     </div>
-    <div
-        class="modal close" id="myModal">
+    <div class="modal close" id="myModal">
 
         <!-- The Close Button -->
         <span class="close">&times;</span>
@@ -130,6 +146,14 @@
             nextButton: '.button-next',
             prevButton: '.button-prev',
             slidesPerView: 3,
+            paginationClickable: false,
+            spaceBetween: 33,
+            loop: true
+        });
+        var swiper = new Swiper('.mobile', {
+            nextButton: '.button-next-mobile',
+            prevButton: '.button-prev-mobile',
+            slidesPerView: 1,
             paginationClickable: false,
             spaceBetween: 33,
             loop: true
