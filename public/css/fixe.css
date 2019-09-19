@@ -125,8 +125,8 @@ ol, ul {
 
 main {
   display: flex;
+  margin-top: 3em;
   flex-direction: column;
-  margin: 3em 0 0 0;
   width: 100%;
   flex-grow: 1;
   color: #212121

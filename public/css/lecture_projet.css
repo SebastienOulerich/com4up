@@ -23,6 +23,8 @@ main {
 #Partie_Haute_Gauche {
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 100%;
   width: 15%
 }
 
@@ -31,6 +33,7 @@ main {
   justify-content: center;
   align-items: center;
   width: 70%;
+  height: 100%;
   font-family: Bebas, sans-serif;
   font-size: 2.5em
 }
@@ -42,7 +45,9 @@ main {
 #Partie_Haute_Droite {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 15%;
+  height: 100%;
   font-family: Montserrat_Regular, sans-serif;
   font-size: 1.25em
 }
@@ -89,6 +94,7 @@ main {
 #Description_Integrale {
   font-family: Montserrat, sans-serif;
   font-weight: 700;
+  list-style-type: circle;
   margin-top: 2em
 }
 
@@ -146,7 +152,7 @@ main {
   -webkit-box-align: center;
   -ms-flex-align: center;
   -webkit-align-items: center;
-  align-items: center
+  align-items: center;
 }
 
 .swiper-slide img {
@@ -155,10 +161,12 @@ main {
 }
 
 .button-prev {
+  cursor: pointer;
   font-size: 2em
 }
 
 .button-next {
+  cursor: pointer;
   font-size: 2em
 }
 
@@ -170,13 +178,13 @@ main {
   display: none;
 }
 
-#myImg {
+.myImg {
   cursor: pointer;
   transition: .3s
 }
 
-#myImg:hover {
-  opacity: .7
+.myImg:hover {
+  opacity: .9
 }
 
 #myModal {

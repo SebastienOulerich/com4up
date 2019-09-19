@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+<head>
 <!-- UTILITAIRES -->
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -7,11 +8,11 @@
 
 <!-- DESCRIPTION -->
 <title>Com4Up - {% block title %}{% endblock %}</title>
-<meta name="description" content={% block description %}{% endblock %}>
+<meta name="description" content="{% block description %}{% endblock %}">
 <meta name="keywords" content="Com4Up, Agence, communication, digitale, web, entreprise, video, réseaux sociaux, hardware">
 
 <!-- CSS -->
-<link type="text/css" rel="stylesheet" href={{asset("css/fixe.css")}} />
+<link type="text/css" rel="stylesheet" href="{{asset('css/fixe.css')}}" />
 {% block stylesheets %}{% endblock %}
 
 <!-- FAVICON -->

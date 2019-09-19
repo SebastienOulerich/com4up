@@ -1,1 +1,180 @@
-#Bandeau{max-width:100%;height:auto}#Partie_Haute{display:flex;flex-direction:column;width:100%;background-color:#0080d1;color:#212121;font-size:1.25em}#Partie_Sup{display:flex;align-items:center;justify-content:center;text-align:center;flex-wrap:wrap;width:100%}#Partie_Sup a{width:25%;display:flex;justify-content:center;text-align:center;flex-wrap:wrap}#Partie_Sup a h1{display:flex;align-items:center;justify-content:center;text-align:center;font-family:Montserrat,sans-serif;font-weight:700;height:3em}#Partie_Basse a{background-color:#005b95;color:#fff;display:flex;justify-content:space-around;height:2.5em;align-items:center}#Vide{width:5%}#Partie_Basse a h2{display:flex;justify-content:center;font-family:Montserrat,sans-serif;width:90%}#Partie_Basse i{display:flex;width:5%;justify-content:flex-end;margin-right:1em}#Selection{display:flex;align-items:center;justify-content:center;text-align:center;background-color:#005b95;color:#fff;height:100%;width:100%}#Argument_Bandeau{display:flex;width:100%;background-color:#d5d5d5}#Argument{display:flex;flex-direction:column;justify-content:center;text-align:center;width:75%;margin:1em auto 1em auto}#Argument h3{font-family:Bebas,sans-serif;font-size:2em}#Argument p{font-family:Montserrat,sans-serif;font-weight:700}#Categorie{display:flex;flex-direction:column;width:100%}#Partie_Sup a:hover{color:#fff}.Un_Reseau{display:flex;align-items:center}.Icone_Centre{display:flex;justify-content:center;align-items:center;text-align:center;font-size:2em;margin-right:.5em;min-width:2em}.Un_Reseau p{font-family:Montserrat,sans-serif;font-weight:700}.Redimension{width:60%;margin:1em auto 1em auto}.Background_Gris{background-color:#d5d5d5}.Section_Reseaux{font-family:Bebas,sans-serif;font-size:2em}.Mettre_Valeur{font-family:Montserrat_Bold,sans-serif}.sanshover:hover{color:#212121}@media screen and (max-width:1280px){.Redimension{width:70%}}@media screen and (max-width:1024px){#Partie_Sup a{width:50%;border:1px solid #005b95;margin:-1px}.Redimension{width:80%}}
+#Bandeau {
+  max-width: 100%;
+  height: auto
+}
+
+#Partie_Haute {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #0080d1;
+  color: #212121;
+  font-size: 1.25em
+}
+
+#Partie_Sup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  width: 100%
+}
+
+#Partie_Sup a {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap
+}
+
+#Partie_Sup a h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  height: 3em
+}
+
+#Partie_Basse a {
+  background-color: #005b95;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  height: 2.5em;
+  align-items: center
+}
+
+#Vide {
+  width: 5%
+}
+
+#Partie_Basse a h2 {
+  display: flex;
+  justify-content: center;
+  font-family: Montserrat, sans-serif;
+  width: 90%
+}
+
+#Partie_Basse i {
+  display: flex;
+  width: 5%;
+  justify-content: flex-end;
+  margin-right: 1em
+}
+
+#Selection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #005b95;
+  color: #fff;
+  height: 100%;
+  width: 100%
+}
+
+#Argument_Bandeau {
+  display: flex;
+  width: 100%;
+  background-color: #d5d5d5
+}
+
+#Argument {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 75%;
+  margin: 1em auto 1em auto
+}
+
+#Argument h3 {
+  font-family: Bebas, sans-serif;
+  font-size: 2em
+}
+
+#Argument p {
+  font-family: Montserrat, sans-serif;
+  font-weight: 700
+}
+
+#Categorie {
+  display: flex;
+  flex-direction: column;
+  width: 100%
+}
+
+#Partie_Sup a:hover {
+  color: #fff
+}
+
+.Un_Reseau {
+  display: flex;
+  align-items: center
+}
+
+.Icone_Centre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2em;
+  margin-right: .5em;
+  min-width: 2em
+}
+
+.Un_Reseau p {
+  font-family: Montserrat, sans-serif;
+  font-weight: 700
+}
+
+.Redimension {
+  width: 60%;
+  margin: 1em auto 1em auto
+}
+
+.Background_Gris {
+  background-color: #d5d5d5
+}
+
+.Section_Reseaux {
+  font-family: Bebas, sans-serif;
+  font-size: 2em
+}
+
+.Mettre_Valeur {
+  font-family: Montserrat_Bold, sans-serif
+}
+
+.sanshover:hover {
+  color: #212121
+}
+
+@media screen and (max-width:1280px) {
+  .Redimension {
+    width: 70%
+  }
+}
+
+@media screen and (max-width:1024px) {
+  #Partie_Sup a {
+    width: 50%;
+    border: 1px solid #005b95;
+    margin: -1px
+  }
+
+  .Redimension {
+    width: 80%
+  }
+
+  #Partie_Basse {
+    text-align: center;
+  }
+    #Partie_Basse i {
+      display: none;
+    }
+}

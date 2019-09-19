@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
-{% block title %}Projet ID
+{% block title %}Projet {{ project.title }}
 {% endblock %}
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('css/swiper.min.css') }}">
-    <link type="text/css" rel="stylesheet" href="{{asset("css/lecture_projet.css")}}"/>
+    <link type="text/css" rel="stylesheet" href="{{asset('css/lecture_projet.css')}}"/>
 {% endblock %}
 {% block body%}
 
@@ -129,8 +129,7 @@
         <img
         class="myImgZoom" id="imgZoom" src={{asset("images/projets/fas1.jpg")}} alt="Aperçu Faeriths">
 
-        <!-- Modal Caption (Image Text) -->
-        <div class="caption" id="caption"></div>
+
     </div>
 
 
