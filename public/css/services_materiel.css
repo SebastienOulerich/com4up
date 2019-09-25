@@ -447,8 +447,12 @@
     border: 1px solid #6100c9;
     margin: -1px
   }
-  
+
   #Partie_Basse a i {
     display: none;
+  }
+  .Redimension {
+    width: 95%;
+    margin: 1em auto 1em auto
   }
 }
