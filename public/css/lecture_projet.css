@@ -119,8 +119,16 @@ main {
     font-size: 2.5em
 }
 
+.fa-th-large:hover {
+  color: #717171
+}
+
 .icone-awesome {
     font-size: 1.25em
+}
+
+.icone-awesome:hover {
+  color: #717171
 }
 
 .swiper-container {

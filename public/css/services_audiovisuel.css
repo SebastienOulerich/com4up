@@ -173,4 +173,8 @@
     #Partie_Basse i {
       display: none;
     }
+    .Redimension {
+      width: 95%;
+      margin: 1em auto 1em auto
+    }
 }
