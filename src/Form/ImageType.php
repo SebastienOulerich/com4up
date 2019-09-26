@@ -17,7 +17,14 @@ class ImageType extends AbstractType
     {
         $builder
            ->add('alt')
-           ->add('filename', FileType::class, ['label' => 'Upload the thumbnail'])
+           ->add('filename', FileType::class, [
+               'label' => 'Upload the thumbnail',
+               'attr' => [
+                   'class' => 'fileElem',
+                   'onchange'=>'handleFiles(this.files)',
+                   'onload'=>  'handleFiles(this.files)',
+               ]
+               ])
             ;
 }
 

@@ -283,6 +283,7 @@ class ProjectsController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $project = $em->getRepository(Projects::class)->find($id);
+        $projectInfo = $em->getRepository(Projects::class)->find($id);
         $saveGallery = new ArrayCollection();
         $filenames = array();
         foreach ($project->getGallery() as $img) {
@@ -295,6 +296,7 @@ class ProjectsController extends Controller
         $project->getBanner()->setFilename(new File($this->getParameter('uploadDirectory') . '/' . $project->getBanner()->getFilename()));
         $project->getMiniature()->setFilename(new File($this->getParameter('uploadDirectory') . '/' . $project->getMiniature()->getFilename()));
         $form = $this->createForm(ProjectType::class, $project);
+        
         $saveProject = $project->getBanner()->getFilename();
         $saveMiniature = $project->getMiniature()->getFilename();
 
@@ -321,6 +323,7 @@ class ProjectsController extends Controller
         return $this->render('base/addProject.html.twig', [
             "form" => $form->createView(),
             "project" => $project,
+            "projectInfo" => $projectInfo,
         ]);
     }
 
