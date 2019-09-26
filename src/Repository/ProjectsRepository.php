@@ -39,7 +39,7 @@ class ProjectsRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('b')
         ->leftJoin("b.miniature", "m")
-        ->select("b.id","b.title","b.categorie","m.path")
+        ->select("b.id","b.title","b.slug","b.categorie","m.path")
         ->setFirstResult(($page-1)*8)
         ->setMaxResults(8)
         ->orderBy('b.date','DESC')

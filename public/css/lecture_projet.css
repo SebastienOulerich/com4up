@@ -1,323 +1,347 @@
 main {
-  min-height: 90vh
+    min-height: 90vh
 }
 
 #Bandeau {
-  max-width: 100%;
-  height: auto
+    max-width: 100%;
+    height: auto
 }
 
 #Bandeau_mobile {
-  display: none;
+    display: none;
 }
 
 #Partie_Haute {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  height: 5em
-}
-
-#Partie_Haute_Gauche {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 15%
-}
-
-#Partie_Haute_Centre {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 70%;
-  height: 100%;
-  font-family: Bebas, sans-serif;
-  font-size: 2.5em
-}
-
-#Partie_Haute_Centre h1 {
-  margin: auto 2em auto 2em
-}
-
-#Partie_Haute_Droite {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 15%;
-  height: 100%;
-  font-family: Montserrat_Regular, sans-serif;
-  font-size: 1.25em
-}
-
-#Bouton_Visite {
-  background-color: #212121;
-  color: #fff;
-  padding: .5em
-}
-
-#Bandeau_Information {
-  display: flex;
-  width: 100%;
-  background-color: #d5d5d5;
-  font-family: Montserrat_Bold, sans-serif;
-  height: 100%
-}
-
-#Description_Integrale, #Integrale_Information {
-  display: flex;
-  width: 45%;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 2.5em auto .5em auto
-}
-
-#Categorie, #Client, #Date, #Technologies {
-  display: flex;
-  width: 100%;
-  margin-bottom: 2em
-}
-
-#Technologies {
-  display: flex;
-  align-items: center
-}
-
-#Technologies i {
-  font-size: 1.75em;
-  margin: auto .25em auto .25em
-}
-
-#Description_Integrale {
-  font-family: Montserrat, sans-serif;
-  font-weight: 700;
-  list-style-type: circle;
-  margin-top: 2em
-}
-
-#Description_Integrale h4 {
-  font-family: Montserrat_Bold, sans-serif
-}
-
-#Apercu {
-  margin-top: 1em;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center
-}
-
-.fa-th-large {
-  font-size: 2.5em
-}
-
-.icone-awesome {
-  font-size: 1.25em
-}
-
-.swiper-container {
-  width: 76.5%;
-  height: auto
-}
-
-.desktop {
-  display: block;
-}
-
-.mobile {
-  display: none;
-}
-
-.swiper-wrapper {
-  height: auto
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  height: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-}
-
-.swiper-slide img {
-  width: 100%;
-  height: 100%
-}
-
-.button-prev {
-  cursor: pointer;
-  font-size: 2em
-}
-
-.button-next {
-  cursor: pointer;
-  font-size: 2em
-}
-
-.button-prev-mobile {
-  display: none;
-}
-
-.button-next-mobile {
-  display: none;
-}
-
-.myImg {
-  cursor: pointer;
-  transition: .3s
-}
-
-.myImg:hover {
-  opacity: .9
-}
-
-#myModal {
-  display: none;
-  position: fixed;
-  padding-top: 100px;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  z-index: 10000000000;
-  font-family: Montserrat, sans-serif;
-  background-color: #000;
-  background-color: rgba(0, 0, 0, .9)
-}
-
-.myImgZoom {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 80%;
-  margin: auto;
-  max-width: 70%
-}
-
-.caption {
-  display: block;
-  margin: auto;
-  padding: .5em;
-  width: 80%;
-  text-align: center;
-  color: #ccc;
-  height: 150px
-}
-
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: 700;
-  transition: .3s
-}
-
-.close:focus, .close:hover {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer
-}
-
-@media only screen and (max-width:700px) {
-  .modal-content {
-    width: 100%
-  }
-}
-
-@media screen and (max-width:1024px) {
-  #Bandeau {
-    display: none
-  }
-
-  #Bandeau_mobile {
-    display: flex;
-    width: 100%;
-    height: auto;
-  }
-
-  #Partie_Haute_Centre {
-    width: 60%;
-    justify-content: flex-end;
-    height: 2em
-  }
-
-  .desktop {
-    display: none;
-  }
-
-  .mobile {
-    display: block;
-  }
-
-  .button-prev {
-    display: none;
-  }
-
-  .button-next {
-    display: none;
-  }
-
-  .button-prev-mobile {
-    display: block;
-    font-size: 2em
-  }
-
-  .button-next-mobile {
-    display: block;
-    font-size: 2em
-  }
-}
-
-@media screen and (max-width:1280px) {
-  #Description_Integrale, #Integrale_Information {
-    width: 80%
-  }
-
-  #Partie_Haute {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    height: 100%
-  }
+    height: 5em
+}
 
-  #Partie_Haute_Gauche {
-    width: 10%
-  }
+#Partie_Haute_Gauche {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 15%
+}
 
-  #Partie_Haute_Centre {
-    width: 80%;
-    justify-content: flex-end;
-    height: 2em
-  }
+#Partie_Haute_Centre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+    font-family: Bebas, sans-serif;
+    font-size: 2.5em
+}
 
-  #Partie_Haute_Droite {
-    width: 100%;
+#Partie_Haute_Centre h1 {
+    margin: auto 2em auto 2em
+}
+
+#Partie_Haute_Droite {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    height: 100%;
+    font-family: Montserrat_Regular, sans-serif;
+    font-size: 1.25em
+}
+
+#Bouton_Visite {
     background-color: #212121;
-    color: #fff
-  }
+    color: #fff;
+    padding: .5em
+}
 
-  #Bouton_Visite {
-    padding: 1em 0 1em 0
-  }
+#Bandeau_Information {
+    display: flex;
+    width: 100%;
+    background-color: #d5d5d5;
+    font-family: Montserrat_Bold, sans-serif;
+    height: 100%
+}
+
+#Description_Integrale,
+#Integrale_Information {
+    display: flex;
+    width: 45%;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 2.5em auto .5em auto
+}
+
+#Categorie,
+#Client,
+#Date,
+#Technologies {
+    display: flex;
+    width: 100%;
+    margin-bottom: 2em
+}
+
+#Technologies {
+    display: flex;
+    align-items: center
+}
+
+#Technologies i {
+    font-size: 1.75em;
+    margin: auto .25em auto .25em
+}
+
+#Description_Integrale {
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    list-style-type: circle;
+    margin-top: 2em
+}
+
+#Description_Integrale h4 {
+    font-family: Montserrat_Bold, sans-serif
+}
+
+#Apercu {
+    margin-top: 1em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center
+}
+
+.fa-th-large {
+    font-size: 2.5em
+}
+
+.icone-awesome {
+    font-size: 1.25em
+}
+
+.swiper-container {
+    width: 76.5%;
+    height: auto
+}
+
+.desktop {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
+.swiper-wrapper {
+    height: auto
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%
+}
+
+.button-prev {
+    cursor: pointer;
+    font-size: 2em
+}
+
+.button-next {
+    cursor: pointer;
+    font-size: 2em
+}
+
+.button-prev-mobile {
+    display: none;
+}
+
+.button-next-mobile {
+    display: none;
+}
+
+.myImg {
+    cursor: pointer;
+    transition: .3s
+}
+
+.myImg:hover {
+    opacity: .9
+}
+
+#myModal {
+    display: none;
+    position: fixed;
+    padding-top: 100px;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10000000000;
+    font-family: Montserrat, sans-serif;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, .9)
+}
+
+.myImgZoom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    max-width: 70%
+}
+
+.caption {
+    display: block;
+    margin: auto;
+    padding: .5em;
+    width: 80%;
+    text-align: center;
+    color: #ccc;
+    height: 150px
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: 700;
+    transition: .3s
+}
+
+.close:focus,
+.close:hover {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer
+}
+
+@media only screen and (max-width:700px) {
+    .modal-content {
+        width: 100%
+    }
+}
+
+@media screen and (max-width:1024px) {
+    #Bandeau {
+        display: none
+    }
+    #Bandeau_mobile {
+        display: flex;
+        width: 100%;
+        height: auto;
+    }
+    #Partie_Haute_Centre {
+        width: 60%;
+        justify-content: flex-end;
+        height: 2em
+    }
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
+    .button-prev {
+        display: none;
+    }
+    .button-next {
+        display: none;
+    }
+    .button-prev-mobile {
+        display: block;
+        font-size: 2em
+    }
+    .button-next-mobile {
+        display: block;
+        font-size: 2em
+    }
+}
+
+@media screen and (max-width:1280px) {
+    #Description_Integrale,
+    #Integrale_Information {
+        width: 80%
+    }
+    #Partie_Haute {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%
+    }
+    #Partie_Haute_Gauche {
+        width: 10%
+    }
+    #Partie_Haute_Centre {
+        width: 80%;
+        justify-content: flex-end;
+        height: 2em
+    }
+    #Partie_Haute_Droite {
+        width: 100%;
+        background-color: #212121;
+        color: #fff
+    }
+    #Bouton_Visite {
+        padding: 1em 0 1em 0
+    }
+}
+
+.infobulle {
+    /* color: #ccc; */
+    text-shadow: 0 -1px 0 black;
+}
+
+.infobulle:hover,
+a:focus {
+    background: rgba(0, 0, 0, .4);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .4);
+}
+
+.infobulle span {
+    position: absolute;
+    margin-top: 23px;
+    margin-left: -35px;
+    color: #09c;
+    background: rgba(0, 0, 0, .9);
+    padding: 15px;
+    border-radius: 3px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .5);
+    transform: scale(0) rotate(-12deg);
+    transition: all .25s;
+    opacity: 0;
+}
+
+.infobulle:hover span,
+.infobulle:focus span {
+    transform: scale(1) rotate(0);
+    opacity: 1;
 }

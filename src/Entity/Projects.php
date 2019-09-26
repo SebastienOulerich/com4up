@@ -25,6 +25,11 @@ class Projects
     private $title;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
+
+    /**
      * @ORM\Column(type="text")
      */
     private $description;
@@ -102,6 +107,12 @@ class Projects
     public function getSlug(): ?string
     {
         return (new Slugify())->slugify($this->title);
+    }
+
+    public function setSlug(): self
+    {
+        $this->slug = (new Slugify())->slugify($this->title);
+        return $this;
     }
 
 

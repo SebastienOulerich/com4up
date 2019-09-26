@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
-{% block title %}Projet {{ project.title }}
+{% block title %}Projet
+    {{ project.title }}
 {% endblock %}
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('css/swiper.min.css') }}">
@@ -18,7 +19,7 @@
         </div>
         <div id="Partie_Haute_Centre">
             {% if previous is not null %}
-                <a href="{{path('project_id' , {'id' : previous.id ,'slug' : previous.title }) }}">
+                <a href="{{path('project_id' , {'slug' : previous.title }) }}">
                     <i aria-hidden class="far fa-angle-left icone-awesome"></i>
                 </a>
             {% else %}
@@ -26,7 +27,7 @@
             {% endif %}
             <h1>{{ project.title }}</h1>
             {% if next is not null %}
-                <a href="{{path('project_id' , {'id' : next.id ,'slug' : next.title }) }}">
+                <a href="{{path('project_id' , {'slug' : next.title }) }}">
                     <i aria-hidden class="far fa-angle-right icone-awesome"></i>
                 </a>
             {% else %}
@@ -52,7 +53,8 @@
     <div id="Bandeau_Information">
         <div id="Integrale_Information">
             <div id="Information_Gauche">
-                <h3 id="Client">Client : {{ project.client }}</h3>
+                <h3 id="Client">Client :
+                    {{ project.client }}</h3>
                 <h3 id="Categorie">Catégorie :&nbsp<a href="{{ path('projets') }}">{{ project.categorie }}</a>
                 </h3>
             </div>
@@ -61,16 +63,18 @@
                     {% if project.URLSite and project.status == "fini" %}
                         {{ project.date|localizeddate('none', 'none', null, null, 'EEEE d ')|capitalize }}
                         {{ project.date|localizeddate('none', 'none', null, null, 'MMMM Y ')|capitalize }}
-                {% elseif project.status == "En développement" %}
+                    {% elseif project.status == "En développement" %}
                         À venir
-                {% else %}
-                    Site hors-ligne
-                {% endif %}
+                    {% else %}
+                        Site hors-ligne
+                    {% endif %}
                 </h3>
                 <div id="Technologies">
                     <h3>Technologies utilisées :</h3>
                     {% for techno in project.technologies %}
-                        {{techno.icon|raw}}
+                        <a class="infobulle" href="#">
+                            {{techno.icon|raw}}<span>{{techno.description}}</span>
+                        </a>
                     {% endfor %}
                 </div>
             </div>
@@ -120,14 +124,14 @@
             </div>
         </div>
     </div>
-    <div class="modal close" id="myModal">
+    <div
+        class="modal close" id="myModal">
 
         <!-- The Close Button -->
         <span class="close">&times;</span>
 
         <!-- Modal Content (The Image) -->
-        <img
-        class="myImgZoom" id="imgZoom" src={{asset("images/projets/fas1.jpg")}} alt="Aperçu Faeriths">
+        <img class="myImgZoom" id="imgZoom" src={{asset("images/projets/fas1.jpg")}} alt="Aperçu Faeriths">
 
 
     </div>

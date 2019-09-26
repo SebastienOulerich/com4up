@@ -14,6 +14,7 @@ class TechnologieType extends AbstractType
         $builder
             ->add('name')
             ->add('icon')
+            ->add('description')
             // ->add('projects')
         ;
     }

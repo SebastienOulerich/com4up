@@ -94,7 +94,7 @@
         </div> #}
 
     <div id="Integrale_Image">
-        <a class="card" v-bind:href="'/projets/' + projet.slug + - + projet.id" v-for="(projet,index) in projets">
+        <a class="card" v-bind:href="'/projets/' + projet.slug " v-for="(projet,index) in projets">
             <img alt="Bandeau" class="Images_Projet" v-bind:src="projet.miniature">
             <div class="Projet_hover" v-bind:class="hover_select(projet.categorie)">
                 <div class="Projet_hover_border"></div>

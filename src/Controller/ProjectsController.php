@@ -46,13 +46,13 @@ class ProjectsController extends Controller
 
 
     /**
-     * @Route("/projets/{slug}-{id}", name="project_id", requirements={"slug" : "[a-z0-9\-]*"})
+     * @Route("/projets/{slug}", name="project_id", requirements={"slug" : "[a-z0-9\-]*"})
      */
-    public function projet_id($slug, $id)
+    public function projet_id($slug)
     {
         // replace this line with your own code!
         $em = $this->getDoctrine()->getManager();
-        $project = $em->getRepository(Projects::class)->find($id);
+        $project = $em->getRepository(Projects::class)->findOneBySlug($slug);
         $previous = $em->getRepository(Projects::class)->findOneByNext($project->getDate());
         $next = $em->getRepository(Projects::class)->findOneByPrevious($project->getDate());
         $slug = new Slugify();
@@ -265,9 +265,10 @@ class ProjectsController extends Controller
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $project->setSlug();
             $em->persist($project);
             $em->flush();
-            return $this->redirectToRoute('project_id', ['slug' => $project->getSlug(), 'id' => $project->getId()]);
+            return $this->redirectToRoute('project_id', ['slug' => $project->getSlug()]);
         }
         return $this->render('base/addProject.html.twig', [
             "form" => $form->createView(),
@@ -312,9 +313,10 @@ class ProjectsController extends Controller
             if ($data->getMiniature()->getFilename() == null)
                 $data->getMiniature()->setFilename($saveMiniature);
             $em = $this->getDoctrine()->getManager();
+            $project->setSlug();
             $em->persist($project);
             $em->flush();
-            return $this->redirectToRoute('project_id', ['slug' => $project->getSlug(), 'id' => $project->getId()]);
+            return $this->redirectToRoute('project_id', ['slug' => $project->getSlug()]);
         }
         return $this->render('base/addProject.html.twig', [
             "form" => $form->createView(),
