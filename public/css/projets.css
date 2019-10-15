@@ -1,1 +1,120 @@
-#Bandeau{max-width:100%;height:auto}#Une_Ligne{display:flex;justify-content:space-between;align-items:center;width:100%;height:8em;background-color:#d5d5d5}#Titre_Principal{display:flex;font-family:Bebas,sans-serif;font-size:2.5em;margin-left:.5em}#Categorie_Selection{display:flex;font-family:Montserrat,sans-serif;font-size:1.25em;font-weight:700;margin-right:.5em}#Integrale_Image{display:flex;flex-wrap:wrap;width:100%}#Integrale_Image a{width:25%;height:auto}.Images_Projet{display:flex;width:100%;height:auto}.Espace_Slash{margin:auto .5em auto .5em}.Projet_hover{display:flex;justify-content:center;align-items:center;position:relative;bottom:100%;opacity:0;height:100%;width:100%;-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out;-o-transition:all .2s ease-out;transition:all .2s ease-out}.Projet_hover_border{min-width:95%;min-height:90%;outline:solid #fff 1px}.Projet_hover:hover{opacity:1}.Projet_hover_web{background-color:rgba(255,0,45,.5)}.Projet_hover_audiovisuel{background-color:rgba(0,182,65,.5)}.Projet_hover_social{background-color:rgba(0,128,209,.5)}.Projet_hover_materiel{background-color:rgba(123,0,255,.5)}@media screen and (max-width:1280px){#Integrale_Image a{width:50%}}@media screen and (max-width:1024px){#Une_Ligne{flex-direction:column;justify-content:center;align-items:center;width:100%;height:8em}#Titre_Principal{margin-left:0;margin-bottom:.25em}#Categorie_Selection{font-size:1em;margin-right:0}}
+#Bandeau {
+  max-width: 100%;
+  margin: 0;
+  height: auto
+}
+
+#Une_Ligne {
+  position: relative;
+  top: -4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  height: 8em;
+  background-color: #d5d5d5
+}
+
+#Titre_Principal {
+  display: flex;
+  font-family: Bebas, sans-serif;
+  font-size: 2.5em;
+  margin-left: .5em
+}
+
+#Categorie_Selection {
+  display: flex;
+  font-family: Montserrat, sans-serif;
+  font-size: 1.25em;
+  font-weight: 700;
+  margin-right: .5em
+}
+
+#Integrale_Image {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%
+}
+
+#Integrale_Image a {
+  width: 25%;
+  height: auto
+}
+
+.Images_Projet {
+  display: flex;
+  width: 100%;
+  height: auto
+}
+
+.Espace_Slash {
+  margin: auto .5em auto .5em
+}
+
+.Projet_hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 100%;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all .2s ease-out;
+  -moz-transition: all .2s ease-out;
+  -o-transition: all .2s ease-out;
+  transition: all .2s ease-out
+}
+
+.Projet_hover_border {
+  min-width: 95%;
+  min-height: 90%;
+  outline: solid #fff 1px
+}
+
+.Projet_hover:hover {
+  opacity: 1
+}
+
+.Projet_hover_web {
+  background-color: rgba(255, 0, 45, .5)
+}
+
+.Projet_hover_audiovisuel {
+  background-color: rgba(0, 182, 65, .5)
+}
+
+.Projet_hover_social {
+  background-color: rgba(0, 128, 209, .5)
+}
+
+.Projet_hover_materiel {
+  background-color: rgba(123, 0, 255, .5)
+}
+
+@media screen and (max-width:1280px) {
+  #Integrale_Image a {
+    width: 50%
+  }
+}
+
+@media screen and (max-width:1024px) {
+  #Une_Ligne {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 8em
+  }
+
+  #Titre_Principal {
+    margin-left: 0;
+    margin-bottom: .25em
+  }
+
+  #Categorie_Selection {
+    font-size: 1em;
+    margin-right: 0
+  }
+}

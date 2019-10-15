@@ -65,7 +65,9 @@ form {
 #Categorie {
   margin: 2em 0 0 0;
   width: 100%;
+  min-width: 100%;
   display: flex;
+  justify-content: flex-start;
   flex-wrap: wrap
 }
 
@@ -90,10 +92,14 @@ form {
   display: flex;
   align-items: center;
   margin: .2em 0 .2em 0;
-  width: 50%;
+  width: 58.8%;
   font-family: Montserrat, sans-serif;
   font-weight: 700;
   font-size: 1em
+}
+
+.CategorieLine:nth-child(5), .CategorieLine:nth-child(3) {
+  width: auto;
 }
 
 .CategorieLine input:hover, .CategorieLine label:hover {
