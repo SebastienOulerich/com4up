@@ -1,0 +1,145 @@
+{
+  "_args": [
+    [
+      "jquery-cropper",
+      "/home/nesta/Documents/Lab/www/com4up"
+    ]
+  ],
+  "_from": "jquery-cropper@latest",
+  "_id": "jquery-cropper@1.0.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/jquery-cropper",
+  "_nodeVersion": "9.8.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/jquery-cropper_1.0.0_1522563767654_0.3859667262014732"
+  },
+  "_npmUser": {
+    "email": "chenfengyuan@outlook.com",
+    "name": "chenfengyuan"
+  },
+  "_npmVersion": "5.6.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "jquery-cropper",
+    "raw": "jquery-cropper",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/jquery-cropper/-/jquery-cropper-1.0.0.tgz",
+  "_shasum": "a863005f8e1533825f269ff7ee2c2308137d045e",
+  "_shrinkwrap": null,
+  "_spec": "jquery-cropper",
+  "_where": "/home/nesta/Documents/Lab/www/com4up",
+  "author": {
+    "name": "Chen Fengyuan",
+    "url": "http://chenfengyuan.com"
+  },
+  "bugs": {
+    "url": "https://github.com/fengyuanchen/jquery-cropper/issues"
+  },
+  "dependencies": {},
+  "description": "A jQuery plugin wrapper for Cropper.js.",
+  "devDependencies": {
+    "@commitlint/cli": "^6.1.3",
+    "@commitlint/config-angular": "^6.1.3",
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
+    "cropperjs": "^1.3.4",
+    "del-cli": "^1.1.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.10.0",
+    "husky": "^0.14.3",
+    "jquery": "^3.3.1",
+    "karma": "^2.0.0",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.5",
+    "karma-rollup-preprocessor": "^5.1.1",
+    "mocha": "^5.0.5",
+    "puppeteer": "^1.2.0",
+    "rollup": "^0.57.1",
+    "rollup-plugin-alias": "^1.4.0",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-watch": "^4.3.1",
+    "uglify-js": "^3.3.17"
+  },
+  "directories": {},
+  "dist": {
+    "fileCount": 9,
+    "integrity": "sha512-ox1zRC1IIlN0sPxqb8TqgmoiEs1USNFfNn1RK6mwXrBdOfJpwqog7ZZVc6Hz/ev03gomDbOs2jXZUgTMBg35xg==",
+    "shasum": "a863005f8e1533825f269ff7ee2c2308137d045e",
+    "tarball": "https://registry.npmjs.org/jquery-cropper/-/jquery-cropper-1.0.0.tgz",
+    "unpackedSize": 14506
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "gitHead": "62eebeaa50730b3b67e3f56c22bbd937fd3254e1",
+  "homepage": "https://fengyuanchen.github.io/jquery-cropper",
+  "keywords": [
+    "crop",
+    "cropper",
+    "cropper.js",
+    "cropping",
+    "css",
+    "front-end",
+    "html",
+    "image",
+    "javascript",
+    "jquery",
+    "jquery-plugin",
+    "move",
+    "plugin",
+    "processing",
+    "rotate",
+    "scale",
+    "web",
+    "zoom"
+  ],
+  "license": "MIT",
+  "main": "dist/jquery-cropper.common.js",
+  "maintainers": [
+    {
+      "name": "chenfengyuan",
+      "email": "chenfengyuan@outlook.com"
+    }
+  ],
+  "module": "dist/jquery-cropper.esm.js",
+  "name": "jquery-cropper",
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "cropperjs": ">= 1.0.0",
+    "jquery": ">= 1.9.1"
+  },
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fengyuanchen/jquery-cropper.git"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "clear": "del-cli dist",
+    "commitmsg": "npm run lint && commitlint -e",
+    "compress": "uglifyjs dist/jquery-cropper.js -o dist/jquery-cropper.min.js -c -m --comments /^!/",
+    "lint": "eslint src test *.js --fix",
+    "release": "npm run clear && npm run lint && npm run build && npm run compress && npm test",
+    "start": "rollup -c -m -w",
+    "test": "karma start test/karma.conf.js"
+  },
+  "unpkg": "dist/jquery-cropper.js",
+  "version": "1.0.0"
+}

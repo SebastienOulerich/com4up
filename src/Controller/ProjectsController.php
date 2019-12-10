@@ -11,9 +11,13 @@ use App\Form\EditProjectType;
 use App\Service\FileUploader;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
 use Cocur\Slugify\Slugify;
 
 
+
+use Symfony\Component\HttpFoundation\RequestStack;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -96,11 +100,11 @@ class ProjectsController extends Controller
         #$request = $request_stack->getCurrentRequest();
         #$content = $request->getContent();
         #$contentDecode = json_decode($content);
-	#$page = $contentDecode->page;
-	$page =1;
+        #$page = $contentDecode->page;
+        $page = 1;
         $projets = $doctrine->getRepository(Projects::class)->myGetProjet($page);
-	#$projets = $doctrine->getRepository(Projects::class)->findAll();
-	$encoders = array(new XmlEncoder(), new JsonEncoder());
+        #$projets = $doctrine->getRepository(Projects::class)->findAll();
+        $encoders = array(new XmlEncoder(), new JsonEncoder());
         $normalizer = new ObjectNormalizer();
         $normalizer->setCircularReferenceLimit(2);
         $normalizer->setCircularReferenceHandler(function ($object) {
@@ -272,6 +276,7 @@ class ProjectsController extends Controller
         }
         return $this->render('base/addProject.html.twig', [
             "form" => $form->createView(),
+            "action" => "new",
         ]);
     }
 
@@ -279,7 +284,7 @@ class ProjectsController extends Controller
     /**
      * @Route("/cms/edit-project/{id}", name="edit_project")
      */
-    public function edit_project(Request $request, FileUploader $fileUploader, $id)
+    public function edit_project(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
         $project = $em->getRepository(Projects::class)->find($id);
@@ -296,7 +301,7 @@ class ProjectsController extends Controller
         $project->getBanner()->setFilename(new File($this->getParameter('uploadDirectory') . '/' . $project->getBanner()->getFilename()));
         $project->getMiniature()->setFilename(new File($this->getParameter('uploadDirectory') . '/' . $project->getMiniature()->getFilename()));
         $form = $this->createForm(ProjectType::class, $project);
-        
+
         $saveProject = $project->getBanner()->getFilename();
         $saveMiniature = $project->getMiniature()->getFilename();
 
@@ -310,12 +315,20 @@ class ProjectsController extends Controller
                     }
                 }
             }
+            $miniatureCrop = $this->container->get('request_stack')->getCurrentRequest()->get('miniature');
             if ($data->getBanner()->getFilename() == null)
                 $data->getBanner()->setFilename($saveProject);
-            if ($data->getMiniature()->getFilename() == null)
-                $data->getMiniature()->setFilename($saveMiniature);
+
+            if ($miniatureCrop != NULL) {
+                $min = $em->getRepository(Image::class)->findOneByFilename($miniatureCrop);
+                $project->setMiniature($min);
+            } else {
+                if ($data->getMiniature()->getFilename() == null)
+                    $data->getMiniature()->setFilename($saveMiniature);
+            }
             $em = $this->getDoctrine()->getManager();
             $project->setSlug();
+
             $em->persist($project);
             $em->flush();
             return $this->redirectToRoute('project_id', ['slug' => $project->getSlug()]);
@@ -323,6 +336,7 @@ class ProjectsController extends Controller
         return $this->render('base/addProject.html.twig', [
             "form" => $form->createView(),
             "project" => $project,
+            "action" => "edit",
             "projectInfo" => $projectInfo,
         ]);
     }

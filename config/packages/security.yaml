@@ -11,6 +11,7 @@ security:
                     admin: 
                         password: $2y$12$2Ixti8tDGj8k10MoQOZ5q.P0lK/zw/tK3iQju4inEM1ZL.UVZSt6S
                         roles: 'ROLE_ADMIN'
+                        # token: "c288d342-e4e7-11e9-a2b7-93b01adfc486"
                 # if you're using multiple entity managers
                 # manager_name: customer
 

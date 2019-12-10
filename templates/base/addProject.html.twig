@@ -2,115 +2,154 @@
 {% block title %}Ajouter Projet
 {% endblock %}
 {% block stylesheets %}
-    <link type="text/css" rel="stylesheet" href="{{asset("css/addProject.css")}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset("css/lecture_projet.css")}}"/>
+    <link type="text/css" rel="stylesheet" href="{{asset("css/cropper.css")}}"/>
 {% endblock %}
 
 {% block body%}
-    {{ form_start(form) }}
+<div id="project_id" value="{{project.miniature.id}}" style="display:none;" > </div>
+    {{ form_start(form, {'attr' : {'id':"project"}}) }}
 
     {# <img id="Bandeau" src={{asset(project.banner.path)}} alt="Bandeau"> #}
     <div>
         <h2>Miniature :{{form_widget(form.miniature)}}</h2>
         <div id="fileList">
             {% if projectInfo is defined %}
-                <img src={{asset(project.miniature.path)}}></img>
+                <img id="image" src={{asset(project.miniature.path)}}></img>
             {% endif %}
+            <button type="button" id="projectImage" onclick="setImage('miniature')">Validation</button>
         </div>
         <h2>Banner :{{form_widget(form.banner)}}</h2>
     </div>
-    {# <img alt="Bandeau" id="Bandeau" src="https://via.placeholder.com/1920x320"> #}
-    <div id="Partie_Haute">
-        <div
-            id="Partie_Haute_Gauche">
-            {# <a href="{{ path('projets') }}"> #}
-            <i aria-hidden class="fas fa-th-large"></i>
-        </a>
-    </div>
-    <div id="Partie_Haute_Centre">
-        <h1>Titre :
-            {{ form_widget(form.title) }}</h1>
-    </div>
-    <div id="Partie_Haute_Droite">
-        <h2>URL :{{ form_widget(form.URL_site) }}</h2>
-    </div>
+{# <img alt="Bandeau" id="Bandeau" src="https://via.placeholder.com/1920x320"> #}
+<div id="Partie_Haute">
+    <div
+        id="Partie_Haute_Gauche">
+        {# <a href="{{ path('projets') }}"> #}
+        <i aria-hidden class="fas fa-th-large"></i>
+    </a>
 </div>
-
-<div id="Bandeau_Information">
-    <div id="Integrale_Information">
-        <div id="Information_Gauche">
-            <h3 id="Client">Client :{{ form_widget(form.client) }}</h3>
-            <h3 id="Categorie">Catégorie :&nbsp{{ form_widget(form.categorie) }}
-            </h3>
-        </div>
-        <div id="Information_Droite">
-            <h3 id="Date">Date :
-                {{ form_widget(form.date) }}</h3>
-            <div id="Technologies">
-                <h3>Technologies utilisées :</h3>
-                {{ form_widget(form.technologies) }}
-            </div>
+<div id="Partie_Haute_Centre">
+    <h1>Titre :
+        {{ form_widget(form.title) }}</h1>
+</div>
+<div id="Partie_Haute_Droite">
+    <h2>URL :{{ form_widget(form.URL_site) }}</h2>
+</div></div><div id="Bandeau_Information">
+<div id="Integrale_Information">
+    <div id="Information_Gauche">
+        <h3 id="Client">Client :{{ form_widget(form.client) }}</h3>
+        <h3 id="Categorie">Catégorie :&nbsp{{ form_widget(form.categorie) }}
+        </h3>
+    </div>
+    <div id="Information_Droite">
+        <h3 id="Date">Date :
+            {{ form_widget(form.date) }}</h3>
+        <div id="Technologies">
+            <h3>Technologies utilisées :</h3>
+            {{ form_widget(form.technologies) }}
         </div>
     </div>
+</div></div><div id="Description_Integrale">
+<div>
+    <h4>Description :</h4>
+    <p>
+        {{ form_widget(form.description) }}
+    </p>
+    <h4>Status :</h4>
+    <p>{{ form_widget(form.status) }}</p>
 </div>
-<div id="Description_Integrale">
-    <div>
-        <h4>Description :</h4>
-        <p>
-            {{ form_widget(form.description) }}
-        </p>
-        <h4>Status :</h4>
-        <p>{{ form_widget(form.status) }}</p>
-    </div>
-    <h3>Gallery</h3>
-    <ul
-        class="tags" data-prototype="{{ form_widget(form.gallery.vars.prototype)|e('html_attr') }}">
-        {# iterate over each existing tag and render its only field: name #}
-        {% for img in form.gallery %}
-            <li>{{ form_widget(img) }}<a href="#" class="remove-tag">x</a>
-            </li>
+<h3>Gallery</h3>
+<ul
+    class="tags" data-prototype="{{ form_widget(form.gallery.vars.prototype)|e('html_attr') }}">
+    {# iterate over each existing tag and render its only field: name #}
+    {% for img in form.gallery %}
+        <li>{{ form_widget(img) }}<a href="#" class="remove-tag">x</a>
+        </li>
 
-        {% endfor %}
-    </ul>
-    <input id="submit" type="submit" value="Submit"/>{{ form_widget(form._token) }}
-</div>{% endblock %}{% block js %}
-<script>
-    window.URL = window.URL || window.webkitURL;
+    {% endfor %}
+</ul>
+<input id="submit" type="submit" value="Submit"/>{{ form_widget(form._token) }}</div>{% endblock %}{% block js %}{{ encore_entry_script_tags('app') }}<script src="{{asset('js/cropper.js')}}"></script><script src="{{asset('js/jquery-cropper.js')}}"></script><script src="{{asset('js/vue.js')}}"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script><script>
 
-    const fileElem = document.getElementsByClassName("fileElem"),
-        fileList = document.getElementById("fileList");
+const fileElem = document.getElementsByClassName("fileElem"),
+    fileList = document.getElementById("fileList");
 
-    //$("#project_miniature_filename").load(function () { // Handler for .load() called. #}
+function reloadCropper(){
+    var $image = $('#image');
+    var canvas;
+    
+// https://github.com/fengyuanchen/cropperjs
 
-     //});
-        console.log(fileElem[0])
-    function handleFiles(files) {
-        console.log(files)
-        console.log(fileElem)
-        console.log("lancement é");
-        if (! files.length) {}fileList.innerHTML = "";
-        const list = document.createElement("ul");
-        fileList.appendChild(list);
-        for (let i = 0; i < files.length; i++) {
-            const li = document.createElement("li");
-            list.appendChild(li);
 
-            const img = document.createElement("img");
-            img.src = window.URL.createObjectURL(files[i]);
-            // img.height = 500;
-            img.onload = function () {
-                window.URL.revokeObjectURL(this.src);
-            }
-            li.appendChild(img);
+console.log(canvas);
+var cropper = $image.cropper('cropper');
+}
 
-        }
+// Get the Cropper.js instance after initialized
+// https://stackoverflow.com/questions/30537406/how-to-set-crop-box-in-jquery-cropper
 
-    }
-</script>
-<script>
-    // setup an "add a tag" link
-    var $addTagLink = $('<a href="#" class="add_tag_link">Ajouter une image</a>');
-    var $newLinkLi = $('<li></li>').append($addTagLink);
+
+window.URL = window.URL || window.webkitURL;
+
+/*const fileElem = document.getElementsByClassName("fileElem"),
+    fileList = document.getElementById("fileList");*/
+
+// $("#project_miniature_filename").load(function () { // Handler for .load() called. #}
+
+// });
+</script><script>
+// setup an "add a tag" link
+var $addTagLink = $('<a href="#" class="add_tag_link">Ajouter une image</a>');
+var $newLinkLi = $('<li></li>').append($addTagLink);
+// handle the removal, just for this example
+$('.remove-tag').click(function (e) {
+    e.preventDefault();
+
+    $(this).parent().remove();
+
+    return false;
+});
+jQuery(document).ready(function () { // Get the ul that holds the collection of tags
+    var $collectionHolder = $('ul.tags');
+
+    // add the "add a tag" anchor and li to the tags ul
+    $collectionHolder.append($newLinkLi);
+
+    // count the current form inputs we have (e.g. 2), use that as the new
+    // index when inserting a new item (e.g. 2)
+    $collectionHolder.data('index', $collectionHolder.find(':input').length);
+
+    $addTagLink.on('click', function (e) { // prevent the link from creating a "#" on the URL
+        e.preventDefault();
+
+        // add a new tag form (see code block below)
+        addTagForm($collectionHolder, $newLinkLi);
+    });
+
+
+});
+
+function addTagForm($collectionHolder, $newLinkLi) { // Get the data-prototype explained earlier
+    var prototype = $collectionHolder.data('prototype');
+
+    // get the new index
+    var index = $collectionHolder.data('index');
+
+    // Replace '$$name$$' in the prototype's HTML to
+    // instead be a number based on how many items we have
+    var newForm = prototype.replace(/__name__/g, index);
+
+    // increase the index with one for the next item
+    $collectionHolder.data('index', index + 1);
+
+    // Display the form in the page in an li, before the "Add a tag" link li
+    var $newFormLi = $('<li></li>').append(newForm);
+
+    // also add a remove button, just for this example
+    $newFormLi.append('<a href="#" class="remove-tag">x</a>');
+
+    $newLinkLi.before($newFormLi);
+
     // handle the removal, just for this example
     $('.remove-tag').click(function (e) {
         e.preventDefault();
@@ -119,54 +158,58 @@
 
         return false;
     });
-    jQuery(document).ready(function () { // Get the ul that holds the collection of tags
-        var $collectionHolder = $('ul.tags');
-
-        // add the "add a tag" anchor and li to the tags ul
-        $collectionHolder.append($newLinkLi);
-
-        // count the current form inputs we have (e.g. 2), use that as the new
-        // index when inserting a new item (e.g. 2)
-        $collectionHolder.data('index', $collectionHolder.find(':input').length);
-
-        $addTagLink.on('click', function (e) { // prevent the link from creating a "#" on the URL
-            e.preventDefault();
-
-            // add a new tag form (see code block below)
-            addTagForm($collectionHolder, $newLinkLi);
+}</script><script>
+$(document).ready(function (e) {
+    $("#form").on('submit', (function (e) {
+        e.preventDefault();
+        $.ajax({
+            url: "/upload",
+            type: "POST",
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData: false,
+            beforeSend: function () { // $("#preview").fadeOut();
+                $("#err").fadeOut();
+            },
+            success: function (data) {
+                if (data == 'invalid') { // invalid file format.
+                    $("#err").html("Invalid File !").fadeIn();
+                } else { // view uploaded file.
+                    $("#preview").html(data).fadeIn();
+                    $("#form")[0].reset();
+                }
+            },
+            error: function (e) {
+                $("#err").html(e).fadeIn();
+            }
         });
-
-
-    });
-
-    function addTagForm($collectionHolder, $newLinkLi) { // Get the data-prototype explained earlier
-        var prototype = $collectionHolder.data('prototype');
-
-        // get the new index
-        var index = $collectionHolder.data('index');
-
-        // Replace '$$name$$' in the prototype's HTML to
-        // instead be a number based on how many items we have
-        var newForm = prototype.replace(/__name__/g, index);
-
-        // increase the index with one for the next item
-        $collectionHolder.data('index', index + 1);
-
-        // Display the form in the page in an li, before the "Add a tag" link li
-        var $newFormLi = $('<li></li>').append(newForm);
-
-        // also add a remove button, just for this example
-        $newFormLi.append('<a href="#" class="remove-tag">x</a>');
-
-        $newLinkLi.before($newFormLi);
-
-        // handle the removal, just for this example
-        $('.remove-tag').click(function (e) {
-            e.preventDefault();
-
-            $(this).parent().remove();
-
-            return false;
-        });
+    }));
+});</script><script>
+var app = new Vue({
+    el: "#app",
+    delimiters: [
+        "{", "}"
+    ],
+    data: {
+        projets: [],
+        select: "All",
+        page: 1,
+        count: 0,
+        nbrPage: 0,
+        onLoad: !1
+    },
+    methods: {
+        upload() {
+            axios({method: "POST", url: "/upload", data: {}}).then(e => {
+                var t = JSON.parse(e.data),
+                    i = this;
+                this.projets = [],
+                $.each(t, function (e, t) {
+                    i.projets.push({id: t.id, slug: t.slug, miniature: t.path, categorie: t.categorie})
+                }),
+                this.onLoad = !1
+            })
+        }
     }
-</script>{% endblock %}
+});</script>{% endblock %}
