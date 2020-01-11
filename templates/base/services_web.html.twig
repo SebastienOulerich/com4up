@@ -36,7 +36,7 @@
     <div class='container'>
         <div class="swiper-container">
             <div class="swiper-wrapper" id="app">
-                <transition name="slide-fade">
+                <transition name="slide-fade-left">
                     <div v-if="categorie == 'All'" key="1" class="swiper-slide slide0 toggle" data-hash="slide0">
                         <div id="Argument_Bandeau">
                             <div id="Argument">
@@ -68,7 +68,7 @@
                                 <i class="far fa-chart-line"></i>
                                 <h4>Référencement et Publicité</h4>
                             </div>
-                            <div v-on:click="changeCategorie('mainteance')" id="Cat_6" class="toggle" data-toggle='maintenance'>
+                            <div v-on:click="changeCategorie('maintenance')" id="Cat_6" class="toggle" data-toggle='maintenance'>
                                 <i class="fas fa-wrench"></i>
                                 <h4>Maintenance</h4>
                             </div>
@@ -409,7 +409,7 @@
                                     <i class="far fa-chart-line"></i>
                                     <h1>Référencement et Publicité</h1>
                                 </div>
-                                <i v-on:click="changeCategorie('maintenace')" class="far fa-angle-right icone-awesome button-next" aria-hidden></i>
+                                <i v-on:click="changeCategorie('maintenance')" class="far fa-angle-right icone-awesome button-next" aria-hidden></i>
                             </div>
                             <div class="Partie_Haute_Droite_Alt"></div>
                         </div>
