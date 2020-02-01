@@ -89,9 +89,9 @@
             (function (d, s, id) {
                 var js,
                     fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) 
+                if (d.getElementById(id))
                     return;
-                
+
                 js = d.createElement(s);
                 js.id = id;
                 js.src = 'https://connect.facebook.net/fr_FR/sdk/xfbml.customerchat.js';
@@ -103,7 +103,7 @@
         <div class="fb-customerchat" attribution="setup_tool" page_id="434493520235515" logged_in_greeting="Bonjour! Comment puis-je vous aider?" logged_out_greeting="Bonjour! Comment puis-je vous aider?"></div>`
         <header id="HeaderDesktop">
             <h1 class="logo">
-                <a href="{{ path('default') }}">
+                <a class="logo" href="{{ path('default') }}">
                     <span class="Com">Com</span>
                     <span class="Four">4</span>
                     <span class="Up">Up</span>
@@ -172,7 +172,7 @@
         <header id='HeaderMobile'>
             <div id="HeaderMobileTop">
                 <h1 class="logo">
-                    <a href="{{ path('default') }}">
+                    <a class="logo" href="{{ path('default') }}">
                         <span class="Com">Com</span>
                         <span class="Four">4</span>
                         <span class="Up">Up</span>

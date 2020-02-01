@@ -163,6 +163,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
     cursor: pointer;
   width: calc(100% / 3);
   margin: 2em auto 2em auto
@@ -266,7 +267,8 @@
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  height: 7em;
+  min-height: 7em;
+  padding-top: 0.2em;
   background-color: #d5d5d5
 }
 
@@ -315,7 +317,7 @@
 
 @media screen and (max-width:1024px) {
   #Cat_1, #Cat_2, #Cat_3, #Cat_4, #Cat_5, #Cat_6 {
-    width: 50%;
+    width: 40%;
     margin: 2em auto 2em auto
   }
 

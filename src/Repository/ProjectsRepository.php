@@ -4,7 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Projects;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Symfony\Bridge\Doctrine\RegistryInterface;
+use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @method Projects|null find($id, $lockMode = null, $lockVersion = null)
@@ -14,7 +14,7 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  */
 class ProjectsRepository extends ServiceEntityRepository
 {
-    public function __construct(RegistryInterface $registry)
+    public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Projects::class);
     }
@@ -55,7 +55,7 @@ class ProjectsRepository extends ServiceEntityRepository
         ->setFirstResult(($page-1)*8)
         ->setMaxResults(8)
         ->orderBy('b.date','DESC')
-      
+
         ->getQuery()
         ->getResult()
         ;
