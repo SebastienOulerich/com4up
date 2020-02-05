@@ -125,7 +125,7 @@ class ProjectsController extends Controller
      * @Route("/get-projet-selection",name="getProjetSelection")
      */
 
-    public function getProjetBYType(Request $request, RegistryInterface $doctrine)
+    public function getProjetBYType(Request $request, ManagerRegistry $doctrine)
     {
         $request_stack = $this->container->get('request_stack');
         $request = $request_stack->getCurrentRequest();
@@ -157,7 +157,7 @@ class ProjectsController extends Controller
      * @Route("/count-projet",name="countProjet")
      */
 
-    public function countProjet(Request $request, RegistryInterface $doctrine)
+    public function countProjet(Request $request, ManagerRegistry $doctrine)
     {
         $user1 = $this->getUser();
         $request_stack = $this->container->get('request_stack');
