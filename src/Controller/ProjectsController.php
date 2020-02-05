@@ -32,6 +32,7 @@ use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Doctrine\Persistence\ManagerRegistry;
 
 class ProjectsController extends Controller
 {
@@ -94,7 +95,7 @@ class ProjectsController extends Controller
     /**
      * @Route("/get-projet",name="getProjet")
      */
-    public function getProjet(Request $request, RegistryInterface $doctrine)
+    public function getProjet(Request $request, ManagerRegistry $doctrine)
     {
         #$request_stack = $this->container->get('request_stack');
         #$request = $request_stack->getCurrentRequest();
