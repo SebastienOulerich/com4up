@@ -51,10 +51,10 @@ class UploadController extends AbstractController
             $em->flush();
             $encoders = array(new XmlEncoder(), new JsonEncoder());
             $normalizer = new ObjectNormalizer();
-            $normalizer->setCircularReferenceLimit(2);
-            $normalizer->setCircularReferenceHandler(function ($object) {
-                return $object->getId();
-            });
+            // $normalizer->setCircularReferenceLimit(2);
+            // $normalizer->setCircularReferenceHandler(function ($object) {
+            //     return $object->getId();
+            // });
             $arr = array('name' => $new_image_name, 'type' =>$type);
             $normalizers = array($normalizer);
             $serializer = new Serializer($normalizers, $encoders);

@@ -107,10 +107,10 @@ class ProjectsController extends Controller
         #$projets = $doctrine->getRepository(Projects::class)->findAll();
         $encoders = array(new XmlEncoder(), new JsonEncoder());
         $normalizer = new ObjectNormalizer();
-        $normalizer->setCircularReferenceLimit(2);
-        $normalizer->setCircularReferenceHandler(function ($object) {
-            return $object->getId();
-        });
+        //$normalizer->setCircularReferenceLimit(2);
+        //$normalizer->setCircularReferenceHandler(function ($object) {
+          //  return $object->getId();
+        //});
 
         $normalizers = array($normalizer);
         $serializer = new Serializer($normalizers, $encoders);
@@ -139,10 +139,10 @@ class ProjectsController extends Controller
             $selection = $doctrine->getRepository(Projects::class)->myGetProjetByType($type, intval($page));
         $encoders = array(new XmlEncoder(), new JsonEncoder());
         $normalizer = new ObjectNormalizer();
-        $normalizer->setCircularReferenceLimit(2);
-        $normalizer->setCircularReferenceHandler(function ($object) {
-            return $object->getId();
-        });
+        // $normalizer->setCircularReferenceLimit(2);
+        // $normalizer->setCircularReferenceHandler(function ($object) {
+        //     return $object->getId();
+        // });
 
         $normalizers = array($normalizer);
         $serializer = new Serializer($normalizers, $encoders);
@@ -171,11 +171,11 @@ class ProjectsController extends Controller
             $count = $doctrine->getRepository(Projects::class)->myCount();
         $encoders = array(new XmlEncoder(), new JsonEncoder());
         $normalizer = new ObjectNormalizer();
-        $normalizer->setCircularReferenceLimit(2);
+        // $normalizer->setCircularReferenceLimit(2);
         // Add Circular reference handler
-        $normalizer->setCircularReferenceHandler(function ($object) {
-            return $object->getId();
-        });
+        // $normalizer->setCircularReferenceHandler(function ($object) {
+        //     return $object->getId();
+        // });
 
         $normalizers = array($normalizer);
         $serializer = new Serializer($normalizers, $encoders);
