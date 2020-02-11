@@ -2,10 +2,6 @@ main {
     min-height: 90vh
 }
 
-#Bandeau {
-    max-width: 100%;
-    height: auto
-}
 
 #Bandeau_mobile {
     display: none;
@@ -17,7 +13,6 @@ main {
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    height: 5em
 }
 
 #Partie_Haute_Gauche {
@@ -39,7 +34,9 @@ main {
 }
 
 #Partie_Haute_Centre h1 {
-    margin: auto 2em auto 2em
+    margin: auto 2em auto 2em;
+    white-space: nowrap;
+
 }
 
 #Partie_Haute_Droite {
@@ -267,7 +264,11 @@ main {
     #Partie_Haute_Centre {
         width: 60%;
         justify-content: flex-end;
-        height: 2em
+        min-height: 100%;
+    }
+
+    #Partie_Haute_Centre h1 {
+        margin: auto;
     }
     .desktop {
         display: none;

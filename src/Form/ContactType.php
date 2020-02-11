@@ -22,7 +22,7 @@ class ContactType extends AbstractType
             ->add('email', EmailType::class ,array('label'=> 'E-Mail',))
             ->add('entreprise', TextType::class ,array(
                 "required" => false,
-                'label'=> 'Entreprise/Organisme  - (Optionnel)',))
+                'label'=> 'Organisme (Optionnel)',))
               ->add('cate', ChoiceType::class, [
                     'choices'=> array(
                         'Site web' => 'Site web',

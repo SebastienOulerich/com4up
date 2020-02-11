@@ -29,6 +29,13 @@
   src: url(../fonts/Montserrat/Montserrat-Regular.ttf)
 }
 
+#Bandeau {
+  max-width: 100%;
+  min-width: 100%;
+  width: 100%;
+  height: auto
+}
+
 body {
   margin: 0;
   padding: 0;
