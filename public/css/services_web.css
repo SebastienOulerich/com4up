@@ -36,6 +36,9 @@
   height: 3em
 }
 
+.Pointer:hover {
+  cursor: pointer;
+}
 #Partie_Basse a {
   background-color: #b70020;
   color: #fff;

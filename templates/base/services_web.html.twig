@@ -81,16 +81,20 @@
                         v-else-if="categorie =='UX'" key="2" class="swiper-slide slide1" data-hash="slide1">
                         {# </transition> #}
                         <div class="Partie_Haute_Alt" id="Partie_Haute_1">
-                            <div class="Partie_Haute_Gauche_Alt">
+                            <div class="Partie_Haute_Gauche_Alt Pointer">
                                 <i class="fas fa-th-large" aria-hidden v-on:click="changeCategorie('All')"></i>
                             </div>
                             <div class="Partie_Haute_Centre_Alt">
-                                <i v-on:click="changeCategorie('All')" class="far fa-angle-left icone-awesome button-prev" aria-hidden></i>
+                              <div class="Pointer" v-on:click="changeCategorie('All')">
+                                <i class="far fa-angle-left icone-awesome button-prev" aria-hidden></i>
+                                </div>
                                 <div class="Titre_Menu">
                                     <i class="fas fa-sitemap"></i>
                                     <h1>Expérience Utilisateur (UX Design)</h1>
                                 </div>
-                                <i v-on:click="changeCategorie('responsive')" class="far fa-angle-right icone-awesome button-next" aria-hidden></i>
+                                <div class="Pointer" v-on:click="changeCategorie('responsive')">
+                                <i  class="far fa-angle-right icone-awesome button-next" aria-hidden></i>
+                                </div>
                             </div>
                             <div class="Partie_Haute_Droite_Alt"></div>
                         </div>
@@ -166,16 +170,20 @@
                     {# <transition name="slide-fade"> #}
                     <div key="3" v-else-if="categorie =='responsive'" class="swiper-slide slide2" data-hash="slide2">
                         <div class="Partie_Haute_Alt" id="Partie_Haute_2">
-                            <div class="Partie_Haute_Gauche_Alt">
+                            <div class="Partie_Haute_Gauche_Alt Pointer">
                                 <i class="fas fa-th-large" aria-hidden v-on:click="changeCategorie('All')"></i>
                             </div>
                             <div class="Partie_Haute_Centre_Alt">
-                                <i v-on:click="changeCategorie('UX')" class="far fa-angle-left icone-awesome button-prev" aria-hidden></i>
+                              <div class="Pointer" v-on:click="changeCategorie('UX')">
+                                <i class="far fa-angle-left icone-awesome button-prev" aria-hidden></i>
+                                </div>
                                 <div class="Titre_Menu">
                                     <i class="fas fa-expand-arrows-alt"></i>
                                     <h1>Responsive</h1>
                                 </div>
-                                <i v-on:click="changeCategorie('QVC')" class="far fa-angle-right icone-awesome button-next" aria-hidden></i>
+                                <div class="Pointer" v-on:click="changeCategorie('QVC')">
+                                <i class="far fa-angle-right icone-awesome button-next" aria-hidden></i>
+                                </div>
                             </div>
                             <div class="Partie_Haute_Droite_Alt"></div>
                         </div>
@@ -248,16 +256,20 @@
                     {# <transition name="slide-fade"> #}
                     <div key="4" v-else-if="categorie =='QVC'" class="swiper-slide slide3" data-hash="slide3">
                         <div class="Partie_Haute_Alt" id="Partie_Haute_3">
-                            <div class="Partie_Haute_Gauche_Alt">
+                            <div class="Partie_Haute_Gauche_Alt Pointer">
                                 <i class="fas fa-th-large" aria-hidden v-on:click="changeCategorie('All')"></i>
                             </div>
                             <div class="Partie_Haute_Centre_Alt">
-                                <i v-on:click="changeCategorie('responsive')" class="far fa-angle-left icone-awesome button-prev" aria-hidden></i>
+                              <div class="Pointer" v-on:click="changeCategorie('responsive')">
+                                <i class="far fa-angle-left icone-awesome button-prev" aria-hidden></i>
+                                </div>
                                 <div class="Titre_Menu">
                                     <i class="fas fa-user-check"></i>
                                     <h1>Qui vous correspond</h1>
                                 </div>
-                                <i v-on:click="changeCategorie('UI')" class="far fa-angle-right icone-awesome button-next" aria-hidden></i>
+                                <div class="Pointer" v-on:click="changeCategorie('UI')">
+                                <i class="far fa-angle-right icone-awesome button-next" aria-hidden></i>
+                                </div>
                             </div>
                             <div class="Partie_Haute_Droite_Alt"></div>
                         </div>
@@ -330,16 +342,20 @@
                     {# <transition name="slide-fade"> #}
                     <div key="5" v-else-if="categorie =='UI'" class="swiper-slide slide4" data-hash="slide4">
                         <div class="Partie_Haute_Alt" id="Partie_Haute_4">
-                            <div class="Partie_Haute_Gauche_Alt">
+                            <div class="Partie_Haute_Gauche_Alt Pointer">
                                 <i class="fas fa-th-large" aria-hidden v-on:click="changeCategorie('All')"></i>
                             </div>
                             <div class="Partie_Haute_Centre_Alt">
-                                <i v-on:click="changeCategorie('QVC')" class="far fa-angle-left icone-awesome button-prev" aria-hidden></i>
+                              <div class="Pointer" v-on:click="changeCategorie('QVC')">
+                                <i class="far fa-angle-left icone-awesome button-prev" aria-hidden></i>
+                                </div>
                                 <div class="Titre_Menu">
                                     <i class="fas fa-paint-brush-alt"></i>
                                     <h1>Interface Utilisateur (UI Design)</h1>
                                 </div>
-                                <i v-on:click="changeCategorie('SEA')" class="far fa-angle-right icone-awesome button-next" aria-hidden></i>
+                                <div class="Pointer" v-on:click="changeCategorie('SEA')">
+                                <i class="far fa-angle-right icone-awesome button-next" aria-hidden></i>
+                                </div>
                             </div>
                             <div class="Partie_Haute_Droite_Alt"></div>
                         </div>
@@ -400,16 +416,20 @@
                     {# <transition name="slide-fade"> #}
                     <div key="6" v-else-if="categorie =='SEA'" class="swiper-slide slide6" data-hash="slide6">
                         <div class="Partie_Haute_Alt" id="Partie_Haute_5">
-                            <div class="Partie_Haute_Gauche_Alt">
+                            <div class="Partie_Haute_Gauche_Alt Pointer">
                                 <i class="fas fa-th-large" aria-hidden v-on:click="changeCategorie('All')"></i>
                             </div>
                             <div class="Partie_Haute_Centre_Alt">
-                                <i v-on:click="changeCategorie('UI')" class="far fa-angle-left icone-awesome button-prev" aria-hidden></i>
+                              <div class="Pointer" v-on:click="changeCategorie('UI')">
+                                <i class="far fa-angle-left icone-awesome button-prev" aria-hidden></i>
+                                </div>
                                 <div class="Titre_Menu">
                                     <i class="far fa-chart-line"></i>
                                     <h1>Référencement et Publicité</h1>
                                 </div>
-                                <i v-on:click="changeCategorie('maintenance')" class="far fa-angle-right icone-awesome button-next" aria-hidden></i>
+                                <div class="Pointer" v-on:click="changeCategorie('maintenance')">
+                                <i class="far fa-angle-right icone-awesome button-next" aria-hidden></i>
+                                </div>
                             </div>
                             <div class="Partie_Haute_Droite_Alt"></div>
                         </div>
@@ -496,16 +516,20 @@
                     {# <transition name="slide-fade"> #}
                     <div key="7" v-else-if="categorie =='maintenance'" class="swiper-slide slide5" data-hash="slide5">
                         <div class="Partie_Haute_Alt" id="Partie_Haute_6">
-                            <div class="Partie_Haute_Gauche_Alt">
+                            <div class="Partie_Haute_Gauche_Alt Pointer">
                                 <i class="fas fa-th-large" aria-hidden v-on:click="changeCategorie('All')"></i>
                             </div>
                             <div class="Partie_Haute_Centre_Alt">
-                                <i v-on:click="changeCategorie('SEA')" class="far fa-angle-left icone-awesome button-prev" aria-hidden></i>
+                              <div class="Pointer" v-on:click="changeCategorie('SEA')">
+                                <i class="far fa-angle-left icone-awesome button-prev" aria-hidden></i>
+                                </div>
                                 <div class="Titre_Menu">
                                     <i class="fas fa-wrench"></i>
                                     <h1>Maintenance</h1>
                                 </div>
-                                <i v-on:click="changeCategorie('All')" class="far fa-angle-right icone-awesome button-next" aria-hidden></i>
+                                <div class="Pointer" v-on:click="changeCategorie('All')">
+                                <i class="far fa-angle-right icone-awesome button-next" aria-hidden></i>
+                                </div>
                             </div>
                             <div class="Partie_Haute_Droite_Alt"></div>
                         </div>
