@@ -431,6 +431,10 @@
   font-size: 1.25em
 }
 
+.Gras {
+  font-weight: bold;
+}
+
 @media screen and (max-width:1024px) {
   #Cat_1, #Cat_2, #Cat_3 {
     width: 50%;
