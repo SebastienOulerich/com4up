@@ -3,4 +3,11 @@ Disallow:
 
 User-agent : *
 Disallow: /cms/
+
+User-agent: archive.org_bot
+Disallow: /
+
+User-agent: ia_archiver
+Disallow: /
+
 Sitemap: https://com4up.fr/sitemap.xml
