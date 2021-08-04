@@ -59,3 +59,7 @@ node_modules/*
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
+
+/public/analytics/*
+/public/analytics/
+
