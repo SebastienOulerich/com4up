@@ -94,7 +94,7 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 50%
+  width: 100%
 }
 
 #Distance, #Domicile {
@@ -127,20 +127,19 @@
   width: 100%;
   height: 6em;
   align-items: center;
-  padding-left: 2em
+  justify-content: space-between;
 }
 
 .texte {
+  margin-left: 15vw;
   display: flex;
   flex-direction: column;
-  width: 85%
 }
 
 .prix {
+  margin-right: 15vw;
   display: flex;
-  width: 10%;
   justify-content: flex-end;
-  padding-right: 2em
 }
 
 @media screen and (max-width:1280px) {
